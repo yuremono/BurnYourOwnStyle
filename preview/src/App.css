@@ -1,0 +1,162 @@
+/* My Style System - Cards Unit */
+/* Tailwind CSS (index.css) は最後に読み込み */
+
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap, 30px);
+  margin: 0 auto;
+}
+
+.Cards > .item {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: unset;
+}
+
+.Cards > .item img {
+  width: 100%;
+  height: auto;
+}
+
+/* 3 カラム */
+.Cards.col3 {
+  --itemW: calc((100% - (var(--gap, 30px) * 2)) / 3);
+}
+
+.Cards.col3 > .item {
+  width: var(--itemW);
+}
+
+/* 4 カラム */
+.Cards.col4 {
+  --itemW: calc((100% - (var(--gap, 30px) * 3)) / 4);
+}
+
+.Cards.col4 > .item {
+  width: var(--itemW);
+}
+
+/* 5 カラム */
+.Cards.col5 {
+  --itemW: calc((100% - (var(--gap, 30px) * 4)) / 5);
+}
+
+.Cards.col5 > .item {
+  width: var(--itemW);
+}
+
+/* 6 カラム */
+.Cards.col6 {
+  --itemW: calc((100% - (var(--gap, 30px) * 5)) / 6);
+}
+
+.Cards.col6 > .item {
+  width: var(--itemW);
+}
+
+/* Flex 伸縮 */
+.Cards.colflex > .item {
+  flex: 1;
+  width: auto;
+}
+
+/* 固定幅 */
+.Cards.colfix {
+  --itemW: 240px;
+}
+
+.Cards.colfix > .item {
+  width: var(--itemW);
+}
+
+/* レイヤーモード（画像とテキストを重ねる） */
+.Cards.IsLayer {
+  width: var(--wid, 1080px);
+  --itemW: calc((100% - (var(--gap, 30px) * 1)) / 2);
+}
+
+.Cards.IsLayer > .item {
+  display: grid;
+  position: relative;
+  width: var(--itemW);
+}
+
+.Cards.IsLayer > .item > * {
+  grid-area: 1 / 1;
+  z-index: 1;
+}
+
+.Cards.IsLayer > .item figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  position: relative;
+}
+
+.Cards.IsLayer > .item figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.Cards.IsLayer > .item .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+  .Cards {
+    --gap: 20px;
+  }
+
+  .Cards.col3,
+  .Cards.col4,
+  .Cards.col5,
+  .Cards.col6 {
+    --itemW: calc((100% - (var(--gap) * 1)) / 2);
+  }
+
+  .Cards.col3 > .item,
+  .Cards.col4 > .item,
+  .Cards.col5 > .item,
+  .Cards.col6 > .item {
+    width: var(--itemW);
+  }
+}
+
+@media (max-width: 640px) {
+  .Cards,
+  .Cards.col3,
+  .Cards.col4,
+  .Cards.col5,
+  .Cards.col6 {
+    --itemW: 100%;
+  }
+
+  .Cards > .item,
+  .Cards.col3 > .item,
+  .Cards.col4 > .item,
+  .Cards.col5 > .item,
+  .Cards.col6 > .item {
+    width: var(--itemW);
+  }
+
+  .Cards.IsLayer > .item {
+    display: flex;
+  }
+
+  .Cards.IsLayer > .item > * {
+    grid-area: unset;
+  }
+}
+
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

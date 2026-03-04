@@ -1,0 +1,94 @@
+@use "mixin" as *;
+
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 0vw;
+  border: none;
+  background-color: unset;
+}
+
+html{
+    font-size: 100% ;
+    text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+}
+body {
+	counter-reset: number 0;
+	// overflow: hidden;
+    min-height: 100lvh;
+	font-style: normal;
+	margin: 0;
+	color: unset;
+	text-align: unset;
+}
+figure>img{//js $(this).wrap('<figure>');
+    height: auto;
+}
+#contents{
+    width: 100%;
+}
+
+blockquote{font-style: italic;}
+iframe{width: 100%;}
+span,b,u{display: inline-block;}
+img {
+	max-width: 100%;
+	object-fit: contain;
+	display: block;
+}
+figure{
+    width: 100%;
+}
+li {list-style: none;outline: none;}
+small {	font-size: 62.5%;}
+input,button,textarea,select{font: inherit;color: inherit;}
+input[type="button"] {
+	cursor: pointer;
+}
+a:not([class],.h a,.f a){
+	text-decoration-skip-ink: auto;
+	color: var(--linkC);
+}
+
+.form_wrap.confirm {
+	margin-top: 40px;
+}
+
+table {
+	table-layout: auto;
+}
+@media screen and (-ms-high-contrast: active),
+screen and (-ms-high-contrast: none) {
+	table {
+		table-layout: fixed;
+	}
+}
+pre {
+	margin: 0;
+	padding: 0;
+	white-space: pre-line;
+}
+u {
+	text-decoration: line-through;
+    text-decoration-skip-ink: none;
+    text-decoration: underline;
+}
+em,span{
+    font-size: inherit;font-weight: inherit;
+    display: inline-block;
+}
+div.clearfix{
+    >div,>article>div{
+        &:empty:not([class],[id]){display: none!important;}
+        a:not([class],[id]){color: var(--linkC);}
+    }
+}
+// body,b,p,strong,h~除外
+html,  div, span, applet, object, iframe,  blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike,  sub, sup, tt, var,  u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	font-weight: inherit;
+    vertical-align: unset;
+}
