@@ -1,4 +1,4 @@
-# My Style System VISION
+# Burn Your Own Style VISION
 
 ## プロジェクトの目的
 
@@ -40,9 +40,9 @@
 
 ### 2. Tailwind.css との役割分担
 
-**基本方針**：My Style System = レイアウト固定、細部 = Tailwind
+**基本方針**：Burn Your Own Style = レイアウト固定、細部 = Tailwind
 
-| 層 | My Style System | Tailwind.css |
+| 層 | Burn Your Own Style | Tailwind.css |
 |---|---|---|
 | **レイアウト骨格** | ✅ flex/grid 構成 | ❌ |
 | **コンポーネント構造** | ✅ 構造定義 | ❌ |
@@ -163,7 +163,7 @@ hero.pen の MainVisual を Cards で、col3、--gap=60px、React で
 - **React**：コンポーネントベース開発
 - **Astro**：スタティックサイト生成
 - **Tailwind.css**：細部スタイリング、装飾上書き
-- **SCSS**：My Style System 本体
+- **SCSS**：Burn Your Own Style 本体
 
 ### 設計思想
 
