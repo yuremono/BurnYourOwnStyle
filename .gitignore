@@ -2,6 +2,7 @@
 NOTE.md
 .vscode/*
 ignore/*
+CLAUDE.md
 
 # macOS system files
 .DS_Store
