@@ -9,7 +9,7 @@ CLAUDE.md
 ._*
 
 # Claude Code settings
-.claude/*
+.claude/output-styles
 .agent/*
 .gemini/*
 .mcp.json
