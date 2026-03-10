@@ -1,29 +1,32 @@
 interface CardsProps {
-  className?: string;
-  style?: React.CSSProperties;
-  children: React.ReactNode;
+  className?: string
+  style?: React.CSSProperties
+  children: React.ReactNode
 }
 
-interface ItemProps {
-  className?: string;
-  children: React.ReactNode;
-}
-
-const Cards: React.FC<CardsProps> = ({ className = '', style, children }) => {
+const Cards = ({ className = "", style, children }: CardsProps) => {
   return (
     <div className={`Cards ${className}`} style={style}>
       {children}
     </div>
-  );
-};
+  )
+}
 
-const Item: React.FC<ItemProps> = ({ className = '', children }) => {
+interface ItemProps {
+  image?: string
+  className?: string
+  children: React.ReactNode
+}
+
+const Item = ({ image, className = "", children }: ItemProps) => {
   return (
-    <div className={`item ${className}`}>
-      {children}
+    <div className={`item gap-0 ${className}`}>
+      {image && <figure><img src={image} alt=""/></figure>}
+      <div className="p-4 rounded-lg shadow-lg flex-1">
+        {children}
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export { Cards, Item };
-export default Cards;
+export { Cards, Item }

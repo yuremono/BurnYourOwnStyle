@@ -520,7 +520,7 @@
               "id": "dZVUp",
               "x": -8,
               "y": 2359,
-              "name": "2",
+              "name": "cards col2",
               "children": [
                 {
                   "type": "rectangle",
@@ -535,31 +535,6 @@
                     "align": "inside",
                     "thickness": 1
                   }
-                },
-                {
-                  "type": "text",
-                  "id": "b84Zn",
-                  "x": 835,
-                  "y": 120,
-                  "name": "SERVICE",
-                  "fill": "#ffffffff",
-                  "content": "SERVICE",
-                  "fontFamily": "Outfit",
-                  "fontSize": 50,
-                  "fontWeight": "500",
-                  "letterSpacing": 8.5
-                },
-                {
-                  "type": "text",
-                  "id": "TEPav",
-                  "x": 928,
-                  "y": 188,
-                  "name": "業務内容",
-                  "fill": "#3bf0f0ff",
-                  "content": "業務内容",
-                  "fontFamily": "Noto Sans JP",
-                  "fontSize": 16,
-                  "fontWeight": "normal"
                 },
                 {
                   "type": "rectangle",
@@ -1027,6 +1002,31 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "text",
+                  "id": "b84Zn",
+                  "x": 835,
+                  "y": 120,
+                  "name": "SERVICE",
+                  "fill": "#ffffffff",
+                  "content": "SERVICE",
+                  "fontFamily": "Outfit",
+                  "fontSize": 50,
+                  "fontWeight": "500",
+                  "letterSpacing": 8.5
+                },
+                {
+                  "type": "text",
+                  "id": "TEPav",
+                  "x": 928,
+                  "y": 188,
+                  "name": "業務内容",
+                  "fill": "#3bf0f0ff",
+                  "content": "業務内容",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
                 }
               ]
             },

@@ -293,6 +293,7 @@ main>* {
         img {
             width: 100%;
         }
+
     } 
 
     // --- 2. モディファイア: レイヤー重ね合わせ (IsLayer) ---
@@ -333,7 +334,7 @@ main>* {
         --itemW: 240px;
 
         .item {
-            width: var(--itemW);
+            width: var(--itemW, 240px);
         }
     }
 
@@ -713,7 +714,7 @@ main>* {
         &:not(.bp-sm)>* {
             width: 100%;
         }
-    }
+    } 
 
     @include max-sm {
         &:is(.bp-sm)>* {
