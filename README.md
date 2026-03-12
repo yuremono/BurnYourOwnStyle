@@ -1,73 +1,190 @@
-# React + TypeScript + Vite
+# 【Burn Your Own Style】プロジェクトルール
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## このプロジェクトについて
 
-Currently, two official plugins are available:
+ユーザーが Web サイト制作で蓄積してきたスタイルシステム（クラス、変数、スタイリングの癖）を、Claude Code・Cursor 等のエージェントに理解させることで、Web 制作の全ての作業をエージェントに任せることを目標としたプロジェクトです。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+完成後はこのプロジェクトを丸ごとコピーして新規プロジェクトの基盤としての使用を想定する。`.claude/skills`, `/scss`, `/js` が主要ディレクトリ。
 
-## React Compiler
+＊Burn Your Own Styleがプロジェクト名であり、4桁の数字は開始日を表すprefix。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**現在は準備段階です。ドキュメントやシステム全体の改善を行なっているので、Unit実装というワークフローを実行しようとしないでください。プロジェクトを理解したうえでユーザーの指示に従ってください** 
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 使用フレームワーク
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+プロジェクト開始時に設定。複数のフレームワークに対応する
+/FRAMEWORK.md に詳細手順を記載
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Unit（ユニット）
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+本システム固有の概念。**CSSクラス名・スキル名・コンポーネント名を兼ねる単位**を指す。
+
+---
+
+## 設計思想
+
+### 1. クラス名・変数名
+
+文字数を最小限に、短縮・略語・主にパスカルケースを使用。
+あらかじめ用意された10~20程度の少数Unitでの運用を想定。実運用でUnitの新規作成は行わない。
+
+### 2. Tailwind.css との役割分担
+
+**基本方針**：Unit = レイアウトを構成、Tailwind = 装飾、微調整
+
+| 層 | Unit | Tailwind.css |
+|---|---|---|
+| **レイアウト骨格** | ✅ | ❌ |
+| **コンポーネント構造** | ✅ | ❌ |
+| **色・グラデーション** | ❌ | ✅ |
+| **余白微調整** | ✅(変数) | ✅ |
+| **フォントサイズ** | ✅(変数) | ✅ |
+| **レスポンシブ** | ✅ | ✅ |
+
+**詳細は [STYLE.md](./STYLE.md) を参照**
+
+## Unit（ユニット）
+
+**基本ルール**：CSSクラス名、スキル名、コンポーネント名はUnit名として一致します。(パスカルケース)
+ただし `FlexR` のように、クラス名がValue(比率・数値)を含む例外あり。
+
+| スキル名 | CSSクラス | 備考 |
+|---|---|---|
+| `Cards` | `.Cards` | 一般的な横並びコンテナ(2~5列程度) |
+| `Toggle` | `.Toggle` | summary,detailsタグを使う開閉コンテンツ。特殊なcssを使うためUnit化 |
+| `Panel` | `.Panel` | 一般的な縦並びコンテナ。ImgTextを複数まとめたものに近い。画像使用任意 |
+| `ImgText` | `.ImgText` | 画像+テキスト横並びコンテナ。画像比率をValueクラスで可変 |
+| `FlexR` | `.Flex55` `.Flex46` など | クラス名が比率を表す。２種類のコンテンツの比率を制御するラッパー |
+
+**文脈による呼び分け**：
+
+| 呼び方 | 指しているもの |
+|---|---|
+| `Cards クラス` | `.Cards` のSCSSルール |
+| `Cards スキル` | `.claude/skills/Cards/SKILL.md` |
+| `Cards コンポーネント` | `Cards.tsx`（実装済みの場合） |
+| `Cards ユニット` | 上記すべてを包含する総称 |
+
+エージェントはユーザーの発言の文脈からどの意味で使われているかを判断する。
+
+---
+
+## ファイル構成
+
+```
+PROJECT_ROOT/
+├── scss/                  # 元 CSS ソース
+│   └── _10template.scss      
+│   └── ...      
+│   └── RatioKit.scss      # 参考プロジェクト//LINK https://ratiokit.vercel.app/HtmlPreview.html SCSS ソース
+├── .claude/skills/                # コンポーネント実装スキル
+│   └── Cards/
+│       ├── SKILL.md       # クラス構造、変数、Modifier、設計思想
+│       └── evals/
+│           └── evals.json # テストケース
+├── designs/               # pencil.dev デザインファイル
+│   └── *.pen              # コンポーネントデザイン
+├── CLAUDE.md              # プロジェクトルール
+├── STYLE.md        # 設計思想・html基本構造について
+├── UNIT.md        # Unit・クラスについて
+└── その他
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## pencil.dev
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+pencil.dev は、VS Code上でデザインファイルを表示、編集できるツール。
+あらかじめ用意された.penファイルを元にUnitを実装する。
+エージェントはユーザーの指示、Unitスキルにより指定されたレイヤー内データを把握する。
+ファイルやレイヤー指定がない場合はUnitの基本構造を実装し、細部の装飾は行わない。
+
+
+
+### 基本フロー
+
+詳細は.claude/skills/{スキル名}/SKILL.md を参照する
+
+1. **ユーザー指示を解析**
+2. **クラスを構築**
+3. **Modifier,Value,変数を適用**
+4. **デザインファイルを確認**
+5. **Tailwind で装飾**
+6. (オプション：ユーザーの指示があった時) agent-browser で表示確認を行う
+
+---
+
+## ブラウザ状態確認の基本的姿勢
+
+**ユーザーがプレビューを開始してから**修正などやりとりを行う際は、ブラウザの状態確認ツールを積極的に使用し、
+実際の CSS 適用状況や UI 挙動を確認する。
+
+### 使用ツール
+
+- **agent-browser**（推奨）：MCP サーバー経由でブラウザ操作
+- リポジトリ：https://github.com/vercel-labs/agent-browser
+- README には使用可能なコマンド一覧と MCP サーバー設定方法が記載されています
+
+### 注意事項
+
+**agent-browser,pupeteer,playwrightなどブラウザ表示確認をした時の注意事項：**
+
+   - **引き続き表示確認する場合**,**「そのまま」**と言われない限り必ずプロセスを終了する
+   - `agent-browser close` を実行
+   - puppeteer を使用する場合は、必ず `browser.close()` でブラウザプロセスを終了
+   - 使用したポートを手動で解放 例：`kill $(lsof -t -i:3456)`
+   - 使用していたポートがわからない場合は、確認すること。別のポートを解放しないように注意
+   - ポートを解放しないと、次回実行時にポート競合が発生する。不要なプロセスがリソースを消費し続けるのを防ぐ
+
+---
+
+## 基本原則
+
+1. **対話言語**: 常に日本語で回答する
+2. **Read してから Write/Edit**: ファイルを編集する前に必ず内容を読む
+3. **Edit が失敗したら Write ツールで書換える** Edit ツールは LF 形式のファイルのみ対応（CRLF 形式だと編集失敗）
+4. **コメントを安易に消さない**: ユーザーがトグルするため残している場合がある
+5. **基本行動は追記**: 「書き換え」「削除」と言わない限りは「追記」する
+6. **/user/?????/などユーザーネームをパスに含めない**: `PROJECT_ROOT` や `N,M` などのプレースホルダーを使用する。
+
+## 禁止事項
+
+以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
+
+- **調査・確認・検討段階でファイルを編集**
+  良かれと思って、独断で実装に進まない。
+
+- **勝手に名前をつける**
+  クラス名、スキル名、コンポーネント名、Unit名など、エージェントがそれらしい名前をつけることはしない。
+  名前が必要な場合はユーザーに提案し、承認を得ること。
+
+- **デザインの再現以外でのcreative work**
+  用意されたUnitと引数を使うこと、Tailwindでデザインデータ通りの装飾をすることがエージェントの役割である。
+
+- **シークレット（APIキー、パスワード、トークン）をコードに直書き**
+  環境変数や設定ファイルを使用する。
+
+- **未確認の削除・破壊的操作**
+  ファイルの削除、ディレクトリのクリア、git reset --hard など、元に戻せない操作をする前には必ず確認する。
+
+- **独断で書き換え、削除**
+  「書き換え」「削除」と言わない限りは「追記」する
+
+- **不明点を確認せず推測で進めない**
+
+---
+
+## 誤変換に注意
+
+ユーザーは音声入力を多用するため、誤変換が頻繁に発生します。
+文脈から適切と思われる単語に変換して回答してください。特に固有名詞について判断に迷う場合は回答を一時停止して正確な文字列を問い返してください。
+
+#### よくある誤変換パターン
+| 誤変換 | 正しい語句 |
+|--------|-----------|
+| cloud.md | CLAUDE.md |
+| ご返還 | 誤変換 |
+
+// LINK https://github.com/yuremono/BurnYourOwnStyle
