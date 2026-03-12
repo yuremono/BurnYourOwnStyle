@@ -224,6 +224,28 @@ function App() {
 				</Panel>
 			</section>
 
+            			{/* Toggle セクション */}
+			<section className="">
+				<h2 className="text-center font-semibold mb-4">
+					Toggle - 開閉コンテンツ
+				</h2>
+
+				<Toggle style={{} as React.CSSProperties}>
+					<ToggleSummary>基本的なアコーディオンです</ToggleSummary>
+					<ToggleBody>
+						<span>本文コンテンツ</span>
+					</ToggleBody>
+				</Toggle>
+
+				<Toggle className="IsQa" style={{} as React.CSSProperties}>
+					<ToggleSummary>Q1: これはどのような仕組みですか？</ToggleSummary>
+					<ToggleBody>
+						<p>A1: summary と details タグを使った開閉コンテンツです。</p>
+					</ToggleBody>
+				</Toggle>
+
+			</section>
+
 			{/* FlexR セクション */}
 			<section className="wrapper">
 				<h2 className="text-center font-semibold mb-4">
@@ -247,27 +269,7 @@ function App() {
 				</FlexR>
 			</section>
 
-			{/* Toggle セクション */}
-			<section className="">
-				<h2 className="text-center font-semibold mb-4">
-					Toggle - 開閉コンテンツ
-				</h2>
 
-				<Toggle style={{} as React.CSSProperties}>
-					<ToggleSummary>基本的なアコーディオンです</ToggleSummary>
-					<ToggleBody>
-						<span>本文コンテンツ</span>
-					</ToggleBody>
-				</Toggle>
-
-				<Toggle className="IsQa" style={{} as React.CSSProperties}>
-					<ToggleSummary>Q1: これはどのような仕組みですか？</ToggleSummary>
-					<ToggleBody>
-						<p>A1: summary と details タグを使った開閉コンテンツです。</p>
-					</ToggleBody>
-				</Toggle>
-
-			</section>
 		</main>
 	);
 }
