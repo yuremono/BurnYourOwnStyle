@@ -9,7 +9,7 @@ Unitクラス が、**Tailwind CSS の utility クラスよりも先に適用さ
 ### CSS の適用順序
 
 ```
-1. Unit クラス（.Cards, .Accordion など）
+1. Unit クラス（.Cards, .Toggle など）
 2. Tailwind CSS（@tailwind base/components/utilities）
 3. JSX/コンポーネント内の className（Tailwind クラス）
 ```

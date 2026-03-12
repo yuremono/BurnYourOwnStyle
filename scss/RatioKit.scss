@@ -372,7 +372,7 @@ main>* {
     interpolate-size: allow-keywords;
 }
 
-:where(.Accordion){// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
+:where(.Toggle){// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
 
     // 開閉アニメーション
     &::details-content {

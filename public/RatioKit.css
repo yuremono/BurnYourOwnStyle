@@ -368,16 +368,16 @@ main > *:is(script, input[type=hidden]) {
   interpolate-size: allow-keywords;
 }
 
-.Accordion::details-content {
+.Toggle::details-content {
   -webkit-transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
   transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
   height: 0;
   overflow: hidden;
 }
-.Accordion[open]::details-content {
+.Toggle[open]::details-content {
   height: auto;
 }
-.Accordion summary {
+.Toggle summary {
   list-style: none;
   outline: none;
   cursor: pointer;
@@ -388,13 +388,13 @@ main > *:is(script, input[type=hidden]) {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-.Accordion summary:hover {
+.Toggle summary:hover {
   opacity: 0.8;
 }
-.Accordion summary::-webkit-details-marker {
+.Toggle summary::-webkit-details-marker {
   display: none;
 }
-.Accordion summary:after {
+.Toggle summary:after {
   content: ">";
   font-weight: 900;
   font-family: var(--icon, inherit);
@@ -408,15 +408,15 @@ main > *:is(script, input[type=hidden]) {
   transition: 0.4s;
   rotate: 90deg;
 }
-.Accordion[open] summary:after {
+.Toggle[open] summary:after {
   rotate: -90deg;
 }
-.Accordion > div {
+.Toggle > div {
   position: relative;
   padding: 1em;
   background-color: var(--aBG, var(--wh, #fff));
 }
-.Accordion .has_img {
+.Toggle .has_img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -432,7 +432,7 @@ main > *:is(script, input[type=hidden]) {
   gap: 1em;
   width: 100%;
 }
-.Accordion .has_img figure {
+.Toggle .has_img figure {
   max-width: 100%;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -440,34 +440,34 @@ main > *:is(script, input[type=hidden]) {
   width: var(--imgW, 30%);
   margin-left: auto;
 }
-.Accordion .has_img figure img {
+.Toggle .has_img figure img {
   width: 100%;
   height: auto;
   display: block;
 }
-.Accordion .has_img > div {
+.Toggle .has_img > div {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 @media (max-width: 767px) {
-  .Accordion .has_img:not(.bp-sm) figure {
+  .Toggle .has_img:not(.bp-sm) figure {
     width: 100%;
     margin-left: unset;
   }
 }
 @media (max-width: 639px) {
-  .Accordion .has_img:is(.bp-sm) figure {
+  .Toggle .has_img:is(.bp-sm) figure {
     width: 100%;
     margin-left: unset;
   }
 }
-.Accordion.IsQa summary,
-.Accordion.IsQa > div {
+.Toggle.IsQa summary,
+.Toggle.IsQa > div {
   padding-left: 4em;
 }
-.Accordion.IsQa summary:before,
-.Accordion.IsQa > div:before {
+.Toggle.IsQa summary:before,
+.Toggle.IsQa > div:before {
   content: "";
   font-family: var(--bfFF, var(--Eng));
   color: var(--bfC, var(--wh, #fff));
@@ -485,10 +485,10 @@ main > *:is(script, input[type=hidden]) {
       align-content: center;
   text-align: center;
 }
-.Accordion.IsQa summary:before {
+.Toggle.IsQa summary:before {
   content: "Q";
 }
-.Accordion.IsQa > div:before {
+.Toggle.IsQa > div:before {
   content: "A";
   background-color: var(--abfBG, var(--ac));
 }

@@ -450,7 +450,7 @@ h4 {// --h3FZ
         interpolate-size: allow-keywords;
     }
 
-    .Accordion {// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
+    .Toggle {// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
 
         // 開閉アニメーション
         &::details-content {

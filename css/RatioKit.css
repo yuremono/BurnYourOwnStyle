@@ -354,16 +354,16 @@ main > *:is(script, input[type=hidden]) {
   interpolate-size: allow-keywords;
 }
 
-:where(.Accordion)::details-content {
+:where(.Toggle)::details-content {
   -webkit-transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
   transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
   height: 0;
   overflow: hidden;
 }
-:where(.Accordion)[open]::details-content {
+:where(.Toggle)[open]::details-content {
   height: auto;
 }
-:where(.Accordion) summary {
+:where(.Toggle) summary {
   list-style: none;
   outline: none;
   cursor: pointer;
@@ -374,13 +374,13 @@ main > *:is(script, input[type=hidden]) {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-:where(.Accordion) summary:hover {
+:where(.Toggle) summary:hover {
   opacity: 0.8;
 }
-:where(.Accordion) summary::-webkit-details-marker {
+:where(.Toggle) summary::-webkit-details-marker {
   display: none;
 }
-:where(.Accordion) summary:after {
+:where(.Toggle) summary:after {
   content: ">";
   font-weight: 900;
   font-family: var(--icon, inherit);
@@ -394,15 +394,15 @@ main > *:is(script, input[type=hidden]) {
   transition: 0.4s;
   rotate: 90deg;
 }
-:where(.Accordion)[open] summary:after {
+:where(.Toggle)[open] summary:after {
   rotate: -90deg;
 }
-:where(.Accordion) > div {
+:where(.Toggle) > div {
   position: relative;
   padding: 1em;
   background-color: var(--aBG, var(--wh, #fff));
 }
-:where(.Accordion) .has_img {
+:where(.Toggle) .has_img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -418,7 +418,7 @@ main > *:is(script, input[type=hidden]) {
   gap: 1em;
   width: 100%;
 }
-:where(.Accordion) .has_img figure {
+:where(.Toggle) .has_img figure {
   max-width: 100%;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -426,34 +426,34 @@ main > *:is(script, input[type=hidden]) {
   width: var(--imgW, 30%);
   margin-left: auto;
 }
-:where(.Accordion) .has_img figure img {
+:where(.Toggle) .has_img figure img {
   width: 100%;
   height: auto;
   display: block;
 }
-:where(.Accordion) .has_img > div {
+:where(.Toggle) .has_img > div {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 @media (max-width: 767px) {
-  :where(.Accordion) .has_img:not(.bp-sm) figure {
+  :where(.Toggle) .has_img:not(.bp-sm) figure {
     width: 100%;
     margin-left: unset;
   }
 }
 @media (max-width: 639px) {
-  :where(.Accordion) .has_img:is(.bp-sm) figure {
+  :where(.Toggle) .has_img:is(.bp-sm) figure {
     width: 100%;
     margin-left: unset;
   }
 }
-:where(.Accordion).IsQa summary,
-:where(.Accordion).IsQa > div {
+:where(.Toggle).IsQa summary,
+:where(.Toggle).IsQa > div {
   padding-left: 4em;
 }
-:where(.Accordion).IsQa summary:before,
-:where(.Accordion).IsQa > div:before {
+:where(.Toggle).IsQa summary:before,
+:where(.Toggle).IsQa > div:before {
   content: "";
   font-family: var(--bfFF, var(--Eng));
   color: var(--bfC, var(--wh, #fff));
@@ -471,10 +471,10 @@ main > *:is(script, input[type=hidden]) {
       align-content: center;
   text-align: center;
 }
-:where(.Accordion).IsQa summary:before {
+:where(.Toggle).IsQa summary:before {
   content: "Q";
 }
-:where(.Accordion).IsQa > div:before {
+:where(.Toggle).IsQa > div:before {
   content: "A";
   background-color: var(--abfBG, var(--ac));
 }

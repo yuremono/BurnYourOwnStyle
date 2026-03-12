@@ -12,13 +12,13 @@ const Cards = ({ className = "", style, children }: CardsProps) => {
   )
 }
 
-interface ItemProps {
+interface CardsItemProps {
   image?: string
   className?: string
   children: React.ReactNode
 }
 
-const Item = ({ image, className = "", children }: ItemProps) => {
+const CardsItem = ({ image, className = "", children }: CardsItemProps) => {
   return (
     <div className={`item gap-0 ${className}`}>
       {image && <figure><img src={image} alt=""/></figure>}
@@ -29,4 +29,4 @@ const Item = ({ image, className = "", children }: ItemProps) => {
   )
 }
 
-export { Cards, Item }
+export { Cards, CardsItem }

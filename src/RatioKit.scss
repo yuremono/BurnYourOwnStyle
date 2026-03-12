@@ -73,6 +73,11 @@ h4 {// --h3FZ
 .into {// --into
     padding-inline: var(--into);
 } 
+.sub {//タイトルタグ内の小さい文字
+    font-size: 0.75em;
+    color: var(--mc);
+    margin-right: 0.5em;
+}
 
 
 
@@ -373,7 +378,7 @@ main>* {
     interpolate-size: allow-keywords;
 }
 
-:where(.Accordion){// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
+:where(.Toggle){// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
 
     // 開閉アニメーション
     &::details-content {
@@ -543,7 +548,7 @@ main>* {
             width: var(--imgW, 30%);
 
             &:is(.IsRev *) {
-                order: -1;
+                order: 1;
             }
 
             img {
@@ -556,11 +561,7 @@ main>* {
         >div {
             flex: 1;
 
-            .sub {
-                font-size: 0.75em;
-                color: var(--mc);
-                margin-right: 0.5em;
-            }
+
         }
 
         @include max-md {
