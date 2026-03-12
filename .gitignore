@@ -1,5 +1,4 @@
 
-NOTE.md
 .vscode/*
 ignore/*
 
@@ -24,6 +23,3 @@ ignore/*
 # Memory MCP data (local to each installation)
 memory/
 
-# Internal docs (operation logs, test plans, article drafts)
-docs/
-archive/
