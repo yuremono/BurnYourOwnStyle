@@ -1,6 +1,7 @@
 # macOS system files
 .DS_Store
 ._*
+.vscode
 
 # Claude Code settings
 .claude/output-styles
