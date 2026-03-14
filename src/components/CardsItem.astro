@@ -1,0 +1,15 @@
+---
+interface Props {
+  image?: string
+  class?: string
+}
+
+const { image, class: className = '' } = Astro.props
+---
+
+<div class={`item gap-0 ${className}`}>
+  {image && <figure><img src={image} alt=""/></figure>}
+  <div class="p-4 rounded-lg shadow-lg flex-1">
+    <slot />
+  </div>
+</div>

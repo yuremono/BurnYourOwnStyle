@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string
+  style?: Record<string, string>
+}
+
+const { class: className = '', style } = Astro.props
+---
+
+<details class={`Toggle ${className}`} style={style}>
+  <slot />
+</details>

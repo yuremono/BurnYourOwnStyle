@@ -1,6 +1,11 @@
 
 .vscode/*
 ignore/*
+node_modules
+
+# Astro build files
+.astro
+dist
 
 # macOS system files
 .DS_Store

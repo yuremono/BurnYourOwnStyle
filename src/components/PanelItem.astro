@@ -1,0 +1,15 @@
+---
+interface Props {
+  image?: string
+  class?: string
+}
+
+const { image, class: className = '' } = Astro.props
+---
+
+<div class={`item ${className}`}>
+  {image && <figure><img src={image} alt=""/></figure>}
+  <div>
+    <slot />
+  </div>
+</div>
