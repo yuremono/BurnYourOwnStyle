@@ -31,8 +31,6 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.bak
-sample.html
-LOCAL.html
 
 # Memory MCP data (local to each installation)
 memory/
