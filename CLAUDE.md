@@ -1,4 +1,4 @@
-# 【Burn Your Own Style】プロジェクトルール
+# Burn Your Own Style プロジェクトルール
 
 ## このプロジェクトについて
 
