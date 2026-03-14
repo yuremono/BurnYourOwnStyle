@@ -1,0 +1,104 @@
+{
+    "IIFE": {
+        "prefix": "ii;",
+        "body": [
+            "(() => {",
+            "    $1",
+            "})();"
+        ],
+        "description": "IIFE 即時実行関数式"
+    },
+    "try catch": {
+        "prefix": "tce;",
+        "body": [
+            "try {",
+            "} catch (error) { console.log(error); }"
+        ],
+        "description": "Log output to console"
+    },
+    "DOMContentLoaded": {
+        "prefix": "dcl;",
+        "body": [
+            "document.addEventListener('DOMContentLoaded', function () {",
+            "    $1",
+            "});"
+        ],
+        "description": "Log output to console"
+    },
+    "ifwindow": {
+        "prefix": "iw;",
+        "body": [
+            "if (window.innerWidth <= 834) {",
+            "    $('').removeClass('');",
+            "};"
+        ],
+        "description": "Log output to console"
+    },
+    "function": {
+        "prefix": "$f;",
+        "body": [
+            "$(function () {",
+            "    $1",
+            "});"
+        ],
+        "description": "Log output to console"
+    },
+    "settimeout": {
+        "prefix": "sto;",
+        "body": [
+            "setTimeout(() => {",
+            "    $1;",
+            "}, 100);"
+        ],
+        "description": "Log output to console"
+    },
+    "each": {
+        "prefix": "ec;",
+        "body": [
+            "$('$1').each(function(i){",
+            "    $(this)$2;",
+            "});"
+        ],
+        "description": "Log output to console"
+    },
+    "windowonload": {
+        "prefix": "wl;",
+        "body": [
+            "window.addEventListener('load', function () {",
+            "    $1;",
+            "});"
+        ],
+        "description": "Log output to console"
+    },
+    "documentq": {
+        "prefix": "dq;",
+        "body": [
+            "document.querySelector('');"
+        ],
+        "description": "Log output to console"
+    },
+    "forEach": {
+        "prefix": "fe;",
+        "body": [
+            "forEach((el) => {",
+            "    $1;",
+            "});"
+        ],
+        "description": "Log output to console"
+    },
+    "console.dir": {
+        "prefix": "cd",
+        "body": [
+            "console.dir($1);"
+        ],
+        "description": "Log output to console"
+    },
+    "console.log": {
+        "prefix": "cl",
+        "body": [
+            "console.log($1);"
+        ],
+        "description": "Log output to console"
+    }
+
+}

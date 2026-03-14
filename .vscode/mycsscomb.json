@@ -1,0 +1,60 @@
+{
+    
+    
+
+    "exclude": [
+        ".git/**",
+        "node_modules/**",
+        "bower_components/**"
+    ],
+    "block-indent": "    ",
+    "eof-newline": false,
+    "quotes": "double",
+    "tab-size": true,
+    "always-semicolon": true,
+    "color-case": "lower",
+    "color-shorthand": false,
+    "leading-zero": false,
+    "space-after-colon": "",
+    "space-after-combinator": "",
+    "space-after-opening-brace": "",
+    "space-after-selector-delimiter": "",
+    "space-before-closing-brace": "",
+    "space-before-colon": "",
+    "space-before-combinator": "",
+    "space-before-opening-brace": "",
+    "space-before-selector-delimiter": "",
+    "strip-spaces": true,
+    "unitless-zero": true,
+    "vendor-prefix-align": false,
+    "space-between-declarations": "",
+    "sort-order": [
+        [
+            "background",
+            "background-image",
+            "background-size",
+            "background-repeat",
+            "content",
+            "display",
+            "position",
+            "width",
+            "height",
+            "margin",
+            "padding",
+            "top",
+            "botttom",
+            "left",
+            "right",
+            "border",
+            "color",
+            "font",
+            "font-size",
+            "text-decoration",
+            "text-align",
+            "vertical-align",
+            "writing-mode",
+            "other text",
+            "content"
+        ]
+    ]
+}
