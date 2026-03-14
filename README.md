@@ -1,190 +1,42 @@
-# 【Burn Your Own Style】プロジェクトルール
+# sv
 
-## このプロジェクトについて
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-ユーザーが Web サイト制作で蓄積してきたスタイルシステム（クラス、変数、スタイリングの癖）を、Claude Code・Cursor 等のエージェントに理解させることで、Web 制作の全ての作業をエージェントに任せることを目標としたプロジェクトです。
+## Creating a project
 
-完成後はこのプロジェクトを丸ごとコピーして新規プロジェクトの基盤としての使用を想定する。`.claude/skills`, `/scss`, `/js` が主要ディレクトリ。
+If you're seeing this, you've probably already done this step. Congrats!
 
-＊Burn Your Own Styleがプロジェクト名であり、4桁の数字は開始日を表すprefix。
-
-**現在は準備段階です。ドキュメントやシステム全体の改善を行なっているので、Unit実装というワークフローを実行しようとしないでください。プロジェクトを理解したうえでユーザーの指示に従ってください**
-
----
-
-### 使用フレームワーク
-
-プロジェクト開始時に設定。複数のフレームワークに対応する
-/FRAMEWORK.md に詳細手順を記載
-
-### Unit（ユニット）
-
-本システム固有の概念。**CSSクラス名・スキル名・コンポーネント名を兼ねる単位**を指す。
-
----
-
-## 設計思想
-
-### 1. クラス名・変数名
-
-文字数を最小限に、短縮・略語・主にパスカルケースを使用。
-あらかじめ用意された10~20程度の少数Unitでの運用を想定。実運用でUnitの新規作成は行わない。
-
-### 2. Tailwind.css との役割分担
-
-**基本方針**：Unit = レイアウトを構成、Tailwind = 装飾、微調整
-
-| 層 | Unit | Tailwind.css |
-|---|---|---|
-| **レイアウト骨格** | ✅ | ❌ |
-| **コンポーネント構造** | ✅ | ❌ |
-| **色・グラデーション** | ❌ | ✅ |
-| **余白微調整** | ✅(変数) | ✅ |
-| **フォントサイズ** | ✅(変数) | ✅ |
-| **レスポンシブ** | ✅ | ✅ |
-
-**詳細は [STYLE.md](./STYLE.md) を参照**
-
-## Unit（ユニット）
-
-**基本ルール**：CSSクラス名、スキル名、コンポーネント名はUnit名として一致します。(パスカルケース)
-ただし `FlexRatio` のように、クラス名がValue(比率・数値)を含む例外あり。
-
-| スキル名 | CSSクラス | 備考 |
-|---|---|---|
-| `Cards` | `.Cards` | 一般的な横並びコンテナ(2~5列程度) |
-| `Accordion` | `.Accordion` | summary,detailsタグを使う開閉コンテンツ。特殊なcssを使うためUnit化 |
-| `Panel` | `.Panel` | 一般的な縦並びコンテナ。ImgTextを複数まとめたものに近い。画像使用任意 |
-| `ImgText` | `.ImgText` | 画像+テキスト横並びコンテナ。画像比率をValueクラスで可変 |
-| `FlexRatio` | `.Flex55` `.Flex46` など | クラス名が比率を表す。２種類のコンテンツの比率を制御するラッパー |
-
-**文脈による呼び分け**：
-
-| 呼び方 | 指しているもの |
-|---|---|
-| `Cards クラス` | `.Cards` のSCSSルール |
-| `Cards スキル` | `.claude/skills/Cards/SKILL.md` |
-| `Cards コンポーネント` | `Cards.tsx`（実装済みの場合） |
-| `Cards ユニット` | 上記すべてを包含する総称 |
-
-エージェントはユーザーの発言の文脈からどの意味で使われているかを判断する。
-
----
-
-## ファイル構成
-
-```
-PROJECT_ROOT/
-├── scss/                  # 元 CSS ソース
-│   └── _10template.scss      
-│   └── ...      
-│   └── RatioKit.scss      # 参考プロジェクト//LINK https://ratiokit.vercel.app/HtmlPreview.html SCSS ソース
-├── .claude/skills/                # コンポーネント実装スキル
-│   └── Cards/
-│       ├── SKILL.md       # クラス構造、変数、Modifier、設計思想
-│       └── evals/
-│           └── evals.json # テストケース
-├── designs/               # pencil.dev デザインファイル
-│   └── *.pen              # コンポーネントデザイン
-├── CLAUDE.md              # プロジェクトルール
-├── STYLE.md        # 設計思想・html基本構造について
-├── UNIT.md        # Unit・クラスについて
-└── その他
+```sh
+# create a new project
+npx sv create my-app
 ```
 
----
+To recreate this project with the same configuration:
 
-## pencil.dev
+```sh
+# recreate this project
+npx sv@0.12.7 create --template minimal --types ts --install npm .
+```
 
-pencil.dev は、VS Code上でデザインファイルを表示、編集できるツール。
-あらかじめ用意された.penファイルを元にUnitを実装する。
-エージェントはユーザーの指示、Unitスキルにより指定されたレイヤー内データを把握する。
-ファイルやレイヤー指定がない場合はUnitの基本構造を実装し、細部の装飾は行わない。
+## Developing
 
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
+```sh
+npm run dev
 
-### 基本フロー
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-詳細は.claude/skills/{スキル名}/SKILL.md を参照する
+## Building
 
-1. **ユーザー指示を解析**
-2. **クラスを構築**
-3. **Modifier,Value,変数を適用**
-4. **デザインファイルを確認**
-5. **Tailwind で装飾**
-6. (オプション：ユーザーの指示があった時) agent-browser で表示確認を行う
+To create a production version of your app:
 
----
+```sh
+npm run build
+```
 
-## ブラウザ状態確認の基本的姿勢
+You can preview the production build with `npm run preview`.
 
-**ユーザーがプレビューを開始してから**修正などやりとりを行う際は、ブラウザの状態確認ツールを積極的に使用し、
-実際の CSS 適用状況や UI 挙動を確認する。
-
-### 使用ツール
-
-- **agent-browser**（推奨）：MCP サーバー経由でブラウザ操作
-- リポジトリ：https://github.com/vercel-labs/agent-browser
-- README には使用可能なコマンド一覧と MCP サーバー設定方法が記載されています
-
-### 注意事項
-
-**agent-browser,pupeteer,playwrightなどブラウザ表示確認をした時の注意事項：**
-
-   - **引き続き表示確認する場合**,**「そのまま」**と言われない限り必ずプロセスを終了する
-   - `agent-browser close` を実行
-   - puppeteer を使用する場合は、必ず `browser.close()` でブラウザプロセスを終了
-   - 使用したポートを手動で解放 例：`kill $(lsof -t -i:3456)`
-   - 使用していたポートがわからない場合は、確認すること。別のポートを解放しないように注意
-   - ポートを解放しないと、次回実行時にポート競合が発生する。不要なプロセスがリソースを消費し続けるのを防ぐ
-
----
-
-## 基本原則
-
-1. **対話言語**: 常に日本語で回答する
-2. **Read してから Write/Edit**: ファイルを編集する前に必ず内容を読む
-3. **Edit が失敗したら Write ツールで書換える** Edit ツールは LF 形式のファイルのみ対応（CRLF 形式だと編集失敗）
-4. **コメントを安易に消さない**: ユーザーがトグルするため残している場合がある
-5. **基本行動は追記**: 「書き換え」「削除」と言わない限りは「追記」する
-6. **/user/?????/などユーザーネームをパスに含めない**: `PROJECT_ROOT` や `N,M` などのプレースホルダーを使用する。
-
-## 禁止事項
-
-以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
-
-- **調査・確認・検討段階でファイルを編集**
-  良かれと思って、独断で実装に進まない。
-
-- **勝手に名前をつける**
-  クラス名、スキル名、コンポーネント名、Unit名など、エージェントがそれらしい名前をつけることはしない。
-  名前が必要な場合はユーザーに提案し、承認を得ること。
-
-- **デザインの再現以外でのcreative work**
-  用意されたUnitと引数を使うこと、Tailwindでデザインデータ通りの装飾をすることがエージェントの役割である。
-
-- **シークレット（APIキー、パスワード、トークン）をコードに直書き**
-  環境変数や設定ファイルを使用する。
-
-- **未確認の削除・破壊的操作**
-  ファイルの削除、ディレクトリのクリア、git reset --hard など、元に戻せない操作をする前には必ず確認する。
-
-- **独断で書き換え、削除**
-  「書き換え」「削除」と言わない限りは「追記」する
-
-- **不明点を確認せず推測で進めない**
-
----
-
-## 誤変換に注意
-
-ユーザーは音声入力を多用するため、誤変換が頻繁に発生します。
-文脈から適切と思われる単語に変換して回答してください。特に固有名詞について判断に迷う場合は回答を一時停止して正確な文字列を問い返してください。
-
-#### よくある誤変換パターン
-| 誤変換 | 正しい語句 |
-|--------|-----------|
-| cloud.md | CLAUDE.md |
-| ご返還 | 誤変換 |
-
-// LINK https://github.com/yuremono/BurnYourOwnStyle
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

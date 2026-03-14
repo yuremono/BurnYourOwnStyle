@@ -1,3 +1,11 @@
+## Project Configuration
+
+- **Language**: TypeScript
+- **Package Manager**: npm
+- **Add-ons**: none
+
+---
+
 # 【Burn Your Own Style】プロジェクトルール
 
 ## このプロジェクトについて
