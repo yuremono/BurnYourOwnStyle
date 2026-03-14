@@ -4,7 +4,7 @@ description: |
   My Style System の Cards コンポーネントを生成するスキル。ユーザーが「Cards」「Cards」「/Cards」「カードセクション」「カードグリッド」「カードレイアウト」「3 カラム」などと言った場合、または.card の集合体 UI 要素が必要な時に使用。
   指示形式：テキストでモディファイアクラス（col3, IsLayer, col4 など）と変数（--gap 20px, --wid 1200px など）を指定。
   例：`/Cards col3 --gap 20px` または `3 カラムでギャップ 20px`
-argument-hint: "[col3 | col4 | IsGrow | IsFix | [IsLayer] "
+argument-hint: "[col3 | col4 | IsGrow | IsFix | [IsLayer] | img20 | img30 | img40 | img60]"
 allowed-tools: Read, Glob, Grep, Write, Edit
 ---
 
@@ -31,24 +31,14 @@ allowed-tools: Read, Glob, Grep, Write, Edit
 
 ## 基本構造
 
-```scss
-:where(.Cards) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--gap);
-
-    .item {
-        width: var(--itemW);
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
-        margin-top: unset;
-
-        img {
-            width: 100%;
-        }
-    }
-}
+```jsx
+<Cards className="{{modifier_classes}}" style={{} as React.CSSProperties}>
+  <CardsItem image="/images/path.png">
+    <h3>タイトル</h3>
+    <p>本文</p>
+  </CardsItem>
+  <CardsItem>...</CardsItem>
+</Cards>
 ```
 
 ## 引数の指定方法
@@ -59,7 +49,7 @@ allowed-tools: Read, Glob, Grep, Write, Edit
 引数例：`/Cards col3 --gap 20px`
 ```
 
-### モディファイア（第 1 引数）
+### モディファイア・Value クラス
 
 クラス名に追加する修飾語：
 
@@ -71,6 +61,13 @@ allowed-tools: Read, Glob, Grep, Write, Edit
 | `IsGrow` | 伸縮 (flex:1) | `class="Cards IsGrow"` |
 | `IsLayer` | 画像とテキストを重ねる（grid-aria:1/1） | `class="Cards col2 IsLayer"` |
 
+### CardsItem props
+
+| props | 説明 |
+|-----|------|
+| `image` | 画像のパス（省略可能） |
+| `className` | 追加する CSS クラス（省略可能） |
+
 ## 実装ワークフロー
 
 1. **ユーザー指示を解析**
@@ -81,32 +78,32 @@ allowed-tools: Read, Glob, Grep, Write, Edit
    - 既存のコンポーネントがあれば利用する
 
 2. **既存コンポーネントの確認**
-   - `preview/src/components/Cards.tsx`などの既存コンポーネントを確認
-   - **存在しない場合**：新しく作成する（??? 行目を参照）
-   - **存在する場合**：そこを利用する（??? 行目を参照）
+   - `src/components/Cards.tsx` などの既存コンポーネントを確認
+   - **存在しない場合**：新しく作成する
+   - **存在する場合**：そこを利用する
 
 3. **クラスを構築**
-   ```html
-   <div class="Cards {{modifier_classes}}">
+   ```jsx
+   <Cards className="{{modifier_classes}}" style={{} as React.CSSProperties}>
    ```
 
 4. **Modifier, Value,変数を適用**
-   ```html
-   <div class="Cards col3 IsLayer" >
+   ```jsx
+   <Cards className="Cards col3 IsLayer" style={{} as React.CSSProperties}>
    ```
 
 5. **デザインファイルを確認**
   - designs/{ファイル名}.pen
   - 指定レイヤーのデザインを視覚的に確認する
   - ファイルが存在しない場合はスキップする
-  - フォントサイズの殆どは `difine` スキルにより変数定義されるため**Tailwind クラス不要**
-  - 色の殆どは`difine` スキルにより変数定義されるため**変数を含む Tailwind クラスを使用**
+  - フォントサイズの殆どは `define` スキルにより変数定義されるため**Tailwind クラス不要**
+  - 色の殆どは`define` スキルにより変数定義されるため**変数を含む Tailwind クラスを使用**
   - カード型レイアウトとかけ離れていた場合は作業をストップしユーザーに確認する。
   - 色、余白、初期値以外のフォントサイズ、必要なら座標を取得する。
 
 6. **Tailwind で装飾**
 
-  - DOM 出力とデザインの見た目が一致しない場合は`difine`スキルが未実行の可能性が高い。ユーザーに確認すること。
+  - DOM 出力とデザインの見た目が一致しない場合は`define`スキルが未実行の可能性が高い。ユーザーに確認すること。
 
 7. (オプション：ユーザーの指示があった時) agent-browser で表示確認を行う
   - ブラウザのスクリーンショットを撮影
@@ -116,33 +113,47 @@ allowed-tools: Read, Glob, Grep, Write, Edit
 
 ## 実装例：基本の 3 カラム
 
-**注意点**:
-- `h3`、`p` にはフォントサイズのクラスをつけない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
-- `<img>` 要素にもクラス不要。`.Cards .item img` で `width: 100%` が設定済み。
-
 **ユーザー指示**:
 ```
-カーズユニットコルスリーパブリックイメージーズの 3 対 2 の画像を仮置きして
+Cards col3
 ```
 
 **引数解析**:
 - モディファイア：`col3`
 
-**生成 HTML**:
-```html
-<div class="Cards col3">
-  <div class="item">
-    <figure>
-      <img alt="" src="/images/960x640.png" />
-    </figure>
+**生成 JSX**:
+```jsx
+<Cards className="col3" style={{} as React.CSSProperties}>
+  <CardsItem image="/images/960x480.png">
+    <h3 className=" font-bold mb-2">カード 1</h3>
+    <p>
+      ここで Tailwind クラスを使って装飾できます。
+      <code>bg-blue-500</code>、
+      <code>hover:bg-blue-600</code> など。
+    </p>
+  </CardsItem>
+  <CardsItem image="/images/960x480.png">
     <div>
-      <h3>タイトル 1</h3>
-      <p>説明文</p>
+      <h3 className=" font-bold mb-2">カード 2</h3>
+      <p>
+        Burn Your Own Style
+        のクラスはレイアウト骨格のみ担当。
+        <br />
+        装飾は Tailwind で上書きできます。
+      </p>
     </div>
-  </div>
-  <div class="item">...</div>
-  <div class="item">...</div>
-</div>
+  </CardsItem>
+  <CardsItem image="/images/960x480.png">
+    <div>
+      <h3 className=" font-bold mb-2">カード 3</h3>
+      <p>
+        <code>--gap: 30px</code>{" "}
+        でカード間隔も制御可能。Tailwind の{" "}
+        <code>gap-</code> クラスでも上書きできます。
+      </p>
+    </div>
+  </CardsItem>
+</Cards>
 ```
 
 ---
@@ -157,35 +168,41 @@ Cards col4 IsLayer
 **引数解析**:
 - モディファイア：`col4`、`IsLayer`
 
-**生成 HTML**:
-```html
-<div class="Cards col4 IsLayer">
-  <div class="item">
-    <figure>
-      <img alt="" src="https://picsum.photos/400/400" />
-    </figure>
+**生成 JSX**:
+```jsx
+<Cards className="col4 IsLayer" style={{} as React.CSSProperties}>
+  <CardsItem image="https://picsum.photos/400/400">
     <div>
       <h3>タイトル 1</h3>
       <p>説明文 1</p>
     </div>
-  </div>
-  ...
-</div>
+  </CardsItem>
+  <CardsItem image="https://picsum.photos/401/401">
+    <div>
+      <h3>タイトル 2</h3>
+      <p>説明文 2</p>
+    </div>
+  </CardsItem>
+  <CardsItem image="https://picsum.photos/402/402">
+    <div>
+      <h3>タイトル 3</h3>
+      <p>説明文 3</p>
+    </div>
+  </CardsItem>
+  <CardsItem image="https://picsum.photos/403/403">
+    <div>
+      <h3>タイトル 4</h3>
+      <p>説明文 4</p>
+    </div>
+  </CardsItem>
+</Cards>
 ```
 
----
+## React コンポーネント構造
 
-## 実装例：React コンポーネント
+### Cards コンポーネント（`src/components/Cards.tsx`）
 
-### A. 新規に Cards、Item コンポーネントを作成する場合
-
-**ユーザー指示**:
-```
-カードユニット React コンポーネント作成
-```
-
-**生成 JSX**（ファイル：`preview/src/components/Cards.tsx`）:
-```jsx
+```tsx
 interface CardsProps {
   className?: string
   style?: React.CSSProperties
@@ -200,13 +217,13 @@ const Cards = ({ className = "", style, children }: CardsProps) => {
   )
 }
 
-interface ItemProps {
+interface CardsItemProps {
   image?: string
   className?: string
   children: React.ReactNode
 }
 
-const Item = ({ image, className = "", children }: ItemProps) => {
+const CardsItem = ({ image, className = "", children }: CardsItemProps) => {
   return (
     <div className={`item gap-0 ${className}`}>
       {image && <figure><img src={image} alt=""/></figure>}
@@ -217,25 +234,14 @@ const Item = ({ image, className = "", children }: ItemProps) => {
   )
 }
 
-export { Cards, Item }
+export { Cards, CardsItem }
 ```
 
-### B. 既存の Cards、Item コンポーネントを利用する場合
-
-**生成 JSX**:
-```jsx
-<Cards className="col4 IsLayer" style={{ } as React.CSSProperties}>
-  <Item image="https://picsum.photos/400/400">
-    <div>
-      <h3>タイトル 1</h3>
-      <p>説明文 1</p>
-    </div>
-  </Item>
-  ...
-</Cards>
-```
-
----
+**props の説明**:
+- `className`: 追加する CSS クラス（`col3`, `col4`, `IsLayer` 等）
+- `style`: シリアル化可能なスタイルオブジェクト（`React.CSSProperties`）
+- `children`: CardsItem 要素（複数指定可能）
+- `image`: CardsItem 内の画像パス（省略可能）
 
 ## 変数指定の詳細
 
@@ -319,7 +325,7 @@ export { Cards, Item }
     // デフォルト（PC）: 指定カラム数
     @for $i from 1 through 6 {
       &.col#{$i} {
-        --itemW: calc((100% - (var(--gap, 30px) * #{$i - 1})) / #{$i});
+        --itemW: calc((100% - (var(--gap, 30px) * (#{$i - 1})) / #{$i});
 
         .item {
           width: var(--itemW);
