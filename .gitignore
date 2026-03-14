@@ -19,8 +19,13 @@ ignore/*
 # Temporary files
 *.tmp
 *.bak
+CLAUDE.bak.md
+SPEC.md
 
 # Memory MCP data (local to each installation)
 memory/
+
+# Build output
+dist/
 
 node_modules
