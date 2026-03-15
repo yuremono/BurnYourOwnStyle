@@ -1,23 +1,25 @@
 ---
 name: FlexR
 description: |
-  My Style System の FlexR コンポーネントを生成するスキル。ユーザーが「FlexR」「FlexR」「/FlexR」「比率割付」「2 分割」「2 種類コンテンツ比率」などと言った場合、または 2 種類のコンテンツを比率で配置する必要がある時に使用。
+  BYOS の FlexR コンポーネントを生成するスキル。ユーザーが「FlexR」「FlexR」「/FlexR」「比率割付」「2 分割」「2 種類コンテンツ比率」などと言った場合、または 2 種類のコンテンツを比率で配置する必要がある時に使用。
   指示形式：テキストでクラス名（Flex55, Flex46, Flex64, Flex37, Flex73, Flex28, Flex82 等）とスタイル属性を指定。
   例：`/Flex46` または `4 対 6 に分割`
 argument-hint: "[Flex55 | Flex46 | Flex64 | Flex37 | Flex73 | Flex28 | Flex82]"
 allowed-tools: Read, Glob, Grep, Write, Edit
+component-variants: true
+variant-naming: "{Base}{N}{Sub}"
+new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新たに, 新しく"
 ---
 
 # FlexR コンポーネント
 
-このスキルは My Style System の FlexR コンポーネントを生成・実装します。
+このスキルは BYOS の FlexR コンポーネントを生成・実装します。
 
 ## 禁止事項
 
 以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
 
-- **勝手に名前をつける**
-  - `item-img`等のクラスをつける等
+- **勝手に名前をつける**  
   Unit クラスで定義されたクラス名のみ使用すること
 
 - **デザインの再現以外での Tailwind クラスをつける**
@@ -28,6 +30,27 @@ allowed-tools: Read, Glob, Grep, Write, Edit
   - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
   - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
   デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
+
+- **勝手にコンポーネント分岐を作成する**
+  - ユーザーが明示的に「新規コンポーネント」「別バージョン」「FlexR2」等を指定した場合のみ作成
+  - デフォルトは既存コンポーネントを再利用
+
+## コンポーネント分岐ルール
+
+### 分岐条件
+- 同じ Unit だがデザインが大きく異なる
+- Tailwind 装飾がコンポーネント内に含まれる必要がある
+
+### 命名規則
+- 親: `{Unit}{N}` 例: `FlexR2`
+- 子: `{Unit}{N}{Sub}` 例: `FlexR2Image`, `FlexR2Body`
+- N は 1 桁の連番（2〜9）
+
+### 判断方法
+ユーザーが以下を指定した場合のみ新規作成：
+- `new` 引数: `/FlexR new`
+- 明示的な番号: `/FlexR2`
+- トリガーワード: 「新規コンポーネント」「別バージョン」「別の」「新たに」「新しく」
 
 ## 基本構造
 
