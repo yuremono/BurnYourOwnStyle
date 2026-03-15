@@ -27,5 +27,33 @@ memory/
 
 # Build output
 dist/
+build/
 
-node_modules
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE/Editor
+.idea/
+*.swp
+*.swo
+
+# Test coverage
+coverage/
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
