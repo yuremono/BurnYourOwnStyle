@@ -3,6 +3,7 @@ import { ImgText } from "./components/ImgText";
 import { Panel, PanelItem } from "./components/Panel";
 import { FlexR, FlexRImage } from "./components/FlexR";
 import { Toggle, ToggleSummary, ToggleBody } from "./components/Toggle";
+import { Hero, HeroItem, HeroBack } from "./components/Hero";
 
 const HouseIcon = ({ className = "" }: { className?: string }) => (
 	<svg viewBox="0 0 225 225" className={className}>
@@ -27,13 +28,20 @@ const HouseIcon = ({ className = "" }: { className?: string }) => (
 
 function App() {
 	return (
-		<main>
-			<h1 className="font-bold text-center mx-auto mt-[var(--head)]">
-				EACH FRAMEWORK PREVIEW
-			</h1>
+		<main  className=" mt-[var(--head)]">
+			{/* Hero セクション */}
+			<Hero className="out text-white">
+				<HeroBack image="https://picsum.photos/1920/960" />
+				<HeroItem className="text-shadow-[var(--tsbk)]">
+					<h1 className="font-bold   ">
+						EACH FRAMEWORK PREVIEW
+					</h1>
+					<p className="mt-4">ヒーローコンポーネントのサンプル</p>
+				</HeroItem>
+			</Hero>
 
 			{/* カーズセクション（pencil-new.pen から） */}
-			<section className="wrapper into bg-blue-900 text-white">
+			<section className="wrapper into bg-[var(--bc)]  mt-0">
 				<h2 className="text-center font-semibold mb-4">
 					カーズセクション（pencil-new.pen から）
 				</h2>
@@ -102,9 +110,9 @@ function App() {
 					<CardsItem image="/images/960x480.png">
 						<h3 className="font-bold mb-2">カード 3</h3>
 						<p>
-							<code>--gap: 30px</code>{" "}
-							でカード間隔も制御可能。 Tailwind の{" "}
-							<code>gap-</code> クラスでも上書きできます。
+							<code>--gap: 30px</code> でカード間隔も制御可能。
+							Tailwind の <code>gap-</code>{" "}
+							クラスでも上書きできます。
 						</p>
 					</CardsItem>
 				</Cards>
@@ -196,9 +204,13 @@ function App() {
 				</Toggle>
 
 				<Toggle className="IsQa">
-					<ToggleSummary>Q1: これはどのような仕組みですか？</ToggleSummary>
+					<ToggleSummary>
+						これはどのような仕組みですか？
+					</ToggleSummary>
 					<ToggleBody>
-						<p>A1: summary と details タグを使った開閉コンテンツです。</p>
+						<p>
+							summary と details タグを使った開閉コンテンツです。
+						</p>
 					</ToggleBody>
 				</Toggle>
 			</section>

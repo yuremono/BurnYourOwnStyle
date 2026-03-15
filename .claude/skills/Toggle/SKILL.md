@@ -1,23 +1,25 @@
 ---
 name: Toggle
 description: |
-  My Style System の Toggle コンポーネントを生成するスキル。ユーザーが「Toggle」「Toggle」「/Toggle」「アコーディオン」「開閉コンテンツ」「summary details」などと言った場合、または開閉コンテンツが必要な時に使用。
+  BYOS の Toggle コンポーネントを生成するスキル。ユーザーが「Toggle」「Toggle」「/Toggle」「アコーディオン」「開閉コンテンツ」「summary details」などと言った場合、または開閉コンテンツが必要な時に使用。
   指示形式：テキストで Modifier クラス（IsQa）とスタイル属性を指定。
   例：`/Toggle IsQa` または `Q&A 形式のアコーディオン`
 argument-hint: "[IsQa]"
 allowed-tools: Read, Glob, Grep, Write, Edit
+component-variants: true
+variant-naming: "{Base}{N}{Sub}"
+new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新たに, 新しく"
 ---
 
 # Toggle コンポーネント
 
-このスキルは My Style System の Toggle コンポーネントを生成・実装します。
+このスキルは BYOS の Toggle コンポーネントを生成・実装します。
 
 ## 禁止事項
 
 以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
 
-- **勝手に名前をつける**
-  - `item-img`等のクラスをつける等
+- **勝手に名前をつける**  
   Unit クラスで定義されたクラス名のみ使用すること
 
 - **デザインの再現以外での Tailwind クラスをつける**
@@ -28,6 +30,27 @@ allowed-tools: Read, Glob, Grep, Write, Edit
   - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
   - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
   デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
+
+- **勝手にコンポーネント分岐を作成する**
+  - ユーザーが明示的に「新規コンポーネント」「別バージョン」「Toggle2」等を指定した場合のみ作成
+  - デフォルトは既存コンポーネントを再利用
+
+## コンポーネント分岐ルール
+
+### 分岐条件
+- 同じ Unit だがデザインが大きく異なる
+- Tailwind 装飾がコンポーネント内に含まれる必要がある
+
+### 命名規則
+- 親: `{Unit}{N}` 例: `Toggle2`
+- 子: `{Unit}{N}{Sub}` 例: `Toggle2Summary`, `Toggle2Body`
+- N は 1 桁の連番（2〜9）
+
+### 判断方法
+ユーザーが以下を指定した場合のみ新規作成：
+- `new` 引数: `/Toggle new`
+- 明示的な番号: `/Toggle2`
+- トリガーワード: 「新規コンポーネント」「別バージョン」「別の」「新たに」「新しく」
 
 ## 基本構造
 
@@ -163,10 +186,12 @@ Toggle IsQa
 ### Toggle コンポーネント（`src/components/Toggle.tsx`）
 
 ```tsx
+import { CaretDownIcon } from "@phosphor-icons/react";
+
 interface ToggleProps {
-  className?: string
-  style?: React.CSSProperties
-  children: React.ReactNode
+  className?: string;
+  style?: React.CSSProperties;
+  children: React.ReactNode;
 }
 
 const Toggle = ({ className = "", style, children }: ToggleProps) => {
@@ -174,37 +199,39 @@ const Toggle = ({ className = "", style, children }: ToggleProps) => {
     <details className={`Toggle ${className}`} style={style}>
       {children}
     </details>
-  )
-}
+  );
+};
 
 interface ToggleSummaryProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 const ToggleSummary = ({ children, className = "" }: ToggleSummaryProps) => {
   return (
-    <summary className={className}>
+    <summary className={`ToggleSummary ${className}`}>
       {children}
+      <CaretDownIcon className="ToggleIcon" />
     </summary>
-  )
-}
+  );
+};
 
 interface ToggleBodyProps {
-  children?: React.ReactNode
-  className?: string
+  children?: React.ReactNode;
+  className?: string;
 }
 
 const ToggleBody = ({ children, className = "" }: ToggleBodyProps) => {
-  return (
-    <div className={className}>
-      {children}
-    </div>
-  )
-}
+  return <div className={className}>{children}</div>;
+};
 
-export { Toggle, ToggleSummary, ToggleBody }
+export { Toggle, ToggleSummary, ToggleBody };
 ```
+
+### アイコンについて
+- `@phosphor-icons/react` パッケージを使用（Tree Shaking 対応）
+- `CaretDownIcon` が `ToggleSummary` 内に自動的に追加される
+- クラス名は `ToggleIcon`（パスカルケース）
 
 **props の説明**:
 - `className`: 追加する CSS クラス（`IsQa` 等）
@@ -223,44 +250,48 @@ export { Toggle, ToggleSummary, ToggleBody }
 
 ```scss
 .Toggle {
-  @include where {
-    // --- 基本設定 ---
-    summary {
-      cursor: pointer;
-      padding: var(--rad);
-      background-color: var(--bc);
-      list-style: none;
+  summary {
+    cursor: pointer;
+    padding: var(--rad);
+    background-color: var(--bc);
+    list-style: none;
+    position: relative;
 
-      &::-webkit-details-marker {
-        display: none;
-      }
+    &::-webkit-details-marker {
+      display: none;
     }
 
-    > div {
-      padding: var(--rad);
-      background-color: var(--wh);
+    // 矢印アイコン（React コンポーネント）
+    .ToggleIcon {
+      font-size: 1.5em;
+      position: absolute;
+      right: 1em;
+      top: 50%;
+      translate: 0 -50%;
+      transition: 0.4s;
+    }
+  }
+
+  // 開閉時のアイコン回転
+  &[open] summary .ToggleIcon {
+    scale: 1 -1;
+  }
+
+  > div {
+    padding: var(--rad);
+    background-color: var(--wh);
+  }
+
+  // --- Modifier: Q&A 装飾 ---
+  &.IsQa {
+    summary::before {
+      content: "Q";
+      // ... Q ラベルスタイル
     }
 
-    // --- Modifier: Q&A 装飾 ---
-    &.IsQa {
-      summary {
-        font-weight: bold;
-
-        &::before {
-          content: "▶ ";
-          display: inline-block;
-          margin-right: 0.5em;
-          transition: transform 0.2s;
-        }
-
-        &[open]::before {
-          transform: rotate(90deg);
-        }
-      }
-
-      > div {
-        padding-top: 0;
-      }
+    > div::before {
+      content: "A";
+      // ... A ラベルスタイル
     }
   }
 }
@@ -279,12 +310,17 @@ export { Toggle, ToggleSummary, ToggleBody }
    - セマンティックな開閉コンテンツ
    - CSS で完結するための工夫が必要
 
-2. **IsQa で Q&A 装飾**
-   - 矢印アイコンが付与される
-   - open 時に回転するアニメーション
+2. **Phosphor Icons 採用**
+   - `@phosphor-icons/react` を使用（Tree Shaking 対応）
+   - CDN 方式ではなく React コンポーネント方式
+   - `CaretDownIcon` が ToggleSummary に内蔵される
 
-3. **画像付き対応**
+3. **IsQa で Q&A 装飾**
+   - Q/A ラベルが付与される
+   - open 時にアイコンが反転するアニメーション
+
+4. **画像付き対応**
    - 本文内に.has_img を使って画像を埋め込める
 
-4. **シンプル API**
+5. **シンプル API**
    - details タグをラップするだけの単純な構造

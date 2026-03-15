@@ -73,6 +73,11 @@ h4 {// --h3FZ
 .into {// --into
     padding-inline: var(--into);
 } 
+.sub {//タイトルタグ内の小さい文字
+    font-size: 0.75em;
+    color: var(--mc);
+    margin-right: 0.5em;
+}
 
 
 
@@ -92,6 +97,8 @@ h4 {// --h3FZ
     --gr: #666;
     --bk: #000;
     --wh: #fff;
+
+    --tsbk: .25rem .25rem var(--bk);
 }
 
 :root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
@@ -270,6 +277,35 @@ main>* {
 }
 
 
+// ********** ヒーロー (.Hero) **********
+:where(.Hero) {
+        display: grid;
+        >* {
+                grid-area: 1/1;
+                z-index: 1;
+        }
+        :where(.back){
+                width: 100%;
+                > img{
+                        width: 100%;
+                        object-fit: cover;
+                        @include max-md {
+                                aspect-ratio: 1;
+                        }
+                }
+        } 
+        .item {
+                margin-top: unset;
+                align-content: center;
+                padding-block: var(--PX);
+                padding-inline: var(--into);
+        } 
+        // 削除禁止！！
+        @include max-sm {
+        }
+        @include max-xs {
+        }
+}
 // ********** カードシリーズ (.Cards) **********
 :where(.Cards) {// --gap , --itemW
     display: flex;
@@ -293,6 +329,7 @@ main>* {
         img {
             width: 100%;
         }
+
     } 
 
     // --- 2. モディファイア: レイヤー重ね合わせ (IsLayer) ---
@@ -333,7 +370,7 @@ main>* {
         --itemW: 240px;
 
         .item {
-            width: var(--itemW);
+            width: var(--itemW, 240px);
         }
     }
 
@@ -404,24 +441,19 @@ main>* {
             display: none;
         }
 
-        // 矢印アイコン
-        &:after {
-            content: ">";
-            font-weight: 900;
-            font-family: var(--icon, inherit);
+        // 矢印アイコン（React コンポーネント）
+        .ToggleIcon{
             font-size: 1.5em;
-            color: #888;
             position: absolute;
             right: 1em;
             top: 50%;
             translate: 0 -50%;
             transition: 0.4s;
-            rotate: 90deg;
         }
     }
 
-    &[open] summary:after {
-        rotate: -90deg;
+    &[open] summary .ToggleIcon {
+        scale:  1 -1;
     }
 
     >div {
@@ -542,7 +574,7 @@ main>* {
             width: var(--imgW, 30%);
 
             &:is(.IsRev *) {
-                order: -1;
+                order: 1;
             }
 
             img {
@@ -555,11 +587,7 @@ main>* {
         >div {
             flex: 1;
 
-            .sub {
-                font-size: 0.75em;
-                color: var(--mc);
-                margin-right: 0.5em;
-            }
+
         }
 
         @include max-md {
@@ -713,7 +741,7 @@ main>* {
         &:not(.bp-sm)>* {
             width: 100%;
         }
-    }
+    } 
 
     @include max-sm {
         &:is(.bp-sm)>* {
