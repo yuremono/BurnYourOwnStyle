@@ -56,7 +56,7 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 
 | 引数 | 必須 | 例 | 説明 |
 |---|---|---|---|
-| スキル名 | ✅ | `Cards` `Accordion` `Panel` | `.claude/skills/` 配下のスキル名（パスカルケース） |
+| スキル名 | ✅ | `Cards` `Toggle` `Panel` | `.claude/skills/` 配下のスキル名（パスカルケース） |
 | デザインファイル | ⬜ | `design.pen` | 指定があれば基本継続的に参照 |
 | レイヤー名 | ⬜ | `MainVisual` | 指定があったデザインファイルから探す |
 | Modifier | ⬜ | `.IsRev` `.IsLayer` | 状態・モードの切り替え。`Is`+ パスカルケース。複数指定可 |
@@ -283,14 +283,14 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 
 ---
 
-### `Accordion`
+### `Toggle`
 
 summary,details タグを使う開閉コンテンツ。css で完結するための工夫が必要なため Unit 化
 
 #### 基本構造
 
 ```html
-<details class="Accordion">
+<details class="Toggle">
   <summary>見出し</summary>
   <div>
     <p>本文コンテンツ</p>
@@ -302,19 +302,19 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 
 | クラス | 説明 | 使用例 |
 |--------|------|--------|
-| `.IsQa` | Q&A の装飾付与 | `.Accordion.IsQa` |
+| `.IsQa` | Q&A の装飾付与 | `.Toggle.IsQa` |
 
 
 **基本的なアコーディオン**
 
 ```html
-<details class="Accordion">
+<details class="Toggle">
   <summary>項目 1</summary>
   <div>
     <p>詳細コンテンツ</p>
   </div>
 </details>
-<details class="Accordion">
+<details class="Toggle">
   <summary>項目 2</summary>
   <div>
     <p>詳細コンテンツ</p>
@@ -325,7 +325,7 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 **画像付きアコーディオン**
 
 ```html
-<details class="Accordion">
+<details class="Toggle">
   <summary>Q1 見出し</summary>
   <div>
     <div class="has_img">

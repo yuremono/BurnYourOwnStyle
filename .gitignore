@@ -2,6 +2,7 @@
 .vscode/*
 ignore/*
 NOTE.md
+voice-input-patterns.md
 
 # macOS system files
 .DS_Store
