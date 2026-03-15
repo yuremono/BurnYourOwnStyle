@@ -19,7 +19,7 @@ interface ToggleSummaryProps {
 
 const ToggleSummary = ({ children, className = "" }: ToggleSummaryProps) => {
   return (
-    <summary className={className}>
+    <summary className={`ToggleSummary ${className}`}>
       {children}
     </summary>
   )

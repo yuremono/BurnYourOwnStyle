@@ -1,13 +1,14 @@
 interface PanelItemProps {
   image?: string
+  imageAlt?: string
   className?: string
   children: React.ReactNode
 }
 
-const PanelItem = ({ image, className = "", children }: PanelItemProps) => {
+const PanelItem = ({ image, imageAlt = "", className = "", children }: PanelItemProps) => {
   return (
     <div className={`item ${className}`}>
-      {image && <figure><img src={image} alt=""/></figure>}
+      {image && <figure><img src={image} alt={imageAlt}/></figure>}
       <div>
         {children}
       </div>

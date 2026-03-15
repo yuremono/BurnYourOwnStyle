@@ -14,13 +14,14 @@ const FlexR = ({ className = "", style, children }: FlexRProps) => {
 
 interface FlexRImageProps {
   image?: string
+  imageAlt?: string
   className?: string
 }
 
-const FlexRImage = ({ image, className = "" }: FlexRImageProps) => {
+const FlexRImage = ({ image, imageAlt = "", className = "" }: FlexRImageProps) => {
   return (
     <figure className={className}>
-      {image && <img src={image} alt=""/>}
+      {image && <img src={image} alt={imageAlt}/>}
     </figure>
   )
 }
