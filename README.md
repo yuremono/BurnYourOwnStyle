@@ -249,6 +249,10 @@ PROJECT_ROOT/
 
 ---
 
+## React + Vite Preview
+
+https://yuremono.github.io/BurnYourOwnStyle/
+
 ## ユーザー向け情報
 
 ### 注意事項

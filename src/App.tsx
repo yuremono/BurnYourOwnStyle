@@ -5,6 +5,11 @@ import { FlexR, FlexRImage } from "./components/FlexR";
 import { Toggle, ToggleSummary, ToggleBody } from "./components/Toggle";
 import { Hero, HeroItem, HeroBack } from "./components/Hero";
 
+const getAssetPath = (path: string) => {
+  if (path.startsWith("http")) return path;
+  return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
+};
+
 const HouseIcon = ({ className = "" }: { className?: string }) => (
 	<svg viewBox="0 0 225 225" className={className}>
 		<path
@@ -28,7 +33,7 @@ const HouseIcon = ({ className = "" }: { className?: string }) => (
 
 function App() {
 	return (
-		<main  className=" mt-[var(--head)]">
+		<main  className="">
 			{/* Hero セクション */}
 			<Hero className="out text-white">
 				<HeroBack image="https://picsum.photos/1920/960" />
@@ -90,7 +95,7 @@ function App() {
 					基本 3 カラム - <code>class="Cards col3"</code>
 				</h2>
 				<Cards className="col3">
-					<CardsItem image="/images/960x480.png">
+					<CardsItem image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">カード 1</h3>
 						<p>
 							ここで Tailwind クラスを使って装飾できます。
@@ -98,7 +103,7 @@ function App() {
 							<code>hover:bg-blue-600</code> など。
 						</p>
 					</CardsItem>
-					<CardsItem image="/images/960x480.png">
+					<CardsItem image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">カード 2</h3>
 						<p>
 							Burn Your Own Style
@@ -107,7 +112,7 @@ function App() {
 							装飾は Tailwind で上書きできます。
 						</p>
 					</CardsItem>
-					<CardsItem image="/images/960x480.png">
+					<CardsItem image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">カード 3</h3>
 						<p>
 							<code>--gap: 30px</code> でカード間隔も制御可能。
@@ -150,7 +155,7 @@ function App() {
 				</h2>
 
 				{/* 画像 30% の横並び */}
-				<ImgText className="img30" image="/images/960x480.png">
+				<ImgText className="img30" image={getAssetPath("/images/960x480.png")}>
 					<h3 className="font-bold mb-2">ImgText 基本使い方</h3>
 					<p>
 						画像とテキストを横並びで配置。
@@ -158,7 +163,7 @@ function App() {
 						ImgText クラスでレイアウトを制御。
 					</p>
 				</ImgText>
-				<ImgText className="img40 IsRev" image="/images/960x480.png">
+				<ImgText className="img40 IsRev" image={getAssetPath("/images/960x480.png")}>
 					<h3 className="font-bold mb-2">ImgText 基本使い方</h3>
 					<p>
 						画像とテキストを横並びで配置。
@@ -175,15 +180,15 @@ function App() {
 				</h2>
 
 				<Panel className="img40 IsFlow">
-					<PanelItem image="/images/960x480.png">
+					<PanelItem image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">ステップ 1</h3>
 						<p>ご相談を伺います</p>
 					</PanelItem>
-					<PanelItem className="IsRev" image="/images/960x480.png">
+					<PanelItem className="IsRev" image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">ステップ 2</h3>
 						<p>ご提案いたします</p>
 					</PanelItem>
-					<PanelItem image="/images/960x480.png">
+					<PanelItem image={getAssetPath("/images/960x480.png")}>
 						<h3 className="font-bold mb-2">ステップ 3</h3>
 						<p>サポートいたします</p>
 					</PanelItem>
@@ -222,7 +227,7 @@ function App() {
 				</h2>
 
 				<FlexR className="Flex46">
-					<FlexRImage image="/images/960x480.png" />
+					<FlexRImage image={getAssetPath("/images/960x480.png")} />
 					<div>
 						<h3 className="font-bold mb-2">Flex46</h3>
 						<p>画像 4 割、本文 6 割で配置</p>
