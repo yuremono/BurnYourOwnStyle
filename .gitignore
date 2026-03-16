@@ -3,6 +3,7 @@
 ignore/*
 NOTE.md
 voice-input-patterns.md
+.memsearch
 
 # macOS system files
 .DS_Store
