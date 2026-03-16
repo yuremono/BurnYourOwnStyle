@@ -1,19 +1,19 @@
 ---
-name: Hero
-description: |
-  BYOS の Hero コンポーネントを生成するスキル。ユーザーが「Hero」「ヒーロー」「メインビジュアル」「ファーストビュー」「MV」などと言った場合、または背景画像の上にコンテンツを重ねる UI 要素が必要な時に使用。
-  指示形式：テキストで画像パスと変数を指定。
-  例：`/Hero /images/hero-bg.jpg` または `メインビジュアル 背景画像は /images/main.jpg`
-argument-hint: "[image_path] "
+name: {SkillName}
+description:
+    BYOS の {SkillName} コンポーネントを生成するスキル。ユーザーが...時に使用。
+    指示形式：テキストでModifierクラス と変数を指定。
+    例：`/{SkillName} ` または `3 カラムで`
+argument-hint: ""
 allowed-tools: Read, Glob, Grep, Write, Edit
 component-variants: true
 variant-naming: "{Base}{N}{Sub}"
 new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新たに, 新しく"
 ---
 
-# Hero
+# {SkillName}
 
-このスキルは BYOS の Hero コンポーネントを生成・実装します。
+このスキルは BYOS の {SkillName} コンポーネントを生成・実装します。
 
 ## 前提
 
@@ -26,7 +26,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
 
-- **勝手に名前をつける**
+- **勝手に名前をつける**  
   Unit クラスで定義されたクラス名のみ使用すること
 
 - **デザインの再現以外での Tailwind クラスをつける**
@@ -39,7 +39,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
       デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
 
 - **勝手にコンポーネント分岐を作成する**
-    - ユーザーが明示的に「新規コンポーネント」「別バージョン」「Hero2」等を指定した場合のみ作成
+    - ユーザーが明示的に「新規コンポーネント」「別バージョン」「{SkillName}2」等を指定した場合のみ作成
     - デフォルトは既存コンポーネントを再利用
 
 ## コンポーネント分岐ルール
@@ -51,27 +51,28 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ### 命名規則
 
-- 親: `{Unit}{N}` 例: `Hero2`
-- 子: `{Unit}{N}{Sub}` 例: `Hero2Item`, `Hero2Back`
+- 親: `{Unit}{N}` 例: `{SkillName}2`
+- 子: `{Unit}{N}{Sub}` 例: `{SkillName}2Item`, `{SkillName}2Summary`
 - N は 1 桁の連番（2〜9）
 
 ### 判断方法
 
 ユーザーが以下を指定した場合のみ新規作成：
 
-- 明示的な番号: `Hero2`
+- 明示的な番号: `{SkillName}2`
 - トリガーワード: 「新規コンポーネント」「別バージョン」「別の」「新たに」「新しく」
 
 ## 基本構造
 
 ```jsx
-<Hero className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-  <HeroBack image="/images/hero-bg.jpg" />
-  <HeroItem>
-    <h1>メインタイトル</h1>
-    <p>サブテキスト</p>
-  </HeroItem>
-</Hero>
+<{SkillName} className="{{modifier_classes}}" style={{} as React.CSSProperties}>
+  <{SkillName}Item image="/images/960x480.png">
+    <h3>カード 1</h3>
+    <p>説明文</p>
+  </{SkillName}Item>
+  </{SkillName}>
+  <{SkillName}Item>...</{SkillName}Item>
+</{SkillName}>
 ```
 
 ## 引数の指定方法
@@ -79,20 +80,21 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 ユーザーから渡された引数 `$ARGUMENTS` を解析して、適切に変換します。
 
 ```
-引数例：`/Hero /images/hero-bg.jpg `
+引数例：`/{SkillName} {SkillValue} {SkillModifier}`
 ```
 
-### HeroBack props
+### Modifier・Value クラス
 
-| props | 説明 |
-|-----|------|
+クラス名に追加する修飾語：
+
+| 引数      | 効果                                    | HTML 出力                    |
+| --------- | --------------------------------------- | ---------------------------- |
+| `{SkillValue}`    |                                | `class="{SkillName} {SkillValue}"`         |
+### {SkillName}Item props
+
+| props   | 説明                   |
+| ------- | ---------------------- |
 | `image` | 画像のパス（省略可能） |
-
-### HeroItem props
-
-| props | 説明 |
-|-----|------|
-| `children` | コンテンツ（タイトル、テキスト等） |
 
 ## 実装手順
 
@@ -104,7 +106,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
     - デザインファイルの指定の有無
 
 2. **既存コンポーネントの確認**
-    - `src/components/Hero.tsx` などの既存コンポーネントを確認
+    - `src/components/{SkillName}.tsx` などの既存コンポーネントを確認
     - **存在しない場合**：新しく作成する
     - **存在する場合**：それを利用する
 
@@ -113,20 +115,13 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 **前後のセクションを参考にしないこと**
 
     ```jsx
-    <Hero className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-      <HeroBack image="/images/hero-bg.jpg" />
-      <HeroItem>
-        <h1>タイトル</h1>
-      </HeroItem>
-    </Hero>
+    <{SkillName} className="{SkillName} {SkillValue} IsLayer"style={{} as React.CSSProperties}> ...
     ```
 
 **デザインがない場合ここで終了**
-
 ### 出力前チェック
-
 - [ ] 指示にない変数指定がないか
-- [ ] 指示にないTailwindクラスを付けていないか
+- [ ] 指示にないTailwindクラスを付けていないか  
 - [ ] 透明度・色など独自判断をしていないか
 
 4. **デザインファイルを確認**
@@ -152,83 +147,70 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ## React コンポーネント構造
 
-### Hero コンポーネント（`src/components/Hero.tsx`）
+### {SkillName} コンポーネント（`src/components/{SkillName}.tsx`）
 
 ```tsx
-interface HeroProps {
-  className?: string;
-  style?: React.CSSProperties;
-  children: React.ReactNode;
+interface {SkillName}Props {
+	className?: string;
+	style?: React.CSSProperties;
+	children: React.ReactNode;
 }
 
-const Hero = ({ className = "", style, children }: HeroProps) => {
-  return (
-    <div className={`Hero ${className}`} style={style}>
-      {children}
-    </div>
-  );
+const {SkillName} = ({ className = "", style, children }: {SkillName}Props) => {
+	return (
+		<div className={`{SkillName} ${className}`} style={style}>
+			{children}
+		</div>
+	);
 };
 
-interface HeroItemProps {
-  className?: string;
-  children: React.ReactNode;
+interface {SkillName}ItemProps {
+	image?: string;
+	className?: string;
+	children: React.ReactNode;
 }
 
-const HeroItem = ({ className = "", children }: HeroItemProps) => {
-  return (
-    <div className={`item ${className}`}>
-      {children}
-    </div>
-  );
+const {SkillName}Item = ({ image, className = "", children }: {SkillName}ItemProps) => {
+	return (
+		<div className={`item  ${className}`}>
+			{image && (
+				<figure>
+					<img src={image} alt="" />
+				</figure>
+			)}
+			<div className="">{children}</div>
+		</div>
+	);
 };
 
-interface HeroBackProps {
-  image?: string;
-  className?: string;
-}
-
-const HeroBack = ({ image, className = "" }: HeroBackProps) => {
-  return (
-    <figure className={`back ${className}`}>
-      {image && <img src={image} alt="" />}
-    </figure>
-  );
-};
-
-export { Hero, HeroItem, HeroBack };
+export { {SkillName}, {SkillName}Item };
 ```
 
 **props の説明**:
 
-- `className`: 追加する CSS クラス
-- `style`: シリアル化可能なスタイルオブジェクト（`React.CSSProperties`）
-- `children`: HeroBack と HeroItem 要素
-- `image`: HeroBack 内の背景画像パス
+- `className`: 追加する CSS クラス（`{SkillValue}`, `col4`, `IsLayer` 等）
+- `children`: {SkillName}Item 要素（複数指定可能）
+- `image`: {SkillName}Item 内の画像パス（省略可能）
+- `style`: シリアル化可能なスタイルオブジェクト（`React.CSSProperties`）**指定がなければ空で記述する**
 
 ## レスポンシブ挙動
 
-- **PC（>768px）**: 背景画像とコンテンツを重ねて表示
-- **スマートフォン（≤640px）**: 背景画像は正方形アスペクト比に変更
+- **PC（>768px）**: 指定カラム数で表示（デフォルト：auto）
+- **スマートフォン（≤640px）**:
+    - デフォルト：1 列
+    - `.min2` あり：2 列
 
 ## 設計思想
 
-1. **Grid レイヤー構造として設計**
-   - 背景画像（HeroBack）とコンテンツ（HeroItem）を重ねる
-   - CSS Grid の `grid-area: 1/1` で同一位置に配置
+1. **カードの集合体として設計**
+    - 単一カードではなく、複数カードをグループ化するコンポーネント
+    - `.item` クラスが個々のカードを構成
 
-2. **関心の分離**
-   - `Hero`: レイアウトコンテナ（grid 設定）
-   - `HeroBack`: 背景画像専用
-   - `HeroItem`: コンテンツ専用
+2. **Flex レイアウト**
+    - Value クラスで動的に幅を計算
 
-3. **Tailwind で柔軟にカスタマイズ**
-   - 高さ、余白、位置合わせは Tailwind クラスで制御
-   - `min-h-screen`, `content-end`, `text-right` 等
+ ## クラス定義ファイル
 
-4. **セマンティックな HTML**
-   - 背景画像は装飾目的のため `figure` と `alt=""` を使用
-   - コンテンツは意味を持つため `.item` 内に配置
+ `src/RatioKit.scss`
 
-## クラス定義ファイル
 
-`src/RatioKit.scss`

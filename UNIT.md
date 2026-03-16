@@ -2,32 +2,15 @@
 
 Burn Your Own Style システムの各 Unit クラスの使用法を記載します。
 
-**設計思想・変数定義・基本構造については [`STYLE.md`](./STYLE.md) を参照してください。**
-
-## 禁止事項
-
-以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
-
-- **勝手に名前をつける**
-  - `item-img`等のクラスをつける等
-  Unit クラスで定義されたクラス名のみ使用すること
-
-- **デザインの再現以外での Tailwind クラスをつける**
-  - デザインファイル無しの作業やテスト実装において Tailwind クラスで背景色をつけるなど
-  用意された Unit を使うこと、デザインデータ通りの装飾をすることがエージェントの役割である。
-
-- **設計思想を無視した Tailwind クラスをつける**
-  - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
-  - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
-  デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
+**設計思想・変数定義・基本構造については [`STYLE.md`](./STYLE.md) を参照。**
 
 ---
 
-## 命名規則
+## Unitの命名規則
 
 **Value クラス指定**（ex: 小文字 + 数値）：
 
-CSS 変数に値を渡すクラス。Tailwind クラスとは別物。
+CSS 変数に値を渡すクラス。**例外的にパスカルケースを使用しない**。
 
 | クラス | 意味 |
 |---|---|
@@ -36,7 +19,7 @@ CSS 変数に値を渡すクラス。Tailwind クラスとは別物。
 
 **Modifier クラス**（`Is*` 形式）：
 
-Unit クラス毎に定義されている。パスカルケースで差別化。
+Unit クラス毎に定義されている。
 
 | クラス | 効果 | 使用 Unit |
 |---|---|---|
@@ -45,13 +28,13 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 | `.IsFlow` | パネル間に矢印 | Panel |
 
 **ブレイクポイント制御**：
-- `.bp-sm`：スマートフォン用挙動
+- `.bp-sm`：スマートフォン用挙動 Tailwindのブレイクポイントに準拠
 
 ## エージェントワークフロー
 
 ### ユーザー指示の構文
 ```
-[対象] を [スキル名] で、[Modifier...] 、[Value...] 、[--変数=値...] 、[出力形式] で
+[対象] を [スキル名] で、[Modifier...] 、[Value...] 、[--変数=値...] 
 ```
 
 | 引数 | 必須 | 例 | 説明 |
@@ -61,21 +44,12 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 | レイヤー名 | ⬜ | `MainVisual` | 指定があったデザインファイルから探す |
 | Modifier | ⬜ | `.IsRev` `.IsLayer` | 状態・モードの切り替え。`Is`+ パスカルケース。複数指定可 |
 | Value クラス | ⬜ | `col3` `img30` | CSS 変数への値渡し。複数指定可 |
-| 出力形式 | ✅初回 | `React` `Astro` `HTML` | 初回必須、またはプロジェクトのデフォルトに従う、以後継続、 |
-<!-- | CSS 変数 | ⬜ | `--gap=60px` `--wid=80%` | 指示頻度：低 変数を style タグで上書き | -->
+| CSS 変数 | ⬜ | `--gap=60px` `--wid=80%` | **指示頻度：低** 変数を style タグで上書き |
 
 ## Tailwind CSS との併用
 
 - Unit クラスで**レイアウト骨格**
-- Tailwind で**装飾・色・細かいスタイル**を上書き
-
-```html
-<div class="Cards col3 ">
-  <div class="item p-4 transition-shadow">
-    <!-- Tailwind で装飾 -->
-  </div>
-</div>
-```
+- Tailwind で**デザインを再現。装飾・色・細かいスタイル**
 
 ---
 
@@ -85,7 +59,7 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 
 ### `Cards`
 
-一般的な横並びコンテナ (2~5 列程度)
+一般的な横並びアイテムを内包するコンテナ (2~5 列程度)
 
 #### 基本構造
 
@@ -118,40 +92,6 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 | `.IsGrow` | スマホで自動調整（flex:1） | `.Cards.IsGrow.col3` |
 | `.IsFix` | 固定幅 --itemW:???px | `.Cards.IsFix` |
 | `.bp-sm` | ブレイクポイントを変更 | `.Cards.col3.bp-sm` |
-
-#### 使用方法
-
-**3 カラムのカード**：
-```html
-<div class="Cards col3">
-  <div class="item">...</div>
-  <div class="item">...</div>
-  <div class="item">...</div>
-</div>
-```
-
-**レイヤーモード（画像の上にテキスト）の 2 列カード**：
-```html
-<div class="Cards IsLayer col2">
-  <div class="item">
-    <figure>
-      <img src="..." alt="">
-    </figure>
-    <div>
-      <h3>タイトル</h3>
-      <p>本文</p>
-    </div>
-  </div>
-  <!-- 繰り返し -->
-</div>
-```
-
-**ブレイクポイントを変更**：
-```html
-<div class="Cards col3 bp-sm">
-  <!-- item -->
-</div>
-```
 
 ---
 
@@ -191,32 +131,6 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 | `.IsFlow` | 矢印でつながれた表現 | `.Panel.IsFlow` |
 | `.IsRev` | 画像を左に配置 | `.Panel.item.IsRev` |
 
-#### 使用方法
-
-**矢印付きの流れ表現**：
-```html
-<div class="Panel IsFlow">
-  <div class="item">...</div>
-  <div class="item">...</div>
-  <div class="item">...</div>
-</div>
-```
-
-**40% 画像でアイテムを左配置**：
-```html
-<div class="Panel img40">
-  <div class="item IsRev">
-    <figure><img src="..." alt=""></figure>
-    <div><h3>タイトル</h3></div>
-  </div>
-</div>
-```
-
-#### 関連変数
-
-- `--rad`：角丸半径
-- `--bc`, `--mc`, `--sc`：各色変数
-
 ---
 
 ### `ImgText`
@@ -253,34 +167,6 @@ Unit クラス毎に定義されている。パスカルケースで差別化。
 |--------|------|--------|
 | `.IsRev` | 画像を右側に配置 | `.ImgText.IsRev` |
 
-#### 使用方法
-
-**30% 画像で画像を左配置（反転なし）**：
-```html
-<div class="ImgText img30">
-  <figure>
-    <img src="..." alt="">
-  </figure>
-  <div>
-    <h3>タイトル</h3>
-    <p>本文</p>
-  </div>
-</div>
-```
-
-**IsRev で画像を右に配置（スマホは IsRev 無しと同じ順番）**：
-```html
-<div class="ImgText img40 IsRev">
-  <figure>
-    <img src="..." alt="">
-  </figure>
-  <div>
-    <h3>タイトル</h3>
-    <p>本文</p>
-  </div>
-</div>
-```
-
 ---
 
 ### `Toggle`
@@ -304,49 +190,6 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 |--------|------|--------|
 | `.IsQa` | Q&A の装飾付与 | `.Toggle.IsQa` |
 
-
-**基本的なアコーディオン**
-
-```html
-<details class="Toggle">
-  <summary>項目 1</summary>
-  <div>
-    <p>詳細コンテンツ</p>
-  </div>
-</details>
-<details class="Toggle">
-  <summary>項目 2</summary>
-  <div>
-    <p>詳細コンテンツ</p>
-  </div>
-</details>
-```
-
-**画像付きアコーディオン**
-
-```html
-<details class="Toggle">
-  <summary>Q1 見出し</summary>
-  <div>
-    <div class="has_img">
-      <figure>
-        <img src="..." alt="">
-      </figure>
-      <div>
-        <p>A 回答本文</p>
-      </div>
-    </div>
-  </div>
-</details>
-```
-
-#### 関連変数
-
-- `--bc`, `--wh`：背景色（見出し、本文）
-- `--mc`, `--ac`：Q/A ラベルカラー
-- `--rad`：角丸半径
-- `--imgW`：画像付き時の画像幅
-
 ---
 
 ### `FlexRatio`
@@ -354,7 +197,6 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 クラス名が比率を表す。2 種類のコンテンツの比率を制御するラッパー。
 全て round された見た目を表し実際は--gap を大きい要素から差し引く (Flex55 は等分)。
 25% など細かい調整は近いクラスを選び--few を上書きする。
-
 
 #### クラス一覧
 
@@ -389,4 +231,26 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 
 ---
 
+### `Hero`
 
+主に画面幅で表示する画像とテキストが重なるセクション
+
+#### 基本構造
+
+```html
+
+```
+
+#### Value クラス
+
+| クラス | 説明 |
+|--------|------|
+
+
+#### Modifier クラス
+
+| クラス | 説明 | 使用例 |
+|--------|------|--------|
+
+
+---

@@ -1,7 +1,7 @@
 import json, sys, os
 
 PROTECTED = [
-    "scss/RatioKit.scss",
+    "**/RatioKit.scss",
     "scss/AnotherFile.scss",
     "config/production.yml"
 ]

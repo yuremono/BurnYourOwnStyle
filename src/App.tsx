@@ -237,6 +237,46 @@ function App() {
 					</div>
 				</FlexR>
 			</section>
+
+			{/* テストセクション - Cards col4 IsLayer */}
+			<section className="wrapper bg-[var(--gr)]" style={{ "--gap": "1.5rem" } as React.CSSProperties}>
+				<h2 className="text-center font-semibold mb-4 text-white">
+					テストセクション - Cards col4 IsLayer
+				</h2>
+				<Cards className="col4 IsLayer">
+					<CardsItem image="https://picsum.photos/400/400?random=10">
+						<h3 className="text-white">タイトル A</h3>
+						<p className="text-white/80">説明文 A</p>
+					</CardsItem>
+					<CardsItem image="https://picsum.photos/400/400?random=11">
+						<h3 className="text-white">タイトル B</h3>
+						<p className="text-white/80">説明文 B</p>
+					</CardsItem>
+					<CardsItem image="https://picsum.photos/400/400?random=12">
+						<h3 className="text-white">タイトル C</h3>
+						<p className="text-white/80">説明文 C</p>
+					</CardsItem>
+					<CardsItem image="https://picsum.photos/400/400?random=13">
+						<h3 className="text-white">タイトル D</h3>
+						<p className="text-white/80">説明文 D</p>
+					</CardsItem>
+				</Cards>
+			</section>
+
+			{/* テストセクション - Cards col2 IsGrow */}
+			<section className="wrapper bg-[var(--bc)]">
+				<h2>テスト - Cards col2 IsGrow</h2>
+				<Cards className="col2 IsGrow">
+					<CardsItem image="https://picsum.photos/400/300?random=20">
+						<h3>カード 1</h3>
+						<p>説明文</p>
+					</CardsItem>
+					<CardsItem image="https://picsum.photos/400/300?random=21">
+						<h3>カード 2</h3>
+						<p>説明文</p>
+					</CardsItem>
+				</Cards>
+			</section>
 		</main>
 	);
 }

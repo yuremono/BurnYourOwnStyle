@@ -21,9 +21,9 @@ interface CardsItemProps {
 
 const CardsItem = ({ image, imageAlt = "", className = "", children }: CardsItemProps) => {
   return (
-    <div className={`item gap-0 ${className}`}>
+    <div className={`item  ${className}`}>
       {image && <figure><img src={image} alt={imageAlt}/></figure>}
-      <div className="p-4 rounded-lg shadow-lg flex-1">
+      <div className="">
         {children}
       </div>
     </div>
