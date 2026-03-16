@@ -23,7 +23,7 @@ const CardsItem = ({ image, imageAlt = "", className = "", children }: CardsItem
   return (
     <div className={`item  ${className}`}>
       {image && <figure><img src={image} alt={imageAlt}/></figure>}
-      <div className="">
+      <div className="p-4">
         {children}
       </div>
     </div>

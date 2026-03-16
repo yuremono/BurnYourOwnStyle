@@ -41,7 +41,7 @@ function App() {
 					<h1 className="font-bold   ">
 						EACH FRAMEWORK PREVIEW
 					</h1>
-					<p className="mt-4">ヒーローコンポーネントのサンプル</p>
+					<p className="mt-4 text-xl">ヒーローコンポーネントのサンプル</p>
 				</HeroItem>
 			</Hero>
 
@@ -51,7 +51,6 @@ function App() {
 					カーズセクション（pencil-new.pen から）
 				</h2>
 				<Cards className="col2">
-					{/* カード 1: 相続登記 */}
 					<CardsItem>
 						<div className="p-6">
 							<figure className="w-[240px] h-[240px] mb-6 mx-auto">
@@ -62,14 +61,12 @@ function App() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-white/60 rounded-full px-10 py-3 hover:bg-white/10 transition-colors">
-									相続登記について
+								<button className="border border-[var(--mc)] rounded-full px-10 py-3 hover:bg-[var(--sc)] transition-colors">
+									ボタン
 								</button>
 							</div>
 						</div>
 					</CardsItem>
-
-					{/* カード 2: 相続放棄 */}
 					<CardsItem>
 						<div className="p-6">
 							<figure className="w-[240px] h-[240px] mb-6 mx-auto">
@@ -80,8 +77,8 @@ function App() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-white/60 rounded-full px-10 py-3 hover:bg-white/10 transition-colors">
-									相続放棄について
+								<button className="border border-[var(--mc)] rounded-full px-10 py-3 hover:bg-[var(--sc)] transition-colors">
+									TitleTitle
 								</button>
 							</div>
 						</div>
@@ -90,7 +87,7 @@ function App() {
 			</section>
 
 			{/* 基本の 3 カラム */}
-			<section className="wrapper">
+			<section className="">
 				<h2 className="text-center font-semibold mb-4">
 					基本 3 カラム - <code>class="Cards col3"</code>
 				</h2>
@@ -149,7 +146,7 @@ function App() {
 			</section>
 
 			{/* ImgText セクション */}
-			<section>
+			<section className="wrapper into">
 				<h2 className="text-center font-semibold mb-4">
 					ImgText - 画像とテキスト横並び
 				</h2>
@@ -226,17 +223,17 @@ function App() {
 					FlexR - 比率割付
 				</h2>
 
-				<FlexR className="Flex46">
-					<FlexRImage image={getAssetPath("/images/960x480.png")} />
+				<FlexR className="Flex55 into">
 					<div>
-						<h3 className="font-bold mb-2">Flex46</h3>
+						<h3 className="font-bold mb-2">Flex55</h3>
 						<p>画像 4 割、本文 6 割で配置</p>
 					</div>
+					<FlexRImage image={getAssetPath("/images/960x480.png")} />
 				</FlexR>
 
 				<FlexR className="Flex64">
 					<FlexRImage image="https://picsum.photos/600/400" />
-					<div>
+					<div className="PX">
 						<h3 className="font-bold mb-2">Flex64</h3>
 						<p>画像 6 割、本文 4 割で配置</p>
 					</div>
@@ -244,11 +241,11 @@ function App() {
 			</section>
 
 			{/* テストセクション - Cards col4 IsLayer */}
-			<section className="wrapper bg-[var(--gr)]" style={{ "--gap": "1.5rem" } as React.CSSProperties}>
+			<section className="wrapper into  bg-[var(--gr)]" style={{  } as React.CSSProperties}>
 				<h2 className="text-center font-semibold mb-4 text-white">
 					テストセクション - Cards col4 IsLayer
 				</h2>
-				<Cards className="col4 IsLayer">
+				<Cards className="col4 IsLayer" style={{ "--gap": "0rem" } as React.CSSProperties}>
 					<CardsItem image="https://picsum.photos/400/400?random=10">
 						<h3 className="text-white">タイトル A</h3>
 						<p className="text-white/80">説明文 A</p>
@@ -270,7 +267,7 @@ function App() {
 
 			{/* テストセクション - Cards col2 IsGrow */}
 			<section className="wrapper bg-[var(--bc)]">
-				<h2>テスト - Cards col2 IsGrow</h2>
+				<h2  className="text-center font-semibold mb-4 ">テスト - Cards col2 IsGrow</h2>
 				<Cards className="col2 IsGrow">
 					<CardsItem image="https://picsum.photos/400/300?random=20">
 						<h3>カード 1</h3>

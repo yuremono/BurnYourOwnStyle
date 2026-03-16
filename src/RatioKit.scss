@@ -138,7 +138,7 @@ h4 {// --h3FZ
     @media (max-width: 834px) {
         --bodyFZ: 0.875rem;
     }
-    --h1FZ: clamp(24px, 4.8vw, 48px);
+    --h1FZ: clamp(24px, 6.4vw, 64px);
     --h2FZ: clamp(20px, 3.2vw, 32px);
     --h3FZ: clamp(18px, 2.4vw, 24px);
 }
@@ -386,14 +386,13 @@ main>* {
             flex: unset;
         }
     }
-
+//     ！！！！デフォsmで100%に
     @include max-sm {
-        &:is(.bp-sm)>.item {
-            width: calc(50% - var(--gap)/2);
+        &:not(.bp-sm)>.item {
+                width: 100%;
             flex: unset;
         }
     }
-
     // 最小状態 (max-xs): 1列
     @include max-xs {
         &:not(.min2)>.item {
@@ -593,6 +592,7 @@ main>* {
             &:not(.bp-sm) {
                 figure {
                     width: 100%;
+                    order: -1;
                 }
             }
         }
@@ -601,6 +601,8 @@ main>* {
             &:is(.bp-sm) {
                 figure {
                     width: 100%;
+                    order: -1;
+
                 }
             }
         }
@@ -740,11 +742,17 @@ main>* {
         &:not(.bp-sm)>* {
             width: 100%;
         }
+        &:not(.bp-sm)>figure {
+            order: -1;
+        }
     } 
 
     @include max-sm {
         &:is(.bp-sm)>* {
             width: 100%;
+        }
+        &:is(.bp-sm)>figure {
+                order: -1;
         }
     }
 }
@@ -791,11 +799,18 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
     >div {
         flex: 1;
     }
+        // --- 反転設定 ---
+        &.IsRev {
+                figure {
+                    order: 1;
+                }
+        
+            }
 
     @include max-md {
         &:not(.bp-sm) {
             figure {
-                order: 1;
+                order: -1;
                 width: 100%;
             }
         }
@@ -805,31 +820,14 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
         &:is(.bp-sm) {
 
             figure {
-                order: 1;
+                order: -1;
                 width: 100%;
             }
 
         }
     }
 
-    // --- 反転設定 ---
-    &.IsRev {
-        figure {
-            order: 1;
-        }
 
-        @include max-md {
-            &:not(.bp-sm) figure {
-                order: unset;
-            }
-        }
-
-        @include max-sm {
-            &:is(.bp-sm) figure {
-                order: unset;
-            }
-        }
-    }
 
 } 
 
