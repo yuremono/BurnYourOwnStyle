@@ -2,7 +2,7 @@
 name: Panel
 description: |
   BYOS の Panel コンポーネントを生成するスキル。ユーザーが「Panel」「パネル」「/Panel」「縦並び」「縦並びコンテナ」などと言った場合、または複数の ImgText をまとめた縦並びレイアウトが必要な時に使用。
-  指示形式：テキストで Value クラス（img20, img40）、Modifier クラス（IsFlow, IsRev）、スタイル属性を指定。
+  指示形式：テキストで Value クラス（img20, img40）、Modifier クラス（IsFlow, IsRev）、を指定。
   例：`/Panel img40 IsFlow` または `矢印でつながれた縦並び`
 argument-hint: "[img20 | img40 | IsFlow | IsRev]"
 allowed-tools: Read, Glob, Grep, Write, Edit
@@ -11,45 +11,55 @@ variant-naming: "{Base}{N}{Sub}"
 new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新たに, 新しく"
 ---
 
-# Panel コンポーネント
+# Panel
 
 このスキルは BYOS の Panel コンポーネントを生成・実装します。
+
+## 前提
+
+このスキルを実行する前に以下を読むこと：
+
+- @STYLE.md
+- @UNIT.md
 
 ## 禁止事項
 
 以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
 
-- **勝手に名前をつける**  
+- **勝手に名前をつける**
   Unit クラスで定義されたクラス名のみ使用すること
 
 - **デザインの再現以外での Tailwind クラスをつける**
-  - デザインファイル無しの作業やテスト実装において Tailwind クラスで背景色をつけるなど
-  用意された Unit を使うこと、デザインデータ通りの装飾をすることがエージェントの役割である。
+    - デザインファイル無しの作業やテスト実装において Tailwind クラスで背景色をつけるなど
+      用意された Unit を使うこと、デザインデータ通りの装飾をすることがエージェントの役割である。
 
 - **設計思想を無視した Tailwind クラスをつける**
-  - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
-  - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
-  デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
+    - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
+    - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
+      デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
 
 - **勝手にコンポーネント分岐を作成する**
-  - ユーザーが明示的に「新規コンポーネント」「別バージョン」「Panel2」等を指定した場合のみ作成
-  - デフォルトは既存コンポーネントを再利用
+    - ユーザーが明示的に「新規コンポーネント」「別バージョン」「Panel2」等を指定した場合のみ作成
+    - デフォルトは既存コンポーネントを再利用
 
 ## コンポーネント分岐ルール
 
 ### 分岐条件
+
 - 同じ Unit だがデザインが大きく異なる
 - Tailwind 装飾がコンポーネント内に含まれる必要がある
 
 ### 命名規則
+
 - 親: `{Unit}{N}` 例: `Panel2`
 - 子: `{Unit}{N}{Sub}` 例: `Panel2Item`, `Panel2Body`
 - N は 1 桁の連番（2〜9）
 
 ### 判断方法
+
 ユーザーが以下を指定した場合のみ新規作成：
-- `new` 引数: `/Panel new`
-- 明示的な番号: `/Panel2`
+
+- 明示的な番号: `Panel2`
 - トリガーワード: 「新規コンポーネント」「別バージョン」「別の」「新たに」「新しく」
 
 ## 基本構造
@@ -79,96 +89,69 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 引数例：`/Panel img40 IsFlow`
 ```
 
-### Value クラス（画像比率）
+### Modifier・Value クラス
 
-| クラス | 説明 | 画像幅 |
-|--------|------|--------|
-| `.img20` | 画像比率 20% | 20% |
-| `.img40` | 画像比率 40% | 40% |
-
-### Modifier クラス
+クラス名に追加する修飾語：
 
 | 引数 | 効果 | HTML 出力 |
-|-----|------|----------|
+| --------- | --------------------------------------- | ---------------------------- |
+| `img20` | 画像比率 20% | `class="Panel img20"` |
+| `img40` | 画像比率 40% | `class="Panel img40"` |
 | `IsFlow` | 矢印でつながれた表現 | `class="Panel IsFlow"` |
 | `IsRev` | アイテム内で画像を左に配置 | `class="PanelItem IsRev"` |
 
-## 実装ワークフロー
+## 実装手順
 
 1. **ユーザー指示を解析**
-   - `$ARGUMENTS` から Value クラスを抽出（img20, img40 等）
-   - `$ARGUMENTS` から Modifier を抽出（IsFlow, IsRev 等）
-   - 省略された引数はデフォルト値で補完する
-   - 不明・矛盾がある場合は実装前にユーザーに確認する
+    - `$ARGUMENTS` からValueクラスを抽出
+    - `$ARGUMENTS` からModifierクラス抽出
+    - `$ARGUMENTS` から変数を抽出
+    - 既存のコンポーネントの有無
+    - デザインファイルの指定の有無
 
 2. **既存コンポーネントの確認**
-   - `src/components/Panel.tsx` の既存コンポーネントを確認
-   - **存在する場合**：そこを利用する
+    - `src/components/Panel.tsx` などの既存コンポーネントを確認
+    - **存在しない場合**：新しく作成する
+    - **存在する場合**：それを利用する
 
-3. **クラスを構築**
-   ```jsx
-   <Panel className="{{value_classes}} {{modifier_classes}}" style={{} as React.CSSProperties}>
-   ```
+3. **マークアップする**
 
-4. **スタイル属性の付与**
-   - `style={{} as React.CSSProperties}` を付与する準備は完了
-   - ただしカスタムプロパティの変更は行わない
+**前後のセクションを参考にしないこと**
 
-5. **デザインファイルの確認**
-  - designs/{ファイル名}.pen
-  - 指定レイヤーのデザインを視覚的に確認する
-  - ファイルが存在しない場合はスキップする
-  - フォントサイズの殆どは `define` スキルにより変数定義されるため**Tailwind クラス不要**
-  - 色の殆どは`define` スキルにより変数定義されるため**変数を含む Tailwind クラスを使用**
-  - カード型レイアウトとかけ離れていた場合は作業をストップしユーザーに確認する。
-  - 色、余白、初期値以外のフォントサイズ、必要なら座標を取得する。
+    ```jsx
+    <Panel className="{{value_classes}} {{modifier_classes}}" style={{} as React.CSSProperties}>
+      ...
+    </Panel>
+    ```
 
-6. **Tailwind で装飾**
-  - DOM 出力とデザインの見た目が一致しない場合は`define`スキルが未実行の可能性が高い。ユーザーに確認すること。
+**デザインがない場合ここで終了**
+
+### 出力前チェック
+
+- [ ] 指示にない変数指定がないか
+- [ ] 指示にないTailwindクラスを付けていないか
+- [ ] 透明度・色など独自判断をしていないか
+
+4. **デザインファイルを確認**
+
+- designs/{ファイル名}.pen
+- 指定レイヤーのデザインを視覚的に確認する。
+- フォントサイズの殆どは `define` スキルにより変数定義されるため**Tailwind クラス不要**
+- 色の殆どは`define` スキルにより変数定義されるため**変数を含む Tailwind クラスを使用**
+- 色、余白、初期値以外のフォントサイズ、必要なら座標を取得する。
+
+5. **Tailwind で装飾**
+
+- DOM 出力とデザインの見た目が一致しない場合は`define`スキルが未実行の可能性が高い。ユーザーに確認すること。
 
 7. (オプション：ユーザーの指示があった時) agent-browser で表示確認を行う
-  - ブラウザのスクリーンショットを撮影
-  - .pen/レイヤーとスクリーンショットを比較
-  - 一致していなければ Tailwind クラスを書き換える
-  - Tailwind クラスで再現不可能であればユーザーに報告する
 
-## 実装例：矢印付きの流れ表現
+- ブラウザのスクリーンショットを撮影
+- .pen/レイヤーとスクリーンショットを比較
+- 一致していなければ Tailwind クラスを書き換える
+- Tailwind クラスで再現不可能であればユーザーに報告する
 
-**ユーザー指示**:
-```
-Panel img40 IsFlow
-```
-
-**引数解析**:
-- Value クラス：`img40`
-- Modifier：`IsFlow`
-
-**生成 JSX**:
-```jsx
-<Panel
-  className="img40 IsFlow"
-  style={{} as React.CSSProperties}
->
-  <PanelItem image="/images/960x480.png">
-    <div>
-      <h3 className="font-bold mb-2">ステップ 1</h3>
-      <p>ご相談を伺います</p>
-    </div>
-  </PanelItem>
-  <PanelItem className="IsRev" image="/images/960x480.png">
-    <div>
-      <h3 className="font-bold mb-2">ステップ 2</h3>
-      <p>ご相談を伺います</p>
-    </div>
-  </PanelItem>
-  <PanelItem image="/images/960x480.png">
-    <div>
-      <h3 className="font-bold mb-2">ステップ 3</h3>
-      <p>ご相談を伺います</p>
-    </div>
-  </PanelItem>
-</Panel>
-```
+---
 
 ## React コンポーネント構造
 
@@ -210,130 +193,17 @@ export { Panel, PanelItem }
 ```
 
 **props の説明**:
+
 - `className`: 追加する CSS クラス（`img20`, `img40`, `IsFlow`, `IsRev` 等）
 - `style`: シリアル化可能なスタイルオブジェクト（`React.CSSProperties`）
 - `children`: PanelItem 要素（複数指定可能）
 - `image`: PanelItem 内の画像パス（省略可能）
-
-## クラス構造の詳細
-
-```scss
-:where(.Panel) {
-  // --MY5, --bc, --mc, --sc, --rad, --gap, --imgW
-  position: relative;
-  --mt: var(--MY5);
-  --p: 1em;
-  --bg: var(--bc);
-  --beforeFZ: 75%;
-  --beforeC: var(--mc);
-  --afterW: 2em;
-  --afterBG: var(--sc);
-  --imgW: 30%; // デフォルトの画像幅
-
-  .item {
-    background-color: var(--bg, var(--bc));
-    counter-increment: cnt;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: var(--rad);
-    padding: var(--p, 1em);
-    gap: var(--gap);
-    position: relative;
-
-    +.item {
-      margin-top: var(--gap);
-    }
-
-    figure {
-      width: var(--imgW, 30%);
-
-      &:is(.IsRev *) {
-        order: -1;
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    }
-
-    >div {
-      flex: 1;
-
-      .sub {
-        font-size: 0.75em;
-        color: var(--mc);
-        margin-right: 0.5em;
-      }
-    }
-
-    @include max-md {
-      &:not(.bp-sm) {
-        figure {
-          width: 100%;
-        }
-      }
-    }
-
-    @include max-sm {
-      &:is(.bp-sm) {
-        figure {
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  // --- 画像サイズユーティリティ (img20〜img50) ---
-  @for $i from 2 through 5 {
-    $size: $i * 10;
-
-    &.img#{$size} {
-      --imgW: #{$size + "%"};
-    }
-  }
-
-  // --- IsFlow modifier (矢印ありの流れ) ---
-  &.IsFlow {
-    .item {
-      +.item {
-        margin-top: calc(var(--afterW, 2em) + 2em);
-      }
-
-      &:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: calc(100% + 1em);
-        left: 50%;
-        transform: translateX(-50%);
-        width: var(--afterW, 2em);
-        aspect-ratio: 1;
-        background-color: var(--afterBG, var(--sc));
-        clip-path: polygon(0 0%, 50% 85%, 100% 0%);
-      }
-
-      &:last-child:after {
-        display: none;
-      }
-    }
-  }
-}
-```
 
 ## レスポンシブ挙動
 
 - **PC（>768px）**: 画像 + テキストを横並びで表示
 - **スマートフォン（≤640px）**:
   - 自動で 1 列に折り返される（画像が上、テキストが下）
-
-## 関連変数
-
-- `--rad`：角丸半径
-- `--bc`, `--mc`, `--sc`：各色変数
-- `--gap`：パネル間のギャップ
 
 ## 設計思想
 
@@ -350,3 +220,7 @@ export { Panel, PanelItem }
 
 4. **IsFlow で矢印表現**
    - 手順やフローを視覚的に表現可能
+
+## クラス定義ファイル
+
+`src/RatioKit.scss`
