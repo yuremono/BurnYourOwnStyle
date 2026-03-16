@@ -1,0 +1,25 @@
+
+.vscode/*
+ignore/*
+
+# macOS system files
+.DS_Store
+._*
+
+# Claude Code settings
+.claude/output-styles
+.agent/*
+.gemini/*
+.mcp.json
+
+
+
+
+
+# Temporary files
+*.tmp
+*.bak
+
+# Memory MCP data (local to each installation)
+memory/
+

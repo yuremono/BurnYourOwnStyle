@@ -1,0 +1,16 @@
+{
+    "outputStyle": "team-rules",
+    "hooks": {
+        "PreToolUse": [
+            {
+            "matcher": "Edit|Write",
+            "hooks": [
+                {
+                "type": "command",
+                "command": "python3 .claude/hooks/protect_files.py"
+                }
+            ]
+            }
+        ]
+    }
+}
