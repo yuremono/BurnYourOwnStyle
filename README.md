@@ -280,4 +280,4 @@ https://github.com/yuremono/BurnYourOwnStyle
 
 ## ワークフロー図
 
-![BYOSワークフロー](./docs/images/workflow.svg)
+![BYOSワークフロー](./public/images/overview.svg)
