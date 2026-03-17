@@ -86,9 +86,9 @@ main>* {
 
 ```scss
 :root {
-    --bodyFZ: 1rem;
-    @media (max-width: 834px) {
-        --bodyFZ: 0.875rem;
+    --FZ: 1rem;
+    @include max-md {
+        --FZ: 0.875rem;
     }
     --h1FZ: clamp(24px, 4.8vw, 48px);
     --h2FZ: clamp(20px, 3.2vw, 32px);
@@ -122,9 +122,9 @@ main>* {
 
 Tailwind の arbitrary value 構文を使用し、CSS 変数を直接参照できます：
 
-- **background-color**: `bg-[var(--mc)]`（メインカラー）
-- **text-color**: `text-[var(--tc)]`（テキストカラー）
-- **border-color**: `border-[var(--sc)]`（サブカラー）
+- **background-color**: `bg-[var(--MC)]`（メインカラー）
+- **text-color**: `text-[var(--TC)]`（テキストカラー）
+- **border-color**: `border-[var(--SC)]`（サブカラー）
 
 この設計により、**デザインデータを一元的に管理**し、色やフォントサイズの変更も変数だけで完結できるようになります。
 

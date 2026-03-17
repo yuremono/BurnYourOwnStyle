@@ -3,7 +3,7 @@
 $menu: 834px;
 
 @mixin menu {@media screen and (max-width: $menu) {@content;}}
-@mixin max-md {@media (max-width: 767px) {@content;}}
+@mixin max-md {@include max-md {@content;}}
 @mixin max-sm {@media (max-width: 639px) {@content;}}
 @mixin max-xs {@media (max-width: 479px) {@content;}}
 
@@ -30,7 +30,7 @@ $menu: 834px;
     "Roboto", "Noto Sans CJK JP", /* Android */
     sans-serif;
 
-    --bodyFF:  "Noto Sans JP", sans-serif;
+    --FF:  "Noto Sans JP", sans-serif;
     --Eng:  "Noto Sans JP", sans-serif;
 }
 .Ser {font-family: var(--Ser);}
@@ -75,7 +75,7 @@ h4 {// --h3FZ
 } 
 .sub {//タイトルタグ内の小さい文字
     font-size: 0.75em;
-    color: var(--mc);
+    color: var(--MC);
     margin-right: 0.5em;
 }
 
@@ -98,13 +98,13 @@ h4 {// --h3FZ
     --bk: #000;
     --wh: #fff;
 
-    --tsbk: .25rem .25rem var(--bk);
+    --tsbk: .25rem .25rem var(--BK);
 }
 
 :root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
     --head: 84px;
 
-    @media (max-width: 767px) {
+    @include max-md {
         --head: 60px;
     }
 
@@ -134,9 +134,9 @@ h4 {// --h3FZ
 }
 
 :root {
-    --bodyFZ: 1rem;
-    @media (max-width: 834px) {
-        --bodyFZ: 0.875rem;
+    --FZ: 1rem;
+    @include max-md {
+        --FZ: 0.875rem;
     }
     --h1FZ: clamp(24px, 4.8vw, 48px);
     --h2FZ: clamp(20px, 3.2vw, 32px);
@@ -153,10 +153,10 @@ h4 {// --h3FZ
     --gapN: calc(var(--gap)*-1);
     --gapH: calc(var(--gap)/2);
 
-    @media (max-width : 1440px) {
+    @include menu {
         --gap: 16px;
     }
-    @media (max-width: 768px) {
+    @include max-md {
         --MY: 40px;
     }
     // @media (max-width : 640px) {}
@@ -166,25 +166,25 @@ h4 {// --h3FZ
 :root {
     --bds: solid;
     --bdw: 1px;
-    --bdc: var(--sc);
-    --line: var(--bdw, 1px) var(--bds, solid) var(--bdc, var(--sc));
+    --bdc: var(--SC);
+    --line: var(--bdw, 1px) var(--bds, solid) var(--bdc, var(--SC));
 
     --rad: 0vmin;
     --rad2: calc(var(--rad)*2);
     --radH: calc(var(--rad)/2);
     --sheetR: var(--un, unset);
-    --sheetBG: var(--bc);
+    --sheetBG: var(--BC);
     --sheetP: 3vmin;
 }
 
-body {// --bodyFZ, --bodyFF, --tc
-    font-size: var(--bodyFZ, 1em);
+body {// --FZ, --FF, --tc
+    font-size: var(--FZ, 1em);
     overflow-x: hidden;
-    font-family: var(--bodyFF, sans-serif);
+    font-family: var(--FF, sans-serif);
     font-weight: 500;
     line-height: 2;
     letter-spacing: 0.025em;
-    color: var(--tc);
+    color: var(--TC);
     font-style: normal;
     background-color: unset;
 }
@@ -429,7 +429,7 @@ main>* {
         outline: none;
         cursor: pointer;
         position: relative;
-        background-color: var(--qBG, var(--bc));
+        background-color: var(--qBG, var(--BC));
         padding: 1em;
         padding-right: 2.5em; // 矢印用の余白
         transition: .4s;
@@ -519,7 +519,7 @@ main>* {
                 content: "";
                 font-family: var(--bfFF, var(--Eng));
                 color: var(--bfC, var(--wh, #fff));
-                background-color: var(--bfBG, var(--mc));
+                background-color: var(--bfBG, var(--MC));
                 display: block;
                 position: absolute;
                 left: 1em;
@@ -539,7 +539,7 @@ main>* {
 
         >div:before {
             content: "A";
-            background-color: var(--abfBG, var(--ac));
+            background-color: var(--abfBG, var(--AC));
         }
     }
 }
@@ -549,15 +549,15 @@ main>* {
     position: relative;
     --mt: var(--MY5);
     --p: 1em;
-    --bg: var(--bc);
+    --bg: var(--BC);
     --beforeFZ: 75%;
-    --beforeC: var(--mc);
+    --beforeC: var(--MC);
     --afterW: 2em;
-    --afterBG: var(--sc);
+    --afterBG: var(--SC);
     --imgW: 30%; // デフォルトの画像幅
 
     .item {
-        background-color: var(--bg, var(--bc));
+        background-color: var(--bg, var(--BC));
         counter-increment: cnt;
         width: 100%;
         display: flex;
@@ -633,7 +633,7 @@ main>* {
                 transform: translateX(-50%);
                 width: var(--afterW, 2em);
                 aspect-ratio: 1;
-                background-color: var(--afterBG, var(--sc));
+                background-color: var(--afterBG, var(--SC));
                 clip-path: polygon(0 0%, 50% 85%, 100% 0%);
             }
 

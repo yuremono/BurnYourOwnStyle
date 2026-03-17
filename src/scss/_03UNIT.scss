@@ -1,0 +1,540 @@
+@use "mixin"as *;
+
+
+// ********** ヒーロー (.Hero) **********
+:where(.Hero) {
+        display: grid;
+
+        >* {
+                grid-area: 1/1;
+                z-index: 1;
+        }
+
+        :where(.back) {
+                width: 100%;
+
+                >img {
+                        width: 100%;
+                        object-fit: cover;
+
+                        @include max-md {
+                                aspect-ratio: 1;
+                        }
+                }
+        }
+
+        .item {
+                margin-top: unset;
+                align-content: center;
+                padding-block: var(--PX);
+                padding-inline: var(--into);
+        }
+
+        // 削除禁止！！
+        @include max-sm {}
+
+        @include max-xs {}
+}
+
+// ********** カードシリーズ (.Cards) **********
+:where(.Cards) {
+        // --gap , --itemW
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap);
+
+
+        // 共通ボタン設定
+        .btn {
+                min-width: 100%;
+        }
+
+        // --- 1. アイテム基本設定 (デフォルト: 1列 / Flex) ---
+        .item {
+                width: var(--itemW);
+                display: flex;
+                flex-direction: column;
+                margin-top: unset;
+
+                img {
+                        width: 100%;
+                }
+
+        }
+
+        // --- 2. モディファイア: レイヤー重ね合わせ (IsLayer) ---
+        &.IsLayer {
+                .item {
+                        display: grid;
+
+                        >* {
+                                grid-area: 1/1;
+                                z-index: 1;
+                        }
+
+                        figure {
+                                width: 100%;
+                                height: 100%;
+                                margin: 0;
+
+                                img {
+                                        height: 100%;
+                                        object-fit: cover;
+                                }
+                        }
+
+                }
+        }
+
+        &.IsGrow {
+                .item {
+                        flex: 1;
+                        width: auto;
+                }
+        }
+
+        // 固定幅
+        &.IsFix {
+                --itemW: 240px;
+
+                .item {
+                        width: var(--itemW);
+                }
+        }
+
+        // デフォルト（PC）: 指定カラム数
+        @for $i from 1 through 6 {
+                &.col#{$i} {
+                        --itemW: calc((100% - (var(--gap) * #{$i - 1})) / #{$i});
+                }
+        }
+
+        @include max-md {
+                &:not(.bp-sm)>.item {
+                        width: calc(50% - var(--gap)/2);
+                        flex: unset;
+                }
+        }
+
+        @include max-sm {//     ！！！！デフォsmで100%に
+                &:not(.bp-sm)>.item {
+                        width: 100%;
+                        flex: unset;
+                }
+        }
+
+        @include max-xs {// 最小状態 (max-xs): 1列
+                &:not(.min2)>.item {
+                        width: 100%;
+                }
+        }
+
+}
+
+:root {// 最新ブラウザ向け：height: autoへのアニメーションを許可
+        interpolate-size: allow-keywords;
+}
+
+:where(.Toggle) {// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
+        &::details-content {// 開閉アニメーション
+                transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
+                height: 0;
+                overflow: hidden;
+        }
+
+        &[open]::details-content {
+                height: auto;
+        }
+
+        summary {
+                list-style: none;
+                outline: none;
+                cursor: pointer;
+                position: relative;
+                background-color: var(--qBG);
+                padding: 1em;
+                padding-right: 2.5em; // 矢印用の余白
+                transition: .4s;
+
+                &:hover {
+                        opacity: 0.8;
+                }
+
+                &::-webkit-details-marker {
+                        display: none;
+                }
+
+                .ToggleIcon {// 矢印アイコン（React コンポーネント）
+                        font-size: 1.5em;
+                        position: absolute;
+                        right: 1em;
+                        top: 50%;
+                        translate: 0 -50%;
+                        transition: 0.4s;
+                }
+        }
+
+        &[open] summary .ToggleIcon {
+                scale: 1 -1;
+        }
+
+        >div {
+                position: relative;
+                padding: 1em;
+                background-color: var(--aBG);
+        }
+
+        .has_img {// 画像レイアウト（.has_img > figure + div の構造に対応）
+                display: flex;
+                flex-direction: row; 
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1em;
+                width: 100%;
+
+                figure {
+                        max-width: 100%;
+                        order: 1;
+                        width: var(--imgW, 30%);
+                        margin-left: auto;
+
+                        img {
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                        }
+                }
+
+                >div {
+                        flex: 1;
+                }
+
+                @include max-md {
+                        &:not(.bp-sm) {
+                                figure {
+                                        width: 100%;
+                                        margin-left: unset;
+                                }
+                        }
+                }
+
+                @include max-sm {
+                        &:is(.bp-sm) {
+                                figure {
+                                        width: 100%;
+                                        margin-left: unset;
+                                }
+                        }
+                }
+        }
+
+        &.IsQa {// --- モディファイア: IsQa (Q&Aスタイル) ---
+                summary,
+                >div {
+                        padding-left: 4em;
+
+                        &:before {
+                                content: "";
+                                font-family: var(--bfFF);
+                                color: var(--bfC);
+                                background-color: var(--bfBG);
+                                display: block;
+                                position: absolute;
+                                left: 1em;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                border-radius: var(--bfRad);
+                                width: 2em;
+                                aspect-ratio: 1;
+                                align-content: center;
+                                text-align: center;
+                        }
+                }
+
+                summary:before {
+                        content: "Q";
+                }
+
+                >div:before {
+                        content: "A";
+                        background-color: var(--abfBG);
+                }
+        }
+}
+
+// **********パネル=縦並びコンテンツ 画像任意 IsFlow IsRev imgW可変*************--gap --few
+:where(.Panel) {// --MY5, --bc, --mc, --sc, --rad, --gap, --imgW
+        position: relative;
+        --mt: var(--MY5);
+        --p: 1em;
+        --bg: var(--BC);
+        --beforeFZ: 75%;
+        --beforeC: var(--MC);
+        --afterW: 2em;
+        --afterBG: var(--SC);
+        --imgW: 30%; 
+
+        .item {
+                background-color: var(--bg);
+                counter-increment: cnt;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                border-radius: var(--rad);
+                padding: var(--p, 1em);
+                gap: var(--gap);
+                position: relative;
+
+                +.item {
+                        margin-top: var(--gap);
+                }
+
+                figure {
+                        width: var(--imgW, 30%);
+
+                        &:is(.IsRev *) {
+                                order: 1;
+                        }
+
+                        img {
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                        }
+                }
+
+                >div {
+                        flex: 1;
+                }
+
+                @include max-md {
+                        &:not(.bp-sm) {
+                                figure {
+                                        width: 100%;
+                                        order: -1;
+                                }
+                        }
+                }
+
+                @include max-sm {
+                        &:is(.bp-sm) {
+                                figure {
+                                        width: 100%;
+                                        order: -1;
+
+                                }
+                        }
+                }
+        }
+
+        @for $i from 2 through 5 {// --- 画像サイズユーティリティ (img20〜img50) ---
+                $size: $i * 10;
+
+                &.img#{$size} {
+                        --imgW: #{$size + "%"};
+                }
+        }
+
+        &.IsFlow {// --- IsFlow modifier (矢印ありの流れ) ---
+                .item {
+                        +.item {
+                                margin-top: calc(var(--afterW) + 2em);
+                        }
+
+                        &:after {
+                                content: "";
+                                display: block;
+                                position: absolute;
+                                top: calc(100% + 1em);
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: var(--afterW);
+                                aspect-ratio: 1;
+                                background-color: var(--afterB);
+                                clip-path: polygon(0 0%, 50% 85%, 100% 0%);
+                        }
+
+                        &:last-child:after {
+                                display: none;
+                        }
+                }
+        }
+}
+
+// **********Flex Ratio 左右子要素の比率を指定*************--gap --few
+:where(.Flex55) { // --few, --gap
+        >* {
+                width: calc(50% - var(--gap)/2);
+        }
+}
+
+:where(.Flex46) { // --few, --gap
+        --few: 40%;
+
+        >:where(:nth-child(1)) {
+                width: calc(var(--few));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+}
+
+:where(.Flex64) {// --few, --gap
+        --few: 40%;
+
+        >:where(:nth-child(1)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(var(--few));
+        }
+}
+
+:where(.Flex37) {// --few, --gap
+        --few: 30%;
+
+        >:where(:nth-child(1)) {
+                width: calc(var(--few));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+}
+
+:where(.Flex73) {// --few, --gap
+        --few: 30%;
+
+        >:where(:nth-child(1)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(var(--few));
+        }
+}
+
+:where(.Flex28) {// --few, --gap
+        --few: 20%;
+
+        >:where(:nth-child(1)) {
+                width: calc(var(--few));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+}
+
+:where(.Flex82) {// --few, --gap
+        --few: 20%;
+
+        >:where(:nth-child(1)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(var(--few));
+        }
+}
+
+:where(.Flex55, .Flex28, .Flex37, .Flex46, .Flex64, .Flex73, .Flex82) {// --gap
+        gap: var(--gap);
+        display: flex;
+        flex-wrap: wrap;
+
+        img {
+                width: 100%;
+        }
+
+        @include max-md {
+                &:not(.bp-sm)>* {
+                        width: 100%;
+                }
+
+                &:not(.bp-sm)>figure {
+                        order: -1;
+                }
+        }
+
+        @include max-sm {
+                &:is(.bp-sm)>* {
+                        width: 100%;
+                }
+
+                &:is(.bp-sm)>figure {
+                        order: -1;
+                }
+        }
+}
+
+
+
+
+// ***************画像テキスト ImgText*****************.img??で画像サイズ可変
+$imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
+        "75": 75%, "70": 70%, "66": 66%, "65": 65%, "60": 60%, "55": 55%,
+        "50": 50%, "45": 45%, "40": 40%, "35": 35%, "33": 33%, "30": 30%,
+        "25": 25%, "20": 20%, "10": 10%);
+
+.ImgText {// --gap, --imgW
+        display: flex;
+        flex-wrap: wrap; 
+        align-items: flex-start;
+        gap: var(--gap);
+
+        // PCでのデフォルト画像幅
+        --imgW: calc(50% - var(--gap)/2);
+
+        @each $key,
+        $val in $imgW {// --- 画像サイズユーティリティ ---
+                &.img#{$key} {
+                        --imgW: #{$val};
+                }
+        }
+
+        figure {
+                width: var(--imgW, calc(50% - var(--gap)/2));
+                margin-inline: auto;
+
+                >a,
+                img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                }
+        }
+
+        >div {
+                flex: 1;
+        }
+
+        &.IsRev { // --- 反転設定 ---
+                figure {
+                        order: 1;
+                }
+
+        }
+
+        @include max-md {
+                &:not(.bp-sm) {
+                        figure {
+                                order: -1;
+                                width: 100%;
+                        }
+                }
+        }
+
+        @include max-sm {
+                &:is(.bp-sm) {
+
+                        figure {
+                                order: -1;
+                                width: 100%;
+                        }
+
+                }
+        }
+}

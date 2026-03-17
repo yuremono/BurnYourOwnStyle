@@ -68,7 +68,7 @@ button,a{
     --TLG :.25em;
     // --btnHover:brightness(1.2) saturate(1.2);
     --btnBG:var(--mc);
-    --btnC:var(--wh);
+    --btnC:var(--WH);
     --hoverBG: var(--mc);
     --hoverC: var(--mc);
     --hoverFL: invert(0%) brightness(100%) saturate(100%);
@@ -228,7 +228,7 @@ button,a{
         --btnFZ: calc(var(--emFZ)*1.325 );
         --btnW: 814px;
         --btnH: 17lvh;
-        color: var(--ac);
+        color: var(--AC);
 
         max-width: 100%;
         border-width: 4px;
@@ -271,11 +271,11 @@ button,a{
             
         }
     }
-    &.__bc {--btnBG: var(--bc);color: var(--mc);}
+    &.__bc {--btnBG: var(--BC);color: var(--mc);}
     &.__mc {--btnBG: var(--mc);}
 
-    &.__ac {--btnBG: var(--ac);}
-    &.__sc {--btnBG: var(--sc)}
+    &.__ac {--btnBG: var(--AC);}
+    &.__sc {--btnBG: var(--SC)}
     &:is( .txwh *){
         color: var(--btnC);
     }
@@ -285,8 +285,8 @@ button,a{
         filter: var(--hoverFL); 
     }
     // &.__wh:is(a,span){
-    //     --btnBG:var(--wh);
-    //     --btnC: var(--bk);
+    //     --btnBG:var(--WH);
+    //     --btnC: var(--BK);
     //     &:is(.txwh *){
     //         color: var(--tx);
     //         i{ 
@@ -362,7 +362,7 @@ button,a{
 
     &:is(.txbk *),
     &.__bk{
-        color: var(--wh);
+        color: var(--WH);
     }
     i{font-size: var(--btnIFZ);}
     img{
@@ -413,10 +413,10 @@ a.label{
 
 .textlink{
     &.__wh{
-        --TLC:var(--wh);
+        --TLC:var(--WH);
     }
     &.__bc{
-        --TLC:var(--bc);
+        --TLC:var(--BC);
     }
     &.__anchor {
         &:after{
@@ -449,7 +449,7 @@ a.label{
         margin-left: 0.5em;
 
         // 画像デザインに合わせた上書きスタイル
-        background-color: var(--ac);
+        background-color: var(--AC);
         align-content: center;
         transition: var(--btnTR);
         will-change: scale;
@@ -557,7 +557,7 @@ p:has(>a){
     }
 }
 // .items{
-//     --btnBG: var(--gr);
+//     --btnBG: var(--GR);
 //     --btnC: var(--mc);
 //     --btnFZ: calc(var(--bodyFZ)*1.25 );
 //     .btn{
@@ -646,7 +646,7 @@ p:has(>a){
     background-size: 200% var(--bdw);
     // color: var(--tx);
     background-image: linear-gradient(var(--cur),var(--cur));
-    // background-image: linear-gradient(var(--ac),var(--ac));
+    // background-image: linear-gradient(var(--AC),var(--AC));
     // animation: none!important;
     // animation-duration: .4s;
     // @media (max-width: 834px){
@@ -676,9 +676,9 @@ p:has(>a){
 // ,.card2 .box:has(a) 
     {//ホバーbgスライド
     @extend %r-grow;
-    background-image: linear-gradient( to right,var(--wh) ,var(--wh));
+    background-image: linear-gradient( to right,var(--WH) ,var(--WH));
 
-    // background-image: linear-gradient( 30deg,var(--tr) 25%,var(--bk) 25.1%,var(--bk) 74.9%,var(--tr) 75%);
+    // background-image: linear-gradient( 30deg,var(--tr) 25%,var(--BK) 25.1%,var(--BK) 74.9%,var(--tr) 75%);
     // border-color: var(--btnBG);
     background-position-x: -103%;
     background-size: 300% 100%;

@@ -158,13 +158,13 @@ $menuMin: 1140.1px;
     --mc90: color-mix(in srgb, transparent,var(--mc) 90%);
 
     @for $i from 1 through 9 {
-        --sc#{$i}0: color-mix(in srgb, transparent,var(--sc) #{$i}0%);    
-        --ac#{$i}0: color-mix(in srgb, transparent,var(--ac) #{$i}0%);    
-        --bc#{$i}0: color-mix(in srgb, transparent,var(--bc) #{$i}0%);    
+        --sc#{$i}0: color-mix(in srgb, transparent,var(--SC) #{$i}0%);    
+        --ac#{$i}0: color-mix(in srgb, transparent,var(--AC) #{$i}0%);    
+        --bc#{$i}0: color-mix(in srgb, transparent,var(--BC) #{$i}0%);    
         --tx#{$i}0: color-mix(in srgb, transparent,var(--tx) #{$i}0%);    
-        --gr#{$i}0: color-mix(in srgb, transparent,var(--gr) #{$i}0%);    
-        --wh#{$i}0: color-mix(in srgb, transparent,var(--wh) #{$i}0%);    
-        --bk#{$i}0: color-mix(in srgb, transparent,var(--bk) #{$i}0%);
+        --gr#{$i}0: color-mix(in srgb, transparent,var(--GR) #{$i}0%);    
+        --wh#{$i}0: color-mix(in srgb, transparent,var(--WH) #{$i}0%);    
+        --bk#{$i}0: color-mix(in srgb, transparent,var(--BK) #{$i}0%);
 
         // --pink#{$i}0: color-mix(in srgb, transparent,var(--pink) #{$i}0%);   
 	}

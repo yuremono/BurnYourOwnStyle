@@ -1,0 +1,858 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "tQLOf",
+      "x": 0,
+      "y": 0,
+      "name": "2344",
+      "width": 1920,
+      "height": 4000,
+      "fill": "$BC",
+      "layout": "none",
+      "children": [
+        {
+          "id": "7JjPE",
+          "type": "ref",
+          "ref": "sdnsW",
+          "name": "Panel Instance",
+          "x": 420,
+          "y": 100,
+          "width": 1080,
+          "height": "fit_content",
+          "children": [
+            {
+              "id": "s1Er9",
+              "type": "ref",
+              "ref": "Or5j5"
+            },
+            {
+              "id": "AWYfs",
+              "type": "ref",
+              "ref": "Or5j5",
+              "y": 324
+            },
+            {
+              "id": "WlO9V",
+              "type": "ref",
+              "ref": "Or5j5",
+              "y": 600
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "DzhjY",
+          "x": 420,
+          "y": 1096,
+          "name": "Hero",
+          "width": 1080,
+          "height": 400,
+          "fill": "$BC",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Us18g",
+              "x": 0,
+              "y": 0,
+              "name": "HeroBack",
+              "metadata": {
+                "type": "unsplash",
+                "username": "loganvoss",
+                "link": "https://unsplash.com/@loganvoss",
+                "author": "Logan Voss"
+              },
+              "width": 1080,
+              "height": 400,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1769122490584-d0ce2a6d73c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE2OTJ8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "layout": "none"
+            },
+            {
+              "type": "frame",
+              "id": "MpVBf",
+              "x": 0,
+              "y": 0,
+              "name": "HeroItem",
+              "width": 1080,
+              "height": 400,
+              "layout": "vertical",
+              "padding": 48,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6tMSO",
+                  "name": "HeroTitle",
+                  "fill": "$TC",
+                  "content": "Hero Section",
+                  "fontFamily": "$FF",
+                  "fontSize": 14,
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "4pnpi",
+                  "name": "HeroText",
+                  "fill": "$GR",
+                  "content": "Full-width hero with background image and centered content",
+                  "fontFamily": "$FF",
+                  "fontSize": "$FZ",
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "HNEOn",
+          "x": 420,
+          "y": 1616,
+          "name": "Cards",
+          "width": 1080,
+          "fill": "$BC",
+          "gap": 32,
+          "children": [
+            {
+              "type": "frame",
+              "id": "aftY8",
+              "name": "CardItem",
+              "width": 332,
+              "fill": "$WH",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "outside",
+                "thickness": 1,
+                "fill": "$BC"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "PhzcK",
+                  "name": "CardImage",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "manuelsilva",
+                    "link": "https://unsplash.com/@manuelsilva",
+                    "author": "Manuel Silva"
+                  },
+                  "width": "fill_container",
+                  "height": 160,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1560380104-fe43b50ffcbc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE3NDZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "pRpV5",
+                  "name": "CardBody",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "TeBDX",
+                      "name": "Card1Title",
+                      "fill": "$TC",
+                      "content": "Card Title 1",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$h3",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YOOOy",
+                      "name": "Card1Text",
+                      "fill": "$GR",
+                      "content": "Description text for the first card",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "IrjpC",
+              "name": "CardItem",
+              "width": 332,
+              "fill": "$WH",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "outside",
+                "thickness": 1,
+                "fill": "$BC"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5MSw7",
+                  "name": "CardImage",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "kev1n",
+                    "link": "https://unsplash.com/@kev1n",
+                    "author": "Kevin Dowling"
+                  },
+                  "width": "fill_container",
+                  "height": 160,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1727776208411-e3494ffd96da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE3NDd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "na2Rr",
+                  "name": "CardBody",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mOo82",
+                      "name": "Card2Title",
+                      "fill": "$TC",
+                      "content": "Card Title 2",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$h3",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "RsL6i",
+                      "name": "Card2Text",
+                      "fill": "$GR",
+                      "content": "Description text for the second card",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "LNEpy",
+              "name": "CardItem",
+              "width": 332,
+              "fill": "$WH",
+              "cornerRadius": 12,
+              "stroke": {
+                "align": "outside",
+                "thickness": 1,
+                "fill": "$BC"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "xr92o",
+                  "name": "CardImage",
+                  "metadata": {
+                    "type": "unsplash",
+                    "username": "ltoky26",
+                    "link": "https://unsplash.com/@ltoky26",
+                    "author": "wen jian"
+                  },
+                  "width": "fill_container",
+                  "height": 160,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "https://images.unsplash.com/photo-1763698323966-85cf3fa61c36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE3NDd8&ixlib=rb-4.1.0&q=80&w=1080",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "2r8hI",
+                  "name": "CardBody",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "padding": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "xqYSl",
+                      "name": "Card3Title",
+                      "fill": "$TC",
+                      "content": "Card Title 3",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$h3",
+                      "fontWeight": "600"
+                    },
+                    {
+                      "type": "text",
+                      "id": "0QpP2",
+                      "name": "Card3Text",
+                      "fill": "$GR",
+                      "content": "Description text for the third card",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "yTE2v",
+          "x": 420,
+          "y": 2086,
+          "name": "FlexR",
+          "width": 1080,
+          "fill": "$BC",
+          "gap": 32,
+          "children": [
+            {
+              "type": "frame",
+              "id": "zaGr2",
+              "name": "FlexRFigure",
+              "metadata": {
+                "type": "unsplash",
+                "username": "shotbywoliul",
+                "link": "https://unsplash.com/@shotbywoliul",
+                "author": "Woliul Hasan"
+              },
+              "width": 416,
+              "height": 280,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1762951566390-e35eb7dfe9c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE3NDV8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 12
+            },
+            {
+              "type": "frame",
+              "id": "4EOs4",
+              "name": "FlexRBody",
+              "width": 632,
+              "fill": "$BC",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "uks0W",
+                  "name": "FlexRTitle",
+                  "fill": "$TC",
+                  "content": "FlexR Section (Flex46)",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": "$h2",
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "71URV",
+                  "name": "FlexRText",
+                  "fill": "$GR",
+                  "content": "This is a flexible ratio layout component.\nThe image takes 40% width and the content takes 60%.\nResponsive breakpoints adjust the layout automatically.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": "$FZ",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "pENsb",
+                  "name": "FlexRSub",
+                  "fill": "$SC",
+                  "content": "Available: Flex55, Flex46, Flex64,\nFlex37, Flex73, Flex28, Flex82",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "NzOB2",
+          "x": 420,
+          "y": 2534,
+          "name": "ImgText",
+          "width": 1080,
+          "fill": "$BC",
+          "gap": 32,
+          "children": [
+            {
+              "type": "frame",
+              "id": "9gOom",
+              "name": "ImgTextFigure",
+              "metadata": {
+                "type": "unsplash",
+                "username": "paoalchapar",
+                "link": "https://unsplash.com/@paoalchapar",
+                "author": "Daniela Paola Alchapar"
+              },
+              "width": 416,
+              "height": 240,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1642292851966-0eb7c7404185?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NjE3NDV8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 12
+            },
+            {
+              "type": "frame",
+              "id": "7PQch",
+              "name": "ImgTextBody",
+              "width": 632,
+              "fill": "$BC",
+              "layout": "vertical",
+              "gap": 16,
+              "padding": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0gHLj",
+                  "name": "ImgTextTitle",
+                  "fill": "$TC",
+                  "content": "ImgText Section (img40)",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": "$h2",
+                  "fontWeight": "700"
+                },
+                {
+                  "type": "text",
+                  "id": "Tllnk",
+                  "name": "ImgTextDesc",
+                  "fill": "$GR",
+                  "content": "Image and text horizontal layout component.\nUse img40 for 40% image width.\nAdd IsRev modifier to reverse the order.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": "$FZ",
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "w1l2N",
+                  "name": "ImgTextList",
+                  "fill": "$SC",
+                  "content": "Available: img20, img30, img40,\nimg50, img60, IsRev",
+                  "fontFamily": "Noto Sans JP",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "l5IuS",
+          "x": 420,
+          "y": 2950,
+          "name": "Toggle",
+          "width": 1080,
+          "fill": "$BC",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "uR0VT",
+              "name": "ToggleItem",
+              "width": "fill_container",
+              "fill": "#e3f2fd",
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$GR"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "pBSSE",
+                  "name": "ToggleSummary",
+                  "width": "fill_container",
+                  "fill": "#e8f5e9",
+                  "gap": 16,
+                  "padding": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "st3ou",
+                      "name": "Toggle1Q",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$MC",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MOu4A",
+                          "name": "Toggle1QText",
+                          "fill": "$WH",
+                          "content": "Q",
+                          "fontFamily": "Noto Sans JP",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "2o7Yr",
+                      "name": "Toggle1Title",
+                      "fill": "$TC",
+                      "content": "What is BYOS Framework?",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0TKhJ",
+                  "name": "ToggleBody",
+                  "width": "fill_container",
+                  "fill": "$WH",
+                  "gap": 16,
+                  "padding": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "hsAIB",
+                      "name": "Toggle1A",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$SC",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "3grZE",
+                          "name": "Toggle1AText",
+                          "fill": "$WH",
+                          "content": "A",
+                          "fontFamily": "Noto Sans JP",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "4EsDS",
+                      "name": "Toggle1Ans",
+                      "fill": "$GR",
+                      "content": "BYOS is a design system for building websites with CSS-first approach.",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bbT15",
+              "name": "ToggleItem",
+              "width": "fill_container",
+              "fill": "#e3f2fd",
+              "stroke": {
+                "align": "inside",
+                "thickness": {
+                  "bottom": 1
+                },
+                "fill": "$GR"
+              },
+              "layout": "vertical",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "2Kym8",
+                  "name": "ToggleSummary",
+                  "width": "fill_container",
+                  "fill": "#e8f5e9",
+                  "gap": 16,
+                  "padding": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "woXYE",
+                      "name": "Toggle2Q",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$MC",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "SzOYn",
+                          "name": "Toggle2QText",
+                          "fill": "$WH",
+                          "content": "Q",
+                          "fontFamily": "Noto Sans JP",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "KGPYm",
+                      "name": "Toggle2Title",
+                      "fill": "$TC",
+                      "content": "How do I use Unit components?",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "600"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "GWQo2",
+                  "name": "ToggleBody",
+                  "width": "fill_container",
+                  "fill": "$WH",
+                  "gap": 16,
+                  "padding": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "dq6vE",
+                      "name": "Toggle2A",
+                      "width": 40,
+                      "height": 40,
+                      "fill": "$SC",
+                      "cornerRadius": 8,
+                      "layout": "vertical",
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "V1Q9W",
+                          "name": "Toggle2AText",
+                          "fill": "$WH",
+                          "content": "A",
+                          "fontFamily": "Noto Sans JP",
+                          "fontSize": 20,
+                          "fontWeight": "700"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "xFytl",
+                      "name": "Toggle2Ans",
+                      "fill": "$GR",
+                      "content": "Each Unit is a CSS class. Add modifiers like col3, img40, IsRev for variations.",
+                      "fontFamily": "Noto Sans JP",
+                      "fontSize": "$FZ",
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "sdnsW",
+      "x": 0,
+      "y": 0,
+      "name": "Panel",
+      "reusable": true,
+      "width": "fill_container(0)",
+      "fill": "$WH",
+      "cornerRadius": 8,
+      "layout": "vertical",
+      "gap": 48,
+      "padding": 48,
+      "children": [
+        {
+          "type": "frame",
+          "id": "Or5j5",
+          "name": "PanelItem",
+          "reusable": true,
+          "width": "fill_container",
+          "fill": "$BC",
+          "cornerRadius": 4,
+          "gap": 32,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "C3mcq",
+              "name": "figure",
+              "width": 240,
+              "height": 180,
+              "fill": "#000000",
+              "cornerRadius": 4
+            },
+            {
+              "type": "frame",
+              "id": "pjuv6",
+              "name": "content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "85ZO6",
+                  "name": "title",
+                  "fill": "$TC",
+                  "content": "Panel Title",
+                  "fontFamily": "$FF",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "cXrSe",
+                  "name": "description",
+                  "fill": "$GR",
+                  "content": "Panel description text goes here. This is a placeholder for the actual content.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "$FF",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "AC": {
+      "type": "color",
+      "value": "#512db5"
+    },
+    "BC": {
+      "type": "color",
+      "value": "#fbf9ef"
+    },
+    "BK": {
+      "type": "color",
+      "value": "#000"
+    },
+    "FF": {
+      "type": "string",
+      "value": "Noto Sans JP, sans-serif"
+    },
+    "FW": {
+      "type": "number",
+      "value": 400
+    },
+    "FZ": {
+      "type": "number",
+      "value": 16
+    },
+    "GR": {
+      "type": "color",
+      "value": "#666"
+    },
+    "LH": {
+      "type": "number",
+      "value": 1.5
+    },
+    "LS": {
+      "type": "string",
+      "value": "0.025em"
+    },
+    "MC": {
+      "type": "color",
+      "value": "#2db542"
+    },
+    "MY": {
+      "type": "number",
+      "value": 120
+    },
+    "PX": {
+      "type": "number",
+      "value": 24
+    },
+    "SC": {
+      "type": "color",
+      "value": "#3194c9"
+    },
+    "TC": {
+      "type": "color",
+      "value": "#333"
+    },
+    "WH": {
+      "type": "color",
+      "value": "#fff"
+    },
+    "gap": {
+      "type": "number",
+      "value": 32
+    },
+    "h2": {
+      "type": "number",
+      "value": 32
+    },
+    "h3": {
+      "type": "number",
+      "value": 24
+    },
+    "head": {
+      "type": "number",
+      "value": 80
+    },
+    "wid": {
+      "type": "number",
+      "value": 1080
+    }
+  }
+}

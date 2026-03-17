@@ -33,20 +33,20 @@ const HouseIcon = ({ className = "" }: { className?: string }) => (
 
 function App() {
 	return (
-		<main  className="">
+		<main className="">
 			{/* Hero セクション */}
 			<Hero className="out text-white">
 				<HeroBack image="https://picsum.photos/1920/960" />
 				<HeroItem className="text-shadow-[var(--tsbk)]">
-					<h1 className="font-bold   ">
-						EACH FRAMEWORK PREVIEW
-					</h1>
-					<p className="mt-4 text-xl">ヒーローコンポーネントのサンプル</p>
+					<h1 className="font-bold   ">EACH FRAMEWORK PREVIEW</h1>
+					<p className="mt-4 text-xl">
+						ヒーローコンポーネントのサンプル
+					</p>
 				</HeroItem>
 			</Hero>
 
 			{/* カーズセクション（pencil-new.pen から） */}
-			<section className="wrapper into bg-[var(--bc)]  mt-0">
+			<section className="wrapper into bg-[var(--BC)]  mt-0">
 				<h2 className="text-center font-semibold mb-4">
 					カーズセクション（pencil-new.pen から）
 				</h2>
@@ -61,7 +61,7 @@ function App() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-[var(--mc)] rounded-full px-10 py-3 hover:bg-[var(--sc)] transition-colors">
+								<button className="border border-[var(--MC)] rounded-full px-10 py-3 hover:bg-[var(--SC)] transition-colors">
 									ボタン
 								</button>
 							</div>
@@ -77,7 +77,7 @@ function App() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-[var(--mc)] rounded-full px-10 py-3 hover:bg-[var(--sc)] transition-colors">
+								<button className="border border-[var(--MC)] rounded-full px-10 py-3 hover:bg-[var(--SC)] transition-colors">
 									TitleTitle
 								</button>
 							</div>
@@ -152,7 +152,10 @@ function App() {
 				</h2>
 
 				{/* 画像 30% の横並び */}
-				<ImgText className="img30" image={getAssetPath("/images/960x480.png")}>
+				<ImgText
+					className="img30"
+					image={getAssetPath("/images/960x480.png")}
+				>
 					<h3 className="font-bold mb-2">ImgText 基本使い方</h3>
 					<p>
 						画像とテキストを横並びで配置。
@@ -160,7 +163,10 @@ function App() {
 						ImgText クラスでレイアウトを制御。
 					</p>
 				</ImgText>
-				<ImgText className="img40 IsRev" image={getAssetPath("/images/960x480.png")}>
+				<ImgText
+					className="img40 IsRev"
+					image={getAssetPath("/images/960x480.png")}
+				>
 					<h3 className="font-bold mb-2">ImgText 基本使い方</h3>
 					<p>
 						画像とテキストを横並びで配置。
@@ -181,7 +187,10 @@ function App() {
 						<h3 className="font-bold mb-2">ステップ 1</h3>
 						<p>ご相談を伺います</p>
 					</PanelItem>
-					<PanelItem className="IsRev" image={getAssetPath("/images/960x480.png")}>
+					<PanelItem
+						className="IsRev"
+						image={getAssetPath("/images/960x480.png")}
+					>
 						<h3 className="font-bold mb-2">ステップ 2</h3>
 						<p>ご提案いたします</p>
 					</PanelItem>
@@ -241,11 +250,17 @@ function App() {
 			</section>
 
 			{/* テストセクション - Cards col4 IsLayer */}
-			<section className="wrapper into  bg-[var(--gr)]" style={{  } as React.CSSProperties}>
+			<section
+				className="wrapper into  bg-[var(--GR)]"
+				style={{} as React.CSSProperties}
+			>
 				<h2 className="text-center font-semibold mb-4 text-white">
 					テストセクション - Cards col4 IsLayer
 				</h2>
-				<Cards className="col4 IsLayer" style={{ "--gap": "0rem" } as React.CSSProperties}>
+				<Cards
+					className="col4 IsLayer"
+					style={{ "--gap": "0rem" } as React.CSSProperties}
+				>
 					<CardsItem image="https://picsum.photos/400/400?random=10">
 						<h3 className="text-white">タイトル A</h3>
 						<p className="text-white/80">説明文 A</p>
@@ -266,8 +281,10 @@ function App() {
 			</section>
 
 			{/* テストセクション - Cards col2 IsGrow */}
-			<section className="wrapper bg-[var(--bc)]">
-				<h2  className="text-center font-semibold mb-4 ">テスト - Cards col2 IsGrow</h2>
+			<section className="wrapper bg-[var(--BC)]">
+				<h2 className="text-center font-semibold mb-4 ">
+					テスト - Cards col2 IsGrow
+				</h2>
 				<Cards className="col2 IsGrow">
 					<CardsItem image="https://picsum.photos/400/300?random=20">
 						<h3>カード 1</h3>

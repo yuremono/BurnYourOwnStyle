@@ -39,7 +39,7 @@ mt20:20px   mt1e:一文字分   mt1p:1% */
 /* 下層card~の画像比率 */
 /* :where(html:not(.home) [class*=card]) img{ */
   /* aspect-ratio: 3/2; */
-  /* background-color: var(--bc); */
+  /* background-color: var(--BC); */
 /* } */
 /*○○px以下でmv画像の中央位置を調整*/
 /* @media (max-width: 834px){

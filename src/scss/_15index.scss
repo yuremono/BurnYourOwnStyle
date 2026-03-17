@@ -332,7 +332,7 @@ p:has(>a) {
     padding-inline: var(--inBase);
     min-height: var(--h);
 
-    @media (max-width : 1440px) {
+    @include menu {
         min-height: calc(var(--h)*.9);
     }
 

@@ -453,7 +453,7 @@ html.page-blog {
     }
 
     div#form_calendar table tbody tr td.close {
-        background: var(--ac);
+        background: var(--AC);
     }
     div#form_calendar dl.open,
     div#form_calendar dl.close {
@@ -475,7 +475,7 @@ html.page-blog {
     }
 
     div#form_calendar dl.close label {
-        background: var(--ac);
+        background: var(--AC);
     }
 
     div#builingual {
@@ -1043,7 +1043,7 @@ section div#contents>article{
         border-top: 1px dashed var(--tx50);
     }
      ul li a{
-        color: var(--wh);
+        color: var(--WH);
     }
      h2 span{
         line-height: 2;
@@ -1054,13 +1054,13 @@ section div#contents>article{
 
         border-radius: var(--radH);
         color: #fff;
-        background-color: var(--ac);
+        background-color: var(--AC);
     }
 }
 html.page-blog.bk {
-    background-color: var(--bk);
+    background-color: var(--BK);
     section div.wrap {
-        background-color: var(--bk);
+        background-color: var(--BK);
     }
     @media (max-width : 834px){
         .fl37 > * {

@@ -39,7 +39,7 @@ Unitクラス が、**Tailwind CSS の utility クラスよりも先に適用さ
 
 ```
 src/
-├── RatioKit.css         # RatioKit.scss をコンパイルした CSS
+├── RatioKit.css         # scss/globals.scss をコンパイルした CSS
 ├── main.tsx             # エントリーポイント
 └── App.tsx              # アプリケーション
 ```
@@ -47,13 +47,13 @@ src/
 ### コンパイル
 
 ```bash
-npx sass ../../scss/RatioKit.scss ./src/RatioKit.css
+npx sass ./src/scss/globals.scss
 ```
 
 ### index.html 読み込み
 
 ```html
-<link rel="stylesheet" href="/src/RatioKit.css" />
+<link rel="stylesheet" href="/src/scss/globals.css" />
 ```
 
 ---

@@ -1,0 +1,292 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "iY7yd",
+      "x": 0,
+      "y": 0,
+      "name": "1502 Canvas",
+      "width": 1920,
+      "height": 3000,
+      "fill": "#F5E6D3",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "imk6Y",
+          "x": 360,
+          "y": 120,
+          "name": "Blue Rectangle",
+          "fill": "#1976D2",
+          "width": 1200,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "HYh2L",
+      "x": 2000,
+      "y": 0,
+      "name": "Design Canvas",
+      "width": 1920,
+      "height": 3000,
+      "fill": "#F5F5DC",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "bBIb4",
+          "x": 360,
+          "y": 120,
+          "name": "Green Rectangle",
+          "fill": "#00FF00",
+          "width": 1200,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "xwh2M",
+      "x": 0,
+      "y": 0,
+      "name": "1514",
+      "width": 1920,
+      "height": 3000,
+      "fill": "#F5F0E6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "olaEV",
+          "x": 360,
+          "y": 120,
+          "name": "Pink Rectangle",
+          "fill": "#FFB6C1",
+          "width": 1200,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "0fuGi",
+      "x": 0,
+      "y": 0,
+      "name": "Panel",
+      "width": 1200,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "gap": 24,
+      "padding": 40,
+      "children": [
+        {
+          "type": "frame",
+          "id": "9wLbZ",
+          "name": "PanelItem",
+          "width": "fill_container",
+          "fill": "#F9FAFB",
+          "cornerRadius": 8,
+          "gap": 32,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "jA85D",
+              "name": "image",
+              "metadata": {
+                "type": "unsplash",
+                "username": "silverkblack",
+                "link": "https://unsplash.com/@silverkblack",
+                "author": "Vitaly Gariev"
+              },
+              "width": 280,
+              "height": 180,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1758873269108-7c03a92f7586?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NTY5MjR8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 4
+            },
+            {
+              "type": "frame",
+              "id": "Z1cW4",
+              "name": "textBox1",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "26TuZ",
+                  "name": "title1",
+                  "fill": "#1F2937",
+                  "content": "サービスの特徴",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "2HHJf",
+                  "name": "desc1",
+                  "fill": "#4B5563",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "私たちのサービスは、お客様のビジネスニーズに合わせてカスタマイズされたソリューションを提供します。経験豊富なチームが最新技術を活用し、最適な結果をお届けします。",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "879Bj",
+          "name": "PanelItem",
+          "width": "fill_container",
+          "fill": "#F9FAFB",
+          "cornerRadius": 8,
+          "gap": 32,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "X795V",
+              "name": "image",
+              "metadata": {
+                "type": "unsplash",
+                "username": "glyamin",
+                "link": "https://unsplash.com/@glyamin",
+                "author": "Georgiy Lyamin"
+              },
+              "width": 280,
+              "height": 180,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1770278881151-7cd11eb115b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NTY5MjV8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 4
+            },
+            {
+              "type": "frame",
+              "id": "d2UD5",
+              "name": "textBox2",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "ktW6g",
+                  "name": "title2",
+                  "fill": "#1F2937",
+                  "content": "革新的なアプローチ",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "QBFbR",
+                  "name": "desc2",
+                  "fill": "#4B5563",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "常に新しい技術と手法を取り入れ、従来の枠を超えたソリューションを提案します。お客様と共に成長し、変化する市場に対応します。",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qQQrO",
+          "name": "PanelItem",
+          "width": "fill_container",
+          "fill": "#F9FAFB",
+          "cornerRadius": 8,
+          "gap": 32,
+          "padding": 24,
+          "children": [
+            {
+              "type": "frame",
+              "id": "a0iS0",
+              "name": "image",
+              "metadata": {
+                "type": "unsplash",
+                "username": "amir2mi",
+                "link": "https://unsplash.com/@amir2mi",
+                "author": "Amir M. Mohamadi"
+              },
+              "width": 280,
+              "height": 180,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1759434768863-85483a898cd9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzM3NTY5MjZ8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              },
+              "cornerRadius": 4
+            },
+            {
+              "type": "frame",
+              "id": "2wlfw",
+              "name": "textBox3",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 12,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "js09h",
+                  "name": "title3",
+                  "fill": "#1F2937",
+                  "content": "24時間サポート",
+                  "fontFamily": "Inter",
+                  "fontSize": 24,
+                  "fontWeight": "600"
+                },
+                {
+                  "type": "text",
+                  "id": "OoVe6",
+                  "name": "desc3",
+                  "fill": "#4B5563",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "専任のサポートチームが24時間体制で対応いたします。どんな小さな疑問にも丁寧にお答えし、安心してご利用いただけます。",
+                  "fontFamily": "Inter",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

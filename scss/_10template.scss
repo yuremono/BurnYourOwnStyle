@@ -5,12 +5,12 @@
 // html:is(.eng){.jaOnly{display: none!important;}}
 .box{//box背景色
     &-mc   {--boxBG:var(--mc);}
-    &-bc   {--boxBG:var(--bc);}
-    &-sc   {--boxBG:var(--sc);}
-    &-ac   {--boxBG:var(--ac);}
-    &-wh   {--boxBG:var(--wh);}
-    &-gr   {--boxBG:var(--gr);}
-    &-bk   {--boxBG:var(--bk);}
+    &-bc   {--boxBG:var(--BC);}
+    &-sc   {--boxBG:var(--SC);}
+    &-ac   {--boxBG:var(--AC);}
+    &-wh   {--boxBG:var(--WH);}
+    &-gr   {--boxBG:var(--GR);}
+    &-bk   {--boxBG:var(--BK);}
     &-mc, &-bc, &-sc, &-ac, &-wh, &-gr, &-bk{
         .box{
             background-color: var(--boxBG);
@@ -25,11 +25,11 @@
 .art{//article背景色 
     &-mc   {--artBG:var(--mc);}
     &-mcLT {--artBG:var(--mcLT);}
-    &-bc   {--artBG:var(--bc);}
-    &-sc   {--artBG:var(--sc);}
-    &-ac   {--artBG:var(--ac);}
-    &-wh   {--artBG:var(--wh);}
-    &-bk   {--artBG:var(--bk);}
+    &-bc   {--artBG:var(--BC);}
+    &-sc   {--artBG:var(--SC);}
+    &-ac   {--artBG:var(--AC);}
+    &-wh   {--artBG:var(--WH);}
+    &-bk   {--artBG:var(--BK);}
     &-mc, &-mcLT,&-bc, &-sc, &-ac, &-wh, &-bk{
         >article{background-color: var(--artBG);padding: 2% 3%;}
     }
@@ -37,11 +37,11 @@
 // .H{//タイトル背景色
 //     &-mc   {--headBG:var(--mc);}
 //     &-mcLT {--headBG:var(--mcLT);}
-//     &-bc   {--headBG:var(--bc);}
-//     &-sc   {--headBG:var(--sc);}
-//     &-ac   {--headBG:var(--ac);}
-//     &-wh   {--headBG:var(--wh);}
-//     &-bk   {--headBG:var(--bk);}
+//     &-bc   {--headBG:var(--BC);}
+//     &-sc   {--headBG:var(--SC);}
+//     &-ac   {--headBG:var(--AC);}
+//     &-wh   {--headBG:var(--WH);}
+//     &-bk   {--headBG:var(--BK);}
 //     &-mc, &-mcLT,&-bc, &-sc, &-ac, &-wh, &-bk{
 //         h1,h2,h3,h4,h5{background-color: var(--headBG);padding: 0.0625em 0.125em;}
 //     }
@@ -49,11 +49,11 @@
 // .D{//div背景色
 //     &-mc   {--divBG:var(--mc);}
 //     &-mcLT {--divBG:var(--mcLT);}
-//     &-bc {--divBG:var(--bc);}
-//     &-sc {--divBG:var(--sc);}
-//     &-ac {--divBG:var(--ac);}
-//     &-wh {--divBG:var(--wh);}
-//     &-bk {--divBG:var(--bk);}
+//     &-bc {--divBG:var(--BC);}
+//     &-sc {--divBG:var(--SC);}
+//     &-ac {--divBG:var(--AC);}
+//     &-wh {--divBG:var(--WH);}
+//     &-bk {--divBG:var(--BK);}
 //     &-mc, &-mcLT,&-bc, &-sc, &-ac, &-wh, &-bk{
 //         article>div{background-color: var(--divBG);padding: 1em;}
 //     }
@@ -76,7 +76,7 @@
 //     font-size: inherit;
 //     b{
 //         font-size: 1.5em;
-//         color: var(--ac);
+//         color: var(--AC);
 //     }
 //     +br{display: none;}
 // }
@@ -175,9 +175,9 @@
     &.dd-right:is(#contents *) dd{text-align: right;}
     &.dd-center:is(#contents *) dd{text-align: center;}
     &.__firstmc:is(#contents *) dl:first-child{background-color: var(--mc);}
-    &.__firstbc:is(#contents *) dl:first-child{background-color: var(--bc);}
+    &.__firstbc:is(#contents *) dl:first-child{background-color: var(--BC);}
     dt>span{color: var(--mc);}
-    &.hash-ac dt>span{color: var(--ac);}
+    &.hash-ac dt>span{color: var(--AC);}
     &.noscr{
         overflow: unset;
         height: unset!important;
@@ -261,7 +261,7 @@
             flex-wrap: wrap;
             background-color: unset;
             &:nth-of-type(odd){
-                background-color: var(--wh);
+                background-color: var(--WH);
             }
 
             >*{
@@ -612,12 +612,12 @@
         u{--o:0px;}
         a{
             text-decoration: underline;
-            // color: var(--sc);
+            // color: var(--SC);
         }
         .btn{
             margin-top: 0;
             margin-left: 1.5em;
-            color: var(--wh);
+            color: var(--WH);
             text-decoration: none;
         }
         >br{display: none;}
@@ -719,12 +719,12 @@
         u{--o:0px;}
         a{
             text-decoration: underline;
-            // color: var(--sc);
+            // color: var(--SC);
         }
         .btn{
             margin-top: 0;
             margin-left: 1.5em;
-            color: var(--wh);
+            color: var(--WH);
             text-decoration: none;
         }
         >br{display: none;}
@@ -827,12 +827,12 @@
         u{--o:0px;}
         a{
             text-decoration: underline;
-            // color: var(--sc);
+            // color: var(--SC);
         }
         .btn{
             margin-top: 0;
             margin-left: 1.5em;
-            color: var(--wh);
+            color: var(--WH);
             text-decoration: none;
         }
         >br{display: none;}
@@ -994,8 +994,8 @@
     //     --pdi: 1.5em;
     //     --dtc:currentColor;
     //     --dtw:bold;
-    //     color: var(--sc);
-    //     // --tx:var(--sc);
+    //     color: var(--SC);
+    //     // --tx:var(--SC);
     //     // filter: var(--stroke-wh);
     //     font-size: 16px;
     //     a{
@@ -1065,7 +1065,7 @@
     //         width: 6px;height: 0;
     //     }
     //     &::-webkit-scrollbar-thumb {
-    //         background-color:var(--gr);
+    //         background-color:var(--GR);
     //     }
     // }
     &.form_enkaku {//沿革
@@ -1178,7 +1178,7 @@
     //     dl:is(#contents dl) {
     //         display: block !important;
     //         // line-height: normal;
-    //         // background-color: var(--bk);
+    //         // background-color: var(--BK);
     //         // padding: 1em;
     //         font-size: var(--f20);
     //         border-radius: var(--rad);
@@ -1299,11 +1299,11 @@
     //     +.dl_menu{margin-top: 0;}
     //     &:is(.fl50 .sheet){padding: calc(var(--gap)/2 );}
     //     --p:var(--bodyFZ);
-    //     --bdc: var(--sc);
+    //     --bdc: var(--SC);
     //     --dtFZ:110%;
     //     --dtC:var(--inh);
     //     &.__mc{--bdc: var(--mc);}
-    //     &.__sc{--bdc: var(--sc);}
+    //     &.__sc{--bdc: var(--SC);}
 
     //     dl:has(dd:empty){
     //         padding-inline: unset;
@@ -1314,7 +1314,7 @@
     //             background-color: var(--bdc);
     //             align-items: center;
     //             justify-content: flex-start;
-    //             color: var(--wh);
+    //             color: var(--WH);
     //             font-weight: bold;
     //             padding-inline: var(--bodyFZ);
     //             @extend %h3FZ;
@@ -1399,11 +1399,11 @@
     //     &:is(.fl50 .sheet){padding: calc(var(--gap)/2 );}
     //     --line:var(--mc);
     //     --p:var(--f16);
-    //     --bdc: var(--gr);
+    //     --bdc: var(--GR);
     //     font-size: var(--f18);
     //     --dtFZ:110%;
     //     &.__mc{--bdc: var(--mc);}
-    //     &.__sc{--bdc: var(--sc);}
+    //     &.__sc{--bdc: var(--SC);}
     //     dl:has(dd:empty){
     //         padding-inline: unset;
     //         dd:is(#contents *){display: none;}
@@ -1412,7 +1412,7 @@
     //             width: 100%;
     //             align-items: center;
     //             justify-content: flex-start;
-    //             // color: var(--wh);
+    //             // color: var(--WH);
     //             font-weight: bold;
     //             padding-inline: var(--bodyFZ);
     //             border-bottom: 1px solid #fff;
@@ -1538,7 +1538,7 @@
     &.__hidden .slick-list{overflow: hidden!important;}
     // --gap:3vmin;
     --ulBG:var(--mc);
-    --ulC:var(--wh);
+    --ulC:var(--WH);
     --dateC: var(--mc);
     --dateFW: 500;
     // --capFZ: var(--bodyFZ);
@@ -1700,7 +1700,7 @@
 //     &.__visible .slick-list{overflow: visible!important;}
 //     // --gap:3vmin;
 //     --ulBG:var(--mc);
-//     --ulC:var(--wh);
+//     --ulC:var(--WH);
 //     --dateC: var(--un);
 //     --dateFW: bold;
 //     --capFZ: var(--bodyFZ);
@@ -1730,7 +1730,7 @@
 //     }
 //     button{
 //         width: 100%;
-//         background-color: var(--ac);
+//         background-color: var(--AC);
 //         box-shadow: var(--bsinset);
 //         border-radius: 1000px;
 //         padding: .25em .5em;
@@ -1757,7 +1757,7 @@
 //                 object-fit: cover;
 //                 transition: .4s;
 //                 // transform-origin: center center;
-//                 // outline: 1vmin solid var(--sc);
+//                 // outline: 1vmin solid var(--SC);
 //                 border-radius: var(--rad);
 //                 aspect-ratio: var(--imgAR);
 //                 object-fit: var(--imgOF)
@@ -1939,7 +1939,7 @@
 
 	}
 	.slick-prev, .slick-next{
-        // color: var(--wh);
+        // color: var(--WH);
         font-family: var(--icon);
         font-weight: 900;
         z-index: 10;
@@ -2092,7 +2092,7 @@ div.blog_it{//画像あり
     overflow-y: scroll;
     --pdb: 0.5em;
     --bdc: var(--tx50);
-    --dateC: var(--sc);
+    --dateC: var(--SC);
     --maxH: 60lvh;
     line-height: 1.5;
     @media (max-width: 640px){
@@ -2228,7 +2228,7 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
                 width: 100%;
                 *{width: 100%;}
                 padding: unset;
-                // border-bottom: 1px solid var(--gr);
+                // border-bottom: 1px solid var(--GR);
                 display: grid;place-items: center;place-content: center stretch;
                 img:is(#contents *){
                     border-radius: var(--rad);
@@ -2284,7 +2284,7 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
         width: 8px;height: 0;
     }
     &::-webkit-scrollbar-thumb {
-        background-color:var(--gr);
+        background-color:var(--GR);
         border-radius: 0px;
         // box-shadow: inset 3px 3px 3px rgba(255,255,255,0.2);
     }
@@ -2292,7 +2292,7 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
 // *****************SNS インスタ　連動**********************************
 .sns01{ //縦並び
     --imgW: max(240px, 22em);
-    --divBG:var(--bc);
+    --divBG:var(--BC);
     &.noscr{
         height: unset;
         max-height: unset;
@@ -2314,7 +2314,7 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
         line-height: 1.8;
         >div{
             border: none;
-            // border-bottom: 1px solid var(--gr);
+            // border-bottom: 1px solid var(--GR);
             padding: 1em;
             background-color: var(--divBG);
             flex-direction: row;
@@ -2362,7 +2362,7 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
                     // line-height: 1.8;
                     // font-family: var(--DM);
                     padding: 0em 0em;
-                        // border: 1px solid var(--gr);
+                        // border: 1px solid var(--GR);
                     width: fit-content;
                     margin-bottom: .4em;
                 }
@@ -2372,13 +2372,13 @@ div[class*=blog_card]{//画像日付タイトルサマリー 稀なのでwidth�
                 ul{
                     margin-top: auto;
                     a{
-                        color: var(--wh);
+                        color: var(--WH);
                         margin-right: 0.5em;
                         margin-top: .5em;
                         line-height: 1.5;
                         background-color: var(--mc);
                         // border-radius: 4px;
-                        // border: 1px solid var(--gr);
+                        // border: 1px solid var(--GR);
                         display: inline-block;padding: 0em .5em;
                         text-decoration: none;
                     }
@@ -2407,7 +2407,7 @@ div[class*=sns_card] {//画像card3列
     &.__visible .slick-list{overflow: visible!important;}
     max-width: 100%;
     --ulBG:var(--mc);
-    --ulC:var(--wh);
+    --ulC:var(--WH);
     --dateC: var(--un);
     --dateFW: bold;
     --capFZ: var(--bodyFZ);
@@ -2489,7 +2489,7 @@ div[class*=sns_card] {//画像card3列
             }
         }
         .sns_date {
-        //   color:var(--sc);
+        //   color:var(--SC);
         // padding: 1rem;
         // font-size: 120%;
             top: 0;left: 0;
@@ -2660,7 +2660,7 @@ img.mfp-img{
     font-family: 'Line Awesome Free';
     font-size: 3em;
     display: block;width: 100%;height: 100%;
-    text-shadow: 2px 0 var(--wh);
+    text-shadow: 2px 0 var(--WH);
     line-height: 1;
 }
 .mfp-arrow-left:before{
@@ -2772,7 +2772,7 @@ figure:has(>.figuDC){//figureが邪魔な時imgにつけるクラス
         text-decoration: none;
         display: inline-block;
         background-color: var(--mc);
-        color: var(--wh);
+        color: var(--WH);
         padding-block: .25em;
         padding-inline: .5em;
         margin-inline-end: .5em;
@@ -2787,7 +2787,7 @@ figure:has(>.figuDC){//figureが邪魔な時imgにつけるクラス
         text-decoration: none;
         display: inline-block;
         background-color: var(--mc);
-        color: var(--wh)!important;
+        color: var(--WH)!important;
         padding-block: .25em;
         padding-inline: .5em;
         margin-inline-end: .5em;
@@ -2838,7 +2838,7 @@ div:has(>.bgToRight,>.bgToBottom){
     border: var(--line);
     border-radius: var(--boardR);
     @extend %bf;
-    background-color: var(--bc);
+    background-color: var(--BC);
     &:before{
         content:'';
         background: unset;inset: 1vmin;
@@ -3006,17 +3006,17 @@ div:has(>.bgToRight,>.bgToBottom){
             //     margin-top: var(--Hafter);
             // }
             &:is(.__mc *){background-color: var(--mc);}
-            &:is(.__ac *){background-color: var(--ac);}
-            &:is(.__sc *){background-color: var(--sc);}
+            &:is(.__ac *){background-color: var(--AC);}
+            &:is(.__sc *){background-color: var(--SC);}
             &:is(.__mc50 *){background-color: var(--mc50);}
             &:is(.__ac50 *){background-color: var(--ac50);}
             &:is(.__sc50 *){background-color: var(--sc50);}
             &:is(.__mc2 *){background-color: var(--mc2);}
             &:is(.__ac2 *){background-color: var(--ac2);}
             &:is(.__sc2 *){background-color: var(--sc2);}
-            &:is(.__bc *){background-color: var(--bc);}
-            &:is(.__wh *){background-color: var(--wh);}
-            &:is(.__bk *){background-color: var(--bk);}
+            &:is(.__bc *){background-color: var(--BC);}
+            &:is(.__wh *){background-color: var(--WH);}
+            &:is(.__bk *){background-color: var(--BK);}
             &:is(.__tx *){background-color: var(--tx);}
         }
     }
@@ -3036,17 +3036,17 @@ div:has(>.bgToRight,>.bgToBottom){
             // }
             &:is(.__red *){border-bottom-color: var(--red);}
             &:is(.__mc *){border-bottom-color: var(--mc);}
-            &:is(.__ac *){border-bottom-color: var(--ac);}
-            &:is(.__sc *){border-bottom-color: var(--sc);}
+            &:is(.__ac *){border-bottom-color: var(--AC);}
+            &:is(.__sc *){border-bottom-color: var(--SC);}
             &:is(.__mc50 *){border-bottom-color: var(--mc50);}
             &:is(.__ac50 *){border-bottom-color: var(--ac50);}
             &:is(.__sc50 *){border-bottom-color: var(--sc50);}
             &:is(.__mc2 *){border-bottom-color: var(--mc2);}
             &:is(.__ac2 *){border-bottom-color: var(--ac2);}
             &:is(.__sc2 *){border-bottom-color: var(--sc2);}
-            &:is(.__bc *){border-bottom-color: var(--bc);}
-            &:is(.__wh *){border-bottom-color: var(--wh);}
-            &:is(.__bk *){border-bottom-color: var(--bk);}
+            &:is(.__bc *){border-bottom-color: var(--BC);}
+            &:is(.__wh *){border-bottom-color: var(--WH);}
+            &:is(.__bk *){border-bottom-color: var(--BK);}
             &:is(.__tx *){border-bottom-color: var(--tx);}
         }
     }
@@ -3082,7 +3082,7 @@ div:has(>.bgToRight,>.bgToBottom){
     //     h1,h2,h3,h4,h5{
     //         font-size: 24vmin;
     //         word-break: break-word;   
-    //         font-weight: 100;line-height: .9;color: var(--ac);
+    //         font-weight: 100;line-height: .9;color: var(--AC);
     //     }
     // }
     // &slash{
@@ -3119,17 +3119,17 @@ div:has(>.bgToRight,>.bgToBottom){
     //         // padding-block-end: var(--o);
     //         // margin-block-end: var(--f16);
     //         &:is(.__mc *){--c: var(--mc);}
-    //         &:is(.__ac *){--c: var(--ac);}
-    //         &:is(.__sc *){--c: var(--sc);}
+    //         &:is(.__ac *){--c: var(--AC);}
+    //         &:is(.__sc *){--c: var(--SC);}
     //         &:is(.__mc50 *){--c: var(--mc50);}
     //         &:is(.__ac50 *){--c: var(--ac50);}
     //         &:is(.__sc50 *){--c: var(--sc50);}
     //         &:is(.__mc2 *){--c: var(--mc2);}
     //         &:is(.__ac2 *){--c: var(--ac2);}
     //         &:is(.__sc2 *){--c: var(--sc2);}
-    //         &:is(.__bc *){--c: var(--bc);}
-    //         &:is(.__wh *){--c: var(--wh);}
-    //         &:is(.__bk *){--c: var(--bk);}
+    //         &:is(.__bc *){--c: var(--BC);}
+    //         &:is(.__wh *){--c: var(--WH);}
+    //         &:is(.__bk *){--c: var(--BK);}
     //         &:is(.__tx *){--c: var(--tx);}
     //     }
     // }
@@ -3139,7 +3139,7 @@ div:has(>.bgToRight,>.bgToBottom){
         @extend %bg100;
         padding-inline: var(--inBase);
         padding-block: 2em;
-        background-color: var(--bc);
+        background-color: var(--BC);
         h1,h2,h3,h4,h5{
             +div:not(:empty){
                 margin-top: 1em;
@@ -3150,7 +3150,7 @@ div:has(>.bgToRight,>.bgToBottom){
         @extend %bg100;
         padding-inline: var(--inBase);
         padding-block: 1em;
-        background-color: var(--bc);
+        background-color: var(--BC);
         h1,h2,h3,h4,h5{
             +div:not(:empty){
                 margin-top: 1em;
@@ -3161,7 +3161,7 @@ div:has(>.bgToRight,>.bgToBottom){
 // ************************ bar bfaf**************************
 :is(.barBFAF, .barBF, .barAF){
     // margin-bottom: .25em;
-    // --bdc:var(--ac);
+    // --bdc:var(--AC);
     --barGap:1rem;
     // --bdw:1px;
     &:is(.txwh *,.txwh){--bdc:#fff;}
@@ -3211,12 +3211,12 @@ div:has(>.bgToRight,>.bgToBottom){
     }
 
     &_cover{background: no-repeat center/cover;}
-    &bk{background-color: var(--bk);}
+    &bk{background-color: var(--BK);}
     &mc{background-color: var(--mc);}
-    &bc{background-color: var(--bc);}
-    &sc{background-color: var(--sc);}
-    &ac{background-color: var(--ac);}
-    &wh{background-color: var(--wh);}
+    &bc{background-color: var(--BC);}
+    &sc{background-color: var(--SC);}
+    &ac{background-color: var(--AC);}
+    &wh{background-color: var(--WH);}
     &_top{
         background: no-repeat center 0% / auto;
     }
@@ -3245,7 +3245,7 @@ div:has(>.bgToRight,>.bgToBottom){
     // &_pt{
     //     background: conic-gradient(transparent 0deg 90deg, #fff8 90deg 180deg, transparent 180deg 270deg, #fff8 270deg 360deg) 0 0/var(--s) var(--s);
     //     --s: var(--block3);
-    //     background-color: var(--bc);
+    //     background-color: var(--BC);
     // }
     // &_rect{
     //     --s: 6lvh;
@@ -3319,15 +3319,15 @@ div:has(>.bgToRight,>.bgToBottom){
         td:first-of-type{background-color: var(--mc);color: #fff;font-weight: bold;}
     }
     &.firstBC{
-        tr:first-of-type{background-color: var(--bc);font-weight: bold;}
-        td:first-of-type{background-color: var(--bc);font-weight: bold;}
+        tr:first-of-type{background-color: var(--BC);font-weight: bold;}
+        td:first-of-type{background-color: var(--BC);font-weight: bold;}
     } 
     &.firstSC{
-        tr:first-of-type{background-color: var(--sc);font-weight: bold;color: var(--wh);}
-        td:first-of-type{background-color: var(--sc);font-weight: bold;color: var(--wh);}
+        tr:first-of-type{background-color: var(--SC);font-weight: bold;color: var(--WH);}
+        td:first-of-type{background-color: var(--SC);font-weight: bold;color: var(--WH);}
     } 
     &.firstAC{
-        tr:first-of-type{background-color: var(--ac);font-weight: bold;color: var(--wh);}
+        tr:first-of-type{background-color: var(--AC);font-weight: bold;color: var(--WH);}
         td:first-of-type{background-color: var(--ac30);font-weight: bold;color: var(--tx);}
     } 
     &.firstCenter:is(#contents *){
@@ -3355,7 +3355,7 @@ div:has(>.bgToRight,>.bgToBottom){
 }
 .tbl01{
     tr:first-of-type{
-        background-color: var(--bc);
+        background-color: var(--BC);
         font-weight: bold;
     }
 }
@@ -3405,7 +3405,7 @@ div:has(>.bgToRight,>.bgToBottom){
 //     cursor: pointer;
 //     float: right;
 //     font-weight: 700;
-//     color: var(--ac);
+//     color: var(--AC);
 // }
 // details[open]{
 //     &::before {

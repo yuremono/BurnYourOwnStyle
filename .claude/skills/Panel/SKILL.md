@@ -1,7 +1,7 @@
 ---
 name: Panel
 description: |
-  BYOS の Panel コンポーネントを生成するスキル。ユーザーが「Panel」「パネル」「/Panel」「縦並び」「縦並びコンテナ」などと言った場合、または複数の ImgText をまとめた縦並びレイアウトが必要な時に使用。
+  BYOS の Panel コンポーネントを生成するスキル。複数の ImgText をまとめた縦並びレイアウト。
   指示形式：テキストで Value クラス（img20, img40）、Modifier クラス（IsFlow, IsRev）、を指定。
   例：`/Panel img40 IsFlow` または `矢印でつながれた縦並び`
 argument-hint: "[img20 | img40 | IsFlow | IsRev]"
@@ -36,7 +36,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 - **設計思想を無視した Tailwind クラスをつける**
     - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
     - フォントサイズのクラスをつける必要はない。CSS セレクタで変数を使ってすでにスタイルが設定されている。
-      デザイン再現では文字色、背景色は text-[var(--mc)] bg-[var(--mc)] などを使用する。
+      デザイン再現では文字色、背景色は text-[var(--MC)] bg-[var(--MC)] などを使用する。
 
 - **勝手にコンポーネント分岐を作成する**
     - ユーザーが明示的に「新規コンポーネント」「別バージョン」「Panel2」等を指定した場合のみ作成
@@ -223,4 +223,4 @@ export { Panel, PanelItem }
 
 ## クラス定義ファイル
 
-`src/RatioKit.scss`
+`src/scss/_03UNIT.scss`

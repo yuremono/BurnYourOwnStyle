@@ -146,69 +146,69 @@ h2, .h2FZ {
   --mc70: color-mix(in srgb, transparent,var(--mc) 70%);
   --mc80: color-mix(in srgb, transparent,var(--mc) 80%);
   --mc90: color-mix(in srgb, transparent,var(--mc) 90%);
-  --sc10: color-mix(in srgb, transparent,var(--sc) 10%);
-  --ac10: color-mix(in srgb, transparent,var(--ac) 10%);
-  --bc10: color-mix(in srgb, transparent,var(--bc) 10%);
+  --sc10: color-mix(in srgb, transparent,var(--SC) 10%);
+  --ac10: color-mix(in srgb, transparent,var(--AC) 10%);
+  --bc10: color-mix(in srgb, transparent,var(--BC) 10%);
   --tx10: color-mix(in srgb, transparent,var(--tx) 10%);
-  --gr10: color-mix(in srgb, transparent,var(--gr) 10%);
-  --wh10: color-mix(in srgb, transparent,var(--wh) 10%);
-  --bk10: color-mix(in srgb, transparent,var(--bk) 10%);
-  --sc20: color-mix(in srgb, transparent,var(--sc) 20%);
-  --ac20: color-mix(in srgb, transparent,var(--ac) 20%);
-  --bc20: color-mix(in srgb, transparent,var(--bc) 20%);
+  --gr10: color-mix(in srgb, transparent,var(--GR) 10%);
+  --wh10: color-mix(in srgb, transparent,var(--WH) 10%);
+  --bk10: color-mix(in srgb, transparent,var(--BK) 10%);
+  --sc20: color-mix(in srgb, transparent,var(--SC) 20%);
+  --ac20: color-mix(in srgb, transparent,var(--AC) 20%);
+  --bc20: color-mix(in srgb, transparent,var(--BC) 20%);
   --tx20: color-mix(in srgb, transparent,var(--tx) 20%);
-  --gr20: color-mix(in srgb, transparent,var(--gr) 20%);
-  --wh20: color-mix(in srgb, transparent,var(--wh) 20%);
-  --bk20: color-mix(in srgb, transparent,var(--bk) 20%);
-  --sc30: color-mix(in srgb, transparent,var(--sc) 30%);
-  --ac30: color-mix(in srgb, transparent,var(--ac) 30%);
-  --bc30: color-mix(in srgb, transparent,var(--bc) 30%);
+  --gr20: color-mix(in srgb, transparent,var(--GR) 20%);
+  --wh20: color-mix(in srgb, transparent,var(--WH) 20%);
+  --bk20: color-mix(in srgb, transparent,var(--BK) 20%);
+  --sc30: color-mix(in srgb, transparent,var(--SC) 30%);
+  --ac30: color-mix(in srgb, transparent,var(--AC) 30%);
+  --bc30: color-mix(in srgb, transparent,var(--BC) 30%);
   --tx30: color-mix(in srgb, transparent,var(--tx) 30%);
-  --gr30: color-mix(in srgb, transparent,var(--gr) 30%);
-  --wh30: color-mix(in srgb, transparent,var(--wh) 30%);
-  --bk30: color-mix(in srgb, transparent,var(--bk) 30%);
-  --sc40: color-mix(in srgb, transparent,var(--sc) 40%);
-  --ac40: color-mix(in srgb, transparent,var(--ac) 40%);
-  --bc40: color-mix(in srgb, transparent,var(--bc) 40%);
+  --gr30: color-mix(in srgb, transparent,var(--GR) 30%);
+  --wh30: color-mix(in srgb, transparent,var(--WH) 30%);
+  --bk30: color-mix(in srgb, transparent,var(--BK) 30%);
+  --sc40: color-mix(in srgb, transparent,var(--SC) 40%);
+  --ac40: color-mix(in srgb, transparent,var(--AC) 40%);
+  --bc40: color-mix(in srgb, transparent,var(--BC) 40%);
   --tx40: color-mix(in srgb, transparent,var(--tx) 40%);
-  --gr40: color-mix(in srgb, transparent,var(--gr) 40%);
-  --wh40: color-mix(in srgb, transparent,var(--wh) 40%);
-  --bk40: color-mix(in srgb, transparent,var(--bk) 40%);
-  --sc50: color-mix(in srgb, transparent,var(--sc) 50%);
-  --ac50: color-mix(in srgb, transparent,var(--ac) 50%);
-  --bc50: color-mix(in srgb, transparent,var(--bc) 50%);
+  --gr40: color-mix(in srgb, transparent,var(--GR) 40%);
+  --wh40: color-mix(in srgb, transparent,var(--WH) 40%);
+  --bk40: color-mix(in srgb, transparent,var(--BK) 40%);
+  --sc50: color-mix(in srgb, transparent,var(--SC) 50%);
+  --ac50: color-mix(in srgb, transparent,var(--AC) 50%);
+  --bc50: color-mix(in srgb, transparent,var(--BC) 50%);
   --tx50: color-mix(in srgb, transparent,var(--tx) 50%);
-  --gr50: color-mix(in srgb, transparent,var(--gr) 50%);
-  --wh50: color-mix(in srgb, transparent,var(--wh) 50%);
-  --bk50: color-mix(in srgb, transparent,var(--bk) 50%);
-  --sc60: color-mix(in srgb, transparent,var(--sc) 60%);
-  --ac60: color-mix(in srgb, transparent,var(--ac) 60%);
-  --bc60: color-mix(in srgb, transparent,var(--bc) 60%);
+  --gr50: color-mix(in srgb, transparent,var(--GR) 50%);
+  --wh50: color-mix(in srgb, transparent,var(--WH) 50%);
+  --bk50: color-mix(in srgb, transparent,var(--BK) 50%);
+  --sc60: color-mix(in srgb, transparent,var(--SC) 60%);
+  --ac60: color-mix(in srgb, transparent,var(--AC) 60%);
+  --bc60: color-mix(in srgb, transparent,var(--BC) 60%);
   --tx60: color-mix(in srgb, transparent,var(--tx) 60%);
-  --gr60: color-mix(in srgb, transparent,var(--gr) 60%);
-  --wh60: color-mix(in srgb, transparent,var(--wh) 60%);
-  --bk60: color-mix(in srgb, transparent,var(--bk) 60%);
-  --sc70: color-mix(in srgb, transparent,var(--sc) 70%);
-  --ac70: color-mix(in srgb, transparent,var(--ac) 70%);
-  --bc70: color-mix(in srgb, transparent,var(--bc) 70%);
+  --gr60: color-mix(in srgb, transparent,var(--GR) 60%);
+  --wh60: color-mix(in srgb, transparent,var(--WH) 60%);
+  --bk60: color-mix(in srgb, transparent,var(--BK) 60%);
+  --sc70: color-mix(in srgb, transparent,var(--SC) 70%);
+  --ac70: color-mix(in srgb, transparent,var(--AC) 70%);
+  --bc70: color-mix(in srgb, transparent,var(--BC) 70%);
   --tx70: color-mix(in srgb, transparent,var(--tx) 70%);
-  --gr70: color-mix(in srgb, transparent,var(--gr) 70%);
-  --wh70: color-mix(in srgb, transparent,var(--wh) 70%);
-  --bk70: color-mix(in srgb, transparent,var(--bk) 70%);
-  --sc80: color-mix(in srgb, transparent,var(--sc) 80%);
-  --ac80: color-mix(in srgb, transparent,var(--ac) 80%);
-  --bc80: color-mix(in srgb, transparent,var(--bc) 80%);
+  --gr70: color-mix(in srgb, transparent,var(--GR) 70%);
+  --wh70: color-mix(in srgb, transparent,var(--WH) 70%);
+  --bk70: color-mix(in srgb, transparent,var(--BK) 70%);
+  --sc80: color-mix(in srgb, transparent,var(--SC) 80%);
+  --ac80: color-mix(in srgb, transparent,var(--AC) 80%);
+  --bc80: color-mix(in srgb, transparent,var(--BC) 80%);
   --tx80: color-mix(in srgb, transparent,var(--tx) 80%);
-  --gr80: color-mix(in srgb, transparent,var(--gr) 80%);
-  --wh80: color-mix(in srgb, transparent,var(--wh) 80%);
-  --bk80: color-mix(in srgb, transparent,var(--bk) 80%);
-  --sc90: color-mix(in srgb, transparent,var(--sc) 90%);
-  --ac90: color-mix(in srgb, transparent,var(--ac) 90%);
-  --bc90: color-mix(in srgb, transparent,var(--bc) 90%);
+  --gr80: color-mix(in srgb, transparent,var(--GR) 80%);
+  --wh80: color-mix(in srgb, transparent,var(--WH) 80%);
+  --bk80: color-mix(in srgb, transparent,var(--BK) 80%);
+  --sc90: color-mix(in srgb, transparent,var(--SC) 90%);
+  --ac90: color-mix(in srgb, transparent,var(--AC) 90%);
+  --bc90: color-mix(in srgb, transparent,var(--BC) 90%);
   --tx90: color-mix(in srgb, transparent,var(--tx) 90%);
-  --gr90: color-mix(in srgb, transparent,var(--gr) 90%);
-  --wh90: color-mix(in srgb, transparent,var(--wh) 90%);
-  --bk90: color-mix(in srgb, transparent,var(--bk) 90%);
+  --gr90: color-mix(in srgb, transparent,var(--GR) 90%);
+  --wh90: color-mix(in srgb, transparent,var(--WH) 90%);
+  --bk90: color-mix(in srgb, transparent,var(--BK) 90%);
 }
 
 :root {
@@ -644,7 +644,7 @@ body {
   --rad3:calc(var(--rad)*3 );
   --radH:calc(var(--rad)/2 );
   --sheetR:var(--rad);
-  --sheetBG:var(--bc);
+  --sheetBG:var(--BC);
   --sheetP:var(--gap);
   --boardR:var(rad);
   --lineClamp:2;
@@ -655,12 +655,12 @@ body {
   --txshsc: 0 0 var(--tsW) var(--sc50);
   --txshtx: 0 0 var(--tsW) var(--tx50);
   --dsW:1rem;
-  --dswh: drop-shadow(0 0px var(--dsW) var(--wh));
-  --dsbk: drop-shadow(0 0px var(--dsW) var(--bk));
+  --dswh: drop-shadow(0 0px var(--dsW) var(--WH));
+  --dsbk: drop-shadow(0 0px var(--dsW) var(--BK));
   --dsmc: drop-shadow(0 0px var(--dsW) var(--mc));
-  --dsgr: drop-shadow(0 0px var(--dsW) var(--gr));
-  --pxshwh:0px 1px var(--wh);
-  --pxdswh:drop-shadow(1px 1px var(--wh));
+  --dsgr: drop-shadow(0 0px var(--dsW) var(--GR));
+  --pxshwh:0px 1px var(--WH);
+  --pxdswh:drop-shadow(1px 1px var(--WH));
   --bsW:4px;
   --bxshbk: 0 var(--bsW) calc(var(--bsW)*2 ) var(--bk20);
 }
@@ -691,17 +691,17 @@ body {
 }
 
 .txstwh {
-  -webkit-text-stroke: var(--stw) var(--wh);
+  -webkit-text-stroke: var(--stw) var(--WH);
   paint-order: stroke;
 }
 
 .txstbk {
-  -webkit-text-stroke: var(--stw) var(--bk);
+  -webkit-text-stroke: var(--stw) var(--BK);
   paint-order: stroke;
 }
 
 .txstsc {
-  -webkit-text-stroke: var(--stw) var(--sc);
+  -webkit-text-stroke: var(--stw) var(--SC);
   paint-order: stroke;
 }
 
@@ -986,7 +986,7 @@ div#form_calendar div.head span:nth-of-type(1):hover, div.calendar div.head span
 }
 
 div#form_calendar table tbody tr td.open.level1 span {
-  border-color: var(--gr);
+  border-color: var(--GR);
 }
 
 div#form_calendar table tbody tr td label, div.calendar table tbody tr td label,
@@ -1414,7 +1414,7 @@ html.page-blog div#form_calendar table tbody tr td.open {
   background: var(--mc20);
 }
 html.page-blog div#form_calendar table tbody tr td.close {
-  background: var(--ac);
+  background: var(--AC);
 }
 html.page-blog div#form_calendar dl.open,
 html.page-blog div#form_calendar dl.close {
@@ -1435,7 +1435,7 @@ html.page-blog div#form_calendar dl.open label {
   background: var(--mc20);
 }
 html.page-blog div#form_calendar dl.close label {
-  background: var(--ac);
+  background: var(--AC);
 }
 html.page-blog div#builingual {
   background: #f1f1f1;
@@ -2042,7 +2042,7 @@ section div#contents > article + article {
   border-top: 1px dashed var(--tx50);
 }
 section div#contents > article ul li a {
-  color: var(--wh);
+  color: var(--WH);
 }
 section div#contents > article h2 span {
   line-height: 2;
@@ -2052,14 +2052,14 @@ section div#contents > article time {
   padding: 0.25em 1em;
   border-radius: var(--radH);
   color: #fff;
-  background-color: var(--ac);
+  background-color: var(--AC);
 }
 
 html.page-blog.bk {
-  background-color: var(--bk);
+  background-color: var(--BK);
 }
 html.page-blog.bk section div.wrap {
-  background-color: var(--bk);
+  background-color: var(--BK);
 }
 @media (max-width: 834px) {
   html.page-blog.bk .fl37 > * {
@@ -2227,7 +2227,7 @@ div.items > article {
   line-height: 1.5;
   padding: 1em;
   padding-bottom: 1em;
-  border: 1px solid var(--gr);
+  border: 1px solid var(--GR);
 }
 div.items > article a.photo {
   width: 100%;
@@ -2875,7 +2875,7 @@ button:not([class*=_logo], [class*=slick] button):focus, a:not([class*=_logo], [
   --TLOff:.25em;
   --TLG:.25em;
   --btnBG:var(--mc);
-  --btnC:var(--wh);
+  --btnC:var(--WH);
   --hoverBG: var(--mc);
   --hoverC: var(--mc);
   --hoverFL: invert(0%) brightness(100%) saturate(100%);
@@ -3016,7 +3016,7 @@ button:not([class*=_logo], [class*=slick] button):focus, a:not([class*=_logo], [
   --btnFZ: calc(var(--emFZ)*1.325 );
   --btnW: 814px;
   --btnH: 17lvh;
-  color: var(--ac);
+  color: var(--AC);
   max-width: 100%;
   border-width: 4px;
   border-color: var(--btnC);
@@ -3054,17 +3054,17 @@ button:not([class*=_logo], [class*=slick] button):focus, a:not([class*=_logo], [
   display: block;
 }
 .btn.__bc, .__bc.btnL {
-  --btnBG: var(--bc);
+  --btnBG: var(--BC);
   color: var(--mc);
 }
 .btn.__mc, .__mc.btnL {
   --btnBG: var(--mc);
 }
 .btn.__ac, .__ac.btnL {
-  --btnBG: var(--ac);
+  --btnBG: var(--AC);
 }
 .btn.__sc, .__sc.btnL {
-  --btnBG: var(--sc);
+  --btnBG: var(--SC);
 }
 .btn:is(.txwh *), .btnL:is(.txwh *) {
   color: var(--btnC);
@@ -3122,7 +3122,7 @@ button:not([class*=_logo], [class*=slick] button):focus, a:not([class*=_logo], [
           transform: unset;
 }
 .btn:is(.txbk *), .btnL:is(.txbk *), .btn.__bk, .__bk.btnL {
-  color: var(--wh);
+  color: var(--WH);
 }
 .btn i, .btnL i {
   font-size: var(--btnIFZ);
@@ -3185,10 +3185,10 @@ a.label {
 }
 
 .textlink.__wh {
-  --TLC:var(--wh);
+  --TLC:var(--WH);
 }
 .textlink.__bc {
-  --TLC:var(--bc);
+  --TLC:var(--BC);
 }
 .textlink.__anchor:after:is([target=_blank]:after) {
   content: "\f35d";
@@ -3216,7 +3216,7 @@ a.label {
   color: #fff;
   border-radius: 1000px;
   margin-left: 0.5em;
-  background-color: var(--ac);
+  background-color: var(--AC);
   align-content: center;
   -webkit-transition: var(--btnTR);
   transition: var(--btnTR);
@@ -3424,8 +3424,8 @@ p:has(> a) .__anchor {
 .h_nav .drop ul li,
 .btn:not([href*=tel], span, .__grad),
 .btnL:not([href*=tel], span, .__grad) {
-  background-image: -webkit-gradient(linear, left top, right top, from(var(--wh)), to(var(--wh)));
-  background-image: linear-gradient(to right, var(--wh), var(--wh));
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--WH)), to(var(--WH)));
+  background-image: linear-gradient(to right, var(--WH), var(--WH));
   background-position-x: -103%;
   background-size: 300% 100%;
 }
@@ -3680,14 +3680,14 @@ p:has(> a) .__anchor {
   margin-top: 20px;
 }
 .fb_qa .box {
-  --bfC: var(--wh);
+  --bfC: var(--WH);
   --bfBG: var(--mc);
-  --abfBG: var(--ac);
+  --abfBG: var(--AC);
   --bfFZ: 1.5em;
   --bfFF: var(--Eng);
   --bfRad:var(--rad);
   --bfPX:0.125em;
-  --qBG:var(--bc);
+  --qBG:var(--BC);
   --aBG:var(--un);
   --imgW:30%;
   --imgWsp:320px;
@@ -3830,14 +3830,14 @@ p:has(> a) .__anchor {
   margin-top: 20px;
 }
 .fb_qa2 .box {
-  --bfC: var(--wh);
+  --bfC: var(--WH);
   --bfBG: var(--mc);
-  --abfBG: var(--ac);
+  --abfBG: var(--AC);
   --bfFZ: 1.5em;
   --bfFF: var(--Eng);
   --bfRad:var(--rad);
   --bfPX:0.125em;
-  --qBG:var(--bc);
+  --qBG:var(--BC);
   --aBG:var(--un);
   --imgW:30%;
   --imgWsp:320px;
@@ -3996,7 +3996,7 @@ p:has(> a) .__anchor {
   position: relative;
   --mt:var(--block5);
   --p: var(--gap);
-  --bg:var(--wh);
+  --bg:var(--WH);
   --beforeFZ:75%;
   --beforeC:var(--mc);
   --afterBG:var(--mc);
@@ -4119,8 +4119,8 @@ p:has(> a) .__anchor {
   display: inline-block;
   width: 3em;
   aspect-ratio: 1;
-  background-color: var(--ac);
-  color: var(--wh);
+  background-color: var(--AC);
+  color: var(--WH);
   border-radius: 1000px;
   text-align: center;
   -ms-flex-line-pack: center;
@@ -4163,22 +4163,22 @@ p:has(> a) .__anchor {
   --boxBG:var(--mc);
 }
 .box-bc {
-  --boxBG:var(--bc);
+  --boxBG:var(--BC);
 }
 .box-sc {
-  --boxBG:var(--sc);
+  --boxBG:var(--SC);
 }
 .box-ac {
-  --boxBG:var(--ac);
+  --boxBG:var(--AC);
 }
 .box-wh {
-  --boxBG:var(--wh);
+  --boxBG:var(--WH);
 }
 .box-gr {
-  --boxBG:var(--gr);
+  --boxBG:var(--GR);
 }
 .box-bk {
-  --boxBG:var(--bk);
+  --boxBG:var(--BK);
 }
 .box-mc .box, .box-bc .box, .box-sc .box, .box-ac .box, .box-wh .box, .box-gr .box, .box-bk .box {
   background-color: var(--boxBG);
@@ -4199,19 +4199,19 @@ p:has(> a) .__anchor {
   --artBG:var(--mcLT);
 }
 .art-bc {
-  --artBG:var(--bc);
+  --artBG:var(--BC);
 }
 .art-sc {
-  --artBG:var(--sc);
+  --artBG:var(--SC);
 }
 .art-ac {
-  --artBG:var(--ac);
+  --artBG:var(--AC);
 }
 .art-wh {
-  --artBG:var(--wh);
+  --artBG:var(--WH);
 }
 .art-bk {
-  --artBG:var(--bk);
+  --artBG:var(--BK);
 }
 .art-mc > article, .art-mcLT > article, .art-bc > article, .art-sc > article, .art-ac > article, .art-wh > article, .art-bk > article {
   background-color: var(--artBG);
@@ -4276,13 +4276,13 @@ p:has(> a) .__anchor {
   background-color: var(--mc);
 }
 .form_wrap.__firstbc:is(#contents *) dl:first-child {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .form_wrap dt > span {
   color: var(--mc);
 }
 .form_wrap.hash-ac dt > span {
-  color: var(--ac);
+  color: var(--AC);
 }
 .form_wrap.noscr {
   overflow: unset;
@@ -4377,7 +4377,7 @@ p:has(> a) .__anchor {
   background-color: unset;
 }
 .form_wrap.form_zebra dl:is(#contents *, #footer *):nth-of-type(odd) {
-  background-color: var(--wh);
+  background-color: var(--WH);
 }
 .form_wrap.form_zebra dl:is(#contents *, #footer *) > * {
   padding-top: 0;
@@ -4751,7 +4751,7 @@ p:has(> a) .__anchor {
 .form_wrap.form_02 .btn {
   margin-top: 0;
   margin-left: 1.5em;
-  color: var(--wh);
+  color: var(--WH);
   text-decoration: none;
 }
 .form_wrap.form_02 > br {
@@ -4882,7 +4882,7 @@ p:has(> a) .__anchor {
 .form_wrap.form_03 .btn {
   margin-top: 0;
   margin-left: 1.5em;
-  color: var(--wh);
+  color: var(--WH);
   text-decoration: none;
 }
 .form_wrap.form_03 > br {
@@ -5017,7 +5017,7 @@ p:has(> a) .__anchor {
 .form_wrap.form_04 .btn {
   margin-top: 0;
   margin-left: 1.5em;
-  color: var(--wh);
+  color: var(--WH);
   text-decoration: none;
 }
 .form_wrap.form_04 > br {
@@ -5340,7 +5340,7 @@ p:has(> a) .__anchor {
 }
 .sns_slide {
   --ulBG:var(--mc);
-  --ulC:var(--wh);
+  --ulC:var(--WH);
   --dateC: var(--mc);
   --dateFW: 500;
   --dateFZ: 110%;
@@ -5835,7 +5835,7 @@ div.blog_it {
   overflow-y: scroll;
   --pdb: 0.5em;
   --bdc: var(--tx50);
-  --dateC: var(--sc);
+  --dateC: var(--SC);
   --maxH: 60lvh;
   line-height: 1.5;
 }
@@ -6067,13 +6067,13 @@ div[class*=blog_card]::-webkit-scrollbar {
   height: 0;
 }
 div[class*=blog_card]::-webkit-scrollbar-thumb {
-  background-color: var(--gr);
+  background-color: var(--GR);
   border-radius: 0px;
 }
 
 .sns01 {
   --imgW: max(240px, 22em);
-  --divBG:var(--bc);
+  --divBG:var(--BC);
 }
 .sns01.noscr {
   height: unset;
@@ -6181,7 +6181,7 @@ div[class*=blog_card]::-webkit-scrollbar-thumb {
   margin-top: auto;
 }
 .sns01 div.sns_list > div div.sns_text ul a {
-  color: var(--wh);
+  color: var(--WH);
   margin-right: 0.5em;
   margin-top: 0.5em;
   line-height: 1.5;
@@ -6237,7 +6237,7 @@ div[class*=sns_card].__visible .slick-list {
 div[class*=sns_card] {
   max-width: 100%;
   --ulBG:var(--mc);
-  --ulC:var(--wh);
+  --ulC:var(--WH);
   --dateC: var(--un);
   --dateFW: bold;
   --capFZ: var(--bodyFZ);
@@ -6504,7 +6504,7 @@ img.mfp-img {
   display: block;
   width: 100%;
   height: 100%;
-  text-shadow: 2px 0 var(--wh);
+  text-shadow: 2px 0 var(--WH);
   line-height: 1;
 }
 
@@ -6637,7 +6637,7 @@ figure:has(> .figuDC) > .figuDC {
   text-decoration: none;
   display: inline-block;
   background-color: var(--mc);
-  color: var(--wh);
+  color: var(--WH);
   padding-block: 0.25em;
   padding-inline: 0.5em;
   -webkit-margin-end: 0.5em;
@@ -6653,7 +6653,7 @@ figure:has(> .figuDC) > .figuDC {
   text-decoration: none;
   display: inline-block;
   background-color: var(--mc);
-  color: var(--wh) !important;
+  color: var(--WH) !important;
   padding-block: 0.25em;
   padding-inline: 0.5em;
   -webkit-margin-end: 0.5em;
@@ -6715,7 +6715,7 @@ div:has(> .bgToRight, > .bgToBottom) {
 .board {
   border: var(--line);
   border-radius: var(--boardR);
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .board:before {
   content: "";
@@ -7013,10 +7013,10 @@ div:has(> .bgToRight, > .bgToBottom) {
   background-color: var(--mc);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__ac *) {
-  background-color: var(--ac);
+  background-color: var(--AC);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__sc *) {
-  background-color: var(--sc);
+  background-color: var(--SC);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__mc50 *) {
   background-color: var(--mc50);
@@ -7037,13 +7037,13 @@ div:has(> .bgToRight, > .bgToBottom) {
   background-color: var(--sc2);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__bc *) {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__wh *) {
-  background-color: var(--wh);
+  background-color: var(--WH);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__bk *) {
-  background-color: var(--bk);
+  background-color: var(--BK);
 }
 .H-bg :is(h1, h2, h3, h4, h5):is(.__tx *) {
   background-color: var(--tx);
@@ -7062,10 +7062,10 @@ div:has(> .bgToRight, > .bgToBottom) {
   border-bottom-color: var(--mc);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__ac *) {
-  border-bottom-color: var(--ac);
+  border-bottom-color: var(--AC);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__sc *) {
-  border-bottom-color: var(--sc);
+  border-bottom-color: var(--SC);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__mc50 *) {
   border-bottom-color: var(--mc50);
@@ -7086,13 +7086,13 @@ div:has(> .bgToRight, > .bgToBottom) {
   border-bottom-color: var(--sc2);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__bc *) {
-  border-bottom-color: var(--bc);
+  border-bottom-color: var(--BC);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__wh *) {
-  border-bottom-color: var(--wh);
+  border-bottom-color: var(--WH);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__bk *) {
-  border-bottom-color: var(--bk);
+  border-bottom-color: var(--BK);
 }
 .H-bd :is(h1, h2, h3, h4, h5, p):is(.__tx *) {
   border-bottom-color: var(--tx);
@@ -7116,7 +7116,7 @@ div:has(> .bgToRight, > .bgToBottom) {
 .head_01 {
   padding-inline: var(--inBase);
   padding-block: 2em;
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .head_01 h1 + div:not(:empty), .head_01 h2 + div:not(:empty), .head_01 h3 + div:not(:empty), .head_01 h4 + div:not(:empty), .head_01 h5 + div:not(:empty) {
   margin-top: 1em;
@@ -7124,7 +7124,7 @@ div:has(> .bgToRight, > .bgToBottom) {
 .head_02 {
   padding-inline: var(--inBase);
   padding-block: 1em;
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .head_02 h1 + div:not(:empty), .head_02 h2 + div:not(:empty), .head_02 h3 + div:not(:empty), .head_02 h4 + div:not(:empty), .head_02 h5 + div:not(:empty) {
   margin-top: 1em;
@@ -7208,22 +7208,22 @@ div:has(> .bgToRight, > .bgToBottom) {
   background: no-repeat center/cover;
 }
 .bgbk {
-  background-color: var(--bk);
+  background-color: var(--BK);
 }
 .bgmc {
   background-color: var(--mc);
 }
 .bgbc {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .bgsc {
-  background-color: var(--sc);
+  background-color: var(--SC);
 }
 .bgac {
-  background-color: var(--ac);
+  background-color: var(--AC);
 }
 .bgwh {
-  background-color: var(--wh);
+  background-color: var(--WH);
 }
 .bg_top {
   background: no-repeat center 0%/auto;
@@ -7286,27 +7286,27 @@ div:has(> .bgToRight, > .bgToBottom) {
   font-weight: bold;
 }
 .tbl_normal.firstBC tr:first-of-type, .tbl_scroll.firstBC tr:first-of-type {
-  background-color: var(--bc);
+  background-color: var(--BC);
   font-weight: bold;
 }
 .tbl_normal.firstBC td:first-of-type, .tbl_scroll.firstBC td:first-of-type {
-  background-color: var(--bc);
+  background-color: var(--BC);
   font-weight: bold;
 }
 .tbl_normal.firstSC tr:first-of-type, .tbl_scroll.firstSC tr:first-of-type {
-  background-color: var(--sc);
+  background-color: var(--SC);
   font-weight: bold;
-  color: var(--wh);
+  color: var(--WH);
 }
 .tbl_normal.firstSC td:first-of-type, .tbl_scroll.firstSC td:first-of-type {
-  background-color: var(--sc);
+  background-color: var(--SC);
   font-weight: bold;
-  color: var(--wh);
+  color: var(--WH);
 }
 .tbl_normal.firstAC tr:first-of-type, .tbl_scroll.firstAC tr:first-of-type {
-  background-color: var(--ac);
+  background-color: var(--AC);
   font-weight: bold;
-  color: var(--wh);
+  color: var(--WH);
 }
 .tbl_normal.firstAC td:first-of-type, .tbl_scroll.firstAC td:first-of-type {
   background-color: var(--ac30);
@@ -7341,7 +7341,7 @@ div:has(> .bgToRight, > .bgToBottom) {
 }
 
 .tbl01 tr:first-of-type {
-  background-color: var(--bc);
+  background-color: var(--BC);
   font-weight: bold;
 }
 
@@ -7463,7 +7463,7 @@ header#global_header {
   --PTAF: var(--btnAF);
   --PTscale: 1.5;
   --PTC: var(--mc);
-  --PTBG: var(--bc);
+  --PTBG: var(--BC);
   --PTRad: var(--btnRad);
   --PTW: calc(var(--btnH));
   --PTbottom: var(--gapH);
@@ -7551,8 +7551,8 @@ header#global_header {
   --navLH: 1.75;
   --navFW: inherit;
   --dropBG:var(--mc);
-  --dropC:var(--wh);
-  --SPnavBG: var(--wh);
+  --dropC:var(--WH);
+  --SPnavBG: var(--WH);
   --SPnavFZ: 1em;
   --dropbtnBG:var(--un);
   --dropbtnBF:var(--cur);
@@ -7897,7 +7897,7 @@ header#global_header {
   padding: calc(var(--headG) / 2);
 }
 .h:has(.h_nav.__tate) nav.__tate > ul li:hover {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .h:has(.h_nav.__tate) nav.__tate > ul li.drop {
   z-index: 1;
@@ -7913,7 +7913,7 @@ header#global_header {
   transition: var(--btnTR);
 }
 .h:has(.h_nav.__tate) nav.__tate > ul li.drop ul li:hover {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 .h:has(.h_nav.__tate) nav.__tate > ul li.drop ul li {
   height: unset;
@@ -7939,7 +7939,7 @@ header#global_header {
   padding-block: 0.5em;
 }
 .h:has(.h_nav.__tate) nav.KUSHI > ul > li.drop::after {
-  background-color: var(--ac);
+  background-color: var(--AC);
 }
 .h:has(.h_nav.__tate).trans .btn {
   background-color: color-mix(in srgb, var(--btnBG), transparent 30%);
@@ -8200,7 +8200,7 @@ header#global_header {
 }
 .h.leftSide .h_items {
   --btnBG:var(--mc);
-  --btnC:var(--wh);
+  --btnC:var(--WH);
   z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8309,7 +8309,7 @@ header#global_header {
     pointer-events: all;
   }
   .h.leftSide:is(.active) .h_inner {
-    background-color: var(--bc);
+    background-color: var(--BC);
   }
   .h.leftSide .focus_trap {
     display: none;
@@ -8417,7 +8417,7 @@ header#global_header {
 }
 .h.navColumnRight .h_nav:is(.trans *) {
   --tsW: 12px;
-  --txshbk: 0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh);
+  --txshbk: 0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH);
 }
 .h.navColumnRight .h_nav > ul li.drop ul {
   right: 0;
@@ -8462,7 +8462,7 @@ header#global_header {
 }
 .h.navBtn .h_menu {
   --btnH: var(--head);
-  --btnBG:var(--wh);
+  --btnBG:var(--WH);
   background-color: var(--btnBG);
   border-radius: unset;
 }
@@ -9184,7 +9184,7 @@ header#global_header {
           margin-inline-start: 0.25em;
   font-family: var(--icon);
   font-weight: 900;
-  color: var(--ac);
+  color: var(--AC);
 }
 .h_nav {
   font-size: var(--navFZ);
@@ -9533,7 +9533,7 @@ header#global_header {
   visibility: visible;
 }
 .nav .focus_trap.__cross {
-  background-image: linear-gradient(-45deg, transparent, transparent calc(50% - 1px), var(--bk) 50%, transparent calc(50% + 1px)), linear-gradient(45deg, transparent, transparent calc(50% - 1px), var(--bk) 50%, transparent calc(50% + 1px));
+  background-image: linear-gradient(-45deg, transparent, transparent calc(50% - 1px), var(--BK) 50%, transparent calc(50% + 1px)), linear-gradient(45deg, transparent, transparent calc(50% - 1px), var(--BK) 50%, transparent calc(50% + 1px));
   position: fixed;
   top: 0;
   right: 0;
@@ -9785,7 +9785,7 @@ header#global_header {
   content: "\f105";
   font-family: var(--icon);
   font-weight: var(--btnAFFW);
-  color: var(--sc);
+  color: var(--SC);
   font-size: 0.75em;
   margin-right: 0.25em;
 }
@@ -9899,7 +9899,7 @@ footer#global_footer:is(html:has(.bgFix, .mv_slide.__bg) *) {
   padding-inline: 0 2em;
 }
 #footer .f_nav li > span {
-  color: var(--gr);
+  color: var(--GR);
 }
 
 .f > * {
@@ -9985,7 +9985,7 @@ footer#global_footer:is(html:has(.bgFix, .mv_slide.__bg) *) {
   width: 5em;
   height: 5em;
   font-size: var(--f20);
-  background-color: var(--ac);
+  background-color: var(--AC);
   color: #fff;
   z-index: 100;
   text-align: center;
@@ -10206,7 +10206,7 @@ body {
 
 time {
   font-size: var(--bodyFZ);
-  color: var(--ac);
+  color: var(--AC);
   font-weight: 700;
   letter-spacing: inherit;
   display: inline-block;
@@ -10276,7 +10276,7 @@ span.sub, :where(small) {
   margin-bottom: 0.25em;
 }
 :is(p:not(:has(> a)), h1, h2, h3, h4):has(small) small:is(.txwh *) {
-  color: var(--wh);
+  color: var(--WH);
 }
 :is(p:not(:has(> a)), h1, h2, h3, h4):has(em) {
   font-size: var(--bodyFZ);
@@ -10297,7 +10297,7 @@ em + br {
   display: none;
 }
 em::first-letter {
-  color: var(--ac);
+  color: var(--AC);
 }
 em:is(.title1 *)::first-letter {
   color: inherit;
@@ -10352,7 +10352,7 @@ p:has(> a) {
   --maxH:26em;
 }
 #contents .form_simple:is(.txwh *) {
-  color: var(--wh) !important;
+  color: var(--WH) !important;
 }
 #contents .form_simple dt {
   font-weight: 700;
@@ -10377,10 +10377,10 @@ p:has(> a) {
 }
 
 .title1 .txwh * {
-  color: var(--wh) !important;
+  color: var(--WH) !important;
 }
 .title1 .txbk * {
-  color: var(--bk) !important;
+  color: var(--BK) !important;
 }
 .title1 {
   margin-top: calc(var(--head) * 1);
@@ -10453,7 +10453,7 @@ p:has(> a) {
   padding-inline: var(--inBase);
   padding-block: var(--block5);
   height: 100%;
-  color: var(--wh);
+  color: var(--WH);
   text-align: right;
   font-size: var(--f24);
 }
@@ -10505,7 +10505,7 @@ html.page-blog section div#contents > dl dt > div > a {
 }
 
 html.page-blog section div#contents > dl dt span.translate {
-  background-color: var(--bc);
+  background-color: var(--BC);
   padding: 0.5em 0.25em;
   text-decoration: none;
 }
@@ -10535,7 +10535,7 @@ html.page-blog section div#contents > dl dt span.translate {
   font-weight: 900;
   margin-right: 0.33em;
   display: inline-block;
-  color: var(--ac);
+  color: var(--AC);
   width: 1em;
   aspect-ratio: 1;
   background-color: var(--iconC);
@@ -10571,7 +10571,7 @@ html.page-blog section div#contents > dl dt span.translate {
   gap: 0.5em;
 }
 .p-strong p:nth-child(odd) {
-  background-color: var(--wh);
+  background-color: var(--WH);
 }
 .p-strong strong {
   min-width: 4.5em;
@@ -10599,11 +10599,11 @@ html.page-blog section div#contents > dl dt span.translate {
   padding-left: var(--shift);
 }
 .fb_column.even-sc .box:nth-child(even) {
-  background-color: var(--sc);
+  background-color: var(--SC);
   color: #fff;
 }
 .fb_column.__second .box {
-  background-color: var(--bc);
+  background-color: var(--BC);
   --gap: 20px;
 }
 .fb_column .box {
@@ -10655,19 +10655,19 @@ html.page-blog section div#contents > dl dt span.translate {
   margin-bottom: 0.5em;
 }
 .fb_column .box:has(div > [class*=bg]):after {
-  background-color: var(--wh);
+  background-color: var(--WH);
   color: var(--mc);
 }
 .fb_column .box:has(div > [class*=bg]) article > div {
-  color: var(--wh);
+  color: var(--WH);
 }
 .fb_column .box:has(div > [class*=bg]) article > div h1,
 .fb_column .box:has(div > [class*=bg]) article > div h2,
 .fb_column .box:has(div > [class*=bg]) article > div h3 {
-  border-color: var(--wh);
+  border-color: var(--WH);
 }
 .fb_column .box:has(div > [class*=bg]) article > div em {
-  color: var(--wh);
+  color: var(--WH);
 }
 .fb_column .box:has(div > [class*=bg]) article > div [class*=bg] {
   display: none;
@@ -10676,10 +10676,10 @@ html.page-blog section div#contents > dl dt span.translate {
   background-color: var(--mc);
 }
 .fb_column .box:has(div > .bgac) article > div {
-  background-color: var(--ac);
+  background-color: var(--AC);
 }
 .fb_column .box:has(div > .bgsc) article > div {
-  background-color: var(--sc);
+  background-color: var(--SC);
 }
 
 @media (max-width: 960px) {
@@ -10745,7 +10745,7 @@ html.page-blog section div#contents > dl dt span.translate {
 }
 
 .fb_flow {
-  --bg:var(--wh);
+  --bg:var(--WH);
   --beforeFZ:75%;
   --beforeC:var(--mc);
   --afterBG:var(--mc);
@@ -10763,7 +10763,7 @@ html.page-blog section div#contents > dl dt span.translate {
 
 .fb_flow .box:is(#contents div) article div > :is(p, h3, h2) {
   font-size: var(--PFZ);
-  border-bottom: 1px solid var(--sc);
+  border-bottom: 1px solid var(--SC);
   padding-block: 0.25em;
   margin-bottom: 0.5em;
   font-weight: var(--hfw);
@@ -10857,7 +10857,7 @@ html.page-blog section div#contents > dl dt span.translate {
 }
 
 .naname {
-  --nanameBG:var(--bc);
+  --nanameBG:var(--BC);
   --vw:22.5vw;
 }
 @media (max-width: 834px) {
@@ -11009,7 +11009,7 @@ html.page-blog section div#contents > dl dt span.translate {
 .p-mark p,
 .H-mark :is(h1, h2, h3),
 mark {
-  --bdc: var(--bc);
+  --bdc: var(--BC);
   color: inherit;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, transparent), color-stop(50%, var(--bdc)));
   background: linear-gradient(transparent 50%, var(--bdc) 50%);
@@ -11312,7 +11312,7 @@ mark:is(.box *) {
 
 #contents .absRT.sheet {
   line-height: 1;
-  color: var(--ac);
+  color: var(--AC);
   rotate: 10deg;
 }
 
@@ -11325,7 +11325,7 @@ mark:is(.box *) {
   display: none;
 }
 .p-bd.txwh {
-  --bdc: var(--wh);
+  --bdc: var(--WH);
 }
 
 .video_container {
@@ -11655,12 +11655,12 @@ mark:is(.box *) {
 
 .hueGrad {
   /* linear-gradient の色指定の中で、
-     oklch(from var(--bc) l c h + 角度) を使って色相をずらします。
+     oklch(from var(--BC) l c h + 角度) を使って色相をずらします。
   */
-  background: -webkit-gradient(linear, left top, right top, from(oklch(from var(--bc) l c h160)), color-stop(20%, oklch(from var(--bc) l c h120)), color-stop(40%, oklch(from var(--bc) l c h80)), color-stop(60%, oklch(from var(--bc) l c h40)), color-stop(80%, var(--bc)));
-  background: linear-gradient(to right, oklch(from var(--bc) l c h160) 0% 20%, oklch(from var(--bc) l c h120) 20% 40%, oklch(from var(--bc) l c h80) 40% 60%, oklch(from var(--bc) l c h40) 60% 80%, var(--bc) 80% 100%);
-  background: -webkit-gradient(linear, left top, right top, from(hsl(from var(--bc) h160 c l)), color-stop(20%, hsl(from var(--bc) h120 c l)));
-  background: linear-gradient(to right, hsl(from var(--bc) h160 c l) 0% 20%, hsl(from var(--bc) h120 c l) 20% 40%);
+  background: -webkit-gradient(linear, left top, right top, from(oklch(from var(--BC) l c h160)), color-stop(20%, oklch(from var(--BC) l c h120)), color-stop(40%, oklch(from var(--BC) l c h80)), color-stop(60%, oklch(from var(--BC) l c h40)), color-stop(80%, var(--BC)));
+  background: linear-gradient(to right, oklch(from var(--BC) l c h160) 0% 20%, oklch(from var(--BC) l c h120) 20% 40%, oklch(from var(--BC) l c h80) 40% 60%, oklch(from var(--BC) l c h40) 60% 80%, var(--BC) 80% 100%);
+  background: -webkit-gradient(linear, left top, right top, from(hsl(from var(--BC) h160 c l)), color-stop(20%, hsl(from var(--BC) h120 c l)));
+  background: linear-gradient(to right, hsl(from var(--BC) h160 c l) 0% 20%, hsl(from var(--BC) h120 c l) 20% 40%);
 }
 
 .hueGrad {
@@ -11686,11 +11686,11 @@ mark:is(.box *) {
 }
 .hueGrad {
   /* 3. 変数に基づいた色の生成 */
-  --c1: oklch(from var(--bc) l var(--ch) calc(h + var(--h1)));
-  --c2: oklch(from var(--bc) l var(--ch) calc(h + var(--h2)));
-  --c3: oklch(from var(--bc) l var(--ch) calc(h + var(--h3)));
-  --c4: oklch(from var(--bc) l var(--ch) calc(h + var(--h4)));
-  --c5: oklch(from var(--bc) l var(--ch) calc(h + var(--h5)));
+  --c1: oklch(from var(--BC) l var(--ch) calc(h + var(--h1)));
+  --c2: oklch(from var(--BC) l var(--ch) calc(h + var(--h2)));
+  --c3: oklch(from var(--BC) l var(--ch) calc(h + var(--h3)));
+  --c4: oklch(from var(--BC) l var(--ch) calc(h + var(--h4)));
+  --c5: oklch(from var(--BC) l var(--ch) calc(h + var(--h5)));
   background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--c1)), color-stop(20%, var(--c2)), color-stop(40%, var(--c3)), color-stop(60%, var(--c4)), color-stop(80%, var(--c5)));
   background: linear-gradient(to right, var(--c1) 0 20%, var(--c2) 20% 40%, var(--c3) 40% 60%, var(--c4) 60% 80%, var(--c5) 80% 100%);
 }
@@ -11756,7 +11756,7 @@ mark:is(.box *) {
 }
 
 .sheet {
-  background-color: var(--bc);
+  background-color: var(--BC);
 }
 
 .board {
@@ -11879,7 +11879,7 @@ mark:is(.box *) {
   width: 960px;
   max-width: 100%;
   padding: var(--inline);
-  background-color: var(--wh);
+  background-color: var(--WH);
 }
 .mfp-content figure {
   display: -webkit-box;
@@ -11909,7 +11909,7 @@ mark:is(.box *) {
 .mfp-content .mfp-title {
   text-align: left;
   line-height: 2;
-  color: var(--wh);
+  color: var(--WH);
   word-wrap: unset;
   color: var(--tx);
   font-size: var(--bodyFZ);
@@ -11993,7 +11993,7 @@ div.blog_list div.blog_date {
 
 div.blog_form .blog_text:is(#contents *) ul a {
   padding: 0.25em 0.5em;
-  background-color: var(--sc);
+  background-color: var(--SC);
   border-radius: 999px;
   margin: unset;
 }
@@ -12053,7 +12053,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
   }
 }
 .veil.__arrow:hover:after {
-  background-color: var(--sc);
+  background-color: var(--SC);
   scale: 1.25;
 }
 
@@ -12118,7 +12118,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
   --arrowR: 999px;
   --arrowFZ: 2em;
   --arrowW: 1.75em;
-  --arrowC: var(--wh);
+  --arrowC: var(--WH);
 }
 @media (max-width: 1800px) {
   [class*=_slide]:not(.mv_slide) {
@@ -12217,7 +12217,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
 }
 [class*=_slide]:not(.mv_slide) .buttons .button:hover {
   cursor: pointer;
-  background-color: var(--ac);
+  background-color: var(--AC);
   color: #fff;
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease;
@@ -12259,7 +12259,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
   line-height: 1.25;
 }
 .H-td :is(h1, h2, h3):is(.txwh *) {
-  --bdc: var(--wh);
+  --bdc: var(--WH);
 }
 .H-td :is(h1, h2, h3) {
   text-decoration: underline;
@@ -12361,7 +12361,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  color: var(--wh);
+  color: var(--WH);
   text-shadow: var(--txshbk);
   letter-spacing: -0.025em;
   padding: calc(var(--emFZ) * 0.875);
@@ -12627,7 +12627,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
 :is(.card3, .card2, .card4, .card5, .cardflex, .cardfix).__price i {
   font-size: var(--emFZ);
   font-family: var(--Eng);
-  color: var(--ac);
+  color: var(--AC);
 }
 :is(.card3, .card2, .card4, .card5, .cardflex, .cardfix).__price :is(h1, h2, h3) {
   display: block;
@@ -12670,7 +12670,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
       align-content: center;
   text-align: center;
   border-radius: 1000px;
-  color: var(--sc);
+  color: var(--SC);
   font-size: 2em;
   align-content: center;
   -webkit-transition: var(--btnTR);
@@ -13036,7 +13036,7 @@ div.blog_form .blog_text:is(#contents *) ul a {
 }
 
 .H-bg {
-  --bgc: var(--bc);
+  --bgc: var(--BC);
   --color: var(--inh);
   --subC: var(--mc);
 }
@@ -13050,11 +13050,11 @@ div.blog_form .blog_text:is(#contents *) ul a {
   color: var(--inh);
 }
 .H-bg.__ac {
-  --bgc: var(--ac);
-  --color: var(--wh);
+  --bgc: var(--AC);
+  --color: var(--WH);
 }
 .H-bg.__ac :is(h1, h2, h3) i {
-  color: var(--wh);
+  color: var(--WH);
 }
 
 .p-dot p {
@@ -13121,12 +13121,12 @@ div.blog_form .blog_text:is(#contents *) ul a {
 hr {
   border-bottom: var(--line);
   margin-top: 1em;
-  border-color: var(--gr);
+  border-color: var(--GR);
 }
 
 .div-line article > div > div {
   --LH:3em;
-  --bdc: var(--gr);
+  --bdc: var(--GR);
   line-height: var(--LH);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--bdc)), to(transparent)) repeat-y 0 calc(var(--bdw) * -1)/100% var(--LH);
   background: linear-gradient(to bottom, var(--bdc), transparent var(--bdw)) repeat-y 0 calc(var(--bdw) * -1)/100% var(--LH);
@@ -13134,7 +13134,7 @@ hr {
 
 .bg_line {
   --LH:3em;
-  --bdc: var(--gr);
+  --bdc: var(--GR);
   line-height: var(--LH);
   background: -webkit-gradient(linear, left top, left bottom, from(var(--bdc)), to(transparent)) repeat-y 0 calc(var(--bdw) * -1)/100% var(--LH);
   background: linear-gradient(to bottom, var(--bdc), transparent var(--bdw)) repeat-y 0 calc(var(--bdw) * -1)/100% var(--LH);
@@ -13241,7 +13241,7 @@ hr {
 :is(.mv_img, .mv_slide, .mv_video).__framed {
   overflow: hidden;
   border-radius: var(--rad2);
-  border: 10px solid var(--wh);
+  border: 10px solid var(--WH);
   margin-inline: auto 0;
   margin-block: var(--inline);
 }
@@ -13624,7 +13624,7 @@ hr {
 .fl_tx {
   position: relative;
   z-index: 1;
-  color: var(--wh);
+  color: var(--WH);
   margin-inline: 0 var(--Nshift);
   padding: var(--inline);
 }
@@ -13659,8 +13659,8 @@ hr {
 }
 
 [class*=band0] {
-  --L: var(--ac);
-  --R: var(--sc);
+  --L: var(--AC);
+  --R: var(--SC);
 }
 [class*=band0]:before, [class*=band0]:after {
   content: "";
@@ -13679,23 +13679,23 @@ hr {
 }
 
 .band01 {
-  --L: var(--ac);
-  --R: var(--sc);
+  --L: var(--AC);
+  --R: var(--SC);
 }
 .band01:before {
   top: var(--wrapperPY);
 }
 .band02 {
-  --L: var(--ac);
-  --R: var(--ac);
+  --L: var(--AC);
+  --R: var(--AC);
 }
 .band03 {
   --L: var(--mc);
   --R: var(--mc);
 }
 .band04 {
-  --L: var(--sc);
-  --R: var(--sc);
+  --L: var(--SC);
+  --R: var(--SC);
 }
 
 .BF {
@@ -14219,19 +14219,19 @@ body > * .mb8p {
 }
 
 body > * .txwh, body > * .txwh * {
-  color: var(--wh);
+  color: var(--WH);
 }
 body > * .txbk, body > * .txbk *:not(a) {
-  color: var(--bk);
+  color: var(--BK);
 }
 body > * .txsc, body > * .txsc *:not(a) {
-  color: var(--sc);
+  color: var(--SC);
 }
 body > * .txbc, body > * .txbc *:not(a) {
-  color: var(--bc);
+  color: var(--BC);
 }
 body > * .txac, body > * .txac *:not(a) {
-  color: var(--ac);
+  color: var(--AC);
 }
 body > * .txtx, body > * .txtx *:not(a) {
   color: var(--tx);
@@ -14244,27 +14244,27 @@ body > * .txmc, body > * .txmc *:not(a) {
 }
 @media (max-width: 640px) {
   body > * .sp-wh, body > * .sp-wh *:not(a) {
-    color: var(--wh);
+    color: var(--WH);
   }
 }
 @media (max-width: 640px) {
   body > * .sp-bk, body > * .sp-bk *:not(a) {
-    color: var(--bk);
+    color: var(--BK);
   }
 }
 @media (max-width: 640px) {
   body > * .sp-sc, body > * .sp-sc *:not(a) {
-    color: var(--sc);
+    color: var(--SC);
   }
 }
 @media (max-width: 640px) {
   body > * .sp-bc, body > * .sp-bc *:not(a) {
-    color: var(--bc);
+    color: var(--BC);
   }
 }
 @media (max-width: 640px) {
   body > * .sp-ac, body > * .sp-ac *:not(a) {
-    color: var(--ac);
+    color: var(--AC);
   }
 }
 @media (max-width: 640px) {

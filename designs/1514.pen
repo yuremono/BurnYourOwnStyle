@@ -1,0 +1,28 @@
+{
+  "version": "2.8",
+  "children": [
+    {
+      "type": "frame",
+      "id": "giz7k",
+      "x": 0,
+      "y": 0,
+      "name": "1514",
+      "width": 1920,
+      "height": 3000,
+      "fill": "#F5F0E6",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "id": "OiHyu",
+          "x": 360,
+          "y": 120,
+          "name": "Pink Rectangle",
+          "fill": "#FFB6C1",
+          "width": 1200,
+          "height": 600
+        }
+      ]
+    }
+  ]
+}

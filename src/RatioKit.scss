@@ -3,7 +3,7 @@
 $menu: 834px;
 
 @mixin menu {@media screen and (max-width: $menu) {@content;}}
-@mixin max-md {@media (max-width: 767px) {@content;}}
+@mixin max-md {@include max-md {@content;}}
 @mixin max-sm {@media (max-width: 639px) {@content;}}
 @mixin max-xs {@media (max-width: 479px) {@content;}}
 
@@ -18,21 +18,7 @@ $menu: 834px;
 //     border: none;
 //     background-color: unset;
 // } 
-:root {//font
-    --Ser:  "Noto Serif JP",  serif;
-    --San:
-    "Noto Sans JP",
-    "メイリオ", Meiryo,
-    -apple-system, /* iOS/macOS */ 
-    BlinkMacSystemFont, /* macOS Safari/Chrome */
-    "Hiragino Sans", "Hiragino Kaku Gothic ProN", /* macOS日本語 */
-    "Yu Gothic Medium", "Yu Gothic", "Meiryo", /* Windows */
-    "Roboto", "Noto Sans CJK JP", /* Android */
-    sans-serif;
 
-    --bodyFF:  "Noto Sans JP", sans-serif;
-    --Eng:  "Noto Sans JP", sans-serif;
-}
 .Ser {font-family: var(--Ser);}
 .San {font-family: var(--San);}
 .Eng {font-family: var(--Eng);}
@@ -75,14 +61,28 @@ h4 {// --h3FZ
 } 
 .sub {//タイトルタグ内の小さい文字
     font-size: 0.75em;
-    color: var(--mc);
+    color: var(--MC);
     margin-right: 0.5em;
 }
 
 
 
 // *********************************
-
+:root {//font
+        --Ser:  "Noto Serif JP",  serif;
+        --San:
+        "Noto Sans JP",
+        "メイリオ", Meiryo,
+        -apple-system, /* iOS/macOS */ 
+        BlinkMacSystemFont, /* macOS Safari/Chrome */
+        "Hiragino Sans", "Hiragino Kaku Gothic ProN", /* macOS日本語 */
+        "Yu Gothic Medium", "Yu Gothic", "Meiryo", /* Windows */
+        "Roboto", "Noto Sans CJK JP", /* Android */
+        sans-serif;
+    
+        --FF:  "Noto Sans JP", sans-serif;
+        --Eng:  "Noto Sans JP", sans-serif;
+    }
 :root {//color 基本色設定はcommon.cssで設定 mc10~90で透明度指定
     --un: unset;
     --inh: inherit;
@@ -98,13 +98,13 @@ h4 {// --h3FZ
     --bk: #000;
     --wh: #fff;
 
-    --tsbk: .25rem .25rem var(--bk);
+    --tsbk: .25rem .25rem var(--BK);
 }
 
 :root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
     --head: 84px;
 
-    @media (max-width: 767px) {
+    @include max-md {
         --head: 60px;
     }
 
@@ -116,27 +116,27 @@ h4 {// --h3FZ
     --15MY: calc(var(--MY)*1.5);
     --2MY: calc(var(--MY)*2.0);
     --25MY: calc(var(--MY)*2.5);
-    --into: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), (var(--wid, 1080px) / 2)));
-    --in1800: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 900px));
-    --in1728: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 864px));
-    --in1680: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 840px));
-    --in1560: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 780px));
-    --in1536: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 768px));
-    --in1440: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 720px));
-    --in1320: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 660px));
-    --in1200: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 600px));
-    --in1080: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 540px));
-    --in1000: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 500px));
-    --in960: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 480px));
-    --in840: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 420px));
-    --in720: calc(50vw - clamp(0px, 50vw - var(--PX, 20px), 360px));
+    --into: calc(50vw - clamp(0px, 50vw - var(--PX), (var(--wid) / 2)));
+    --in1800: calc(50vw - clamp(0px, 50vw - var(--PX), 900px));
+    --in1728: calc(50vw - clamp(0px, 50vw - var(--PX), 864px));
+    --in1680: calc(50vw - clamp(0px, 50vw - var(--PX), 840px));
+    --in1560: calc(50vw - clamp(0px, 50vw - var(--PX), 780px));
+    --in1536: calc(50vw - clamp(0px, 50vw - var(--PX), 768px));
+    --in1440: calc(50vw - clamp(0px, 50vw - var(--PX), 720px));
+    --in1320: calc(50vw - clamp(0px, 50vw - var(--PX), 660px));
+    --in1200: calc(50vw - clamp(0px, 50vw - var(--PX), 600px));
+    --in1080: calc(50vw - clamp(0px, 50vw - var(--PX), 540px));
+    --in1000: calc(50vw - clamp(0px, 50vw - var(--PX), 500px));
+    --in960: calc(50vw - clamp(0px, 50vw - var(--PX), 480px));
+    --in840: calc(50vw - clamp(0px, 50vw - var(--PX), 420px));
+    --in720: calc(50vw - clamp(0px, 50vw - var(--PX), 360px));
     --out: calc(50% - 50vw);
 }
 
 :root {
-    --bodyFZ: 1rem;
-    @media (max-width: 834px) {
-        --bodyFZ: 0.875rem;
+    --FZ: 1rem;
+    @include max-md {
+        --FZ: 0.875rem;
     }
     --h1FZ: clamp(24px, 6.4vw, 64px);
     --h2FZ: clamp(20px, 3.2vw, 32px);
@@ -153,10 +153,10 @@ h4 {// --h3FZ
     --gapN: calc(var(--gap)*-1);
     --gapH: calc(var(--gap)/2);
 
-    @media (max-width : 1440px) {
+    @include menu {
         --gap: 16px;
     }
-    @media (max-width: 768px) {
+    @include max-md {
         --MY: 40px;
     }
     // @media (max-width : 640px) {}
@@ -166,25 +166,25 @@ h4 {// --h3FZ
 :root {
     --bds: solid;
     --bdw: 1px;
-    --bdc: var(--sc);
-    --line: var(--bdw, 1px) var(--bds, solid) var(--bdc, var(--sc));
+    --bdc: var(--SC);
+    --line: var(--bdw) var(--bds) var(--bdc,);
 
     --rad: 0vmin;
     --rad2: calc(var(--rad)*2);
     --radH: calc(var(--rad)/2);
-    --sheetR: var(--un, unset);
-    --sheetBG: var(--bc);
+    --sheetR: var(--un);
+    --sheetBG: var(--BC);
     --sheetP: 3vmin;
 }
 
-body {// --bodyFZ, --bodyFF, --tc
-    font-size: var(--bodyFZ, 1em);
+body {// --FZ, --FF, --tc
+    font-size: var(--FZ, 1em);
     overflow-x: hidden;
-    font-family: var(--bodyFF, sans-serif);
+    font-family: var(--FF);
     font-weight: 500;
     line-height: 2;
     letter-spacing: 0.025em;
-    color: var(--tc);
+    color: var(--TC);
     font-style: normal;
     background-color: unset;
 }
@@ -206,7 +206,7 @@ main>* {
 
     // --wid, --MY
     //ページ内コンテンツ div の初期設定_
-    width: var(--wid, 1080px);
+    width: var(--wid);
     max-width: 100%;
     margin-inline: auto;
     position: relative;
@@ -238,7 +238,7 @@ main>* {
 }
 
 .wid {// --wid
-    width: var(--wid, 1080px);
+    width: var(--wid);
 }
 
 .PX {// --PX
@@ -369,7 +369,7 @@ main>* {
         --itemW: 240px;
 
         .item {
-            width: var(--itemW, 240px);
+            width: var(--itemW);
         }
     }
 
@@ -426,7 +426,7 @@ main>* {
         outline: none;
         cursor: pointer;
         position: relative;
-        background-color: var(--qBG, var(--bc));
+        background-color: var(--qBG);
         padding: 1em;
         padding-right: 2.5em; // 矢印用の余白
         transition: .4s;
@@ -457,7 +457,7 @@ main>* {
     >div {
         position: relative;
         padding: 1em;
-        background-color: var(--aBG, var(--wh, #fff));
+        background-color: var(--aBG);
     }
 
     // 画像レイアウト（.has_img > figure + div の構造に対応）
@@ -514,15 +514,15 @@ main>* {
 
             &:before {
                 content: "";
-                font-family: var(--bfFF, var(--Eng));
-                color: var(--bfC, var(--wh, #fff));
-                background-color: var(--bfBG, var(--mc));
+                font-family: var(--bfFF);
+                color: var(--bfC);
+                background-color: var(--bfBG);
                 display: block;
                 position: absolute;
                 left: 1em;
                 top: 50%;
                 transform: translateY(-50%);
-                border-radius: var(--bfRad, var(--rad));
+                border-radius: var(--bfRad);
                 width: 2em;
                 aspect-ratio: 1;
                 align-content: center;
@@ -536,7 +536,7 @@ main>* {
 
         >div:before {
             content: "A";
-            background-color: var(--abfBG, var(--ac));
+            background-color: var(--abfBG);
         }
     }
 }
@@ -546,15 +546,15 @@ main>* {
     position: relative;
     --mt: var(--MY5);
     --p: 1em;
-    --bg: var(--bc);
+    --bg: var(--BC);
     --beforeFZ: 75%;
-    --beforeC: var(--mc);
+    --beforeC: var(--MC);
     --afterW: 2em;
-    --afterBG: var(--sc);
+    --afterBG: var(--SC);
     --imgW: 30%; // デフォルトの画像幅
 
     .item {
-        background-color: var(--bg, var(--bc));
+        background-color: var(--bg);
         counter-increment: cnt;
         width: 100%;
         display: flex;
@@ -621,7 +621,7 @@ main>* {
     &.IsFlow {
         .item {
             +.item {
-                margin-top: calc(var(--afterW, 2em) + 2em);
+                margin-top: calc(var(--afterW) + 2em);
             }
 
             &:after {
@@ -631,9 +631,9 @@ main>* {
                 top: calc(100% + 1em);
                 left: 50%;
                 transform: translateX(-50%);
-                width: var(--afterW, 2em);
+                width: var(--afterW);
                 aspect-ratio: 1;
-                background-color: var(--afterBG, var(--sc));
+                background-color: var(--afterB);
                 clip-path: polygon(0 0%, 50% 85%, 100% 0%);
             }
 

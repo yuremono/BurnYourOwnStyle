@@ -85,7 +85,7 @@ body{
     --Schild:var(--block);
     --Wchild:var(--block5);    
     --Hafter:30px;  
-    // --linkC:var(--ac);
+    // --linkC:var(--AC);
 
     --block:120px;
     --inline:72px;
@@ -126,7 +126,7 @@ body{
     --rad3:calc(var(--rad)*3 );
     --radH:calc(var(--rad)/2 );
     --sheetR:var(--rad);
-    --sheetBG:var(--bc);
+    --sheetBG:var(--BC);
     --sheetP:var(--gap);
     --boardR:var(rad);
     --lineClamp:2;
@@ -138,29 +138,29 @@ body{
     --txshmc: 0 0 var(--tsW)  var(--mc50); 
     --txshsc: 0 0 var(--tsW)  var(--sc50); 
     --txshtx: 0 0 var(--tsW)  var(--tx50); 
-    // --txshbc: 0 0 var(--tsW)  var(--bc); 
+    // --txshbc: 0 0 var(--tsW)  var(--BC); 
 
     --dsW:1rem;
-    --dswh: drop-shadow(0 0px var(--dsW) var(--wh)); 
-    --dsbk: drop-shadow(0 0px var(--dsW) var(--bk)); 
+    --dswh: drop-shadow(0 0px var(--dsW) var(--WH)); 
+    --dsbk: drop-shadow(0 0px var(--dsW) var(--BK)); 
     --dsmc: drop-shadow(0 0px var(--dsW) var(--mc));  
-    // --dsbc: drop-shadow(0 0px var(--dsW) var(--bc)); 
+    // --dsbc: drop-shadow(0 0px var(--dsW) var(--BC)); 
     // --dstx: drop-shadow(0 0px var(--dsW) var(--tx)); 
-    --dsgr: drop-shadow(0 0px var(--dsW) var(--gr)); 
-    // --dssc: drop-shadow(0 0px var(--dsW) var(--sc)); 
+    --dsgr: drop-shadow(0 0px var(--dsW) var(--GR)); 
+    // --dssc: drop-shadow(0 0px var(--dsW) var(--SC)); 
 
     // --pxshmc:1px 1px var(--mc);
     // --pxshac:1px 1px var(--ac30);
-    --pxshwh:0px 1px var(--wh);
-    // --pxshbk:1px 1px var(--bk);
-    // --pxshgr:1px 1px var(--gr);
-    // --pxshbc:1px 1px var(--bc);
+    --pxshwh:0px 1px var(--WH);
+    // --pxshbk:1px 1px var(--BK);
+    // --pxshgr:1px 1px var(--GR);
+    // --pxshbc:1px 1px var(--BC);
 
-    --pxdswh:drop-shadow(1px 1px var(--wh));
-    // --pxdsbk:drop-shadow(1px 1px var(--bk));
+    --pxdswh:drop-shadow(1px 1px var(--WH));
+    // --pxdsbk:drop-shadow(1px 1px var(--BK));
     // --pxdsmc:drop-shadow(1px 1px var(--mc));
     // --pxdstx:drop-shadow(1px 1px var(--tx)); 
-    // --pxdsbc:drop-shadow(1px 1px var(--bc)); 
+    // --pxdsbc:drop-shadow(1px 1px var(--BC)); 
 
     // // --bs2:0px 2px 8px #1119; 
     --bsW:4px;
@@ -172,7 +172,7 @@ body{
     // --bxshtx:  0  var(--bsW) calc(var(--bsW)*2 )  var(--tx10); 
     // --bxshgr:  0  var(--bsW) calc(var(--bsW)*2 )  var(--gr10); 
     // --bxshsc:  0  var(--bsW) calc(var(--bsW)*2 )  var(--sc10); 
-    // // --bxshgr:5px 5px 0px var(--gr); 
+    // // --bxshgr:5px 5px 0px var(--GR); 
     // --bxshbtn: inset 2px 2px 4px var(--wh40),
     // inset -2px -2px 4px var(--tx20); 
 
@@ -196,14 +196,14 @@ body{
 .txshtx{text-shadow: var(--txshtx);}
 // .txshbc{text-shadow: var(--txshbc);}
 
-.txstwh{-webkit-text-stroke: var(--stw) var(--wh);paint-order: stroke;}
-.txstbk{-webkit-text-stroke: var(--stw) var(--bk);paint-order: stroke;}  
+.txstwh{-webkit-text-stroke: var(--stw) var(--WH);paint-order: stroke;}
+.txstbk{-webkit-text-stroke: var(--stw) var(--BK);paint-order: stroke;}  
 // .txstmc{-webkit-text-stroke: var(--stw) var(--mc);paint-order: stroke;}
-.txstsc{-webkit-text-stroke: var(--stw) var(--sc);paint-order: stroke;}
-// .txstbc{-webkit-text-stroke: var(--stw) var(--bc);paint-order: stroke;}
+.txstsc{-webkit-text-stroke: var(--stw) var(--SC);paint-order: stroke;}
+// .txstbc{-webkit-text-stroke: var(--stw) var(--BC);paint-order: stroke;}
 // @media (max-width : 640px){[class*=txst]{-webkit-text-stroke-width: 4px;}}
-// .H-txstwh :is(h1,h2,h3){-webkit-text-stroke: 4px var(--wh);paint-order: stroke;}
-// .H-txstbk :is(h1,h2,h3){-webkit-text-stroke: 4px var(--bk);paint-order: stroke;color: #fff;}
+// .H-txstwh :is(h1,h2,h3){-webkit-text-stroke: 4px var(--WH);paint-order: stroke;}
+// .H-txstbk :is(h1,h2,h3){-webkit-text-stroke: 4px var(--BK);paint-order: stroke;color: #fff;}
 // .H-txstmc :is(h1,h2,h3){-webkit-text-stroke: 4px var(--mc);paint-order: stroke;color: #fff;}
 // @media (max-width : 640px){[class*=H-txst] :is(h1,h2,h3){-webkit-text-stroke-width: 2px;}}
 
@@ -306,9 +306,9 @@ mark{
     background: linear-gradient(transparent 50%,var(--bdc) 50%);
 }
 // .markMC mark{--bdc:var(--mc);}
-// .markSC mark{--bdc:var(--sc);}
-// .markBC mark{--bdc:var(--bc);}
-// .markAC mark{--bdc:var(--ac);}
+// .markSC mark{--bdc:var(--SC);}
+// .markBC mark{--bdc:var(--BC);}
+// .markAC mark{--bdc:var(--AC);}
 hr {
 	border-bottom: var(--line);
 	margin-top: 1em;
@@ -432,7 +432,7 @@ div#form_calendar div.head span:nth-of-type(1), div.calendar div.head span:nth-o
 	}
 }
 div#form_calendar table tbody tr td.open.level1 span{
-	border-color: var(--gr);
+	border-color: var(--GR);
 }
 div#form_calendar table tbody tr td label, div.calendar table tbody tr td label,
 div#form_calendar table tbody tr td.close span{font-size: unset;}

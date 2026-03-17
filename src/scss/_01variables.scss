@@ -1,0 +1,162 @@
+@use "mixin"as *;
+
+// *********************************
+// コメントはpencil variebles に同期しない
+:root {//font
+        --Ser: "Noto Serif JP", serif;
+        --San:
+                "Noto Sans JP",
+                "メイリオ", Meiryo,
+                -apple-system,
+                /* iOS/macOS */
+                BlinkMacSystemFont,
+                /* macOS Safari/Chrome */
+                "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+                /* macOS日本語 */
+                "Yu Gothic Medium", "Yu Gothic", "Meiryo",
+                /* Windows */
+                "Roboto", "Noto Sans CJK JP",
+                /* Android */
+                sans-serif;
+
+        --FF: "Noto Sans JP", sans-serif;
+        --Eng: "Noto Sans JP", sans-serif;
+}
+
+:root {//color
+        --un: unset;
+        --inh: inherit;
+        --cur: currentColor;
+        --tr: transparent;
+
+        --MC: #2db542;
+        --SC: #3194c9;
+        --AC: #512db5;
+        --BC: #fbf9ef;
+        --TC: #333;
+        --GR: #666;
+        --BK: #000;
+        --WH: #fff;
+
+        --tsbk: .25rem .25rem var(--BK);
+}
+
+:root {//color Tailwind culture & semantic color name  コメントはpencil variebles に同期しない
+        --second: var(--SC);
+        --third: var(--SC);
+        // --fourth: var(--SC);
+        // --fifth: var(--SC);
+
+        --primary: var(--MC);
+        --secondary: var(--SC);
+        --accent: var(--AC);
+        --background: var(--WH);
+        --foreground: var(--TC);
+        --muted: var(--BC);
+        --border: var(--TC);
+
+        // --destructive: var(--AC);
+        // --ring: var(--TC);
+        // --card: var(--wc);
+        // --popover: var(--BC);
+        // --surface: var(--BC);//（カード・シートの背景）
+        // --error: var(--AC);
+        // --success: var(--MC);
+        // --warning: var(--AC);
+        // --error: var(--AC);
+        // --info: var(--SC);//（ステータス系）
+        // --neutral: var(--GR);//（グレー系）
+}
+
+:root {// color opacity
+        --MC05: color-mix(in srgb, transparent, var(--MC) 05%);
+        // --MC10: color-mix(in srgb, transparent, var(--MC) 10%);
+        // --MC20: color-mix(in srgb, transparent, var(--MC) 20%);
+        // --MC30: color-mix(in srgb, transparent, var(--MC) 30%);
+        // --MC40: color-mix(in srgb, transparent, var(--MC) 40%);
+        // --MC50: color-mix(in srgb, transparent, var(--MC) 50%);
+        // --MC60: color-mix(in srgb, transparent, var(--MC) 60%);
+        // --MC70: color-mix(in srgb, transparent, var(--MC) 70%);
+        // --MC80: color-mix(in srgb, transparent, var(--MC) 80%);
+        // --MC90: color-mix(in srgb, transparent, var(--MC) 90%);
+
+        @for $i from 1 through 9 {
+                --MC#{$i}0: color-mix(in srgb, transparent, var(--MC) #{$i}0%);
+                --SC#{$i}0: color-mix(in srgb, transparent, var(--SC) #{$i}0%);
+                --AC#{$i}0: color-mix(in srgb, transparent, var(--AC) #{$i}0%);
+                --BC#{$i}0: color-mix(in srgb, transparent, var(--BC) #{$i}0%);
+                --TX#{$i}0: color-mix(in srgb, transparent, var(--tx) #{$i}0%);
+                --GR#{$i}0: color-mix(in srgb, transparent, var(--GR) #{$i}0%);
+                --WH#{$i}0: color-mix(in srgb, transparent, var(--WH) #{$i}0%);
+                --BK#{$i}0: color-mix(in srgb, transparent, var(--BK) #{$i}0%);
+        }
+}
+
+:root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
+        --head: 80px;
+
+        @include max-md {
+                --head: 60px;
+        }
+
+        --wid: 1080px;
+        --MY: 120px;
+        --MY25: calc(var(--MY)/4);
+        --MY5: calc(var(--MY)/2);
+        --MY75: calc(var(--MY)/4*3);
+        --15MY: calc(var(--MY)*1.5);
+        --2MY: calc(var(--MY)*2.0);
+        --25MY: calc(var(--MY)*2.5);
+        --into: calc(50vw - clamp(0px, 50vw - var(--PX), (var(--wid) / 2)));
+        --in1800: calc(50vw - clamp(0px, 50vw - var(--PX), 900px));
+        --in1728: calc(50vw - clamp(0px, 50vw - var(--PX), 864px));
+        --in1680: calc(50vw - clamp(0px, 50vw - var(--PX), 840px));
+        --in1560: calc(50vw - clamp(0px, 50vw - var(--PX), 780px));
+        --in1536: calc(50vw - clamp(0px, 50vw - var(--PX), 768px));
+        --in1440: calc(50vw - clamp(0px, 50vw - var(--PX), 720px));
+        --in1320: calc(50vw - clamp(0px, 50vw - var(--PX), 660px));
+        --in1200: calc(50vw - clamp(0px, 50vw - var(--PX), 600px));
+        --in1080: calc(50vw - clamp(0px, 50vw - var(--PX), 540px));
+        --in1000: calc(50vw - clamp(0px, 50vw - var(--PX), 500px));
+        --in960: calc(50vw - clamp(0px, 50vw - var(--PX), 480px));
+        --in840: calc(50vw - clamp(0px, 50vw - var(--PX), 420px));
+        --in720: calc(50vw - clamp(0px, 50vw - var(--PX), 360px));
+        --out: calc(50% - 50vw);
+}
+
+:root {
+        --LS: 0.025em;
+        --LH: 1.5;
+        --FW: 400;
+        --FZ: 1rem;
+
+        @include max-md {
+                --FZ: 0.875rem;
+        }
+
+        --h1: 64px;
+        --h2: 32px;
+        --h3: 24px;
+        --h1FZ: clamp(24px, 6.4vw, var(--h1));
+        --h2FZ: clamp(20px, 3.2vw, var(--h2));
+        --h3FZ: clamp(18px, 2.4vw, var(--h3));
+}
+
+:root {//space 余白設定
+
+        --MY: 4rem;
+        --PX: 1.5rem;
+        --PX2: calc(var(--PX) * 2);
+        --gap: 2rem;
+        --gapN: calc(var(--gap)*-1);
+        --gapH: calc(var(--gap)/2);
+
+        @include menu {
+                --gap: 16px;
+        }
+
+        @include max-md {
+                --MY: 40px;
+        }
+
+}

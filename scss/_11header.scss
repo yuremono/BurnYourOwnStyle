@@ -11,7 +11,7 @@ header#global_header {
     // --PTFZ: 1.5em;
     --PTscale: 1.5;
     --PTC: var(--mc);
-    --PTBG: var(--bc);
+    --PTBG: var(--BC);
     --PTRad: var(--btnRad);
     --PTW: calc(var(--btnH));
     --PTbottom: var(--gapH);
@@ -90,9 +90,9 @@ header#global_header {
     // --navC: var(--inh); 
     --navFW: inherit; 
     --dropBG:var(--mc);
-    --dropC:var(--wh);
-    // .h_menu{--spanC:var(--wh);}
-    --SPnavBG: var(--wh);//spnav
+    --dropC:var(--WH);
+    // .h_menu{--spanC:var(--WH);}
+    --SPnavBG: var(--WH);//spnav
     // --SPnavBG: var(--innerBG);//spnav 
     --SPnavFZ: 1em;
     --dropbtnBG:var(--un);
@@ -147,11 +147,11 @@ header#global_header {
 
         
         // *****************trans時色変更
-        // .h_inner:not(.trans *,.active *){color: var(--wh);}
+        // .h_inner:not(.trans *,.active *){color: var(--WH);}
         // .h_inner:is(.trans *,.active *){color: var(--tx);}
-        // .h_nav:not(.trans *,.active *){color: var(--wh);}
+        // .h_nav:not(.trans *,.active *){color: var(--WH);}
         // .h_nav:is(.trans *,.active *){color: var(--tx);}
-        // .h_menu:not(.trans *,.active *){--menuC: var(--wh);}
+        // .h_menu:not(.trans *,.active *){--menuC: var(--WH);}
         // .h_menu:is(.trans *,.active *){--menuC: var(--tx);}
         // @media (max-width: 834px){
         //     .h_inner:not(.trans *,.active *){color: var(--tx);}
@@ -510,7 +510,7 @@ header#global_header {
                 transition: var(--btnTR);
                 padding: calc(var(--headG)/2 );
                 &:hover{
-                    background-color: var(--bc);
+                    background-color: var(--BC);
                 }
                 &.drop{
                     z-index: 1;
@@ -521,7 +521,7 @@ header#global_header {
                 transform-origin: right;
                 li{transition: var(--btnTR);}
                 li:hover{
-                    background-color: var(--bc);
+                    background-color: var(--BC);
                 }
         
             }
@@ -551,7 +551,7 @@ header#global_header {
                 }
             }
             > ul>li.drop::after{
-                background-color: var(--ac);
+                background-color: var(--AC);
             }
         }
         &.trans .btn{
@@ -770,7 +770,7 @@ header#global_header {
         }
         .h_items{
             --btnBG:var(--mc);
-            --btnC:var(--wh);
+            --btnC:var(--WH);
             z-index: 100;
             display: flex;
             flex-direction: column;
@@ -848,7 +848,7 @@ header#global_header {
             &:is(.active){
                 .h_nav {opacity: 1;pointer-events: all;}
                 .h_inner{
-                    background-color: var(--bc);
+                    background-color: var(--BC);
                 }
             }
             .focus_trap{
@@ -953,7 +953,7 @@ header#global_header {
                     color: var(--tx);
                 }
                 --tsW: 12px; 
-                --txshbk: 0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh),0 0 var(--tsW) var(--wh);
+                --txshbk: 0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH),0 0 var(--tsW) var(--WH);
             }
         }
         .h_nav > ul li.drop ul{
@@ -995,7 +995,7 @@ header#global_header {
         }
         .h_menu{
             --btnH: var(--head);
-            --btnBG:var(--wh);
+            --btnBG:var(--WH);
             background-color: var(--btnBG);
             border-radius: unset;
         }
@@ -1423,7 +1423,7 @@ header#global_header {
             border-top-left-radius: 10px;
             justify-content: flex-end;
             // &:is(.trans *){
-            //     background: linear-gradient(transparent,var(--wh) 30%);
+            //     background: linear-gradient(transparent,var(--WH) 30%);
             // }
 
             // >*{
@@ -1463,7 +1463,7 @@ header#global_header {
             border-top-left-radius: 10px;
             justify-content: flex-end;
             // &:is(.trans *){
-            //     background: linear-gradient(transparent,var(--wh) 30%);
+            //     background: linear-gradient(transparent,var(--WH) 30%);
             // }
 
             // >*{
@@ -1546,7 +1546,7 @@ header#global_header {
             --btnG:.0em;
             background-color: var(--innerBG);
             // &:is(.trans *){
-            //     background: linear-gradient(transparent,var(--wh) 30%);
+            //     background: linear-gradient(transparent,var(--WH) 30%);
             // }
             >*{
                 flex: 1;min-width: unset;
@@ -1654,7 +1654,7 @@ header#global_header {
             background-color: #000;
             color: #fff;
             // &:is(.trans *){
-            //     background: linear-gradient(transparent,var(--wh) 30%);
+            //     background: linear-gradient(transparent,var(--WH) 30%);
             // }
             a{
                 flex: 1;
@@ -1676,7 +1676,7 @@ header#global_header {
             content: "\f105";
             margin-inline-start: .25em;
             font-family: var(--icon);font-weight: 900;
-            color: var(--ac);
+            color: var(--AC);
         }
     }
     
@@ -1844,7 +1844,7 @@ header#global_header {
     // color: var(--spanC);
     display: none;
     --dotW:calc(var(--btnH) * .125 );
-    // &:is(.active *){--spanC:var(--wh);}
+    // &:is(.active *){--spanC:var(--WH);}
 
 
     @include menu{
@@ -2074,7 +2074,7 @@ header#global_header {
             opacity: 1;visibility: visible;
         }
         &.__cross{
-            background-image: linear-gradient(-45deg, transparent,transparent calc(50% - 1px), var(--bk) 50%,transparent calc(50% + 1px)),linear-gradient(45deg, transparent,transparent calc(50% - 1px), var(--bk) 50%,transparent calc(50% + 1px));
+            background-image: linear-gradient(-45deg, transparent,transparent calc(50% - 1px), var(--BK) 50%,transparent calc(50% + 1px)),linear-gradient(45deg, transparent,transparent calc(50% - 1px), var(--BK) 50%,transparent calc(50% + 1px));
             position: fixed;
             top: 0;right: 0;
             transform: none!important;
@@ -2324,7 +2324,7 @@ header#global_header {
     content: "\f105";
     font-family: var(--icon);
     font-weight: var(--btnAFFW);
-    color: var(--sc);
+    color: var(--SC);
     font-size: .75em;
     margin-right: .25em;
 }

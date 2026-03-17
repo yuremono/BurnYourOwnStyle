@@ -126,7 +126,7 @@ graph TD
 
     subgraph SCSS[scss/]
         T1[_10template.scss]
-        T2[RatioKit.scss]
+        T2[scss/globals.scss]
         T3[その他]
     end
 
