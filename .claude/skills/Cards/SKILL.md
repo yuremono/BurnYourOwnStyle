@@ -66,7 +66,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ```jsx
 <Cards className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-  <CardsItem image="/images/960x480.png">
+  <CardsItem image={getAssetPath("/images/picsum/001.jpg")} />
     <h3>カード 1</h3>
     <p>説明文</p>
   </CardsItem>
@@ -87,13 +87,15 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 クラス名に追加する修飾語：
 
-| 引数      | 効果                                    | HTML 出力                    |
-| --------- | --------------------------------------- | ---------------------------- |
-| `col3`    | 3 カラム                                | `class="Cards col3"`         |
-| `col4`    | 4 カラム                                | `class="Cards col4"`         |
-| `IsFix`   | 固定幅（var(--cardW) 指定）             | `class="Cards IsFix"`        |
-| `IsGrow`  | 伸縮 (flex:1)                           | `class="Cards IsGrow"`       |
-| `IsLayer` | 画像とテキストを重ねる（grid-aria:1/1） | `class="Cards col2 IsLayer"` |
+| 引数      | 効果                                         | HTML出力例                   |
+| --------- | -------------------------------------------- | ---------------------------- |
+| `col{N}`  | Nカラム（N=2〜6）                            | `class="Cards col3"`         |
+| `IsFix`   | 固定幅（--itemW: 240px）※col{N}と併用不可    | `class="Cards IsFix"`        |
+| `IsGrow`  | 均等幅で伸縮（flex:1）※col{N}と併用不可       | `class="Cards IsGrow"`       |
+| `IsLayer` | 画像とテキストを重ねる（grid-area: 1/1）      | `class="Cards col4 IsLayer"` |
+| `IsRow`   | カード内を横並び（画像＋テキスト）            | `class="Cards col2 IsRow"`   |
+| `IsIcon`   | `--iconW`変数に応じて画像サイズ制御            | `class="Cards col3 IsIcon"`   |
+| `IsShift` | `--shift`変数に応じてレイアウトをシフト          | `class="Cards col4 IsShift"` |
 
 ### CardsItem props
 

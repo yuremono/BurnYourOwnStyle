@@ -66,7 +66,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ```jsx
 <Hero className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-  <HeroBack image="/images/hero-bg.jpg" />
+  <HeroBack image={getAssetPath("/images/picsum/001.jpg")} />
   <HeroItem>
     <h1>メインタイトル</h1>
     <p>サブテキスト</p>
@@ -114,7 +114,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
     ```jsx
     <Hero className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-      <HeroBack image="/images/hero-bg.jpg" />
+      <HeroBack image={getAssetPath("/images/picsum/001.jpg")} />
       <HeroItem>
         <h1>タイトル</h1>
       </HeroItem>

@@ -66,7 +66,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ```jsx
 <{SkillName} className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-  <{SkillName}Item image="/images/960x480.png">
+  <{SkillName}Item image={getAssetPath("/images/picsum/001.jpg")} />
     <h3>カード 1</h3>
     <p>説明文</p>
   </{SkillName}Item>
@@ -109,6 +109,24 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
     - `src/components/{SkillName}.tsx` などの既存コンポーネントを確認
     - **存在しない場合**：新しく作成する
     - **存在する場合**：それを利用する
+
+2-1. **画像について指示がない場合**
+
+`scripts/download-image.sh` を実行して Lorem Picsum から画像をダウンロード
+
+```bash
+# 幅600px（デフォルト）
+./scripts/download-image.sh
+
+# 幅800px
+./scripts/download-image.sh 800
+
+# 幅600px x 高さ400px
+./scripts/download-image.sh 600 400
+```
+
+保存先: `public/images/picsum/{連番}.jpg`
+出力例: `/images/picsum/001.jpg`
 
 3. **マークアップする**
 

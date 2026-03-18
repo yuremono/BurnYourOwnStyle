@@ -2,8 +2,11 @@
 .vscode/*
 ignore/*
 NOTE.md
+NOTE*.md
+MEM.md
 voice-input-patterns.md
 .memsearch
+.cursor-memsearch
 
 # macOS system files
 .DS_Store

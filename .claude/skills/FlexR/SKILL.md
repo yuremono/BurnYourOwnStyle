@@ -65,7 +65,7 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ```jsx
 <FlexR className="{{ratio_class}}" style={{} as React.CSSProperties}>
-  <FlexRImage image="/images/path.png" />
+  <FlexRImage image={getAssetPath("/images/picsum/001.jpg")} />
   <div>
     <h3>タイトル</h3>
     <p>本文</p>

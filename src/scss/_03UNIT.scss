@@ -96,10 +96,66 @@
         // 固定幅
         &.IsFix {
                 --itemW: 240px;
+                justify-content: center;
 
                 .item {
                         width: var(--itemW);
                 }
+        }
+        &.IsIcon {
+                --iconW: 7.5em;
+                @include max-md {
+                        --iconW: 5em;
+                }
+                figure {
+                        min-height: var(--iconW);
+                        align-content: center;
+                }
+                svg,
+                img{
+                        max-width: var(--iconW);
+                        margin: auto;
+                }
+        }
+
+        &.IsRow {
+                .item {
+                flex-direction: row;
+                >div {
+                        flex: 1;
+                }
+                }
+                figure {
+                width: var(--imgW);
+                }
+                @include max-md {
+                        .box {
+                                flex-basis: 100%;
+                        }
+                }
+        }
+
+        &.IsShift {
+                --shift: var(--MY5);
+                --shift2: calc(var(--shift)*2);
+                --Nshift: calc(var(--shift)*-1);
+                --Nshift2: calc(var(--shift)*-2);
+
+                .item {
+                        &:nth-child(even) {
+                                margin-block: var(--shift) var(--Nshift);
+                        }
+                        &:last-child {
+                                margin-bottom: unset;
+                        }
+
+                        @include max-md{
+                                &:nth-child(even) {
+                                margin-block: unset;
+                                }
+                        }
+                }
+
         }
 
         // デフォルト（PC）: 指定カラム数
@@ -126,6 +182,57 @@
         @include max-xs {// 最小状態 (max-xs): 1列
                 &:not(.min2)>.item {
                         width: 100%;
+                }
+        }
+
+}
+:is(.card3, .card2, .card4, .card5, .cardflex, .cardfix) {
+        &.__flow{
+
+                .box:not(:last-child){
+                &:after{
+                        content: var(--btnAF);
+                        font-family: var(--btnIFF);
+                        font-weight: var(--btnAFFW);
+                        display: var(--btnAFdis);
+                        place-items: center;
+                        position: var(--btnAFPOS); 
+                        right: var(--btnAFRT);
+                        place-items: center;
+                        line-height: var(--btnFZ);
+                        
+                        padding-inline: unset;
+                        width: calc(var(--gap) + 1em );
+                        line-height: calc(var(--gap) + 1.25em );
+                        aspect-ratio: 1;
+                        align-content: center;text-align: center;
+                        border-radius: 1000px;
+                        
+                        color: var(--SC);
+                        // background-color: var(--sc50);
+                        font-size: 2em;
+                        align-content: center;
+                        transition: var(--btnTR);
+                        position: absolute;
+                        left: calc(100% - 0.5em);
+                        top: 50%;transform: translateY(-50%);
+                        
+                }
+                }
+                .box:is(#contents *):after{
+                @media (max-width: 640px){
+                        display: inline-block;
+                        inset: unset;
+                        top: calc(100% );
+                        left: 50%;
+                        transform: translate(-50%,-50%) rotate(90deg);
+                }
+                }
+                :not(.__scrollX) .box:nth-child(even):after{
+                @media (max-width: 834px){
+                        left: 0%;top: 100%;
+                        transform: translate(-50%,-50%) rotate(135deg);
+                }
                 }
         }
 

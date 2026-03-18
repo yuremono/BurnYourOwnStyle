@@ -15,14 +15,17 @@ const Cards = ({ className = "", style, children }: CardsProps) => {
 interface CardsItemProps {
   image?: string
   imageAlt?: string
+  /** figure 内に表示するカスタム要素（SVG コンポーネント・インライン SVG など） */
+  svg?: React.ReactNode
   className?: string
   children: React.ReactNode
 }
 
-const CardsItem = ({ image, imageAlt = "", className = "", children }: CardsItemProps) => {
+const CardsItem = ({ image, imageAlt = "", svg, className = "", children }: CardsItemProps) => {
+  const figureContent = svg ?? (image && <img src={image} alt={imageAlt} />)
   return (
     <div className={`item  ${className}`}>
-      {image && <figure><img src={image} alt={imageAlt}/></figure>}
+      {figureContent && (svg ? figureContent : <figure>{figureContent}</figure>)}
       <div className="p-4">
         {children}
       </div>

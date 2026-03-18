@@ -65,14 +65,13 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 ## 基本構造
 
 ```jsx
-<ImgText className="{{value_classes}} {{modifier_classes}}" style={{} as React.CSSProperties}>
-  <figure>
-    <img alt="" src="..." />
-  </figure>
-  <div>
-    <h3>タイトル</h3>
-    <p>説明文</p>
-  </div>
+<ImgText className="img30" image={getAssetPath("/images/picsum/011.jpg")}>
+        <h3 className="font-bold mb-2">ImgText 基本使い方</h3>
+        <p>
+                画像とテキストを横並びで配置。
+                <br />
+                ImgText クラスでレイアウトを制御。
+        </p>
 </ImgText>
 ```
 

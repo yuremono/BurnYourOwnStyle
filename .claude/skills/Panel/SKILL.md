@@ -66,18 +66,13 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ```jsx
 <Panel className="{{value_classes}} {{modifier_classes}}" style={{} as React.CSSProperties}>
-  <PanelItem image="/images/path.png">
+  <PanelItem image={getAssetPath("/images/picsum/001.jpg")} />
     <div>
       <h3>タイトル</h3>
       <p>本文</p>
     </div>
   </PanelItem>
-  <PanelItem className="IsRev" image="/images/path2.png">
-    <div>
-      <h3>タイトル 2</h3>
-      <p>本文 2</p>
-    </div>
-  </PanelItem>
+  ...
 </Panel>
 ```
 

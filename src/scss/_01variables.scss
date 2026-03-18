@@ -99,6 +99,7 @@
                 --head: 60px;
         }
 
+        --imgW: calc(50% - var(--gap)/2);
         --wid: 1080px;
         --MY: 120px;
         --MY25: calc(var(--MY)/4);
