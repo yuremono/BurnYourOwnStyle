@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{ "command": ".cursor/hooks/session-start.sh" }],
+    "beforeSubmitPrompt": [{ "command": ".cursor/hooks/before-submit-prompt.sh" }],
+    "stop": [{ "command": ".cursor/hooks/stop.sh" }],
+    "sessionEnd": [{ "command": ".cursor/hooks/session-end.sh" }]
+  }
+}
