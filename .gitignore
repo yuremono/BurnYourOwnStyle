@@ -2,11 +2,15 @@
 .vscode/*
 ignore/*
 NOTE.md
-NOTE*.md
-MEM.md
+NOTE copy.md
+NOTE2.md
+screenshot-full.png
+screenshot-test.png
+Untitled-2026-03-16-2140.excalidraw
 voice-input-patterns.md
 .memsearch
 .cursor-memsearch
+ingore/
 
 # macOS system files
 .DS_Store
@@ -17,6 +21,7 @@ voice-input-patterns.md
 .agent/*
 .gemini/*
 .mcp.json
+.cursor/
 
 
 
@@ -25,8 +30,6 @@ voice-input-patterns.md
 # Temporary files
 *.tmp
 *.bak
-CLAUDE.bak.md
-SPEC.md
 
 # Memory MCP data (local to each installation)
 memory/
