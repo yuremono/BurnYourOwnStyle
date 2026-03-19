@@ -156,13 +156,13 @@ h4 {
 :root {
   --bds: solid;
   --bdw: 1px;
-  --bdc: var(--sc);
-  --line: var(--bdw, 1px) var(--bds, solid) var(--bdc, var(--sc));
+  --bdc: var(--SC);
+  --line: var(--bdw, 1px) var(--bds, solid) var(--bdc, var(--SC));
   --rad: 0vmin;
   --rad2: calc(var(--rad)*2);
   --radH: calc(var(--rad)/2);
   --sheetR: var(--un, unset);
-  --sheetBG: var(--bc);
+  --sheetBG: var(--BC);
   --sheetP: 3vmin;
 }
 
@@ -382,7 +382,7 @@ main > *:is(script, input[type=hidden]) {
   outline: none;
   cursor: pointer;
   position: relative;
-  background-color: var(--qBG, var(--bc));
+  background-color: var(--qBG, var(--BC));
   padding: 1em;
   padding-right: 2.5em;
   -webkit-transition: 0.4s;
@@ -490,22 +490,22 @@ main > *:is(script, input[type=hidden]) {
 }
 .Toggle.IsQa > div:before {
   content: "A";
-  background-color: var(--abfBG, var(--ac));
+  background-color: var(--abfBG, var(--AC));
 }
 
 .Panel {
   position: relative;
   --mt: var(--MY5);
   --p: 1em;
-  --bg: var(--bc);
+  --bg: var(--BC);
   --beforeFZ: 75%;
   --beforeC: var(--mc);
   --afterW: 2em;
-  --afterBG: var(--sc);
+  --afterBG: var(--SC);
   --imgW: 30%;
 }
 .Panel .item {
-  background-color: var(--bg, var(--bc));
+  background-color: var(--bg, var(--BC));
   counter-increment: cnt;
   width: 100%;
   display: -webkit-box;
@@ -579,7 +579,7 @@ main > *:is(script, input[type=hidden]) {
           transform: translateX(-50%);
   width: var(--afterW, 2em);
   aspect-ratio: 1;
-  background-color: var(--afterBG, var(--sc));
+  background-color: var(--afterBG, var(--SC));
   clip-path: polygon(0 0%, 50% 85%, 100% 0%);
 }
 .Panel.IsFlow .item:last-child:after {
