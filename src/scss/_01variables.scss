@@ -94,6 +94,8 @@
 
 :root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
         --head: 80px;
+        --head2: calc(var(--head)*2 );
+        --Nhead: calc(var(--head)*-1 );
 
         @include max-md {
                 --head: 60px;
@@ -136,11 +138,11 @@
         }
 
         --h1: 64px;
-        --h2: 32px;
-        --h3: 24px;
-        --h1FZ: clamp(24px, 6.4vw, var(--h1));
-        --h2FZ: clamp(20px, 3.2vw, var(--h2));
-        --h3FZ: clamp(18px, 2.4vw, var(--h3));
+        --h2: 48px;
+        --h3: 48px;
+        --h1FZ: clamp(32px, 6.4vw, var(--h1));
+        --h2FZ: clamp(28px, 3.2vw, var(--h2));
+        --h3FZ: clamp(24px, 2.4vw, var(--h3));
 }
 
 :root {//space 余白設定

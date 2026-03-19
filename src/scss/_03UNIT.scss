@@ -374,7 +374,7 @@
         position: relative;
         --mt: var(--MY5);
         --p: 1em;
-        --bg: var(--BC);
+        --bg: var(--un);
         --beforeFZ: 75%;
         --beforeC: var(--MC);
         --afterW: 2em;
@@ -388,7 +388,7 @@
                 display: flex;
                 flex-wrap: wrap;
                 border-radius: var(--rad);
-                padding: var(--p, 1em);
+                padding: var(--PX);
                 gap: var(--gap);
                 position: relative;
 
@@ -577,6 +577,89 @@
         }
 }
 
+// **********Stick*************--gap --few
+:where(.Stick) { // --item = stiky item width , --shift = overlapping width　, --shift must be less than --item.
+        --shift: 75%;
+        --Nshift: calc(var(--shift)*-1 );
+        --item: 100%;
+        --scr: calc(100% - var(--item) + var(--shift));
+        @include max-md{
+                --Nshift: 0;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .StickItem{
+                flex: 1;
+                // width: var(--item);
+                // padding-block: var(--head);
+                vertical-align: top;
+                text-align: center;
+                position: sticky;
+                top: 0;
+                // margin-inline: var(--Nshift) ;
+                @include max-md{
+                        flex: unset;
+                    position: unset;
+                //     min-height: unset;
+                }
+                img{
+                        width: 100%;
+                }
+        }
+        .StickScr{
+                position: relative;
+                z-index: 1;
+
+                width: var(--scr);
+                margin-top: unset;
+                margin-inline: var(--Nshift) 0;
+
+                &:is(.IsRev *){
+                        order: -1;
+                        margin-inline: 0 var(--Nshift);
+
+                }
+        }
+        >* {
+                width: calc(50% - var(--gap)/2);
+        }
+
+        @include max-md {
+                &:not(.bp-sm)>* {
+                        width: 100%;
+                }
+
+                &:not(.bp-sm)>figure {
+                        order: -1;
+                }
+        }
+
+        @include max-sm {
+                &:is(.bp-sm)>* {
+                        width: 100%;
+                }
+
+                &:is(.bp-sm)>figure {
+                        order: -1;
+                }
+        }
+}
+
+:where(.Flex46) { // --few, --gap
+        --few: 40%;
+
+        >:where(:nth-child(1)) {
+                width: calc(var(--few));
+        }
+
+        >:where(:nth-child(2)) {
+                width: calc(100% - var(--few) - var(--gap));
+        }
+}
+
+
 
 
 
@@ -589,7 +672,6 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
 .ImgText {// --gap, --imgW
         display: flex;
         flex-wrap: wrap; 
-        align-items: flex-start;
         gap: var(--gap);
 
         // PCでのデフォルト画像幅

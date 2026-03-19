@@ -104,4 +104,14 @@ PROJECT_ROOT/
 
 ユーザー発言に不自然な単語や文章があったら `voice-input-patterns.md` を確認、追記すること。
 
+## プロジェクトルールまとめ
+
+| ドキュメント | 説明 |
+|------------|------|
+| [STYLE.md]| 設計思想・変数設計・基本構造 |
+| [UNIT.md]| Unitクラスリファレンス・詳細使用方法 |
+| [CLAUDE.md] | エージェント用プロジェクトルール |
+| [/.claude/skills/{SkillName}/SKILL.md] | UNIT実装手順 |
+| [/Users/yanoseiji/Desktop/0315BYOS-react/src/scss] | css定義(編集禁止) |
+
 // LINK https://github.com/yuremono/BurnYourOwnStyle

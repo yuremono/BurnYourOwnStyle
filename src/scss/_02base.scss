@@ -15,7 +15,7 @@ html{
     text-size-adjust: none;
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
-    overflow-x: hidden;
+//     overflow-x: hidden;
     scroll-behavior: smooth;
     &:has(.h.active, .policy-wrap.active, .modal.active) {
         overflow: hidden;
@@ -40,7 +40,6 @@ body {// --FZ, --FF, --tc
 .sub {//タイトルタグ内の小さい文字
 	font-size: 0.75em;
 	color: var(--MC);
-	margin-right: 0.5em;
 }
 // body {
 //     counter-reset: number 0;
@@ -72,7 +71,7 @@ main {// --PX
 
 }
 
-main>* {
+:where(main>*) {
 
 	// --wid, --MY
 	//ページ内コンテンツ div の初期設定_
@@ -92,7 +91,7 @@ main>* {
     
 
 
-.wrapper {// --MY, --out
+:where(.wrapper) {// --MY, --out
 	padding-block: var(--MY);
 	margin-inline: var(--out);
 	max-width: unset;
@@ -107,7 +106,7 @@ main>* {
 	>*+* {
 		margin-top: var(--MY5);
 	}
-        +:where(.wrapper){
+        +.wrapper{
                 margin-top: unset;
         }
 }
