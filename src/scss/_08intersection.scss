@@ -1,0 +1,144 @@
+@use "mixin" as *;
+
+
+
+// .js-letter{//文字分割用
+//     @for $i from 1 through 60 {
+// 		&.show >*>*:nth-child(#{$i}){
+//             transition-delay: #{$i*0.05 + 0.05}s;
+//         }
+// 	}
+// }
+.js-letter{
+    --deg: 30deg;
+    >*>*{
+        transition:var(--trt);
+        opacity: 0;
+        rotate: var(--deg);
+        &:nth-child(even){
+            rotate: calc(var(--deg)*-1 );
+        }
+    }
+    &.show >*>*{
+        opacity: 1;
+        rotate: 0deg;
+    }
+    
+}
+[class*=js-],[class*=js-ch]>*{//リスト系のTRディレイ
+    @for $i from 1 through 9 {
+		&.show:nth-child(#{$i}){
+            transition-delay: #{$i*0.2 - 0.2}s;
+            &:is(section>*,form>*){
+                transition-delay: 0s!important;
+            }
+        }
+	}
+}
+.js-{
+    
+    &hide
+    {
+        filter: blur(var(--jsBlur)) ;
+        opacity: 0;
+        transition:var(--trt);
+        &.show{
+            opacity: 1;
+            filter: unset;
+        }
+    }
+    &cpL,&cpR
+    {
+        transition: var(--trt);
+        opacity: 0.1;
+        &.show{
+            translate: none;
+            opacity: unset;
+            filter: unset;
+        }
+    }
+    &scale
+    {
+        opacity: 0;
+        transition:scale 1.8s, opacity 1.2s .4s!important;
+        scale: .8;
+        &.show{
+            opacity: 1;
+            scale: 1;
+        }
+    }
+    &left,&chL>*,&chLR>:nth-child(odd){
+        translate: calc(var(--transX)*-1) 0;
+    }
+    &right,&chR>*,&chLR>:nth-child(even){
+        translate: var(--transX) 0;
+    }
+    &bottom,&chB>*{
+        translate: 0 var(--transY);
+    }
+    &top,&chT>*{
+        translate: 0 calc(var(--transY)*-0.5);
+    }
+}
+.js-{//show上書き
+    &left,&right,&top,&bottom,
+    &chB>*,&chL>*,&chR>*,&chT>*,&chLR>*
+    // &artB article>*,&artL article>*,&artR article>*
+    {
+        transition: var(--trt);
+        opacity: 0;
+        // filter: blur(var(--jsBlur)) ;
+        &.show{
+            opacity: 1;
+            translate: unset;
+            filter: unset;
+        }
+    }
+}
+.js-cpL {clip-path: inset(0 90% 0 0);}
+.js-cpR {clip-path: inset(0  0 0 90%);}
+.js-cpT {clip-path: inset(0  0 90% 0);}
+.js-cpB {clip-path: inset(90% 0  0 0);}
+.js-cpL ,
+.js-cpR ,
+.js-cpT ,
+.js-cpB {
+    transition: var(--trt);
+    opacity: 0;
+    &.show{
+        opacity: 1;
+        clip-path: inset(0);
+    } 
+}
+
+
+
+// .js-bgFix{
+//     z-index: 1;
+//     display: flex;
+//     flex-direction: column;
+//     padding-inline: var(--inline);
+//     >*{margin-inline: auto;position: relative;
+//         max-width: unset;
+//     }
+//     transition: 1s;
+//     &:has(+.js-bgFix.show){
+//         opacity: 0;
+//     } 
+//     .bgFix{
+//         position: fixed;
+//         opacity: 0;pointer-events: none;
+//     }
+//     &.show .bgFix{
+//         opacity: 1;
+//     }
+//     .bgFix {
+//         margin-top: unset;
+//         background: no-repeat center / cover;
+//         +*{margin-top: unset;}
+        
+//         @media (max-width : 960px){
+//             background: no-repeat 0 0 /cover;
+//         }
+//     }
+// }

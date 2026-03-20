@@ -4,9 +4,11 @@
 // コメントはpencil variebles に同期しない
 :root {//font
         --Ser: "Noto Serif JP", serif;
+        /* 以前ここに // で Noto Sans JP / メイリオ を列挙していたが、
+           カスタムプロパティ内の // は CSS にそのまま出て不正になるため削除 */
+           // "Noto Sans JP",
+           // "メイリオ", Meiryo,
         --San:
-                "Noto Sans JP",
-                "メイリオ", Meiryo,
                 -apple-system,
                 /* iOS/macOS */
                 BlinkMacSystemFont,
@@ -19,8 +21,8 @@
                 /* Android */
                 sans-serif;
 
-        --FF: "Noto Sans JP", sans-serif;
-        --Eng: "Noto Sans JP", sans-serif;
+        --FF: var(--San) sans-serif;
+        --Eng: var(--San) sans-serif;
 }
 
 :root {//color
@@ -33,7 +35,7 @@
         --SC: #3194c9;
         --AC: #512db5;
         --BC: #fbf9ef;
-        --TC: #333;
+        --TC: #111;
         --GR: #666;
         --BK: #000;
         --WH: #fff;
@@ -162,4 +164,219 @@
                 --MY: 40px;
         }
 
+}
+:root{//ボーダー シャドウ デコレーション等
+        --bds: solid;
+        --bdw: 3px;
+        --bdc: var(--cur);  
+        --line:var(--bdw) var(--bds) var(--bdc); 
+        --stw: 4px;
+    
+        --rad:0px;
+        --rad2:calc(var(--rad)*2 );
+        @media (max-width: 640px){
+            // --rad:10px;
+        }
+        --rad3:calc(var(--rad)*3 );
+        --radH:calc(var(--rad)/2 );
+        --sheetR:var(--rad);
+        --sheetBG:var(--BC);
+        --sheetP:var(--gap);
+        --boardR:var(rad);
+        --lineClamp:2;
+    
+}
+:root{//header依存prop
+        --PTdis: block;
+        --PTAF: var(--btnAF);
+        // --PTFZ: 1.5em;
+        --PTscale: 1.5;
+        --PTC: var(--MC);
+        --PTBG: var(--BC);
+        --PTRad: var(--btnRad);
+        --PTW: calc(var(--btnH));
+        --PTbottom: var(--gapH);
+        --PTrightTAB: 0.5em;
+        --PTbottomTAB: 0.5em;
+        --PTborder: var(--un);
+        @media (max-width: 480px){
+            --PTrightTAB: 0.25em;
+            --PTbottomTAB: 0.25em;
+        }
+    
+        --headG:1.5em;
+        @media (max-width: 1560px){--headG: .75em;}
+        @media (max-width: 1200px){--headG: 0.5em;}
+        --innerPX: calc(var(--headG)*1 );
+        --navPX: calc(var(--headG)*1 );
+        --itemPX: calc(var(--headG)*0 ); 
+        --logoPX: calc(var(--headG)*0 ); 
+        --itemG: calc(var(--headG)*1.5 );
+        --innerG: calc(var(--headG)*0 );
+    
+        --logoW:200px;//予備(common_header入力)
+        --logoFZ:40px;//予備(common_header入力)
+        --logoH:calc(var(--head) - .5em );
+    
+        --head:114px;
+        
+        // --initHead:calc(var(--head) + 20px );
+        --head2:calc(var(--head)*2 );
+        --Nhead:calc(var(--head)*-1 );
+        --contMT:calc(var(--head)*1);
+        
+        --mvMT:calc(var(--head) * 1 );
+        // @media (max-width: 834px){
+        //     --mvMT:calc(var(--head) * 1 );
+        // }
+        --mvImg:calc(100lvh - var(--head) ); 
+        @media (max-width: 834px){
+            --mvImg:calc(100lvh - var(--head)*2 ); 
+        }
+        // @include menu{--mvImg:calc(50lvh);}
+    
+    
+    
+        
+        @media (max-width : 1560px){
+            // --head:120px; 
+        }
+        @include menu{ 
+            --head:88px; 
+        }
+        @media (max-width : 834px){
+            // --head:72px; 
+            --head:60px; 
+        }
+        @media (max-width : 640px){
+        }
+      
+    }
+
+:root{// IntersectionObserver addClass'show'
+        --dur:0.8s;
+        --dur2:1.2s;
+        --trt:
+        background 5s,
+        translate var(--dur),
+        opacity var(--dur) ,
+        clip-path var(--dur) ,
+        filter var(--dur) ,
+        scale var(--dur) ,
+        rotate var(--dur) ;
+        --jsBlur:0px; 
+        --transX: 6vmin;
+        --transY: 6vmin;
+}
+:root{//ボタンプロパティ
+        --TLC :var(--inh);
+        --TLFZ:var(--h3FZ);
+        --TLFF:var(--Eng);
+        --TLFW:500;
+        --TLFS:normal;
+        --TLLS:inherit;
+        --TLLH:1;
+        --TLDeco:none;
+        --TLOff:.25em;
+        --TLG :.25em;
+        // --btnHover:brightness(1.2) saturate(1.2);
+        --btnBG:var(--MC);
+        --btnC:var(--WH);
+        --hoverBG: var(--MC);
+        --hoverC: var(--MC);
+        --hoverFL: invert(0%) brightness(100%) saturate(100%);
+        --btnFZ:1rem;
+        --btnFF:var(--Eng);
+        --btnLH:1.125;
+        --btnFW: 700; 
+        --btnLS:0.025em; 
+        --btnW:330px;
+        --btnW48:100%;
+        // @media (max-width : 480px){
+        //     --btnW:100%;
+        // }
+        --btnH:56px;
+        @media (max-width : 640px){
+            --btnH:56px;
+        }
+        
+        --btnPX:1.25em ;
+        --btnPY: 0.25em;
+        --btnG:.5em;
+        --btnTR:0.6s ease-out; 
+        // --btnTR:var(--trt);
+        // --btnRad:var(--rad);
+        --btnRad:0px;
+        // --btnSh: var(--bxshbtn);
+    
+        --btnIFZ:calc(var(--btnFZ)*1.25);
+        --btnImg:2.25em;
+        
+        // --btnImg:calc(var(--btnH)*.66 );
+        --btnIFF:var(--icon);
+        --btnIMX: 0 0.25em ;
+        --btnAC:center; 
+        --btnTA:center; 
+        // → content: "\f061";  e06c ▶\25B6
+        // >  content:"\f105"; "\f054";    "\e13a";  circle f35a; f138 &#xf0a9;
+        // hand-pointer f25a //long→&#xf30b;circleright f0a9;caret\f0da 
+        // <i class="las la-mars"></i>
+        --btnAF: "\f105";
+        --btnAFdis: inline-block;
+        --btnAFMX: 0em 0;
+        --btnAFC: var(--inh);
+        --btnAFFZ: calc(var(--btnFZ)*1);
+        // --btnAFFZ: 1.5em;
+        // @media (max-width : 640px){
+        --btnAFFW: 900;
+        --btnAFPOS: absolute;
+        // --btnAFRT: 1.25em;
+        --btnAFRT: 0.25em;
+    }
+:root{//シャドウ デコレーション等
+        --tsW: 1rem; 
+        --txshwh: 0 0 var(--tsW)  var(--wh50);
+        --txshbk: 0 0 var(--tsW)  var(--bk50);
+        --txshmc: 0 0 var(--tsW)  var(--mc50); 
+        --txshsc: 0 0 var(--tsW)  var(--sc50); 
+        --txshtx: 0 0 var(--tsW)  var(--tx50); 
+        // --txshbc: 0 0 var(--tsW)  var(--BC); 
+    
+        --dsW:1rem;
+        --dswh: drop-shadow(0 0px var(--dsW) var(--WH)); 
+        --dsbk: drop-shadow(0 0px var(--dsW) var(--BK)); 
+        --dsmc: drop-shadow(0 0px var(--dsW) var(--mc));  
+        // --dsbc: drop-shadow(0 0px var(--dsW) var(--BC)); 
+        // --dstx: drop-shadow(0 0px var(--dsW) var(--tx)); 
+        --dsgr: drop-shadow(0 0px var(--dsW) var(--GR)); 
+        // --dssc: drop-shadow(0 0px var(--dsW) var(--SC)); 
+    
+        // --pxshmc:1px 1px var(--mc);
+        // --pxshac:1px 1px var(--ac30);
+        --pxshwh:0px 1px var(--WH);
+        // --pxshbk:1px 1px var(--BK);
+        // --pxshgr:1px 1px var(--GR);
+        // --pxshbc:1px 1px var(--BC);
+    
+        --pxdswh:drop-shadow(1px 1px var(--WH));
+        // --pxdsbk:drop-shadow(1px 1px var(--BK));
+        // --pxdsmc:drop-shadow(1px 1px var(--mc));
+        // --pxdstx:drop-shadow(1px 1px var(--tx)); 
+        // --pxdsbc:drop-shadow(1px 1px var(--BC)); 
+    
+        // // --bs2:0px 2px 8px #1119; 
+        --bsW:4px;
+        // --NbsW:calc(var(--bsW)*-1 );
+        // --bxshwh:  0  var(--bsW) calc(var(--bsW)*2 )  var(--wh10); 
+        --bxshbk:  0  var(--bsW) calc(var(--bsW)*2 )  var(--bk20); 
+        // --bxshmc:  0  var(--bsW) calc(var(--bsW)*2 )  var(--mc10); 
+        // --bxshbc:  0  var(--bsW) calc(var(--bsW)*2 )  var(--bc10); 
+        // --bxshtx:  0  var(--bsW) calc(var(--bsW)*2 )  var(--tx10); 
+        // --bxshgr:  0  var(--bsW) calc(var(--bsW)*2 )  var(--gr10); 
+        // --bxshsc:  0  var(--bsW) calc(var(--bsW)*2 )  var(--sc10); 
+        // // --bxshgr:5px 5px 0px var(--GR); 
+        // --bxshbtn: inset 2px 2px 4px var(--wh40),
+        // inset -2px -2px 4px var(--tx20); 
+    
+        // --bxshblur:0 0 10px  #11100088;
 }

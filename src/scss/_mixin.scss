@@ -1,10 +1,15 @@
 @charset "utf-8";
 
-$menu: 1080px;
-$menuMin: 1080.1px;
+$menu: 960px;
+$menuMin: 960.1px;
 
 @mixin menu {
         @media (max-width: $menu) {
+                @content;
+        }
+}
+@mixin menuMin {
+        @media (min-width: $menu) {
                 @content;
         }
 }
@@ -29,12 +34,66 @@ $menuMin: 1080.1px;
 
 // ******************font
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@100..900&family=Noto+Sans+JP:wght@100..900&display=swap');
-@import url('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
+// @import url('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
 
-// *, *::before, *::after{
-//     margin: 0;
-//     padding: 0;
-//     box-sizing: border-box;
-//     border: none;
-//     background-color: unset;
-// } 
+%scrollBar{//スクロールバー
+        overflow-y: scroll;
+        --thumbC:var(--mc20);
+        --thumbW:8px;
+        &::-webkit-scrollbar{background-color: transparent;width: var(--thumbW);height: 0;}
+        &::-webkit-scrollbar-thumb {background-color:var(--thumbC);}
+    }
+    %scrollBarX{//横スクロール
+        overflow-x: scroll;
+        --thumbC:var(--tx10);
+        --thumbW:8px;
+        &::-webkit-scrollbar{background-color: transparent;width: 0;height: var(--thumbW);}
+        &::-webkit-scrollbar-thumb {background-color:var(--thumbC);}
+    }
+    %bfin{//文字や小さい擬似要素
+        position: relative;
+        &::before{
+            content: "";display: inline-block;
+            z-index: 1;
+            font-weight: 900;font-family: var(--icon);
+        }
+    }
+    %afin{
+        position: relative;
+        &::after{
+            content: "";display: inline-block;
+            z-index: 1;
+            font-weight: 900;font-family: var(--icon);
+        }
+    }
+    %bf{//全面覆う擬似要素
+        position: relative;z-index: 1;
+        &::before{
+            content: "";display: block;position: absolute;
+            width: 100%;height: 100%;
+        }
+    }
+    %af{
+        position: relative;z-index: 1;
+        &::after{
+            content: "";display: block;position: absolute;
+            width: 100%;height: 100%;
+        }
+    }
+    %nowrap{
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    %lineClamp{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        line-clamp: var(--lineClamp);
+        -webkit-line-clamp: var(--lineClamp);
+        overflow: hidden;
+    }
+    
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }

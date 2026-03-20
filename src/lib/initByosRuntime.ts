@@ -1,0 +1,43 @@
+/**
+ * BYOS クライアント初期化を一括実行（フレームワーク非依存）
+ */
+
+import { initBorderDraw } from "./initBorderDraw";
+import { initBudoux } from "./budoux";
+import { initHeader } from "./header";
+import { initHeaderTrans } from "./headerTrans";
+import { initIntersectionShow } from "./intersectionShow";
+import { initScrollX } from "./scrollX";
+import { initSpanWrap } from "./spanWrap";
+import { initVideo } from "./video";
+
+export type ByosRuntimeDisconnect = { disconnect: () => void };
+
+/**
+ * @param root 走査ルート。省略時は document（従来の全体初期化に近い）
+ */
+export function initByosRuntime(
+	root: Document | Element = document,
+): ByosRuntimeDisconnect {
+	const intersectionShow = initIntersectionShow(root);
+	const spanWrap = initSpanWrap(root);
+	const budoux = initBudoux(root);
+	const headerTrans = initHeaderTrans(root);
+	const video = initVideo(root);
+	const scrollX = initScrollX(root);
+	const header = initHeader(root);
+	const borderDraw = initBorderDraw(root, { frameStride: 1 });
+
+	return {
+		disconnect: () => {
+			intersectionShow.disconnect();
+			spanWrap.disconnect();
+			budoux.disconnect();
+			headerTrans.disconnect();
+			video.disconnect();
+			scrollX.disconnect();
+			header.disconnect();
+			borderDraw.disconnect();
+		},
+	};
+}

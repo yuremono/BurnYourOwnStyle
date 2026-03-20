@@ -579,10 +579,11 @@
 
 // **********Stick*************--gap --few
 :where(.Stick) { // --item = stiky item width , --shift = overlapping width　, --shift must be less than --item.
-        --shift: 75%;
-        --Nshift: calc(var(--shift)*-1 );
-        --item: 100%;
+        --item: 50%;
         --scr: calc(100% - var(--item) + var(--shift));
+        --scr: 62.5%;
+        --shift: calc(var(--scr) - var(--item) );
+        --Nshift: calc(var(--shift)*-1 );
         @include max-md{
                 --Nshift: 0;
         }
@@ -646,18 +647,106 @@
                 }
         }
 }
+// **********PathDraw*************--gap --few
 
-:where(.Flex46) { // --few, --gap
-        --few: 40%;
-
-        >:where(:nth-child(1)) {
-                width: calc(var(--few));
+/* スクロール連動のラッパー（複数配置可） */
+.PathDraw {
+        --PDS: 0.5;
+        --PES: 0.5;
+        --PVM: 0.5;
+        --stw: 10;
+        --stc:  var(--cur);
+        /* display: flex; */
+        min-height: 55vh;
+        svg {
+                display: block;
         }
-
-        >:where(:nth-child(2)) {
-                width: calc(100% - var(--few) - var(--gap));
+        path {
+                fill: none;
+                stroke: var(--stc);
+                stroke-width: var(--stw);
+                stroke-linecap: round;
+                stroke-linejoin: round;
+        }
+}			
+        /* BorderDraw: --PVM=中央Y比、--PDS=要素中心が「中央+帯」から「中央」へ動く区間(vh比)で線が引き切れる */
+.BorderDraw {
+        --PDS: 0.2;
+        // --PES: 0.75;
+        --PVM: 0.345;
+        --stw: 1px;
+        --stc: var(--cur);
+        position: relative;
+}
+.BorderDraw>.BorderDrawSvg {
+        display: block;
+        pointer-events: none;
+        overflow: visible;
+}
+.BorderDraw:not(.IsDown)>.BorderDrawSvg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: var(--stw);
+}
+/* IsDown: 先端を載せる基準線は --PVM（0.5=画面縦中央）。--PDS/--PES は縦ロジックでは未使用 */
+.BorderDraw.IsDown {
+        --PVM: 0.75;
+}
+.BorderDraw.IsDown>.BorderDrawSvg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        // bottom: unset;
+        width: var(--stw);
+        height: 100%;
+}
+.BorderDraw>.BorderDrawSvg path {
+        stroke: var(--stc);
+        stroke-width: var(--stw);
+        stroke-linecap: butt;
+}
+:where(.RgbShift){
+        --stw: 20;
+        --stc:  var(--cur);
+        --RgbShiftRX: -10px;
+        --RgbShiftRY: -5px;
+        --RgbShiftBX: 10px;
+        --RgbShiftBY: 5px;
+        svg {
+                display: block;
+        }
+        path {
+                fill: none;
+                stroke: var(--stc);
+                stroke-width: var(--stw);
+                stroke-linecap: round;
+                stroke-linejoin: round;
+        }
+        .RgbShiftStack {
+                display: grid;
+                isolation: isolate;
+        }
+        .RgbShiftLayer{
+                grid-area: 1 / 1;
+                mix-blend-mode: screen;
+                will-change: transform;
+        }
+        .RgbShiftR {
+                transform: translate(var(--RgbShiftRX), var(--RgbShiftRY));
+                pointer-events: none;
+        }
+        .RgbShiftG {
+                transform: translate(0, 0);
+                pointer-events: none;
+        }
+        .RgbShiftB {
+                transform: translate(var(--RgbShiftBX), var(--RgbShiftBY));
+                pointer-events: auto;
         }
 }
+
 
 
 
