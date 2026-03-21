@@ -11,6 +11,8 @@ voice-input-patterns.md
 .memsearch
 .cursor-memsearch
 ingore/
+js/
+scss/
 
 # macOS system files
 .DS_Store
