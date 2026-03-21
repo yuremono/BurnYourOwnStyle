@@ -14,6 +14,21 @@ ingore/
 js/
 scss/
 
+# Vite pre-bundle cache (regenerated locally)
+.vite/
+
+# Compiled CSS at repo root (keep locally)
+css/
+
+# Source maps
+*.map
+
+# Public images (keep locally; clone may need a separate asset step)
+public/images/
+
+# Claude Code — machine-local settings
+.claude/settings.json
+
 # macOS system files
 .DS_Store
 ._*
