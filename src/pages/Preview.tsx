@@ -6,11 +6,7 @@ import { Panel, PanelItem } from "../components/Panel";
 import { FlexR, FlexRImage } from "../components/FlexR";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Hero, HeroItem, HeroBack } from "../components/Hero";
-
-const getAssetPath = (path: string) => {
-	if (path.startsWith("http")) return path;
-	return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
-};
+import { getAssetPath } from "../lib/assetPath";
 
 function Preview() {
 	return (

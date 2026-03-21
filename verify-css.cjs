@@ -5,7 +5,7 @@ async function testCSS() {
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://localhost:5173');
+  await page.goto('http://localhost:3000');
 
   // Test 1: Check Cards gap CSS variable
   console.log('1. Checking Cards gap...');

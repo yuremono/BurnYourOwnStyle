@@ -8,11 +8,7 @@ import { RgbShift } from "../components/RgbShift";
 import { Stick } from "../components/Stick";
 import { Header } from "../components/Header";
 import { useByosRuntime } from "../hooks/useByosRuntime";
-
-const getAssetPath = (path: string) => {
-	if (path.startsWith("http")) return path;
-	return `${import.meta.env.BASE_URL}${path.replace(/^\//, "")}`;
-};
+import { getAssetPath } from "../lib/assetPath";
 
 function Test2() {
 	useByosRuntime();

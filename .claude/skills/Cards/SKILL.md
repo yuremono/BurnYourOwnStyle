@@ -2,7 +2,7 @@
 name: Cards
 description:
     BYOS の Cards コンポーネントを生成するスキル。card の集合体 UI 要素が必要な時に使用。
-    指示形式：テキストでModifierクラス（col3, IsLayer, col4 など）と変数（--gap 20px, --wid 1200px など）を指定。
+    指示形式：テキストで Modifier（IsLayer 等）と Value（col3, col4 等）、変数（--gap 20px, --wid 1200px など）を指定。
     例：`/Cards col3 --gap 20px` または `3 カラムでギャップ 20px`
 argument-hint: "[col3 | col4 | IsGrow | IsFix | [IsLayer] | img20 | img30 | img40 | img60]"
 allowed-tools: Read, Glob, Grep, Write, Edit
@@ -64,14 +64,15 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ## 基本構造
 
-```jsx
+```tsx
 <Cards className="{{modifier_classes}}" style={{} as React.CSSProperties}>
-  <CardsItem image={getAssetPath("/images/picsum/001.jpg")} />
+  <CardsItem image={getAssetPath("/images/picsum/001.jpg")}>
     <h3>カード 1</h3>
     <p>説明文</p>
   </CardsItem>
-  </Cards>
-  <CardsItem>...</CardsItem>
+  <CardsItem>
+    {/* 追加カード */}
+  </CardsItem>
 </Cards>
 ```
 
@@ -135,13 +136,14 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 - designs/{ファイル名}.pen
 - 指定レイヤーのデザインを視覚的に確認する。
-- フォントサイズの殆どは `define` スキルにより変数定義されるため**Tailwind クラス不要**
-- 色の殆どは`define` スキルにより変数定義されるため**変数を含む Tailwind クラスを使用**
+- フォントサイズの殆どは **define スキルであらかじめ設定された CSS 変数**を使う想定のため**Tailwind クラス不要**
+- 色の殆どは **define で定義済みの変数**を参照するため**変数を含む Tailwind クラスを使用**
+- 必要な変数が **未設定**のときは勝手に値を補わず、**ユーザーに不足を指摘**する。
 - 色、余白、初期値以外のフォントサイズ、必要なら座標を取得する。
 
 5. **Tailwind で装飾**
 
-- DOM 出力とデザインの見た目が一致しない場合は`define`スキルが未実行の可能性が高い。ユーザーに確認すること。
+- DOM 出力とデザインの見た目が一致しない場合、**define で定義されるべき変数が未設定**の可能性がある。ユーザーに確認すること。
 
 7. (オプション：ユーザーの指示があった時) agent-browser で表示確認を行う
 
@@ -218,6 +220,6 @@ export { Cards, CardsItem };
 
  ## クラス定義ファイル
 
- `src/scss/_03UNIT.scss`
+ `src/scss/_10UNIT.scss`
 
 

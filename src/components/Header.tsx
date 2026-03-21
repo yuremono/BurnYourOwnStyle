@@ -77,7 +77,7 @@ export function Header() {
 					id="navsp"
 					className="nav"
 					role="navigation"
-					aria-label="main navigation"
+					aria-label="main navigation (mobile overlay)"
 				>
 					<div className="nav_inner">
 						<NavUl />

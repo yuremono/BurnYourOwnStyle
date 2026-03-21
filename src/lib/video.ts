@@ -46,7 +46,7 @@ export function initVideo(root: Document | Element = document): ByosDisconnect {
 							func: command,
 							args: "",
 						}),
-						"*",
+						"https://www.youtube.com",
 					);
 				}
 			}

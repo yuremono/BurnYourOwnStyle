@@ -5,7 +5,7 @@ async function testOverride() {
 
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://localhost:5173');
+  await page.goto('http://localhost:3000');
 
     // Test: Check if .Cards gap (Burn Your Own Style) overrides Tailwind gap
   console.log('1. Checking if .Cards gap overrides Tailwind gap-4...');

@@ -22,7 +22,7 @@ interface CardsItemProps {
 }
 
 const CardsItem = ({ image, imageAlt = "", svg, className = "", children }: CardsItemProps) => {
-  const figureContent = svg ?? (image && <img src={image} alt={imageAlt} />)
+  const figureContent = svg ?? (image && <img src={image} alt={imageAlt} loading="lazy" />)
   return (
     <div className={`item  ${className}`}>
       {figureContent && (svg ? figureContent : <figure>{figureContent}</figure>)}

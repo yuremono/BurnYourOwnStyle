@@ -3,6 +3,8 @@
  * 元: js/function.js 326–367 行付近
  */
 
+import { escapeHtmlTextChar } from "./escapeHtmlText";
+
 const ATTR_DONE = "data-byos-span-wrap";
 
 class SpanWrap {
@@ -24,7 +26,7 @@ class SpanWrap {
 				const text = (node.textContent ?? "").replace(/\r?\n/g, "");
 				spanWrapText += text.split("").reduce((acc, v) => {
 					const delay = (this.globalIndex.count * 0.075).toFixed(2);
-					const span = `<span style="--char-index:${this.globalIndex.count}; transition-delay:${delay}s;">${v}</span>`;
+					const span = `<span style="--char-index:${this.globalIndex.count}; transition-delay:${delay}s;">${escapeHtmlTextChar(v)}</span>`;
 					this.globalIndex.count++;
 					return acc + span;
 				}, "");

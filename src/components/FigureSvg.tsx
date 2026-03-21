@@ -1,4 +1,6 @@
 import React from "react"
+import { sanitizeSvgMarkup } from "../lib/sanitizeSvg"
+import { assertSafeSvgAssetPath } from "../lib/svgAssetPath"
 
 /** figure 直下に SVG を置く。public/images/svg/ のパスを指定するか、SVG 文字列を直接渡す。 */
 interface FigureSvgProps {
@@ -17,18 +19,36 @@ const FigureSvg = ({ src, className = "" }: FigureSvgProps) => {
 			setSvg(svgCache[src])
 			return
 		}
-		// SVG 文字列か URL か判定（< で始まれば SVG 文字列）
+		// SVG 文字列かアセットパスか判定（< で始まれば SVG 文字列）
 		if (src.trimStart().startsWith("<")) {
-			svgCache[src] = src
-			setSvg(src)
+			const safe = sanitizeSvgMarkup(src)
+			if (!safe) {
+				setSvg(null)
+				return
+			}
+			svgCache[src] = safe
+			setSvg(safe)
 			return
 		}
-		const url = `${import.meta.env.BASE_URL}images/svg/${src.replace(/^\//, "")}`
+		const safePath = assertSafeSvgAssetPath(src)
+		if (!safePath) {
+			setSvg(null)
+			return
+		}
+		const url = `${import.meta.env.BASE_URL}images/svg/${safePath}`
 		fetch(url)
-			.then((r) => r.text())
+			.then((r) => {
+				if (!r.ok) throw new Error("fetch failed")
+				return r.text()
+			})
 			.then((text) => {
-				svgCache[src] = text
-				setSvg(text)
+				const safe = sanitizeSvgMarkup(text)
+				if (!safe) {
+					setSvg(null)
+					return
+				}
+				svgCache[src] = safe
+				setSvg(safe)
 			})
 			.catch(() => setSvg(null))
 	}, [src])

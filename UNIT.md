@@ -129,7 +129,7 @@ Unit クラス毎に定義されている。
 | クラス | 説明 | 使用例 |
 |--------|------|--------|
 | `.IsFlow` | 矢印でつながれた表現 | `.Panel.IsFlow` |
-| `.IsRev` | 画像を左に配置 | `.Panel.item.IsRev` |
+| `.IsRev` | 画像の位置を反転（右に）。ImgText の `.IsRev` と同様 | `.Panel.item.IsRev` |
 
 ---
 
@@ -159,7 +159,7 @@ Unit クラス毎に定義されている。
 | `.img40` | 画像幅 40% |
 | `.img30` | 画像幅 30% |
 | `.img20` | 画像幅 20% |
-他の数値も細かく設定済み。`scss/Ratiokit.scss`
+他の数値も細かく設定済み。比率・幅の定義は **`src/scss/`** を参照（プロジェクト直下の `scss/` は参照用）。
 
 #### Modifier クラス
 
@@ -227,30 +227,66 @@ summary,details タグを使う開閉コンテンツ。css で完結するため
 
 #### 変数
 
-- `--few`：第一要素の幅（自動計算）
+- `--few`：FlexR 小さい要素側の幅。各 Flex クラスで既定値が入り、上書き可（例は README・STYLE の変数表参照）
 
 ---
 
 ### `Hero`
 
-主に画面幅で表示する画像とテキストが重なるセクション
+主に画面幅で表示する画像とテキストが重なるセクション。Grid レイヤー構造として設計され、背景画像（HeroBack）とコンテンツ（HeroItem）を重ねる。
 
 #### 基本構造
 
 ```html
-
+<div class="Hero">
+  <figure class="back">
+    <img src="..." alt="">
+  </figure>
+  <div class="item">
+    <h1>メインタイトル</h1>
+    <p>サブテキスト</p>
+  </div>
+</div>
 ```
+
+#### React コンポーネント
+
+```jsx
+<Hero className="" style={{}}>
+  <HeroBack image="/images/hero-bg.jpg" />
+  <HeroItem>
+    <h1>メインタイトル</h1>
+    <p>サブテキスト</p>
+  </HeroItem>
+</Hero>
+```
+
+#### コンポーネント構成
+
+| コンポーネント | 役割 | props |
+|---------------|------|-------|
+| `Hero` | レイアウトコンテナ（grid 設定） | `className`, `style`, `children` |
+| `HeroBack` | 背景画像専用 | `image`, `className` |
+| `HeroItem` | コンテンツ専用 | `className`, `children` |
 
 #### Value クラス
 
-| クラス | 説明 |
-|--------|------|
-
+未定
 
 #### Modifier クラス
 
-| クラス | 説明 | 使用例 |
-|--------|------|--------|
+未定
 
+#### 設計思想
 
+1. **Grid レイヤー構造**: 背景画像とコンテンツを `grid-area: 1/1` で同一位置に配置
+2. **関心の分離**: Hero（レイアウト）、HeroBack（背景）、HeroItem（コンテンツ）で役割を分離
+3. **セマンティックな HTML**: 背景画像は装飾目的のため `figure` と `alt=""` を使用
+
+#### レスポンシブ挙動
+
+- **PC（>768px）**: 背景画像とコンテンツを重ねて表示
+- **スマートフォン（≤640px）**: 背景画像は正方形アスペクト比に変更
+
+---
 ---

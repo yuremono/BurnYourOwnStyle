@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preview from "./pages/Preview";
-import Test from "./pages/test";
-import Test2 from "./pages/test2";
+import Test from "./pages/Test";
+import Test2 from "./pages/Test2";
 
 function App() {
 	return (

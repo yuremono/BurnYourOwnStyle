@@ -33,7 +33,7 @@ interface HeroBackProps {
 const HeroBack = ({ image, className = "" }: HeroBackProps) => {
   return (
     <figure className={`back ${className}`}>
-      {image && <img src={image} alt="" />}
+      {image && <img src={image} alt="" loading="lazy" />}
     </figure>
   );
 };
