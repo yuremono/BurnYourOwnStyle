@@ -86,7 +86,7 @@ const RgbShift = ({
 				{src ? (
 					<>
 						<img
-							className="RgbShiftLayer RgbShiftR RgbShiftAsset"
+							className="RgbShiftLayer RgbShiftR RgbShiftImg"
 							src={src}
 							alt=""
 							aria-hidden
@@ -94,7 +94,7 @@ const RgbShift = ({
 							style={{ filter: `url(#${filterBase}-r)` }}
 						/>
 						<img
-							className="RgbShiftLayer RgbShiftG RgbShiftAsset"
+							className="RgbShiftLayer RgbShiftG RgbShiftImg"
 							src={src}
 							alt=""
 							aria-hidden
@@ -102,7 +102,7 @@ const RgbShift = ({
 							style={{ filter: `url(#${filterBase}-g)` }}
 						/>
 						<img
-							className="RgbShiftLayer RgbShiftB RgbShiftAsset"
+							className="RgbShiftLayer RgbShiftB RgbShiftImg"
 							src={src}
 							alt={alt}
 							draggable={false}

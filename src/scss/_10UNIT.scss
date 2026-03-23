@@ -186,7 +186,7 @@
         }
 
 }
-:is(.card3, .card2, .card4, .card5, .cardflex, .cardfix) {
+:is(.card3, .card2, .card4, .card5, .cardflex, .cardfix) {//追加の可能性があるModifierのストック
         &.__flow{
 
                 .box:not(:last-child){
@@ -399,7 +399,7 @@
                 figure {
                         width: var(--imgW, 30%);
 
-                        &:is(.IsRev *) {
+                        &:is(.Panel .IsRev *) {
                                 order: 1;
                         }
 
@@ -577,6 +577,26 @@
         }
 }
 
+:where(.Wrap) {// --MY, --out
+	padding-block: var(--MY);
+	margin-inline: var(--out);
+	max-width: unset;
+	width: unset;
+	position: relative;
+
+	>* {
+		margin-inline: auto;
+		max-width: 100%;
+	}
+
+	>*+* {
+		margin-top: var(--MY5);
+	}
+        +.Wrap{
+                margin-top: unset;
+        }
+}
+
 // **********Stick*************--gap --few
 :where(.Stick) { // --item = stiky item width , --shift = overlapping width　, --shift must be less than --item.
         --item: 50%;
@@ -617,11 +637,10 @@
                 margin-top: unset;
                 margin-inline: var(--Nshift) 0;
 
-                &:is(.IsRev *){
-                        order: -1;
-                        margin-inline: 0 var(--Nshift);
-
-                }
+        }
+        &.IsRev .StickScr{
+                order: -1;
+                margin-inline: 0 var(--Nshift);
         }
         >* {
                 width: calc(50% - var(--gap)/2);
@@ -650,7 +669,7 @@
 // **********PathDraw*************--gap --few
 
 /* スクロール連動のラッパー（複数配置可） */
-.PathDraw {
+:where(.PathDraw) {
         --PDS: 0.5;
         --PES: 0.5;
         --PVM: 0.5;
@@ -670,7 +689,7 @@
         }
 }			
         /* BorderDraw: --PVM=中央Y比、--PDS=要素中心が「中央+帯」から「中央」へ動く区間(vh比)で線が引き切れる */
-.BorderDraw {
+:where(.BorderDraw) {
         --PDS: 0.2;
         // --PES: 0.75;
         --PVM: 0.345;
@@ -793,18 +812,13 @@
         --spring-duration: 1.333s;
 }
 
-
-
-
-
-
 // ***************画像テキスト ImgText*****************.img??で画像サイズ可変
 $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
         "75": 75%, "70": 70%, "66": 66%, "65": 65%, "60": 60%, "55": 55%,
         "50": 50%, "45": 45%, "40": 40%, "35": 35%, "33": 33%, "30": 30%,
         "25": 25%, "20": 20%, "10": 10%);
 
-.ImgText {// --gap, --imgW
+:where(.ImgText) {// --gap, --imgW
         display: flex;
         flex-wrap: wrap; 
         gap: var(--gap);
@@ -835,11 +849,8 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
                 flex: 1;
         }
 
-        &.IsRev { // --- 反転設定 ---
-                figure {
-                        order: 1;
-                }
-
+        &.IsRev figure{ // --- 反転設定 ---
+                order: 1;
         }
 
         @include max-md {

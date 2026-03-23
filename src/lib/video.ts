@@ -4,12 +4,14 @@
  */
 
 const SELECTOR = ".video_container,.video_container2";
-const ATTR = "data-byos-video-io";
+const ATTR = "data-video-io";
 const THRESHOLD = 0.1;
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
-export function initVideo(root: Document | Element = document): ByosDisconnect {
+export function initVideo(
+	root: Document | Element = document,
+): RuntimeDisconnect {
 	const base = root;
 
 	const observer = new IntersectionObserver(
@@ -39,7 +41,9 @@ export function initVideo(root: Document | Element = document): ByosDisconnect {
 
 				const iframe = container.querySelector("iframe");
 				if (iframe?.src.includes("youtube.com")) {
-					const command = entry.isIntersecting ? "playVideo" : "pauseVideo";
+					const command = entry.isIntersecting
+						? "playVideo"
+						: "pauseVideo";
 					iframe.contentWindow?.postMessage(
 						JSON.stringify({
 							event: "command",

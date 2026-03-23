@@ -91,25 +91,7 @@ main {// --PX
     
 
 
-:where(.wrapper) {// --MY, --out
-	padding-block: var(--MY);
-	margin-inline: var(--out);
-	max-width: unset;
-	width: unset;
-	position: relative;
 
-	>* {
-		margin-inline: auto;
-		max-width: 100%;
-	}
-
-	>*+* {
-		margin-top: var(--MY5);
-	}
-        +.wrapper{
-                margin-top: unset;
-        }
-}
 
 .wid {// --wid
 	width: var(--wid);

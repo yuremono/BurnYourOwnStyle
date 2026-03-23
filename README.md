@@ -112,9 +112,9 @@ PROJECT_ROOT/
 │   └── scss/globals.scss    # Unit を含むスタイルのエントリ（ビルドで読み込み）
 ├── js/                      # 参照用
 ├── scss/                    # 参照用（ルート直下・別系統ソース）
-├── CLAUDE.md                # エージェント用プロジェクトルール（編集中）
-├── STYLE.md                 # 設計思想・変数設計（編集中）
-└── UNIT.md                  # Unit クラスリファレンス（編集中）
+├── CLAUDE.md                # エージェント用プロジェクトルール
+├── STYLE.md                 # 設計思想・変数設計
+└── UNIT.md                  # Unit クラスリファレンス
 ```
 
 ### Unit一覧

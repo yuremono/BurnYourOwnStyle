@@ -75,7 +75,7 @@ function Preview() {
 				</Hero>
 
 				{/* カーズセクション（pencil-new.pen から） */}
-				<section className="wrapper into bg-[--BC] mt-0 useSvgIcons">
+				<section className="Wrap into bg-[--BC] mt-0 useSvgIcons">
 					<h2 className="text-center font-semibold mb-4">
 						カーズセクション（pencil-new.pen から）
 					</h2>
@@ -154,7 +154,7 @@ function Preview() {
 				</section>
 
 				{/* Cards col4 IsLayer */}
-				<section className="wrapper">
+				<section className="Wrap">
 					<h2 className="text-center font-semibold mb-4">
 						Cards col4 IsLayer
 					</h2>
@@ -187,7 +187,7 @@ function Preview() {
 				</section>
 
 				{/* ImgText セクション */}
-				<section className="wrapper into">
+				<section className="Wrap into">
 					<h2 className="text-center font-semibold mb-4">
 						ImgText - 画像とテキスト横並び
 					</h2>
@@ -275,7 +275,7 @@ function Preview() {
 				</section>
 
 				{/* FlexR セクション */}
-				<section className="wrapper">
+				<section className="Wrap">
 					<h2 className="text-center font-semibold mb-4">
 						FlexR - 比率割付
 					</h2>
@@ -303,7 +303,7 @@ function Preview() {
 
 				{/* テストセクション - Cards col4 IsLayer */}
 				<section
-					className="wrapper into  bg-[--GR]"
+					className="Wrap into  bg-[--GR]"
 					style={{} as React.CSSProperties}
 				>
 					<h2 className="text-center font-semibold mb-4 text-white">
@@ -369,7 +369,7 @@ function Preview() {
 						</CardsItem>
 					</Cards>
 				</section>
-				<section className="wrapper into bg-[--BC]">
+				<section className="Wrap into bg-[--BC]">
 					<h2 className="text-center font-semibold mb-4 ">テスト</h2>
 					<Cards className=" IsGrow">
 						<CardsItem
@@ -415,7 +415,7 @@ function Preview() {
 						</CardsItem>
 					</Cards>
 				</section>
-				<section className="wrapper into  bg-[--BC]">
+				<section className="Wrap into  bg-[--BC]">
 					<h2 className="text-center font-semibold mb-4 ">テスト</h2>
 					<Cards className="col2 IsRow">
 						<CardsItem

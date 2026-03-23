@@ -77,7 +77,7 @@ function Test() {
 				</Hero>
 
 				{/* About - ImgText img40 IsRev / img30 で店の紹介 */}
-				<section className="wrapper into py-16">
+				<section className="Wrap into py-16">
 					<h2 className="text-center font-bold text-2xl text-amber-900 mb-12">
 						<span className="sub">About</span> 小路カフェについて
 					</h2>
@@ -112,7 +112,7 @@ function Test() {
 				</section>
 
 				{/* Menu - Cards col4 IsLayer */}
-				<section className="wrapper into py-16 bg-amber-100/50">
+				<section className="Wrap into py-16 bg-amber-100/50">
 					<h2 className="text-center font-bold text-2xl text-amber-900 mb-12">
 						<span className="sub">Menu</span> メニュー
 					</h2>
@@ -156,7 +156,7 @@ function Test() {
 				</section>
 
 				{/* Features - Cards col3 IsShift */}
-				<section className="wrapper into py-16">
+				<section className="Wrap into py-16">
 					<h2 className="text-center font-bold text-2xl text-amber-900 mb-12">
 						<span className="sub">Features</span> 小路カフェの特徴
 					</h2>
@@ -198,7 +198,7 @@ function Test() {
 				</section>
 
 				{/* Process - Panel img40 IsFlow */}
-				<section className="wrapper into py-16 bg-amber-100/30">
+				<section className="Wrap into py-16 bg-amber-100/30">
 					<h2 className="text-center font-bold text-2xl text-amber-900 mb-12">
 						<span className="sub">Process</span>{" "}
 						コーヒーができるまで
@@ -242,7 +242,7 @@ function Test() {
 				</section>
 
 				{/* FAQ - Toggle IsQa */}
-				<section className="wrapper into py-16">
+				<section className="Wrap into py-16">
 					<h2 className="text-center font-bold text-2xl text-amber-900 mb-12">
 						<span className="sub">FAQ</span> よくある質問
 					</h2>
@@ -282,7 +282,7 @@ function Test() {
 				</section>
 
 				{/* Access - FlexR Flex46 / Flex64 */}
-				<section className="wrapper into py-16 bg-amber-900 text-amber-50">
+				<section className="Wrap into py-16 bg-amber-900 text-amber-50">
 					<h2 className="text-center font-bold text-2xl mb-12">
 						<span className="sub">Access</span> アクセス
 					</h2>
@@ -333,7 +333,7 @@ function Test() {
 				</section>
 			</main>
 			{/* Footer */}
-			<footer className="wrapper into bg-amber-950 text-amber-100 py-12">
+			<footer className="Wrap into bg-amber-950 text-amber-100 py-12">
 				<div className="text-center">
 					<p className="font-semibold mb-4">KOMICHI CAFE</p>
 					<Link

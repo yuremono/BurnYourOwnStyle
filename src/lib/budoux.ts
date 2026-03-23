@@ -5,11 +5,13 @@
 
 import { loadDefaultJapaneseParser } from "budoux";
 
-const ATTR = "data-byos-budoux";
+const ATTR = "data-budoux";
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
-export function initBudoux(root: Document | Element = document): ByosDisconnect {
+export function initBudoux(
+	root: Document | Element = document,
+): RuntimeDisconnect {
 	const base = root;
 	const parser = loadDefaultJapaneseParser();
 

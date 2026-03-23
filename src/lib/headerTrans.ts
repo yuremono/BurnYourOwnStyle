@@ -6,11 +6,11 @@
 const SELECTOR_HEAD = ".mv,.first,.title1,.page-title";
 const SCROLL_THRESHOLD = 20;
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
 export function initHeaderTrans(
 	root: Document | Element = document,
-): ByosDisconnect {
+): RuntimeDisconnect {
 	const doc = root instanceof Document ? root : root.ownerDocument!;
 	const base = root;
 

@@ -167,7 +167,7 @@
 }
 :root{//ボーダー シャドウ デコレーション等
         --bds: solid;
-        --bdw: 3px;
+        --bdw: 1px;
         --bdc: var(--cur);  
         --line:var(--bdw) var(--bds) var(--bdc); 
         --stw: 4px;

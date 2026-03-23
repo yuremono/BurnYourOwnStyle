@@ -10,8 +10,8 @@ import {
 	computeBorderDrawProgress01,
 } from "./pathDrawMath";
 
-const ATTR = "data-byos-border-draw";
-const SVG_ATTR = "data-byos-border-draw-svg";
+const ATTR = "data-border-draw";
+const SVG_ATTR = "data-border-draw-svg";
 const SELECTOR = ".BorderDraw";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -25,7 +25,7 @@ const borderDrawPathCache = new WeakMap<
 	{ svg: SVGSVGElement; path: SVGPathElement }
 >();
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
 /**
  * PathDraw の `frameStride` と同じ意味。
@@ -85,7 +85,7 @@ function mountHosts(base: Document | Element): HTMLElement[] {
 export function initBorderDraw(
 	root: Document | Element = document,
 	options: InitBorderDrawOptions = {},
-): ByosDisconnect {
+): RuntimeDisconnect {
 	const base = root;
 
 	const hosts = new Set<HTMLElement>();
@@ -193,9 +193,9 @@ export function initBorderDraw(
 			base.querySelectorAll(`[${ATTR}]`).forEach((node) => {
 				if (!(node instanceof HTMLElement)) return;
 				borderDrawPathCache.delete(node);
-				node
-					.querySelectorAll(`:scope > svg[${SVG_ATTR}]`)
-					.forEach((s) => s.remove());
+				node.querySelectorAll(`:scope > svg[${SVG_ATTR}]`).forEach(
+					(s) => s.remove(),
+				);
 				node.removeAttribute(ATTR);
 			});
 			hosts.clear();

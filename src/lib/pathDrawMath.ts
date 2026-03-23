@@ -57,7 +57,7 @@ export function computeBorderDrawIsDownProgress01(
 	const svg =
 		svgHint ??
 		(el.querySelector(
-			":scope > svg[data-byos-border-draw-svg]",
+			":scope > svg[data-border-draw-svg]",
 		) as SVGSVGElement | null);
 	const varEl: Element = svg ?? el;
 	const vMidRatio = readVar(varEl, "--PVM", readVar(el, "--PVM", 0.5));

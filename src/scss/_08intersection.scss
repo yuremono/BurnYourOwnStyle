@@ -2,14 +2,14 @@
 
 
 
-// .js-letter{//文字分割用
+// .Jsletter{//文字分割用
 //     @for $i from 1 through 60 {
 // 		&.show >*>*:nth-child(#{$i}){
 //             transition-delay: #{$i*0.05 + 0.05}s;
 //         }
 // 	}
 // }
-.js-letter{
+.JsLetter{
     --deg: 30deg;
     >*>*{
         transition:var(--trt);
@@ -25,19 +25,19 @@
     }
     
 }
-[class*=js-],[class*=js-ch]>*{//リスト系のTRディレイ
+[class*=Js],[class*=JsCh]>*{//リスト系のTRディレイ
     @for $i from 1 through 9 {
 		&.show:nth-child(#{$i}){
             transition-delay: #{$i*0.2 - 0.2}s;
-            &:is(section>*,form>*){
-                transition-delay: 0s!important;
+            &:is(main>*,form>*){
+                transition-delay: 0s;
             }
         }
 	}
 }
-.js-{
+.Js{
     
-    &hide
+    &Hide
     {
         filter: blur(var(--jsBlur)) ;
         opacity: 0;
@@ -47,7 +47,7 @@
             filter: unset;
         }
     }
-    &cpL,&cpR
+    &CpL,&CpR
     {
         transition: var(--trt);
         opacity: 0.1;
@@ -57,7 +57,7 @@
             filter: unset;
         }
     }
-    &scale
+    &Scale
     {
         opacity: 0;
         transition:scale 1.8s, opacity 1.2s .4s!important;
@@ -67,22 +67,22 @@
             scale: 1;
         }
     }
-    &left,&chL>*,&chLR>:nth-child(odd){
+    &Left,&ChL>*,&ChLR>:nth-child(odd){
         translate: calc(var(--transX)*-1) 0;
     }
-    &right,&chR>*,&chLR>:nth-child(even){
+    &Right,&ChR>*,&ChLR>:nth-child(even){
         translate: var(--transX) 0;
     }
-    &bottom,&chB>*{
+    &Bottom,&ChB>*{
         translate: 0 var(--transY);
     }
-    &top,&chT>*{
+    &Top,&ChT>*{
         translate: 0 calc(var(--transY)*-0.5);
     }
 }
-.js-{//show上書き
-    &left,&right,&top,&bottom,
-    &chB>*,&chL>*,&chR>*,&chT>*,&chLR>*
+.Js{//show上書き
+    &Left,&Right,&Top,&Bottom,
+    &ChB>*,&ChL>*,&ChR>*,&ChT>*,&ChLR>*
     // &artB article>*,&artL article>*,&artR article>*
     {
         transition: var(--trt);
@@ -95,14 +95,14 @@
         }
     }
 }
-.js-cpL {clip-path: inset(0 90% 0 0);}
-.js-cpR {clip-path: inset(0  0 0 90%);}
-.js-cpT {clip-path: inset(0  0 90% 0);}
-.js-cpB {clip-path: inset(90% 0  0 0);}
-.js-cpL ,
-.js-cpR ,
-.js-cpT ,
-.js-cpB {
+.JsCpL {clip-path: inset(0 90% 0 0);}
+.JsCpR {clip-path: inset(0  0 0 90%);}
+.JsCpT {clip-path: inset(0  0 90% 0);}
+.JsCpB {clip-path: inset(90% 0  0 0);}
+.JsCpL ,
+.JsCpR ,
+.JsCpT ,
+.JsCpB {
     transition: var(--trt);
     opacity: 0;
     &.show{
@@ -113,7 +113,7 @@
 
 
 
-// .js-bgFix{
+// .JsbgFix{
 //     z-index: 1;
 //     display: flex;
 //     flex-direction: column;
@@ -122,7 +122,7 @@
 //         max-width: unset;
 //     }
 //     transition: 1s;
-//     &:has(+.js-bgFix.show){
+//     &:has(+.JsbgFix.show){
 //         opacity: 0;
 //     } 
 //     .bgFix{
@@ -133,9 +133,9 @@
 //         opacity: 1;
 //     }
 //     .bgFix {
-//         margin-top: unset;
+//         margin-Top: unset;
 //         background: no-repeat center / cover;
-//         +*{margin-top: unset;}
+//         +*{margin-Top: unset;}
         
 //         @media (max-width : 960px){
 //             background: no-repeat 0 0 /cover;

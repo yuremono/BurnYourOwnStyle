@@ -3,9 +3,9 @@
  * 元: js/function.js 121–219 行
  */
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
-export function initHeader(root: Document | Element = document): ByosDisconnect {
+export function initHeader(root: Document | Element = document): RuntimeDisconnect {
 	const doc = root instanceof Document ? root : root.ownerDocument!;
 	const base = root;
 

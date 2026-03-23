@@ -1,5 +1,5 @@
 /**
- * BYOS クライアント初期化を一括実行（フレームワーク非依存）
+ * クライアント側の DOM 初期化を一括実行（フレームワーク非依存）
  */
 
 import { initBorderDraw } from "./initBorderDraw";
@@ -11,14 +11,14 @@ import { initScrollX } from "./scrollX";
 import { initSpanWrap } from "./spanWrap";
 import { initVideo } from "./video";
 
-export type ByosRuntimeDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
 /**
  * @param root 走査ルート。省略時は document（従来の全体初期化に近い）
  */
-export function initByosRuntime(
+export function initClientRuntime(
 	root: Document | Element = document,
-): ByosRuntimeDisconnect {
+): RuntimeDisconnect {
 	const intersectionShow = initIntersectionShow(root);
 	const spanWrap = initSpanWrap(root);
 	const budoux = initBudoux(root);

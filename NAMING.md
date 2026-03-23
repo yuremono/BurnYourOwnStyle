@@ -34,8 +34,8 @@ Vanilla DOM 初期化・ユーティリティ。**React コンポーネントで
 
 | 項目 | 規則 | 例 |
 |------|------|-----|
-| ファイル名 | **camelCase**（先頭小文字） | `header.ts`, `budoux.ts`, `initByosRuntime.ts` |
-| 公開する関数 | **camelCase** | `initHeader`, `initByosRuntime` |
+| ファイル名 | **camelCase**（先頭小文字） | `header.ts`, `budoux.ts`, `initClientRuntime.ts` |
+| 公開する関数 | **camelCase** | `initHeader`, `initClientRuntime` |
 
 **理由**: 「関数・モジュールの束」として一般的な JS/TS の慣習に合わせる。Unit 名（`Header` など）とは別レイヤーとして区別しやすい。
 
@@ -45,8 +45,8 @@ Vanilla DOM 初期化・ユーティリティ。**React コンポーネントで
 
 | 項目 | 規則 | 例 |
 |------|------|-----|
-| ファイル名 | **camelCase**。React の慣習どおり **`use` で始める** | `useByosRuntime.ts` |
-| フック関数 | **`use` + 以降は内部語を PascalCase 連結**（慣習） | `useByosRuntime` |
+| ファイル名 | **camelCase**。React の慣習どおり **`use` で始める** | `useClientRuntime.ts` |
+| フック関数 | **`use` + 以降は内部語を PascalCase 連結**（慣習） | `useClientRuntime` |
 
 **理由**: [Rules of Hooks](https://react.dev/reference/rules/rules-of-hooks) とコミュニティの慣習。ファイル名は `use` 小文字始まりの **camelCase** とする。
 

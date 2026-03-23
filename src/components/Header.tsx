@@ -42,7 +42,7 @@ export function Header() {
 		<div id="header" className="h  upInit" style={innerStyle}>
 			<div className="h_inner">
 				<div className="h_logo [--logoW:180px]" >
-					<Link to="/">BYOS</Link>
+					<Link to="/">ロゴ</Link>
 				</div>
 				<button
 					type="button"

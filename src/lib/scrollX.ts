@@ -7,10 +7,10 @@ import "scroll-hint/css/scroll-hint.css";
 import ScrollHint from "scroll-hint";
 
 const SELECTOR = ".__scrollX, .tbl_scroll";
-const ATTR_HINT = "data-byos-scroll-hint";
-const WHEEL_ATTR = "data-byos-scroll-wheel";
+const ATTR_HINT = "data-scroll-hint";
+const WHEEL_ATTR = "data-scroll-wheel";
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
 function prependHintIconToScrollX(root: Document | Element) {
 	const base = root;
@@ -21,7 +21,9 @@ function prependHintIconToScrollX(root: Document | Element) {
 	});
 }
 
-export function initScrollX(root: Document | Element = document): ByosDisconnect {
+export function initScrollX(
+	root: Document | Element = document,
+): RuntimeDisconnect {
 	const base = root;
 
 	const candidates = [...base.querySelectorAll(SELECTOR)].filter(

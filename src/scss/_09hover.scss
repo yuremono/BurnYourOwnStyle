@@ -494,12 +494,11 @@ p:has(>a){
     background-position-y: 100%;
     background-position-x: -105%;
     background-size: 200% 1px;
-    // animation: rightgrow2 var(--btnTR) forwards;
-    &:hover{
-        // background-position-x: 0%;
-        animation: rightgrow var(--btnTR) forwards;
-        opacity: 1;
-    }
+//     animation: rightgrow2 var(--btnTR) forwards;
+	&:hover{
+		animation: rightgrow var(--btnTR) ;
+		background-position-x: 50%;
+	}
     @keyframes rightgrow {
         0% {
             background-position-x: 200%;
@@ -508,14 +507,14 @@ p:has(>a){
             background-position-x: 50%;
         }
     }
-    @keyframes rightgrow2 {
-        0% {
-            background-position-x: 50%;
-        }
-        100% {
-            background-position-x: -105%;
-        }
-    }
+    // @keyframes rightgrow2 {
+    //     0% {
+    //         background-position-x: 50%;
+    //     }
+    //     100% {
+    //         background-position-x: -105%;
+    //     }
+    // }
 }
 // %b-grow{
 //     background-image: linear-gradient(currentColor,currentColor);

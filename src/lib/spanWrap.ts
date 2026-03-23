@@ -1,11 +1,11 @@
 /**
- * .js-letter > span 内テキストを1文字ずつ span で囲む
+ * .JsLetter > span 内テキストを1文字ずつ span で囲む
  * 元: js/function.js 326–367 行付近
  */
 
 import { escapeHtmlTextChar } from "./escapeHtmlText";
 
-const ATTR_DONE = "data-byos-span-wrap";
+const ATTR_DONE = "data-span-wrap";
 
 class SpanWrap {
 	private target: HTMLElement;
@@ -38,11 +38,13 @@ class SpanWrap {
 	}
 }
 
-const SELECTOR = ".js-letter > span";
+const SELECTOR = ".JsLetter > span";
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
-export function initSpanWrap(root: Document | Element = document): ByosDisconnect {
+export function initSpanWrap(
+	root: Document | Element = document,
+): RuntimeDisconnect {
 	const base = root;
 	const globalIndex = { count: 0 };
 

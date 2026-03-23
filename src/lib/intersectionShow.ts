@@ -3,23 +3,23 @@
  * 元: js/function.js 271–303 行付近
  */
 
-const ATTR_ONCE = "data-byos-io-once";
-const ATTR_TOGGLE = "data-byos-io-toggle";
+const ATTR_ONCE = "data-io-once";
+const ATTR_TOGGLE = "data-io-toggle";
 
 const SELECTOR_ONCE =
-	"[class*=js-]:not([class*=js-ch],.js-bgFix),[class*=js-ch]>*,.em-clip em";
-const SELECTOR_TOGGLE = ".f_main,.js-bgFix";
+	"[class*=Js]:not([class*=JsCh],.JsBgFix),[class*=JsCh]>* ";
+const SELECTOR_TOGGLE = ".f_main,.JsBgFix";
 
 const ROOT_MARGIN_ONCE = "0% 0% -15% 0px";
 const THRESHOLD_ONCE = 0;
 
 const ROOT_MARGIN_TOGGLE = "-0% 0% -50% 0px";
 
-export type ByosDisconnect = { disconnect: () => void };
+export type RuntimeDisconnect = { disconnect: () => void };
 
 export function initIntersectionShow(
 	root: Document | Element = document,
-): ByosDisconnect {
+): RuntimeDisconnect {
 	const base = root;
 
 	const observerOnce = new IntersectionObserver(
