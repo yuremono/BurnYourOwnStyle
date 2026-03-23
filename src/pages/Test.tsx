@@ -11,8 +11,8 @@ function Test() {
 	return (
 		<>
 			{/* ナビゲーション */}
-			<header className="w-full fixed top-0 left-0 z-50 bg-[var(--background)]  ">
-				<div className=" flex items-center  px-6 min-h-[var(--MY)]">
+			<header className="w-full fixed top-0 left-0 z-50 bg-[--background]  ">
+				<div className=" flex items-center  px-6 min-h-[--MY]">
 					<Link
 						to="/"
 						className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
@@ -38,8 +38,8 @@ function Test() {
 
 			<main className="min-h-screen bg-amber-50">
 				{/* ナビゲーション */}
-				<nav className="w-full fixed top-0 left-0 z-50 bg-[var(--background)]  ">
-					<div className=" flex items-center  px-6 min-h-[var(--MY)]">
+				<nav className="w-full fixed top-0 left-0 z-50 bg-[--background]  ">
+					<div className=" flex items-center  px-6 min-h-[--MY]">
 						<Link
 							to="/"
 							className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
@@ -66,7 +66,7 @@ function Test() {
 				{/* Hero - out で画面幅 */}
 				<Hero className="out text-white">
 					<HeroBack image={getAssetPath("/images/picsum/003.jpg")} />
-					<HeroItem className="text-shadow-[var(--tsbk)]">
+					<HeroItem className="text-shadow-[--tsbk]">
 						<h1 className="font-bold text-4xl md:text-5xl tracking-tight drop-shadow-lg Ser">
 							小路のカフェへようこそ
 						</h1>

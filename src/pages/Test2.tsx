@@ -18,11 +18,11 @@ function Test2() {
 
 			<Header />
 
-			<main id="" className="test2Page min-h-screen  mt-[var(--head)]">
+			<main id="" className="test2Page min-h-screen  mt-[--head]">
 				{/* Hero - .mv は HeaderTrans の監視用 */}
 				<Hero className="out text-white mv">
 					<HeroBack image={getAssetPath("/images/picsum/003.jpg")} />
-					<HeroItem className="text-shadow-[var(--tsbk)]">
+					<HeroItem className="text-shadow-[--tsbk]">
 						<h1 className="font-bold  tracking-tight drop-shadow-lg Ser">
 							小路のカフェへようこそ
 						</h1>
@@ -93,7 +93,7 @@ function Test2() {
 				</section>
 				{/*Stick Unit、RGB*/}
 				<section
-					className="wrapper bg-[var(--TC)] text-white"
+					className="wrapper bg-[--TC] text-white"
 					style={{} as CSSProperties}
 				>
 					<Stick
@@ -103,7 +103,7 @@ function Test2() {
 						<RgbShift
 							src={getAssetPath("/images/p-1.svg")}
 							alt="説明"
-							className="StickItem sticky min-h-[100lvh] content-center"
+							className="IsBeat StickItem sticky min-h-[100lvh] content-center"
 						/>
 						{/* <RgbShift
 							className="StickItem sticky min-h-[100lvh] content-center"

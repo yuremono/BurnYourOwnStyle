@@ -677,35 +677,36 @@
         --stw: 1px;
         --stc: var(--cur);
         position: relative;
-}
-.BorderDraw>.BorderDrawSvg {
-        display: block;
-        pointer-events: none;
-        overflow: visible;
-}
-.BorderDraw:not(.IsDown)>.BorderDrawSvg {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: var(--stw);
-}
-/* IsDown: 先端を載せる基準線は --PVM（0.5=画面縦中央）。--PDS/--PES は縦ロジックでは未使用 */
-.BorderDraw.IsDown {
-        --PVM: 0.75;
-}
-.BorderDraw.IsDown>.BorderDrawSvg {
-        position: absolute;
-        left: 0;
-        top: 0;
-        // bottom: unset;
-        width: var(--stw);
-        height: 100%;
-}
-.BorderDraw>.BorderDrawSvg path {
-        stroke: var(--stc);
-        stroke-width: var(--stw);
-        stroke-linecap: butt;
+        >.BorderDrawSvg {
+                display: block;
+                pointer-events: none;
+                overflow: visible;
+        }
+        >.BorderDrawSvg path {
+                stroke: var(--stc);
+                stroke-width: var(--stw);
+                stroke-linecap: buttom;
+        }
+        >.BorderDrawSvg {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: var(--stw);
+        }
+        /* IsDown: 先端を載せる基準線は --PVM（0.5=画面縦中央）。--PDS/--PES は縦ロジックでは未使用 */
+        &.IsDown {
+                --PVM: 0.75;
+        }
+        &.IsDown>.BorderDrawSvg {
+                position: absolute;
+                left: 0;
+                top: 0;
+                // bottom: unset;
+                width: var(--stw);
+                height: 100%;
+        }
+
 }
 :where(.RgbShift){
         --stw: 20;
@@ -736,15 +737,60 @@
         .RgbShiftR {
                 transform: translate(var(--RgbShiftRX), var(--RgbShiftRY));
                 pointer-events: none;
+                // --xl: -20px;
+                // --xl: -5px;
+                // --yl: 0px;
+                // --ys: 0px;
+                --xl: -20px;
+                --x0: 0px;
+                --xs: calc(var(--xl)*0.5 );
+                --yl: 0px;
+                --y0: 0px;
+                --ys: calc(var(--yl)*0.5 );
+                &:is(.IsBeat *){
+                        transform: unset;
+                        animation:  RgbShift 4s infinite ; 
+                }
         }
         .RgbShiftG {
                 transform: translate(0, 0);
                 pointer-events: none;
         }
+        // --xl: 20px;
+        // --x0: 0px;
+        // --xs: calc(var(--xl)*0.5 );
+        // --yl: 20px;
+        // --y0: 0px;
+        // --ys: calc(var(--yl)*0.5 );
         .RgbShiftB {
                 transform: translate(var(--RgbShiftBX), var(--RgbShiftBY));
                 pointer-events: auto;
+                --xl: 20px;
+                --x0: 0px;
+                --xs: calc(var(--xl)*0.5 );
+                --yl: 0px;
+                --y0: 0px;
+                --ys: calc(var(--yl)*0.5 );
+                &:is(.IsBeat *){
+                        transform: unset;
+                        animation:  RgbShift 3s infinite ; 
+                }
         }
+        @keyframes RgbShift {
+                1%    {transform: translate(var(--xl), var(--yl))}
+                2%    {transform: translate(var(--x0), var(--y0))}
+                5%    {transform: translate(var(--xs), var(--ys))}
+                100%  {transform: translate(0px,0px)}
+        }
+}
+:root {
+        --spring-easing: linear(
+                0, 0.004, 0.016, 0.035, 0.063, 0.098, 0.141 13.6%, 0.25, 0.391, 0.563, 0.765,
+                1, 0.891 40.9%, 0.848, 0.813, 0.785, 0.766, 0.754, 0.75, 0.754, 0.766, 0.785,
+                0.813, 0.848, 0.891 68.2%, 1 72.7%, 0.973, 0.953, 0.941, 0.938, 0.941, 0.953,
+                0.973, 1, 0.988, 0.984, 0.988, 1
+              );
+        --spring-duration: 1.333s;
 }
 
 

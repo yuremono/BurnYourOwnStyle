@@ -126,9 +126,9 @@ main>* {
 
 Tailwind の arbitrary value 構文を使用し、CSS 変数を直接参照できます：
 
-- **background-color**: `bg-[var(--MC)]`（メインカラー）
-- **text-color**: `text-[var(--TC)]`（テキストカラー）
-- **border-color**: `border-[var(--SC)]`（サブカラー）
+- **background-color**: `bg-[--MC]`（メインカラー）
+- **text-color**: `text-[--TC]`（テキストカラー）
+- **border-color**: `border-[--SC]`（サブカラー）
 
 この設計により、**デザインデータを一元的に管理**し、色やフォントサイズの変更も変数だけで完結できるようになります。
 

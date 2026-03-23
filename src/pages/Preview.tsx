@@ -12,8 +12,8 @@ function Preview() {
 	return (
 		<>
 			{/* ナビゲーション */}
-			<header className="w-full fixed top-0 left-0 z-50 bg-[var(--background)]  ">
-				<div className=" flex items-center  px-6 min-h-[var(--MY)]">
+			<header className="w-full fixed top-0 left-0 z-50 bg-[--background]  ">
+				<div className=" flex items-center  px-6 min-h-[--MY]">
 					<Link
 						to="/"
 						className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
@@ -38,8 +38,8 @@ function Preview() {
 			</header>
 			<main className="">
 				{/* ナビゲーション */}
-				<nav className="w-full fixed top-0 left-0 z-50 bg-[var(--background)]  ">
-					<div className=" flex items-center  px-6 min-h-[var(--MY)]">
+				<nav className="w-full fixed top-0 left-0 z-50 bg-[--background]  ">
+					<div className=" flex items-center  px-6 min-h-[--MY]">
 						<Link
 							to="/"
 							className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
@@ -66,7 +66,7 @@ function Preview() {
 				{/* Hero セクション */}
 				<Hero className="out text-white">
 					<HeroBack image={getAssetPath("/images/picsum/003.jpg")} />
-					<HeroItem className="text-shadow-[var(--tsbk)]">
+					<HeroItem className="text-shadow-[--tsbk]">
 						<h1 className="font-bold   ">EACH FRAMEWORK PREVIEW</h1>
 						<p className="mt-4 text-xl">
 							ヒーローコンポーネントのサンプル
@@ -75,7 +75,7 @@ function Preview() {
 				</Hero>
 
 				{/* カーズセクション（pencil-new.pen から） */}
-				<section className="wrapper into bg-[var(--BC)] mt-0 useSvgIcons">
+				<section className="wrapper into bg-[--BC] mt-0 useSvgIcons">
 					<h2 className="text-center font-semibold mb-4">
 						カーズセクション（pencil-new.pen から）
 					</h2>
@@ -90,7 +90,7 @@ function Preview() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-[var(--MC)] rounded-full px-10 py-3 hover:bg-[var(--SC)] transition-colors">
+								<button className="border border-[--MC] rounded-full px-10 py-3 hover:bg-[--SC] transition-colors">
 									TitleTitle
 								</button>
 							</div>
@@ -105,7 +105,7 @@ function Preview() {
 								テキストテキストテキストテキストテキストテキストテキストテキスト
 							</p>
 							<div className="flex justify-center">
-								<button className="border border-[var(--MC)] rounded-full px-10 py-3 hover:bg-[var(--SC)] transition-colors">
+								<button className="border border-[--MC] rounded-full px-10 py-3 hover:bg-[--SC] transition-colors">
 									TitleTitle
 								</button>
 							</div>
@@ -303,7 +303,7 @@ function Preview() {
 
 				{/* テストセクション - Cards col4 IsLayer */}
 				<section
-					className="wrapper into  bg-[var(--GR)]"
+					className="wrapper into  bg-[--GR]"
 					style={{} as React.CSSProperties}
 				>
 					<h2 className="text-center font-semibold mb-4 text-white">
@@ -369,7 +369,7 @@ function Preview() {
 						</CardsItem>
 					</Cards>
 				</section>
-				<section className="wrapper into bg-[var(--BC)]">
+				<section className="wrapper into bg-[--BC]">
 					<h2 className="text-center font-semibold mb-4 ">テスト</h2>
 					<Cards className=" IsGrow">
 						<CardsItem
@@ -415,7 +415,7 @@ function Preview() {
 						</CardsItem>
 					</Cards>
 				</section>
-				<section className="wrapper into  bg-[var(--BC)]">
+				<section className="wrapper into  bg-[--BC]">
 					<h2 className="text-center font-semibold mb-4 ">テスト</h2>
 					<Cards className="col2 IsRow">
 						<CardsItem
