@@ -21,7 +21,7 @@
 - 20260316: `Hero` CustomClass (MVによくある画面幅画像+テキスト) 追加
 - 20260318: `PC/SKILL.md` pencil MCP スキル作成開始 
 - 20260322: `/Build` スキル実装開始 コンポーネント作成とページ構築をまとめて行う。既存のユニットスキルはドキュメントとして残して運用方法を再検討。 
-- 20260322: `CustomClass` 一旦廃止。独自CSSをCustomClassと定義。Classにroleを定義。
+- 20260325: `Unit` 一旦廃止。独自CSSをCustomClassと定義。Classにroleを定義。
 
 ---
 
