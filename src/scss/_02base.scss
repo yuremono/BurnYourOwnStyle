@@ -53,13 +53,13 @@ a {
 img, video {
         object-fit: cover;
 }
-h1 {// --h1FZ
+h1,.h1FZ {// --h1FZ
     font-size: var(--h1FZ);
 }
-h2 {// --h2FZ
+h2,.h2FZ {// --h2FZ
     font-size: var(--h2FZ);
 }
-h3 {// --h3FZ
+h3,.h3FZ {// --h3FZ
     font-size: var(--h3FZ);
 }
 h5,

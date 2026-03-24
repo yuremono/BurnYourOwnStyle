@@ -86,5 +86,10 @@ Vanilla DOM 初期化・ユーティリティ。**React コンポーネントで
 | `lib` の JS モジュール・`utils` | **camelCase** |
 | カスタムフック | **camelCase**（`use` 接頭辞） |
 | エントリ `main` | **小文字** `main.tsx` |
+| 純粋関数・定数（日付、フォーマット） | `src/utils/` または `src/lib/` | **camelCase** |
+| API クライアント | `src/api/` | **camelCase**（`client.ts`, `userApi.ts`） |
+| 型だけ（`.d.ts` や `types.ts`） | `src/types/` | **camelCase** |
+| テスト | 対象と並べる `*.test.ts` / `__tests__/` | 対象ファイル名に合わせる |
+| スタイル（SCSS） | `src/scss/` | 既存ルール（アンダースコア接頭辞など） |
 
 識別子（変数・関数）は従来どおり **camelCase**、型・クラス・コンポーネントは **PascalCase**（[CLAUDE.md](./CLAUDE.md) と整合）。

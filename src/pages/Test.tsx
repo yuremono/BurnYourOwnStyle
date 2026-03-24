@@ -5,6 +5,7 @@ import { Panel, PanelItem } from "../components/Panel";
 import { FlexR, FlexRImage } from "../components/FlexR";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Hero, HeroItem, HeroBack } from "../components/Hero";
+import { LottieScroll } from "../components/LottieScroll";
 import { getAssetPath } from "../lib/assetPath";
 
 function Test() {
@@ -36,32 +37,45 @@ function Test() {
 				</div>
 			</header>
 
-			<main className="min-h-screen bg-amber-50">
-				{/* ナビゲーション */}
-				<nav className="w-full fixed top-0 left-0 z-50 bg-[--background]  ">
-					<div className=" flex items-center  px-6 min-h-[--MY]">
-						<Link
-							to="/"
-							className="text-slate-600 hover:text-slate-900 font-medium transition-colors"
+			<main className="min-h-screen ">
+								{/*Stick Lottie*/}
+                                <section className="out Stick [--shift:--scr] IsColumn">
+                                        <LottieScroll
+					src={getAssetPath("/lottie/untitled.lottie")}
+					segmentStartRatio={0}
+					segmentEndRatio={1}
+					autoplayStopRatio={0.62}
+					className=" [--canvasH:100lvh] StickItem h-[100lvh] "
+					layout={{ fit: "cover", align: [0.5, 0.5] }}
+					renderConfig={{ autoResize: true }}
+				/>
+                                        <div
+							className="StickLetter StickScr   relative  h1FZ"
 						>
-							← Preview
-						</Link>
-						<div className="flex items-center gap-4 ml-auto">
-							<Link
-								to="/test"
-								className="text-slate-500 hover:text-slate-700 transition-colors"
+							<span
+								className="  "
 							>
-								test
-							</Link>
-							<Link
-								to="/test2"
-								className="text-slate-500 hover:text-slate-700 transition-colors"
+									予
+							</span>
+							<span
+								className="    "
 							>
-								test
-							</Link>
+									撮
+							</span>
+							<span
+								className="  "
+							>
+									予
+							</span>
+							<span
+								className="   "
+							>
+									撮
+							</span>
 						</div>
-					</div>
-				</nav>
+					
+				</section>
+				
 
 				{/* Hero - out で画面幅 */}
 				<Hero className="out text-white">
@@ -74,7 +88,9 @@ function Test() {
 							自家焙煎のコーヒーと手作りパンで、ひとときを。
 						</p>
 					</HeroItem>
-				</Hero>
+                                </Hero>
+                                
+				
 
 				{/* About - ImgText img40 IsRev / img30 で店の紹介 */}
 				<section className="Wrap into py-16">
@@ -331,6 +347,8 @@ function Test() {
 						</div>
 					</FlexR>
 				</section>
+
+
 			</main>
 			{/* Footer */}
 			<footer className="Wrap into bg-amber-950 text-amber-100 py-12">

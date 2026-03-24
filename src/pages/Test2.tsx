@@ -41,7 +41,7 @@ function Test2() {
 							style={{} as CSSProperties}
 						>
 							<PanelItem
-								className="items-center BorderDraw"
+								className=" items-center BorderDraw"
 								image={getAssetPath("/images/picsum/010.jpg")}
 							>
 								<h3 className="font-bold mb-2 ">
@@ -110,7 +110,7 @@ function Test2() {
 							style={{} as CSSProperties}
 						>
 							<PanelItem
-								className="items-center"
+								className=" items-center"
 								image={getAssetPath("/images/picsum/010.jpg")}
 							>
 								<h3 className="font-bold mb-2 ">

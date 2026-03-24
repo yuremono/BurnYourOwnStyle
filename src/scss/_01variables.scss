@@ -112,6 +112,8 @@
         --15MY: calc(var(--MY)*1.5);
         --2MY: calc(var(--MY)*2.0);
         --25MY: calc(var(--MY)*2.5);
+        --3MY: calc(var(--MY)*3.0);
+        --4MY: calc(var(--MY)*4.0);
         --into: calc(50vw - clamp(0px, 50vw - var(--PX), (var(--wid) / 2)));
         --in1800: calc(50vw - clamp(0px, 50vw - var(--PX), 900px));
         --in1728: calc(50vw - clamp(0px, 50vw - var(--PX), 864px));

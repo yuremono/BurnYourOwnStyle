@@ -599,10 +599,11 @@
 
 // **********Stick*************--gap --few
 :where(.Stick) { // --item = stiky item width , --shift = overlapping width　, --shift must be less than --item.
-        --item: 50%;
-        --scr: calc(100% - var(--item) + var(--shift));
+        // --item: 50%;
+        // --scr: calc(100% - var(--item) + var(--shift));
         --scr: 62.5%;
-        --shift: calc(var(--scr) - var(--item) );
+        --shift: calc(100% - var(--item) + var(--scr) );
+        --shift: 12.5%;
         --Nshift: calc(var(--shift)*-1 );
         @include max-md{
                 --Nshift: 0;
@@ -610,6 +611,14 @@
 
         display: flex;
         flex-wrap: wrap;
+        &.IsColumn{
+                flex-direction: column;
+                >*{
+                        flex: unset;
+                        width: 100%;
+                        margin-inline: auto;
+                }
+        }
 
         .StickItem{
                 flex: 1;
@@ -637,6 +646,14 @@
                 margin-top: unset;
                 margin-inline: var(--Nshift) 0;
 
+        }
+        &.IsColumn{
+                display: block;
+                >*{
+                        flex: unset;
+                        width: 100%;
+                        margin-inline: auto;
+                }
         }
         &.IsRev .StickScr{
                 order: -1;
@@ -801,6 +818,34 @@
                 5%    {transform: translate(var(--xs), var(--ys))}
                 100%  {transform: translate(0px,0px)}
         }
+}
+// LottieScroll コンポーネントが DotLottie のラッパー div に付与（--canvasH は同要素または祖先で指定）
+.LottieScroll {
+        min-height: var(--canvasH);
+        filter: brightness(1.5);
+}
+.StickLetter {
+        --top: calc(100vh - 3em);
+        width: fit-content;
+        margin-inline: auto;
+        display: flex;
+        align-items: flex-start;
+        padding-block: 1em;
+        >*{
+                position: sticky;
+                top: var(--top);
+                margin-inline: 0.5em;
+                &:nth-child(2){
+                    margin-top: 2em;
+                }
+                &:nth-child(3){
+                    margin-top: 4em;
+                }
+                &:nth-child(4){
+                    margin-top: 6em;
+                }
+        }
+
 }
 :root {
         --spring-easing: linear(
