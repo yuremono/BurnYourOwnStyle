@@ -212,4 +212,4 @@ https://yuremono.github.io/BurnYourOwnStyle/test2
 
 ## GitHubリポジトリ
 
-https://github.com/yuremono/BurnYourOwnStyle
+https://github.com/yuremono/BurnYourOwnStyle/tree/react
