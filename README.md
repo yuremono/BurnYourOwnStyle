@@ -40,7 +40,6 @@
 
 ![BYOSoverview](/public/overview.jpeg)
 
-`UNIT SYSTEM` はお亡くなりに...
 ---
 
 ## 想定するワークフロー
