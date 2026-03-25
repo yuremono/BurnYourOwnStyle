@@ -189,7 +189,7 @@ Tailwindのarbitrary value構文を使用：
 
 ## React + Vite Preview
 
-https://yuremono.github.io/BurnYourOwnStyle/test2
+https://yuremono.github.io/BurnYourOwnStyle/
 
 ## システム開発、実践に基づく考察
 - `pencil.dev` のアーキテクチャが優れていると感じる。思ったより簡単な意思伝達が可能だが、デザイン作成自体が特殊な作業であり**注意事項**が膨れ上がる。段階的開示で対応してもコンテキストは多く消費する。
