@@ -25,7 +25,7 @@ html{
 body {// --FZ, --FF, --tc
 	font-size: var(--FZ);
 	overflow-x: hidden;
-	font-family: var(--FF);
+	font-family: var(--FF)!important;
 	font-weight: var(--FW);
 	line-height: var(--LH);
 	letter-spacing: var(--LS);
@@ -36,10 +36,14 @@ body {// --FZ, --FF, --tc
 
 .Ser {font-family: var(--Ser);}
 .San {font-family: var(--San);}
-.Eng {font-family: var(--Eng);}
+.Eng {
+        font-family: var(--Eng);
+        font-weight: 700;
+}
 .sub {//タイトルタグ内の小さい文字
 	font-size: 0.75em;
 	color: var(--MC);
+        font-family: var(--Eng);
 }
 // body {
 //     counter-reset: number 0;

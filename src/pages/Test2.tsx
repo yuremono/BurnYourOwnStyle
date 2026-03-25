@@ -2,10 +2,11 @@ import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Panel, PanelItem } from "../components/Panel";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
-import { Hero, HeroItem, HeroBack } from "../components/Hero";
+import { Image } from "../components/Image";
 import { PathDraw } from "../components/PathDraw";
-import { RgbShift } from "../components/RgbShift";
-import { Stick } from "../components/Stick";
+// import { RgbShift } from "../components/RgbShift";
+import { LottieScroll } from "../components/LottieScroll";
+
 import { Header } from "../components/Header";
 import { useClientRuntime } from "../hooks/useClientRuntime";
 import { getAssetPath } from "../lib/assetPath";
@@ -15,157 +16,162 @@ function Test2() {
 
 	return (
 		<>
-
 			<Header />
 
 			<main id="" className="test2Page min-h-screen  mt-[--head]">
-				{/* Hero - .mv は HeaderTrans の監視用 */}
-				<Hero className="out text-white mv">
-					<HeroBack image={getAssetPath("/images/picsum/003.jpg")} />
-					<HeroItem className="text-shadow-[--tsbk]">
+				{/*Stick Lottie*/}
+				<section className="out Stick [--shift:--scr] IsColumn">
+					<LottieScroll
+						src={getAssetPath("/lottie/untitled.lottie")}
+						segmentStartRatio={0}
+						segmentEndRatio={1}
+						autoplayStopRatio={0.62}
+						className=" [--canvasH:100lvh] StickItem h-[100lvh] "
+						layout={{ fit: "cover", align: [0.5, 0.5] }}
+						renderConfig={{ autoResize: true }}
+					/>
+					<div className="StickLetter StickScr   relative  h1FZ">
+						<span className="  ">予</span>
+						<span className="    ">撮</span>
+						<span className="  ">予</span>
+						<span className="   ">撮</span>
+					</div>
+				</section>
+				{/* Hero - */}
+				<section className="Hero out text-white ">
+					<figure className="back">
+						<img src={getAssetPath("/images/picsum/003.jpg")} alt="" loading="lazy" />
+					</figure>
+					<div className="item text-shadow-[--tsbk]">
 						<h1 className="font-bold  tracking-tight drop-shadow-lg Ser">
 							小路のカフェへようこそ
 						</h1>
 						<p className="mt-4  font-light">
 							自家焙煎のコーヒーと手作りパンで、ひとときを。
 						</p>
-					</HeroItem>
-				</Hero>
+					</div>
+				</section>
 				{/*Stick Unit、RGB*/}
-				<section
-					className=""
-					style={{} as CSSProperties}
-                                >
-                                        <Panel
-							className=" img30 IsFlow img1-1 [--afterW:0]  BorderDraw IsDown"
-							style={{} as CSSProperties}
-						>
-							<PanelItem
-								className=" items-center BorderDraw"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
+				<section className="" style={{} as CSSProperties}>
+					<Panel
+						className=" img30 IsFlow img1-1 [--afterW:0]  BorderDraw IsDown"
+						style={{} as CSSProperties}
+					>
+						<PanelItem className=" items-center BorderDraw">
+							<Image image={getAssetPath("/images/picsum/010.jpg")} />
+							<div>
 								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
+									<span className="sub block ">Step 01</span> 予約
 								</h3>
 								<p className="">
 									Web または電話で希望日時を予約してください。
 								</p>
-							</PanelItem>
-							<PanelItem
-								className="IsRev items-center BorderDraw"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
+							</div>
+						</PanelItem>
+						<PanelItem className="IsRev items-center BorderDraw">
+							<Image image={getAssetPath("/images/picsum/011.jpg")} />
+							<div>
 								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
+									<span className="sub block ">Step 01</span> 撮影
 								</h3>
 								<p className="">
 									機材のセットアップから撮影まで、スタッフがサポートします。
 								</p>
-							</PanelItem>
-							<PanelItem
-								className="items-center BorderDraw"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
+							</div>
+						</PanelItem>
+						<PanelItem className="items-center BorderDraw">
+							<Image image={getAssetPath("/images/picsum/010.jpg")} />
+							<div>
 								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
+									<span className="sub block ">Step 01</span> 予約
 								</h3>
 								<p className="">
 									Web または電話で希望日時を予約してください。
 								</p>
-							</PanelItem>
-							<PanelItem
-								className="IsRev items-center BorderDraw"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
+							</div>
+						</PanelItem>
+						<PanelItem className="IsRev items-center BorderDraw">
+							<Image image={getAssetPath("/images/picsum/011.jpg")} />
+							<div>
 								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
+									<span className="sub block ">Step 01</span> 撮影
 								</h3>
 								<p className="">
 									機材のセットアップから撮影まで、スタッフがサポートします。
 								</p>
-							</PanelItem>
-						</Panel>
-					
+							</div>
+						</PanelItem>
+					</Panel>
 				</section>
 				{/*Stick Unit、RGB*/}
 				<section
 					className="Wrap bg-[--TC] text-white"
 					style={{} as CSSProperties}
 				>
-					<Stick
-						className="   items-start "
-						style={{} as CSSProperties}
-					>
-						<RgbShift
+					<div className="Stick items-start " style={{} as CSSProperties}>
+						{/* <RgbShift
 							src={getAssetPath("/images/p-1.svg")}
 							alt="説明"
 							className="IsBeat StickItem sticky min-h-[100lvh] content-center"
-						/>
+						/> */}
 						<Panel
 							className="StickScr img40 IsFlow img1-1"
 							style={{} as CSSProperties}
 						>
-							<PanelItem
-								className=" items-center"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className=" items-center">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="items-center"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className="items-center">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
 						</Panel>
-					</Stick>
+					</div>
 				</section>
 				{/*Stick Unit、simulate Gsap*/}
 				<section className="" style={{} as CSSProperties}>
-					<Stick
-						className="IsRev out    items-start "
-						style={{} as CSSProperties}
-					>
+					<div className="Stick IsRev out items-start " style={{} as CSSProperties}>
 						<PathDraw className="StickItem sticky min-h-[100lvh] content-center ">
 							<svg
 								className=""
@@ -220,64 +226,61 @@ function Test2() {
 							className="StickScr img40 IsFlow img1-1 "
 							style={{} as CSSProperties}
 						>
-							<PanelItem
-								className="items-center "
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className="items-center ">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="items-center"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className="items-center">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
 						</Panel>
-					</Stick>
+					</div>
 				</section>
 
 				{/* Stick Unit、 */}
 				<section className="" style={{} as CSSProperties}>
-					<Stick
-						className=" out    items-start img1-1 [--item:50%] [--shift:25%]"
-						style={{} as CSSProperties}
-					>
+					<div className="Stick out items-start img1-1 [--item:50%] [--shift:25%]" style={{} as CSSProperties}>
 						<h2 className=" StickItem  font-bold md:min-h-[100lvh] content-center">
 							<span className="sub block mr-0">Flow</span>{" "}
 							ご利用の流れ
@@ -286,62 +289,63 @@ function Test2() {
 							className="StickScr img40 IsFlow "
 							style={{} as CSSProperties}
 						>
-							<PanelItem
-								className="items-center"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className="items-center">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="items-center"
-								image={getAssetPath("/images/picsum/010.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+							<PanelItem className="items-center">
+								<Image image={getAssetPath("/images/picsum/010.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										予約
+									</h3>
+									<p className="">
+										Web または電話で希望日時を予約してください。
+									</p>
+								</div>
 							</PanelItem>
-							<PanelItem
-								className="IsRev items-center"
-								image={getAssetPath("/images/picsum/011.jpg")}
-							>
-								<h3 className="font-bold mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									撮影
-								</h3>
-								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
+							<PanelItem className="IsRev items-center">
+								<Image image={getAssetPath("/images/picsum/011.jpg")} />
+								<div>
+									<h3 className="font-bold mb-2 ">
+										<span className="sub block ">Step 01</span>{" "}
+										撮影
+									</h3>
+									<p className="">
+										機材のセットアップから撮影まで、スタッフがサポートします。
+									</p>
+								</div>
 							</PanelItem>
 						</Panel>
-					</Stick>
+					</div>
 				</section>
 
 				{/* modules demo */}
 				<section className="Wrap max-w-3xl mx-auto px-4 py-12 space-y-8  title1">
 					<h2 className="text-xl font-bold">
-						クライアント初期化（Budoux / SpanWrap / ScrollX / Video）
+						クライアント初期化（Budoux / SpanWrap / ScrollX /
+						Video）
 					</h2>
 					<p className="budoux text-lg leading-relaxed">
 						長い日本語の文章でも、文節の途中で改行されにくく表示を整えられます。デモ用のテキストです。
@@ -416,54 +420,12 @@ function Test2() {
 						</Toggle>
 					</div>
 				</section>
-				{/* FAQ - Toggle IsQa */}
-				<section className="Wrap into ">
-					<h2 className="text-center font-bold  mb-12">
-						<span className="sub block mr-0">FAQ</span> よくある質問
-					</h2>
-					<div
-						className="wid"
-						style={{ "--wid": "720px" } as CSSProperties}
-					>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								初めてでも利用できますか？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									はい。機材の使い方やライティングのアドバイスも行っています。お気軽にご相談ください。
-								</p>
-							</ToggleBody>
-						</Toggle>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								機材の持ち込みは可能ですか？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									可能です。カメラ・レンズ・ストロボなど、ご自身の機材をお持ち込みいただけます。
-								</p>
-							</ToggleBody>
-						</Toggle>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								キャンセルポリシーは？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									前日まで：無料。当日：50%
-									のキャンセル料が発生します。詳細は予約時にご確認ください。
-								</p>
-							</ToggleBody>
-						</Toggle>
-					</div>
-				</section>
 			</main>
 
 			{/* Footer */}
-			<footer className="Wrap into bg-slate-950  py-12">
+			<footer className="Wrap into bg-[--BK] text-white">
 				<div className="text-center">
-					<p className="font-semibold mb-4">NEXUS STUDIO</p>
+					<p className="font-semibold mb-4">BRAND NAME</p>
 					<Link
 						to="/"
 						className=" hover:text-white font-medium transition-colors"

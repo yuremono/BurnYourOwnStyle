@@ -1,22 +1,7 @@
 @use "mixin" as *;
 
-header#global_header {
-    min-width: unset;
-    height: unset;
-    margin-block: unset;margin-inline: auto;
-}
-
 .fixPageTop .h_pagetop{--PTdis: block;}
 .noPageTop .h_pagetop{--PTdis: none;}
-@media (max-width : 834px){html:has(.h_items.fix-tab) #builingual {bottom: calc(var(--btnH) + 1em);}} 
-@media (max-width : 640px){html:has(.h_items.fix-sp) #builingual {bottom: calc(var(--btnH) + 1em);}}
-
-
-#footer .f_main {//tab以下フッター余白
-    @media (max-width : 834px){
-        padding-bottom: calc(var(--btnH)  *1.5)!important;
-    }
-}
 
 .h{//ヘッダー変形class、固有style 
 
@@ -1071,18 +1056,13 @@ header#global_header {
 .h_pagetop {//fixPageTopでblock noPageTopでnone 
     display: var(--PTdis);
     position: fixed;
-    &:is(.h_items *){
-        position: unset;
-        mix-blend-mode: unset;
-        margin-top: .75em;
-    }
     bottom: var(--PTbottom);
     right: var(--PTbottom);
     z-index: 1000;
     opacity: 0;
     transition: var(--trans);
 
-    @media (max-width : 834px){
+    @media (max-width : 767px){
         right: var(--PTrightTAB);
         bottom: var(--PTbottomTAB);
     }
@@ -1100,17 +1080,6 @@ header#global_header {
 .h_pagetop a{
     
     display: block;
-    // rotate: -90deg;
-    // 
-    text-align: center;
-    
-    line-height: 1;
-    text-decoration: none;
-    // font-weight: var(--btnAFFW);
-    font-weight: var(--btnAFFW);
-    font-family: var(--btnIFF);
-    
-    
     
     color: var(--PTC);
     background-color:var(--PTBG);
@@ -1118,107 +1087,18 @@ header#global_header {
     height: var(--PTW);
     border-radius: var(--PTRad);
     border: var(--PTborder);
-    
-    // outline: var(--line);
     border-color: var(--cur);
-    &:before{
-        rotate: -90deg;
-        // transform: translateY(-0.05em);
-        content:var(--PTAF);
-        font: var(--icon) ;
-        // font-size: var(--PTFZ);
-        scale: var(--PTscale);
-
-        font-weight: 900;
-        width: 100%;height: 100%;
-        display: block;
-        align-content: center; 
-        text-align: center;
-
-    }
-    img:is(#header *){
-        width: 4em;height: 4em;
-    }
-}
-.h_fix{
-    order: 1;
-    z-index: 1000;
-    display: flex;flex-direction: column;
+    align-content: center; 
+    text-align: center;
     
-
-    position: fixed;
-    top: 50%;transform: translateY(-50%);
-    gap: .5em;
-    @media (max-width : 834px){
-        flex-direction: row;
-        
-        top: unset;
-        // top: calc(100% - var(--btnH) - 1em);
-        bottom: 0;
-        right: 0px;
-        width: 100%;
-        padding: .25em .25em;
-        // padding: unset;
-        gap: .25em;
-
-    }
-    &:is(html:has(.f.show) *){
-        opacity: 0;pointer-events: none;
-    }
-    .__w100{width: 100%;min-width: unset;max-width: unset;}
-    .__img{
-        flex-direction: row;
-        gap: 1em;
-        justify-content: space-around;
-        span{display: block;color: var(--spanC);} 
-    }
-    @media (max-width : 834px){
-        width: 100%;
-        .__img{
-            gap: 1em;
-            justify-content: center;
-            --btnImg: calc(var(--btnH)* .64);
-            span{display: inline-block;margin-right: .5em;}
+    svg {// 矢印アイコン（React コンポーネント）
+        transition: 0.4s;
+        scale: var(--PTscale);
+        width: 50%;height: 50%;
+        display: inline-block;
         }
-        >*:not(.__w100){
-            flex: 1;min-width: unset;
-        }
-        .btn{
-            &.__line{
-                flex: .5;
-            }
-        }
-        .iconbtn{
-            flex: unset;
-            padding-inline: .5em;
-            scale: 1.3;
-            i{
-                font-size: var(--btnH);
-            }
-        }
-
-        .textlink{
-            height: var(--btnH);
-            padding-inline: var(--btnPX);
-            font-size: var(--btnFZ);
-            font-size: var(--f24);
-            border: var(--btnBD);
-            border-radius: var(--btnRad);
-            justify-content: center;
-            align-items: center;
-            gap: 0;
-            // **************
-            // display: block;
-            // line-height: var(--btnH);
-            // text-align: center;
-            >*{
-                font-size: 80%;
-                // padding-top: .35em;
-                margin-right: .5em;
-            }
-        }
-    }
 }
+
 .h_items{
     order: 1;
     z-index: 1000;

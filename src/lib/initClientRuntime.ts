@@ -10,6 +10,7 @@ import { initIntersectionShow } from "./intersectionShow";
 import { initScrollX } from "./scrollX";
 import { initSpanWrap } from "./spanWrap";
 import { initVideo } from "./video";
+import { setupRgbShift } from "./rgbShift";
 
 export type RuntimeDisconnect = { disconnect: () => void };
 
@@ -27,6 +28,7 @@ export function initClientRuntime(
 	const scrollX = initScrollX(root);
 	const header = initHeader(root);
 	const borderDraw = initBorderDraw(root, { frameStride: 1 });
+	setupRgbShift();
 
 	return {
 		disconnect: () => {

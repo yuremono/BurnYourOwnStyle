@@ -2,10 +2,10 @@
 
 // *********************************
 // コメントはpencil variebles に同期しない
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
 :root {//font
         --Ser: "Noto Serif JP", serif;
-        /* 以前ここに // で Noto Sans JP / メイリオ を列挙していたが、
-           カスタムプロパティ内の // は CSS にそのまま出て不正になるため削除 */
+
            // "Noto Sans JP",
            // "メイリオ", Meiryo,
         --San:
@@ -21,8 +21,8 @@
                 /* Android */
                 sans-serif;
 
-        --FF: var(--San) sans-serif;
-        --Eng: var(--San) sans-serif;
+        --FF: var(--San) ,sans-serif;
+        --Eng: "Viaoda Libre",var(--San), sans-serif;
 }
 
 :root {//color
@@ -31,7 +31,7 @@
         --cur: currentColor;
         --tr: transparent;
 
-        --MC: #2db542;
+        --MC: #c85f3c;
         --SC: #3194c9;
         --AC: #512db5;
         --BC: #fbf9ef;
@@ -143,7 +143,7 @@
 
         --h1: 64px;
         --h2: 48px;
-        --h3: 48px;
+        --h3: 32px;
         --h1FZ: clamp(32px, 6.4vw, var(--h1));
         --h2FZ: clamp(28px, 3.2vw, var(--h2));
         --h3FZ: clamp(24px, 2.4vw, var(--h3));
@@ -151,7 +151,7 @@
 
 :root {//space 余白設定
 
-        --MY: 4rem;
+        --MY: 6rem;
         --PX: 1.5rem;
         --PX2: calc(var(--PX) * 2);
         --gap: 2rem;
@@ -163,7 +163,7 @@
         }
 
         @include max-md {
-                --MY: 40px;
+                --MY: 4rem;
         }
 
 }
@@ -188,12 +188,12 @@
         --lineClamp:2;
     
 }
-:root{//header依存prop
+:root{//header props
         --PTdis: block;
         --PTAF: var(--btnAF);
         // --PTFZ: 1.5em;
         --PTscale: 1.5;
-        --PTC: var(--MC);
+        --PTC: var(--TC);
         --PTBG: var(--BC);
         --PTRad: var(--btnRad);
         --PTW: calc(var(--btnH));

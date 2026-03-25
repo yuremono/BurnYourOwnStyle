@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
+import { CaretUpIcon } from "@phosphor-icons/react";
 
 function NavUl() {
 	return (
@@ -8,10 +9,10 @@ function NavUl() {
 				<Link to="/">ホーム</Link>
 			</li>
 			<li>
-				<Link to="/test">test</Link>
+				<Link to="/test2">test2</Link>
 			</li>
 			<li>
-				<Link to="/test2">test2</Link>
+				<Link to="/examples">examples</Link>
 			</li>
 			<li className="drop" aria-expanded="false">
 				<a className="droplink drop_toggle" tabIndex={-1}>
@@ -41,8 +42,8 @@ export function Header() {
 	return (
 		<div id="header" className="h  upInit" style={innerStyle}>
 			<div className="h_inner">
-				<div className="h_logo [--logoW:180px]" >
-					<Link to="/">ロゴ</Link>
+				<div className="h_logo Eng [--logoW:180px]">
+					<Link to="/">Brand Name</Link>
 				</div>
 				<button
 					type="button"
@@ -58,7 +59,7 @@ export function Header() {
 				</button>
 				<div className="h_items fix-tab">
 					<a className="textlink __tel" href="tel:000-000-0000">
-                                        tel.000-000-0000
+						tel.000-000-0000
 					</a>
 					<a className="btn" href="#contact">
 						Contact
@@ -85,7 +86,9 @@ export function Header() {
 				</nav>
 			</div>
 			<div className="h_pagetop">
-				<a href="#">ページトップ</a>
+				<a href="#">
+					<CaretUpIcon className="" />
+				</a>
 			</div>
 		</div>
 	);

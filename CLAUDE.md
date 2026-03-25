@@ -85,29 +85,28 @@ PROJECT_ROOT/
 
 ## 基本原則
 
-1. **Read してから Write/Edit**: 初めて編集するファイルは編集する前に必ず内容を読む
-2. **Edit が失敗したら Write ツールで書換える** Edit ツールは LF 形式のファイルのみ対応（CRLF 形式だと編集失敗）
-
+- **Read してから Write/Edit**: 初めて編集するファイルは編集する前に必ず内容を読む
+- **Edit が失敗したら Write ツールで書換える** Edit ツールは LF 形式のファイルのみ対応（CRLF 形式だと編集失敗）
 -  **Tailwind CSS v3** のみ（v4 系は使用しない）。詳細は [`STYLE.md`](./STYLE.md) の「Tailwind CSS のバージョン」。
 - **開発サーバー**は `vite.config.ts`どおりポート **3000**
 - **テスト**: `npm run test`（Vitest）。`npm run test:watch` でウォッチ。
 - **CI**: `.github/workflows/ci.yml` で `lint` → `test` → `build` を実行。
 
-## 禁止事項
+## Prohibitions
 
-### 実行前チェックリスト
-以下に該当する操作は実行を停止し、ユーザーに確認せよ。
+<important if="creating or editing files">
+- Please rethink whether the user's tone suggests still in the research, consideration, or deliberation stage.
+- Never decide ClassName and ComponentName autonomously — always propose and get approval first
+- Never use the project name in any identifier
+- Replace any username in paths with a placeholder such as `{PROJECT_ROOT}`
+- Never hardcode secrets — use environment variables or config files instead
+</important>
 
-
-- You are trying to create or edit a file → Stop if you are still in the investigation, confirmation, or review stage.
-- ファイルを新規作成・編集しようとしている → 調査・確認・検討段階ならストップ
-- 名前（クラス名・コンポーネント名・Unit名）を自分で決めようとしている → 必ずユーザーに提案して承認を得てから進め
-- シークレット（APIキー、パスワード、トークン）をコードに直書きしようとする → 環境変数や設定ファイルを使用しろ
-- 削除・上書き・git reset系の操作をしようとしている → ユーザーがOKしたかもう一度考えろ
-- ファイルを書き換え、削除しようとしている → ユーザーがOKしたかもう一度考えろ
-- パスにユーザー名が含まれている → {PROJECT_ROOT}等のプレースホルダーに置き換えよ
-- コメントを消そうとしている → ユーザーがOKしたかもう一度考えろ
-- 関数名・型名・フック名・ファイル名・data属性名等、再利用の可能性がある箇所で**プロジェクト名**を使用しないこと
+<important if="overwriting, deleting, or resetting">
+- Please rethink whether the user's tone suggests still in the research, consideration, or deliberation stage.
+- Do not remove comments without approval
+- Do not proceed on assumption
+</important>
 
 ---
 

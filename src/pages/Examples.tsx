@@ -1,0 +1,243 @@
+// CustomClass components
+import { Panel, PanelItem } from "../components/Panel";
+import { Cards, CardsItem } from "../components/Cards";
+import { ImgText } from "../components/ImgText";
+import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
+import { Image } from "../components/Image";
+// import { RgbShift } from "../components/RgbShift";
+import { PathDraw } from "../components/PathDraw";
+import { LottieScroll } from "../components/LottieScroll";
+
+// Common
+import { Header } from "../components/Header";
+import { useClientRuntime } from "../hooks/useClientRuntime";
+import { getAssetPath } from "../lib/assetPath";
+
+function Examples() {
+	useClientRuntime();
+
+	return (
+		<>
+			<Header />
+
+			<main className="mt-[--head]">
+				<section className="out Stick IsColumn mt-[--Nhead]">
+					<LottieScroll
+						src={getAssetPath("/lottie/untitled.lottie")}
+						segmentStartRatio={0}
+						segmentEndRatio={1}
+						autoplayStopRatio={0.61}
+						className="StickItem IsDemo"
+						layout={{ fit: "cover", align: [0.5, 0.5] }}
+						renderConfig={{ autoResize: true }}
+					/>
+					<div className="StickyStep StickScr [--step:3em] h3FZ">
+						<span>LottieScrollは</span>
+						<span>特定ファイル向けに<br/>調整されてる</span>
+						<span>StickyStepは</span>
+						<span>FV向け調整</span>
+					</div>
+				</section>
+
+				{/* Hero */}
+				<section className="Hero out">
+					<figure className="back">
+						<img src={getAssetPath("/images/picsum/003.jpg")} alt="" loading="lazy" />
+					</figure>
+					<div className="item">
+						<h1>Hero タイトル</h1>
+						<p>サブタイトル</p>
+					</div>
+				</section>
+
+				{/* Panel */}
+				<section className="">
+					<h2>Panel</h2>
+					<p>縦並びコンテナ。ImgText の集合体。</p>
+					<h3>Panel img40 IsFlow</h3>
+					<h3>
+						BorderDraw.Panel.IsDown BorderDraw.PanelItem
+						ボーダー描画アニメーション。BorderDrawは独立して使用可
+					</h3>
+					<Panel className="img40 IsFlow BorderDraw IsDown">
+						<PanelItem className="BorderDraw">
+							<Image image={getAssetPath("/images/picsum/002.jpg")} />
+							<div>
+								<span className="sub">Step 01</span>
+								<h3>タイトル</h3>
+								<p>コンテンツ説明文</p>
+							</div>
+						</PanelItem>
+						<PanelItem className="IsRev BorderDraw">
+							<Image image={getAssetPath("/images/picsum/003.jpg")} />
+							<div>
+								<span className="sub">Step 02</span>
+								<h3>タイトル（反転）</h3>
+								<p>IsRev で画像を右側に配置</p>
+							</div>
+						</PanelItem>
+					</Panel>
+				</section>
+
+				{/* Cards */}
+				<section className="Wrap into bg-[--BC]">
+					<h2>Wrap</h2>
+					<p>セクションラッパー</p>
+					<h2>Cards</h2>
+					<p>横並びカードコンテナ。</p>
+					<h3>Cards col3</h3>
+					<Cards className="col3">
+						<CardsItem>
+							<Image image={getAssetPath("/images/picsum/004.jpg")} />
+							<div className="p-4">
+								<h3>カード1</h3>
+								<p>説明文</p>
+							</div>
+						</CardsItem>
+						<CardsItem>
+							<Image image={getAssetPath("/images/picsum/005.jpg")} />
+							<div className="p-4">
+								<h3>カード2</h3>
+								<p>説明文</p>
+							</div>
+						</CardsItem>
+						<CardsItem>
+							<Image image={getAssetPath("/images/picsum/006.jpg")} />
+							<div className="p-4">
+								<h3>カード3</h3>
+								<p>説明文</p>
+							</div>
+						</CardsItem>
+					</Cards>
+				</section>
+
+				{/* ImgText */}
+				<section className="">
+					<h2>ImgText</h2>
+					<p>画像とテキスト横並び。</p>
+					<h3>ImgText img40 IsRev</h3>
+					<ImgText className="img40 IsRev">
+						<Image image={getAssetPath("/images/picsum/012.jpg")} />
+						<div>
+							<h3>タイトル（反転）</h3>
+							<p>IsRev で画像を右側に配置</p>
+						</div>
+					</ImgText>
+				</section>
+
+				{/* Toggle */}
+				<section className="">
+					<h2>Toggle</h2>
+					<p>折りたたみコンテンツ。</p>
+					<h3>Toggle IsQa</h3>
+					<Toggle className="IsQa">
+						<ToggleSummary>IsQaは`Q`と`A`の装飾を付与する</ToggleSummary>
+						<ToggleBody>
+							<p>IsQaは`Q`と`A`の装飾を付与する</p>
+						</ToggleBody>
+					</Toggle>
+					<Toggle className="IsQa">
+						<ToggleSummary>
+							質問2：回答2：のような書き方はしないこと！
+						</ToggleSummary>
+						<ToggleBody>
+							<p>
+                                                        質問2：回答2：のような書き方はしないこと！
+							</p>
+						</ToggleBody>
+					</Toggle>
+				</section>
+
+				{/* FlexR */}
+				<section className="">
+					<h2>FlexR</h2>
+					<p>2コンテンツ比率制御（クラスのみ）。</p>
+					<h3>FlexR Flex37（30%:70%）</h3>
+					<div className="Flex37">
+						<Image image={getAssetPath("/images/picsum/015.jpg")} />
+						<div>
+							<h3>タイトル</h3>
+							<p>左30%、右70%</p>
+						</div>
+					</div>
+				</section>
+
+				{/* Stick */}
+				<section className="text-center ">
+					<h2>Stick</h2>
+					<p>
+						2領域レイアウト。StickItemが固定、StickScrがスクロール。
+					</p>
+					<p>RgbShift クロマシフト効果。</p>
+
+					<div className="Stick MY Wrap bg-[--TC] text-white text-left ">
+						<div className="StickItem">
+							{/* <RgbShift
+								src={getAssetPath("/images/p-1.svg")}
+								alt="ロゴ"
+								className="IsBeat"
+							/> */}
+						</div>
+						<Panel className="StickScr img40">
+							<PanelItem>
+								<Image image={getAssetPath("/images/picsum/016.jpg")} />
+								<div>
+									<h3>スクロールコンテンツ1</h3>
+									<p>右側がスクロールされます</p>
+								</div>
+							</PanelItem>
+							<PanelItem className="IsRev">
+								<Image image={getAssetPath("/images/picsum/017.jpg")} />
+								<div>
+									<h3>スクロールコンテンツ2</h3>
+									<p>左側は固定されています</p>
+								</div>
+							</PanelItem>
+							<PanelItem>
+								<Image image={getAssetPath("/images/picsum/016.jpg")} />
+								<div>
+									<h3>スクロールコンテンツ1</h3>
+									<p>右側がスクロールされます</p>
+								</div>
+							</PanelItem>
+						</Panel>
+					</div>
+				</section>
+
+				{/* PathDraw */}
+				<section className="">
+					<h2>PathDraw</h2>
+					<p>スクロール連動 SVG パス描画アニメーション。</p>
+					<PathDraw className="[--stw:1]">
+						<svg
+							viewBox="0 0 100 100"
+							role="img"
+							aria-label="パス描画デモ"
+						>
+							<path
+								d="M10,50 L90,50"
+								stroke="currentColor"
+								fill="none"
+							/>
+							<path
+								d="M50,10 L50,90"
+								stroke="currentColor"
+								fill="none"
+							/>
+							<circle
+								cx="50"
+								cy="50"
+								r="30"
+								stroke="currentColor"
+								strokeWidth="1"
+								fill="none"
+							/>
+						</svg>
+					</PathDraw>
+				</section>
+			</main>
+		</>
+	);
+}
+
+export default Examples;

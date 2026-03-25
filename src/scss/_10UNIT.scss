@@ -372,8 +372,7 @@
 // **********パネル=縦並びコンテンツ 画像任意 IsFlow IsRev imgW可変*************--gap --few
 :where(.Panel) {// --MY5, --bc, --mc, --sc, --rad, --gap, --imgW
         position: relative;
-        --mt: var(--MY5);
-        --p: 1em;
+        --MY:0em;
         --bg: var(--un);
         --beforeFZ: 75%;
         --beforeC: var(--MC);
@@ -393,13 +392,13 @@
                 position: relative;
 
                 +.item {
-                        margin-top: var(--gap);
+                        margin-top: var(--MY);
                 }
 
                 figure {
                         width: var(--imgW, 30%);
 
-                        &:is(.Panel .IsRev *) {
+                        &:where(.Panel .IsRev *) {
                                 order: 1;
                         }
 
@@ -601,7 +600,7 @@
 :where(.Stick) { // --item = stiky item width , --shift = overlapping width　, --shift must be less than --item.
         // --item: 50%;
         // --scr: calc(100% - var(--item) + var(--shift));
-        --scr: 62.5%;
+        --scr: 50%;
         --shift: calc(100% - var(--item) + var(--scr) );
         --shift: 12.5%;
         --Nshift: calc(var(--shift)*-1 );
@@ -611,6 +610,7 @@
 
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
         &.IsColumn{
                 flex-direction: column;
                 >*{
@@ -631,7 +631,7 @@
                 // margin-inline: var(--Nshift) ;
                 @include max-md{
                         flex: unset;
-                    position: unset;
+                        // position: unset;
                 //     min-height: unset;
                 }
                 img{
@@ -732,7 +732,7 @@
         }
         /* IsDown: 先端を載せる基準線は --PVM（0.5=画面縦中央）。--PDS/--PES は縦ロジックでは未使用 */
         &.IsDown {
-                --PVM: 0.75;
+                --PVM: 0.5;
         }
         &.IsDown>.BorderDrawSvg {
                 position: absolute;
@@ -751,6 +751,7 @@
         --RgbShiftRY: -5px;
         --RgbShiftBX: 10px;
         --RgbShiftBY: 5px;
+        --delay: 0ms;
         svg {
                 display: block;
         }
@@ -769,6 +770,7 @@
                 grid-area: 1 / 1;
                 mix-blend-mode: screen;
                 will-change: transform;
+                animation-delay: var(--delay);
         }
         .RgbShiftR {
                 transform: translate(var(--RgbShiftRX), var(--RgbShiftRY));
@@ -785,7 +787,11 @@
                 --ys: calc(var(--yl)*0.5 );
                 &:is(.IsBeat *){
                         transform: unset;
-                        animation:  RgbShift 4s infinite ; 
+                        animation:  RgbShift 4s var(--delay) infinite ; 
+                }
+                &:is(.IsBeatY *){
+                        transform: unset;
+                        animation:  RgbShiftY 4s  var(--delay) infinite ; 
                 }
         }
         .RgbShiftG {
@@ -811,6 +817,10 @@
                         transform: unset;
                         animation:  RgbShift 3s infinite ; 
                 }
+                &:is(.IsBeatY *){
+                        transform: unset;
+                        animation:  RgbShiftY 3s infinite ; 
+                }
         }
         @keyframes RgbShift {
                 1%    {transform: translate(var(--xl), var(--yl))}
@@ -818,31 +828,53 @@
                 5%    {transform: translate(var(--xs), var(--ys))}
                 100%  {transform: translate(0px,0px)}
         }
+        @keyframes RgbShiftY {
+                1%    {transform: translate(var(--yl), var(--xl))}
+                2%    {transform: translate(var(--y0), var(--x0))}
+                5%    {transform: translate(var(--ys), var(--xs))}
+                100%  {transform: translate(0px,0px)}
+        }
 }
-// LottieScroll コンポーネントが DotLottie のラッパー div に付与（--canvasH は同要素または祖先で指定）
-.LottieScroll {
-        min-height: var(--canvasH);
-        filter: brightness(1.5);
+
+:where(.LottieScroll) {//animation demo用
+        --canvasH: 100lvh;
+        canvas{
+                min-height: var(--canvasH);
+        }
+        &.IsDemo{
+                // filter: brightness(1.5);
+                animation: IsDemo 6s linear forwards;
+                @keyframes IsDemo {
+                        0% {filter: brightness(105%);}
+                        100% {filter: brightness(150%);}
+                }
+        }
 }
-.StickLetter {
-        --top: calc(100vh - 3em);
+.StickyStep {
+        --top: calc(100vh - var(--head));
+        --step: 4em;
         width: fit-content;
+        max-width: 100%;
         margin-inline: auto;
         display: flex;
         align-items: flex-start;
         padding-block: 1em;
+
         >*{
                 position: sticky;
                 top: var(--top);
-                margin-inline: 0.5em;
-                &:nth-child(2){
-                    margin-top: 2em;
-                }
-                &:nth-child(3){
-                    margin-top: 4em;
-                }
-                &:nth-child(4){
-                    margin-top: 6em;
+                margin-inline: 1em;
+                @for $i from 2 through 9 {
+                        &:nth-child(#{$i}) {
+                          margin-top: calc(var(--step) * #{$i - 1});
+                        }
+                 }
+        }
+        @include max-md{
+                --top: calc(100vh - var(--head)*3);
+                padding-bottom: 4em;
+                >*{
+                        margin-inline: .25em;
                 }
         }
 

@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Preview from "./pages/Preview";
-import Test from "./pages/Test";
 import Test2 from "./pages/Test2";
+import Playground from "./pages/Playground";
+import Examples from "./pages/Examples";
 
 function App() {
 	return (
 		<BrowserRouter basename={import.meta.env.BASE_URL}>
 			<Routes>
 				<Route path="/" element={<Preview />} />
-				<Route path="/test" element={<Test />} />
 				<Route path="/test2" element={<Test2 />} />
+				<Route path="/playground" element={<Playground />} />
+				<Route path="/examples" element={<Examples />} />
 			</Routes>
 		</BrowserRouter>
 	);
