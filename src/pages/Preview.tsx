@@ -1,5 +1,5 @@
-import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
+// import type { CSSProperties } from "react";
+// import { Link } from "react-router-dom";
 import { Panel, PanelItem } from "../components/Panel";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Image } from "../components/Image";
