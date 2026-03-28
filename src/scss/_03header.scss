@@ -1299,7 +1299,7 @@
             bottom: 0;
             right: 0px;
             width: 100%;
-            padding: .25em var(--inline);
+            padding: .25em var(--PX);
             // padding: unset;
             // gap: .25em;
             background-color: var(--innerBG);
@@ -1580,23 +1580,23 @@
             --size:7.5px;
             will-change: transform;
             // .droplink{background: none;} 
-            &::after{
-                content: "";
-                display: block;
-                width: var(--size);height: var(--size);
-                background-color: var(--cur);
-                opacity: 0.7;
-                position: absolute;z-index: 1;
-                // top: calc(100% - var(--size));
-                top: calc(100% + var(--size)*1);
-                left: 50%;translate: -50%;
-                clip-path: polygon(
-                    0 0,100% 0,50% 80%
-                );
-                @include menu{
-                    display: none;
-                }
-            }
+        //     &::after{
+        //         content: "";
+        //         display: inline-block;
+        //         width: var(--size);height: var(--size);
+        //         background-color: var(--cur);
+        //         opacity: 0.7;
+        //         position: absolute;z-index: 1;
+        //         // top: calc(100% - var(--size));
+        //         top: calc(100% + var(--size)*1);
+        //         left: 50%;translate: -50%;
+        //         clip-path: polygon(
+        //             0 0,100% 0,50% 80%
+        //         );
+        //         @include menu{
+        //             display: none;
+        //         }
+        //     }
             ul{
                 transition: var(--trans);
 
@@ -1652,6 +1652,19 @@
         scale: 1 1;
         opacity: 1;
     }
+}
+.h_nav li.drop > ul{
+        border-radius: 4px;
+        border: var(--line);
+}
+.dropIcon {// 矢印アイコン（React コンポーネント）
+        display: inline-block;
+        font-size: 1em;
+        transition: var(--trans);
+        vertical-align: text-top;
+        &:is(.drop:hover *){
+            scale: 1 -1;
+        }
 }
 // *******************************
 .h_menu{
@@ -1921,7 +1934,7 @@
             background: var(--SPnavBG);
             position: relative;
             z-index: 1;
-            padding: calc(var(--inline) * 1);
+            padding: calc(var(--PX) * 1);
             padding-block: calc(var(--head) * 1.5);
             width: 50%;
             margin-left: auto;

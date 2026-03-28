@@ -22,7 +22,7 @@ const BORDER_DRAW_PATH_LEN = 100;
 /** ホストごとの SVG / path を毎フレーム query しない */
 const borderDrawPathCache = new WeakMap<
 	HTMLElement,
-	{ svg: SVGSVGElement; path: SVGPathElement }
+	{ svgs: SVGSVGElement[]; paths: SVGPathElement[] }
 >();
 
 export type RuntimeDisconnect = { disconnect: () => void };
@@ -36,24 +36,48 @@ export type InitBorderDrawOptions = {
 	frameStride?: number;
 };
 
-function createBorderDrawSvg(isDown: boolean): SVGSVGElement {
-	const svg = document.createElementNS(SVG_NS, "svg");
-	svg.setAttribute("aria-hidden", "true");
-	svg.setAttribute(SVG_ATTR, "1");
-	svg.setAttribute("class", "BorderDrawSvg");
-	svg.setAttribute("preserveAspectRatio", "none");
+function createBorderDrawSvgs(isDown: boolean): SVGSVGElement[] {
+	if (isDown) {// 左右2つのSVGを生成
+		const svgLeft = document.createElementNS(SVG_NS, "svg");
+		svgLeft.setAttribute("aria-hidden", "true");
+		svgLeft.setAttribute(SVG_ATTR, "1");
+		svgLeft.setAttribute("class", "BorderDrawSvg Left");
+		svgLeft.setAttribute("preserveAspectRatio", "none");
+		svgLeft.setAttribute("viewBox", "0 0 1 100");
 
-	const path = document.createElementNS(SVG_NS, "path");
-	path.setAttribute("fill", "none");
-	if (isDown) {
-		svg.setAttribute("viewBox", "0 0 1 100");
-		path.setAttribute("d", "M0.5,0 L0.5,100");
-	} else {
+		const pathLeft = document.createElementNS(SVG_NS, "path");
+		pathLeft.setAttribute("fill", "none");
+		pathLeft.setAttribute("d", "M0.5,0 L0.5,100");
+		svgLeft.appendChild(pathLeft);
+
+		const svgRight = document.createElementNS(SVG_NS, "svg");
+		svgRight.setAttribute("aria-hidden", "true");
+		svgRight.setAttribute(SVG_ATTR, "1");
+		svgRight.setAttribute("class", "BorderDrawSvg Right");
+		svgRight.setAttribute("preserveAspectRatio", "none");
+		svgRight.setAttribute("viewBox", "0 0 1 100");
+
+		const pathRight = document.createElementNS(SVG_NS, "path");
+		pathRight.setAttribute("fill", "none");
+		pathRight.setAttribute("d", "M0.5,0 L0.5,100");
+		svgRight.appendChild(pathRight);
+
+		return [svgLeft, svgRight];
+	} else {// 水平1本
+		const svg = document.createElementNS(SVG_NS, "svg");
+		svg.setAttribute("aria-hidden", "true");
+		svg.setAttribute(SVG_ATTR, "1");
+		svg.setAttribute("class", "BorderDrawSvg");
+		svg.setAttribute("preserveAspectRatio", "none");
 		svg.setAttribute("viewBox", "0 0 100 1");
+
+		const path = document.createElementNS(SVG_NS, "path");
+		path.setAttribute("fill", "none");
 		path.setAttribute("d", "M0,0.5 L100,0.5");
+		svg.appendChild(path);
+
+		return [svg];
 	}
-	svg.appendChild(path);
-	return svg;
 }
 
 function mountHosts(base: Document | Element): HTMLElement[] {
@@ -70,11 +94,17 @@ function mountHosts(base: Document | Element): HTMLElement[] {
 		node.removeAttribute(ATTR);
 
 		const isDown = node.classList.contains("IsDown");
-		const svg = createBorderDrawSvg(isDown);
-		node.appendChild(svg);
-		const pathEl = svg.querySelector("path");
-		if (pathEl instanceof SVGPathElement) {
-			borderDrawPathCache.set(node, { svg, path: pathEl });
+		const svgs = createBorderDrawSvgs(isDown);
+		const paths: SVGPathElement[] = [];
+		svgs.forEach((svg) => {
+			node.appendChild(svg);
+			const pathEl = svg.querySelector("path");
+			if (pathEl instanceof SVGPathElement) {
+				paths.push(pathEl);
+			}
+		});
+		if (paths.length > 0) {
+			borderDrawPathCache.set(node, { svgs, paths });
 		}
 		node.setAttribute(ATTR, "1");
 		mounted.push(node);
@@ -106,23 +136,31 @@ export function initBorderDraw(
 	const updateHost = (el: HTMLElement) => {
 		let cached = borderDrawPathCache.get(el);
 		if (!cached) {
-			const svg = el.querySelector<SVGSVGElement>(
+			const svgEls = el.querySelectorAll<SVGSVGElement>(
 				`:scope > svg[${SVG_ATTR}]`,
 			);
-			const path = svg?.querySelector<SVGPathElement>("path");
-			if (!svg || !path) return;
-			cached = { svg, path };
+			if (svgEls.length === 0) return;
+			const svgs = Array.from(svgEls);
+			const paths: SVGPathElement[] = [];
+			svgs.forEach((svg) => {
+				const pathEl = svg.querySelector<SVGPathElement>("path");
+				if (pathEl) paths.push(pathEl);
+			});
+			if (paths.length === 0) return;
+			cached = { svgs, paths };
 			borderDrawPathCache.set(el, cached);
 		}
-		const { svg, path } = cached;
+		const { svgs, paths } = cached;
 		const isDown = el.classList.contains("IsDown");
 		const p = isDown
-			? computeBorderDrawIsDownProgress01(el, svg)
+			? computeBorderDrawIsDownProgress01(el, svgs[0])
 			: computeBorderDrawProgress01(el);
 		const len = BORDER_DRAW_PATH_LEN;
 		/* PathDraw 描画フェーズと同じ: dasharray は path 長 1 本（横=左→右、IsDown=上→下） */
-		path.style.strokeDasharray = `${len}`;
-		path.style.strokeDashoffset = `${len * (1 - p)}`;
+		paths.forEach((path) => {
+			path.style.strokeDasharray = `${len}`;
+			path.style.strokeDashoffset = `${len * (1 - p)}`;
+		});
 	};
 
 	const updateAll = () => {

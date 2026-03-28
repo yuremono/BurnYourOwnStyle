@@ -25,7 +25,7 @@ html{
 body {// --FZ, --FF, --tc
 	font-size: var(--FZ);
 	overflow-x: hidden;
-	font-family: var(--FF)!important;
+	font-family: var(--FF);
 	font-weight: var(--FW);
 	line-height: var(--LH);
 	letter-spacing: var(--LS);
@@ -40,19 +40,27 @@ body {// --FZ, --FF, --tc
         font-family: var(--Eng);
         font-weight: 700;
 }
-.sub {//タイトルタグ内の小さい文字
-	font-size: 0.75em;
-	color: var(--MC);
+:where(.sub) {//タイトルタグ内の小さい文字
+	font-size: 1.5rem;
+	color: var(--GR);
         font-family: var(--Eng);
+        line-height: var(--LH);
+        &.block{
+                margin-bottom: .5rem;
+        }
 }
 // body {
 //     counter-reset: number 0;
 //     min-height: 100lvh;
 // }
 span {display: inline-block;}
+:where(div){
+        max-width: 100%;
+}
 a {
     text-decoration: none;
     color: inherit;
+    display: inline-block;
 }
 img, video {
         object-fit: cover;

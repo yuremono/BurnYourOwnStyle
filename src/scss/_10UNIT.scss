@@ -243,6 +243,11 @@
 }
 
 :where(.Toggle) {// --bc, --wh, --imgW, --Eng, --mc, --rad, --ac
+        --bfFF: var(--Eng);
+        --bfC: var(--WH);
+        --bfBG: var(--MC);
+        --abfBG: var(--SC);
+        --bfRad: 4px;
         &::details-content {// 開閉アニメーション
                 transition: height 0.4s ease, content-visibility 0.4s allow-discrete;
                 height: 0;
@@ -377,7 +382,7 @@
         --beforeFZ: 75%;
         --beforeC: var(--MC);
         --afterW: 2em;
-        --afterBG: var(--SC);
+        --afterBG: var(--WH20);
         --imgW: 30%; 
 
         .item {
@@ -443,24 +448,22 @@
 
         &.IsFlow {// --- IsFlow modifier (矢印ありの流れ) ---
                 .item {
-                        +.item {
-                                margin-top: calc(var(--afterW) + 2em);
-                        }
+                       
 
                         &:after {
                                 content: "";
                                 display: block;
                                 position: absolute;
-                                top: calc(100% + 1em);
+                                top: calc(100% + calc(var(--MY)/2 ));
                                 left: 50%;
-                                transform: translateX(-50%);
+                                transform: translate(-50%, -50%);
                                 width: var(--afterW);
                                 aspect-ratio: 1;
-                                background-color: var(--afterB);
-                                clip-path: polygon(0 0%, 50% 85%, 100% 0%);
+                                background-color: var(--afterBG);
+                                clip-path: polygon(0 15%, 50% 100%, 100% 15%);
                         }
 
-                        &:last-child:after {
+                        &:last-of-type:after {
                                 display: none;
                         }
                 }
@@ -741,6 +744,9 @@
                 // bottom: unset;
                 width: var(--stw);
                 height: 100%;
+                &.Right{
+                        left: unset;right: 0;
+                }
         }
 
 }
@@ -752,6 +758,15 @@
         --RgbShiftBX: 10px;
         --RgbShiftBY: 5px;
         --delay: 0ms;
+        --beat: 6s;
+        
+        --shift: .5em;
+        --xl: var(--shift);
+        --x0: 0px;
+        --xs: calc(var(--xl)*0.5 );
+        --yl: 0px;
+        --y0: 0px;
+        --ys: calc(var(--yl)*0.5 );
         svg {
                 display: block;
         }
@@ -779,7 +794,7 @@
                 // --xl: -5px;
                 // --yl: 0px;
                 // --ys: 0px;
-                --xl: -20px;
+                --xl: calc(var(--shift)*-1 );
                 --x0: 0px;
                 --xs: calc(var(--xl)*0.5 );
                 --yl: 0px;
@@ -787,11 +802,11 @@
                 --ys: calc(var(--yl)*0.5 );
                 &:is(.IsBeat *){
                         transform: unset;
-                        animation:  RgbShift 4s var(--delay) infinite ; 
+                        animation:  RgbShift var(--beat) var(--delay) infinite ; 
                 }
                 &:is(.IsBeatY *){
                         transform: unset;
-                        animation:  RgbShiftY 4s  var(--delay) infinite ; 
+                        animation:  RgbShiftY var(--beat)  var(--delay) infinite ; 
                 }
         }
         .RgbShiftG {
@@ -807,12 +822,7 @@
         .RgbShiftB {
                 transform: translate(var(--RgbShiftBX), var(--RgbShiftBY));
                 pointer-events: auto;
-                --xl: 20px;
-                --x0: 0px;
-                --xs: calc(var(--xl)*0.5 );
-                --yl: 0px;
-                --y0: 0px;
-                --ys: calc(var(--yl)*0.5 );
+
                 &:is(.IsBeat *){
                         transform: unset;
                         animation:  RgbShift 3s infinite ; 
@@ -851,7 +861,7 @@
         }
 }
 .StickyStep {
-        --top: calc(100vh - var(--head));
+        --top: calc(100vh - 2.5em);
         --step: 4em;
         width: fit-content;
         max-width: 100%;
@@ -874,7 +884,7 @@
                 --top: calc(100vh - var(--head)*3);
                 padding-bottom: 4em;
                 >*{
-                        margin-inline: .25em;
+                        margin-inline: .125em;
                 }
         }
 
@@ -895,6 +905,12 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
         "50": 50%, "45": 45%, "40": 40%, "35": 35%, "33": 33%, "30": 30%,
         "25": 25%, "20": 20%, "10": 10%);
 
+@each $key,
+$val in $imgW {// --- 画像サイズユーティリティ ---
+        .img#{$key} {
+                --imgW: #{$val};
+        }
+}
 :where(.ImgText) {// --gap, --imgW
         display: flex;
         flex-wrap: wrap; 
@@ -903,12 +919,7 @@ $imgW: ("100": 100%, "95": 95%, "90": 90%, "875": 87.5%, "85": 85%, "80": 80%,
         // PCでのデフォルト画像幅
         --imgW: calc(50% - var(--gap)/2);
 
-        @each $key,
-        $val in $imgW {// --- 画像サイズユーティリティ ---
-                &.img#{$key} {
-                        --imgW: #{$val};
-                }
-        }
+
 
         figure {
                 width: var(--imgW, calc(50% - var(--gap)/2));

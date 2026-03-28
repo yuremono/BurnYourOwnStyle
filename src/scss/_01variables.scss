@@ -31,12 +31,13 @@
         --cur: currentColor;
         --tr: transparent;
 
-        --MC: #c85f3c;
-        --SC: #3194c9;
-        --AC: #512db5;
+        --MC: hsl(20, 56%, 51%);
+        --MC: #666;
+        --SC: #3b5bae;
+        --AC: #fffe35;
         --BC: #fbf9ef;
         --TC: #111;
-        --GR: #666;
+        --GR: #888;
         --BK: #000;
         --WH: #fff;
 
@@ -95,16 +96,12 @@
 }
 
 :root {//intoパディングで子要素サイズ、レフトで位置指定 out基本幅→画面幅に
-        --head: 80px;
-        --head2: calc(var(--head)*2 );
-        --Nhead: calc(var(--head)*-1 );
 
-        @include max-md {
-                --head: 60px;
-        }
+
+
 
         --imgW: calc(50% - var(--gap)/2);
-        --wid: 1080px;
+        --wid: 1320px;
         --MY: 120px;
         --MY25: calc(var(--MY)/4);
         --MY5: calc(var(--MY)/2);
@@ -128,13 +125,15 @@
         --in960: calc(50vw - clamp(0px, 50vw - var(--PX), 480px));
         --in840: calc(50vw - clamp(0px, 50vw - var(--PX), 420px));
         --in720: calc(50vw - clamp(0px, 50vw - var(--PX), 360px));
+        --in660: calc(50vw - clamp(0px, 50vw - var(--PX), 330px));
         --out: calc(50% - 50vw);
 }
 
 :root {
-        --LS: 0.025em;
-        --LH: 1.5;
-        --FW: 400;
+        --LS: 0.05em;
+        --LH: 2;
+        --HLH: 1.375;
+        --FW: 300;
         --FZ: 1rem;
 
         @include max-md {
@@ -142,17 +141,17 @@
         }
 
         --h1: 64px;
-        --h2: 48px;
-        --h3: 32px;
+        --h2: 40px;
+        --h3: 24px;
         --h1FZ: clamp(32px, 6.4vw, var(--h1));
-        --h2FZ: clamp(28px, 3.2vw, var(--h2));
-        --h3FZ: clamp(24px, 2.4vw, var(--h3));
+        --h2FZ: clamp(24px, 4vw, var(--h2));
+        --h3FZ: clamp(18px, 2.4vw, var(--h3));
 }
 
 :root {//space 余白設定
 
         --MY: 6rem;
-        --PX: 1.5rem;
+        --PX: 2rem;
         --PX2: calc(var(--PX) * 2);
         --gap: 2rem;
         --gapN: calc(var(--gap)*-1);
@@ -209,7 +208,8 @@
         --headG:1.5em;
         @media (max-width: 1560px){--headG: .75em;}
         @media (max-width: 1200px){--headG: 0.5em;}
-        --innerPX: calc(var(--headG)*1 );
+        // --innerPX: calc(var(--headG)*1 );
+        --innerPX: calc(var(--in1320)*1 );
         --navPX: calc(var(--headG)*1 );
         --itemPX: calc(var(--headG)*0 ); 
         --logoPX: calc(var(--headG)*0 ); 
@@ -217,10 +217,10 @@
         --innerG: calc(var(--headG)*0 );
     
         --logoW:200px;//予備(common_header入力)
-        --logoFZ:40px;//予備(common_header入力)
+        --logoFZ:32px;//予備(common_header入力)
         --logoH:calc(var(--head) - .5em );
     
-        --head:114px;
+        --head:4.5rem;
         
         // --initHead:calc(var(--head) + 20px );
         --head2:calc(var(--head)*2 );
@@ -244,11 +244,11 @@
             // --head:120px; 
         }
         @include menu{ 
-            --head:88px; 
+            --head:3.5rem; 
         }
         @media (max-width : 834px){
             // --head:72px; 
-            --head:60px; 
+        //     --head:60px; 
         }
         @media (max-width : 640px){
         }
@@ -272,7 +272,7 @@
 }
 :root{//ボタンプロパティ
         --TLC :var(--inh);
-        --TLFZ:var(--h3FZ);
+        --TLFZ:1.25rem;
         --TLFF:var(--Eng);
         --TLFW:500;
         --TLFS:normal;
@@ -292,12 +292,12 @@
         --btnLH:1.125;
         --btnFW: 700; 
         --btnLS:0.025em; 
-        --btnW:330px;
+        --btnW:320px;
         --btnW48:100%;
         // @media (max-width : 480px){
         //     --btnW:100%;
         // }
-        --btnH:56px;
+        --btnH:2.5rem;
         @media (max-width : 640px){
             --btnH:56px;
         }
@@ -308,7 +308,7 @@
         --btnTR:0.6s ease-out; 
         // --btnTR:var(--trt);
         // --btnRad:var(--rad);
-        --btnRad:0px;
+        --btnRad:4px;
         // --btnSh: var(--bxshbtn);
     
         --btnIFZ:calc(var(--btnFZ)*1.25);
@@ -334,17 +334,18 @@
         --btnAFPOS: absolute;
         // --btnAFRT: 1.25em;
         --btnAFRT: 0.25em;
-    }
+}
+
 :root{//シャドウ デコレーション等
-        --tsW: 1rem; 
-        --txshwh: 0 0 var(--tsW)  var(--wh50);
-        --txshbk: 0 0 var(--tsW)  var(--bk50);
-        --txshmc: 0 0 var(--tsW)  var(--mc50); 
-        --txshsc: 0 0 var(--tsW)  var(--sc50); 
-        --txshtx: 0 0 var(--tsW)  var(--tx50); 
+        --tsW: .5rem; 
+        --txshwh: 0 0 var(--tsW)  var(--WH);
+        --txshbk: 0 0 var(--tsW)  var(--BK);
+        --txshmc: 0 0 var(--tsW)  var(--MC); 
+        --txshsc: 0 0 var(--tsW)  var(--SC); 
+        --txshtx: 0 0 var(--tsW)  var(--TX); 
         // --txshbc: 0 0 var(--tsW)  var(--BC); 
     
-        --dsW:1rem;
+        --dsW:.5rem;
         --dswh: drop-shadow(0 0px var(--dsW) var(--WH)); 
         --dsbk: drop-shadow(0 0px var(--dsW) var(--BK)); 
         --dsmc: drop-shadow(0 0px var(--dsW) var(--mc));  
@@ -381,4 +382,10 @@
         // inset -2px -2px 4px var(--tx20); 
     
         // --bxshblur:0 0 10px  #11100088;
+}
+.txshwh{
+        text-shadow: var(--txshwh);
+}
+.dswh{
+        filter: var(--dswh) var(--dswh);
 }

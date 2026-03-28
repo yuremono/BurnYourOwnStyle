@@ -1,5 +1,5 @@
 // import type { CSSProperties } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Panel, PanelItem } from "../components/Panel";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Image } from "../components/Image";
@@ -29,32 +29,34 @@ function Preview() {
 						layout={{ fit: "cover", align: [0.5, 0.5] }}
 						renderConfig={{ autoResize: true }}
 					/>
-					<div className="StickyStep StickScr [--step:3em] h2FZ Eng">
-						<span>Using</span>
+					<p className="StickyStep StickScr [--step:5em] h2FZ Eng ">
+						<span>This</span>
+						<span>Is</span>
 						<span>Lottie</span>
 						<span>Free</span>
 						<span>Animation</span>
-					</div>
+					</p>
 				</section>
 				{/* Stick Title */}
-				<section className="Stick out mt-0 pb-[--2MY] items-start img1-1 [--scr:50%] [--shift:12.5%]  bg-[--TC] text-[--WH]">
-					<h2 className=" StickItem  md:min-h-[100lvh] content-center Eng font-medium h1FZ">
-						<span className="sub block mr-0">Flow</span>{" "}
-						Instant<br/>MobileFirst<br/>Layout
-					</h2>
-					<Panel className="StickScr img30 BorderDraw IsDown [--MY:0px]">
+				<section className="Stick out mt-0 into pb-[--2MY] items-start img1-1 [--scr:50%] [--shift:6.25%]  bg-[--TC] text-[--WH]">
+					<h1 className=" StickItem  md:min-h-[100lvh] content-center Eng font-medium  pt-6 md:pt-0">
+						<span className="sub block ">Not Vibe Design</span>
+						Class Based
+						<br />
+						<span className="RgbShift IsBeat [--shift:0.125em]">
+							AI Native
+						</span>
+						<br />
+						environment
+					</h1>
+					<Panel className="StickScr IsFlow img30  text-sm BorderDraw IsDown [--MY:0px]">
 						<PanelItem className="items-center BorderDraw">
-							<Image
-								image={getAssetPath("/images/picsum/010.jpg")}
-							/>
+							{/* <Image image={getAssetPath("/images/picsum/010.jpg")} /> */}
 							<div>
-								<h3 className=" mb-2 ">
-									<span className="sub block ">Step 01</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
-								</p>
+								<h2 className=" mb-8 mt-[15%] Eng [--h2FZ:2.5rem] font-medium">
+									{/* <span className="sub block ">Instant</span> */}
+									Import and Update Examples
+								</h2>
 							</div>
 						</PanelItem>
 						<PanelItem className="IsRev items-center BorderDraw">
@@ -62,40 +64,46 @@ function Preview() {
 								image={getAssetPath("/images/picsum/011.jpg")}
 							/>
 							<div>
-								<h3 className=" mb-2 ">
-									<span className="sub block ">Step 02</span>{" "}
-									撮影
+								<h3 className=" mb-4 ">
+									<span className="sub block ">
+										StickItem and StickScr
+									</span>
 								</h3>
 								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
-								</p>
-							</div>
-						</PanelItem>
-						<PanelItem className="items-center BorderDraw">
-							<Image
-								image={getAssetPath("/images/picsum/010.jpg")}
-							/>
-							<div>
-								<h3 className=" mb-2 ">
-									<span className="sub block ">Step 03</span>{" "}
-									予約
-								</h3>
-								<p className="">
-									Web または電話で希望日時を予約してください。
+									Stickラッパー直下にStickItemとStickScrクラスをつけます
 								</p>
 							</div>
 						</PanelItem>
 						<PanelItem className="IsRev items-center BorderDraw">
 							<Image
-								image={getAssetPath("/images/picsum/011.jpg")}
+								image={getAssetPath("/images/picsum/012.jpg")}
 							/>
 							<div>
-								<h3 className=" mb-2 ">
-									<span className="sub block ">Step 04</span>{" "}
-									撮影
+								<h3 className=" mb-4 ">
+									<span className="sub block ">
+										RgbShift IsBeat
+									</span>
 								</h3>
 								<p className="">
-									機材のセットアップから撮影まで、スタッフがサポートします。
+									[--scr:XX%][--shift:XX%]のTailwind arbitary
+									クラスで変数を上書きします
+								</p>
+							</div>
+						</PanelItem>
+						<PanelItem className="IsRev items-center BorderDraw">
+							<Image
+								image={getAssetPath("/images/picsum/013.jpg")}
+							/>
+							<div>
+								<h3 className=" mb-4 ">
+									<span className="sub block ">
+										BorderDraw and PathDraw
+									</span>
+								</h3>
+								<p className="budoux">
+									スマホデザインをそのまま表示したり、デスクトップ用に固定ヴィジュアルを用意したり、特殊な構造を作らずに済みます。
+									<br />
+									StickItem側にアニメーションを自由につけることもできます。
 								</p>
 							</div>
 						</PanelItem>
@@ -104,14 +112,14 @@ function Preview() {
 
 				{/*Stick 、simulate Gsap RgbBeat*/}
 				<section className="">
-					<div className="Stick IsRev out items-start ">
+					<div className="Stick IsRev  items-start [--shift:6.25%]">
 						<PathDraw className="StickItem sticky min-h-[100lvh] content-center ">
 							<svg
 								className=""
-								viewBox="0 0 2448 2777.8"
+								viewBox="0 0 2440 2950"
 								preserveAspectRatio="xMidYMid meet"
 								role="img"
-								aria-label="p-1.svg 抜粋（st0 1パス・Illustrator 座標系）"
+								aria-label="p-1.svg 編集"
 							>
 								<g>
 									<path
@@ -155,82 +163,79 @@ function Preview() {
 								</g>
 							</svg>
 						</PathDraw>
-						<Panel className="StickScr img40  img1-1 ">
+						<Panel className="StickScr min-h-[100lvh] content-center  img40  img1-1 ">
 							<PanelItem className="items-center ">
-                                                                <Image
-                                                                        className=" RgbShift IsBeatY "
-										image={getAssetPath(
-											"/images/picsum/010.jpg",
-										)}
-									/>
 								<div>
-									<h3 className=" mb-2 ">
-										<span className="sub block ">
-											Step 01
-										</span>{" "}
-										予約
-									</h3>
-									<p className="">
-										Web
-										または電話で希望日時を予約してください。
-									</p>
+									<h2 className=" mb-4  ">
+										<span className="sub block text-right  text-3xl">
+											play on "Bring Your Own Key"
+										</span>
+									</h2>
 								</div>
 							</PanelItem>
-							<PanelItem className="IsRev items-center">
-                                                                <Image
-                                                                        className=" RgbShift IsBeat [--delay:500ms]"
+							<PanelItem className=" items-center">
+								<Image
+									className=" RgbShift IsBeat [--delay:500ms]"
 									image={getAssetPath(
-										"/images/picsum/011.jpg",
+										"/images/picsum/015.jpg",
 									)}
 								/>
 								<div>
-									<h3 className=" mb-2 ">
+									<h3 className=" mb-4 ">
 										<span className="sub block ">
-											Step 01
-										</span>{" "}
-										撮影
+											CustomClass and Tailwind
+										</span>
 									</h3>
 									<p className="">
-										機材のセットアップから撮影まで、スタッフがサポートします。
+										個人の使い慣れたCustomClassで構造を作らせることを強制し、Tailwindで装飾させることでエージェントと自然言語でスムーズに意思疎通を図ります。
 									</p>
 								</div>
 							</PanelItem>
-							<PanelItem className="items-center">
-								<Image
+							<PanelItem className="items-center py-0">
+								{/* <Image
                                                                         className=" RgbShift IsBeatY "
 									image={getAssetPath(
-										"/images/picsum/010.jpg",
+										"/images/picsum/016.jpg",
 									)}
-								/>
+								/> */}
 								<div>
-									<h3 className=" mb-2 ">
-										<span className="sub block ">
-											Step 01
-										</span>{" "}
-										予約
-									</h3>
 									<p className="">
-										Web
-										または電話で希望日時を予約してください。
+										当初はclass,component,skillをまとめた"Unit"という単位を少数用意する運用をしていました。
+										classだけで十分なラッパーやエフェクトクラスを追加するとかえってややこしくなるためclassベースの運用に切り替えました。
 									</p>
 								</div>
 							</PanelItem>
-							<PanelItem className="IsRev items-center">
+							<PanelItem className=" items-center">
 								<Image
-                                                                        className=" RgbShift IsBeat  [--delay:1000ms]"
+									className=" RgbShift IsBeatY  [--delay:1000ms]"
 									image={getAssetPath(
-										"/images/picsum/011.jpg",
+										"/images/picsum/017.jpg",
 									)}
 								/>
 								<div>
-									<h3 className=" mb-2 ">
+									<h3 className=" mb-4 ">
 										<span className="sub block ">
-											Step 01
-										</span>{" "}
-										撮影
+											Scalability
+										</span>
 									</h3>
 									<p className="">
-										機材のセットアップから撮影まで、スタッフがサポートします。
+										チームや個人用の環境を整えるのに時間がかかるため、
+										将来的にはCSSファイルとQuestionツールによる回答を元にドキュメント作成と環境構築を行うスキルを作ることを検討しています。
+									</p>
+								</div>
+							</PanelItem>
+							<PanelItem className="items-center py-0">
+								{/* <Image
+                                                                        className=" RgbShift IsBeatY "
+									image={getAssetPath(
+										"/images/picsum/016.jpg",
+									)}
+								/> */}
+								<div>
+									<p className="">
+										「メイン直下にスティッククラス月のセクションを配置してその中にあのSVG画像を配置してスティックアイテムクラスを付けるその隣にカーズクラスを置いてCore2モディファイヤーを付けるアイテムは4つセクションはここまで」
+										<br />
+										音声入力で人間に伝えるのと同じ感覚でチャットを送るだけで、ハンドコーディングと同じコードを書けるようにドキュメントを整備しています。
 									</p>
 								</div>
 							</PanelItem>
@@ -239,58 +244,96 @@ function Preview() {
 				</section>
 
 				{/* FAQ - Toggle IsQa */}
-				<section className="md:[--wid:50%]">
-					<h2 className="text-center   mb-12">
-						<span className="sub block mr-0">FAQ</span> よくある質問
-					</h2>
-					<div
-						className=""
-					>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								初めてでも利用できますか？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									はい。機材の使い方やライティングのアドバイスも行っています。お気軽にご相談ください。
-								</p>
-							</ToggleBody>
-						</Toggle>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								機材の持ち込みは可能ですか？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									可能です。カメラ・レンズ・ストロボなど、ご自身の機材をお持ち込みいただけます。
-								</p>
-							</ToggleBody>
-						</Toggle>
-						<Toggle className="IsQa">
-							<ToggleSummary>
-								キャンセルポリシーは？
-							</ToggleSummary>
-							<ToggleBody>
-								<p className="">
-									前日まで：無料。当日：50%
-									のキャンセル料が発生します。詳細は予約時にご確認ください。
-								</p>
-							</ToggleBody>
-						</Toggle>
+				<section className="Stick out [--scr:100%] [--shift:100%] ">
+					<div className="StickItem Cards col2 xl:[--gap:660px] top-[--head]">
+						<Image className="item PX max-md:[--PX:0px]" image={getAssetPath("/images/picsum/018.jpg")} />
+						<Image className="item PX max-md:[--PX:0px]" image={getAssetPath("/images/picsum/019.jpg")} />
+					</div>
+					<div className="StickScr  [--h3FZ:1.25em]">
+						<div className="bg-[--WH50] w-[--wid] [--wid:660px] mx-auto p-4">
+						        <h2 className="text-center   pb-12 ">
+        							<span className="sub block mr-0">Toggle</span>
+        							Accordion Contents
+        						</h2>
+        						<Toggle className="">
+        							<ToggleSummary>
+        								details/summaryはtransitionを有効にするために特殊なCSSを使います
+        							</ToggleSummary>
+        							<ToggleBody>
+        								javascript不要ですが、古いブラウザではゆっくり開きません
+        							</ToggleBody>
+        						</Toggle>
+        						<Toggle className="IsQa">
+        							<ToggleSummary>
+        								IsQaは`Q`と`A`の装飾を付与する
+        							</ToggleSummary>
+        							<ToggleBody>
+                                                                質問2：回答2：のような書き方はしないこと！
+        							</ToggleBody>
+        						</Toggle>
+        						<Toggle className="">
+        							<ToggleSummary>
+        								<h3>pencil.devを使ったデザイン再現、デザイン作成について</h3>
+        							</ToggleSummary>
+                                                                <ToggleBody>
+                                                                        デザイン再現は.penファイルとクラスを伝えることで高精度で実現可能です。
+                                                                        既存コンポーネントを.penファイルで再現するのは容易で、意思伝達もスムーズな印象です。
+                                                                        「構造化データ」を作るという意味で本番用コンポーネントのプロトタイピングをすることと変わらないため、現在は実証を見送っています。
+        							</ToggleBody>
+        						</Toggle>
+        						<Toggle className="">
+        							<ToggleSummary>
+        								<h3>vibe design について</h3>
+        							</ToggleSummary>
+                                                                <ToggleBody>
+                                                                        OpenAI,Claude 共にAI駆動開発におけるフロントエンド品質向上のベストプラクティスを発信しています。
+                                                                        "https://www.anthropic.com/engineering/harness-design-long-running-apps" ではハーネス設計とコストにより一定水準を超えた創造を実現したと読み取りました。
+                                                                        無数の優れたwebサイトをDBに蓄積しても、形容詞をJSONデータに変換してベクトル検索しても、AIが人間の脳をシミュレートできるようになるまでwebサイトのようなデザインを選別することはできないと考えます。
+                                                                        本プロジェクトでは仕様に基づいたテキストと画像を用意することがボトルネックになるため、 vibe design ツールとどのように連携させるかが課題です。
+                                                                        pencilやstitchは「仕様からのモックアップ作成」「デザインの共有」「AI開発自体のエンタメ化」という視点で優れていると考えます。
+        							</ToggleBody>
+        						</Toggle>
+						</div>
 					</div>
 				</section>
 			</main>
 
 			{/* Footer */}
 			<footer className="Wrap into bg-[--TC] text-white mt-[--MY]">
-				<div className="text-center">
-					<p className="font-semibold mb-4 Eng text-[length:var(--logoFZ)]">Brand Name</p>
-					{/* <Link
-						to="/"
-						className=" hover:text-white font-medium transition-colors"
-					>
-						← Preview ページへ戻る
-					</Link> */}
+				<div className="text-center font-medium Eng ">
+					<p className="mb-0 font-bold   text-[length:var(--logoFZ)]">
+						Brand Name
+					</p>
+					<div className="space-x-4">
+					        <Link
+        						to="https://cms0505.vercel.app/"
+                                                        className="hover:text-[--AC] transition-colors "
+                                                        target="_blank"
+        					>
+        						MyWorks
+        					</Link>
+        					<Link
+        						to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
+                                                        className=" hover:text-[--AC] transition-colors"
+                                                        target="_blank"
+        					>
+        						BYOS
+        					</Link>
+        					<Link
+        						to="https://chat-kanban.vercel.app/"
+                                                        className=" hover:text-[--AC] transition-colors"
+                                                        target="_blank"
+        					>
+        						ChatCanban
+        					</Link>
+        					<Link
+        						to="https://github.com/yuremono/creative-demos"
+                                                        className=" hover:text-[--AC] transition-colors"
+                                                        target="_blank"
+        					>
+        						CreativeDemos
+        					</Link>
+					</div>
 				</div>
 			</footer>
 		</>

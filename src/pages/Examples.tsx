@@ -73,7 +73,7 @@ function Examples() {
 							<div>
 								<span className="sub">Step 02</span>
 								<h3>タイトル（反転）</h3>
-								<p>IsRev で画像を右側に配置</p>
+								<p>IsRev で画像をStickItemに配置</p>
 							</div>
 						</PanelItem>
 					</Panel>
@@ -120,7 +120,7 @@ function Examples() {
 						<Image image={getAssetPath("/images/picsum/012.jpg")} />
 						<div>
 							<h3>タイトル（反転）</h3>
-							<p>IsRev で画像を右側に配置</p>
+							<p>IsRev で画像をStickItemに配置</p>
 						</div>
 					</ImgText>
 				</section>
@@ -172,32 +172,33 @@ function Examples() {
 
 					<div className="Stick MY Wrap bg-[--TC] text-white text-left ">
 						<div className="StickItem">
-							{/* <RgbShift
-								src={getAssetPath("/images/p-1.svg")}
-								alt="ロゴ"
-								className="IsBeat"
-							/> */}
+                                                <Image
+                                                                        className=" RgbShift IsBeatY "
+										image={getAssetPath(
+											"/images/picsum/014.jpg",
+										)}
+									/>
 						</div>
 						<Panel className="StickScr img40">
 							<PanelItem>
 								<Image image={getAssetPath("/images/picsum/016.jpg")} />
 								<div>
 									<h3>スクロールコンテンツ1</h3>
-									<p>右側がスクロールされます</p>
+									<p>StickItemがスクロールされます</p>
 								</div>
 							</PanelItem>
 							<PanelItem className="IsRev">
 								<Image image={getAssetPath("/images/picsum/017.jpg")} />
 								<div>
 									<h3>スクロールコンテンツ2</h3>
-									<p>左側は固定されています</p>
+									<p>StickScrは固定されています</p>
 								</div>
 							</PanelItem>
 							<PanelItem>
 								<Image image={getAssetPath("/images/picsum/016.jpg")} />
 								<div>
 									<h3>スクロールコンテンツ1</h3>
-									<p>右側がスクロールされます</p>
+									<p>StickItemがスクロールされます</p>
 								</div>
 							</PanelItem>
 						</Panel>

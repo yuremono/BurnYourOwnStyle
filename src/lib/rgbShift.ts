@@ -132,47 +132,65 @@ const processRgbShift = (element: HTMLElement): void => {
 		stack.appendChild(imgG);
 		stack.appendChild(imgB);
 	} else {
-		// 子要素モード: 子要素を3つに複製
-		const children = Array.from(element.children).filter(
-			(child) =>
-				!(child instanceof SVGSVGElement) ||
-				!child.hasAttribute("aria-hidden"),
-		);
+		// テキスト/子要素モード: innerHTML を3つのレイヤーに複製
+		// SVGフィルター以外のコンテンツを取得
+		const contentNodes: Node[] = [];
+		element.childNodes.forEach((node) => {
+			// SVGフィルター（aria-hidden=true の svg）は除外
+			if (
+				node instanceof SVGSVGElement &&
+				node.hasAttribute("aria-hidden")
+			) {
+				return;
+			}
+			// RgbShiftStack も除外
+			if (
+				node instanceof HTMLElement &&
+				node.classList.contains("RgbShiftStack")
+			) {
+				return;
+			}
+			contentNodes.push(node);
+		});
 
-		if (children.length === 0) {
+		if (contentNodes.length === 0) {
 			return;
 		}
 
-		// 元の子要素を退避
-		const fragment = document.createDocumentFragment();
-		children.forEach((child) => fragment.appendChild(child));
+		// コンテンツを HTML 文字列として取得
+		const wrapper = document.createElement("div");
+		contentNodes.forEach((node) => wrapper.appendChild(node.cloneNode(true)));
+		const contentHtml = wrapper.innerHTML;
 
 		// 3つのレイヤーを作成
 		const layerR = document.createElement("div");
 		layerR.className = "RgbShiftLayer RgbShiftR";
 		(layerR.style as CSSStyleDeclaration).filter = `url(#${filterBase}-r)`;
 		layerR.setAttribute("aria-hidden", "true");
+		layerR.innerHTML = contentHtml;
 
 		const layerG = document.createElement("div");
 		layerG.className = "RgbShiftLayer RgbShiftG";
 		(layerG.style as CSSStyleDeclaration).filter = `url(#${filterBase}-g)`;
 		layerG.setAttribute("aria-hidden", "true");
+		layerG.innerHTML = contentHtml;
 
 		const layerB = document.createElement("div");
 		layerB.className = "RgbShiftLayer RgbShiftB";
 		(layerB.style as CSSStyleDeclaration).filter = `url(#${filterBase}-b)`;
-		layerB.setAttribute("aria-hidden", "true");
-
-		// 各レイヤーに子要素を複製
-		children.forEach((child) => {
-			layerR.appendChild(child.cloneNode(true));
-			layerG.appendChild(child.cloneNode(true));
-			layerB.appendChild(child.cloneNode(true));
-		});
+		// B レイヤーはスクリーンリーダー用にコンテンツを残す（aria-hidden なし）
+		layerB.innerHTML = contentHtml;
 
 		stack.appendChild(layerR);
 		stack.appendChild(layerG);
 		stack.appendChild(layerB);
+
+		// 元のコンテンツノードを削除（SVGフィルターとRgbShiftStackは残す）
+		contentNodes.forEach((node) => {
+			if (node.parentNode === element) {
+				element.removeChild(node);
+			}
+		});
 	}
 
 	element.appendChild(stack);

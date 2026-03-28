@@ -1,22 +1,20 @@
-import type { CSSProperties } from "react";
+// import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { CaretUpIcon } from "@phosphor-icons/react";
+import { CaretUpIcon, CaretDownIcon } from "@phosphor-icons/react";
 
 function NavUl() {
 	return (
 		<ul>
-			<li>
-				<Link to="/">ホーム</Link>
+			<li className="dswh">
+				<Link to="/">HOME</Link>
 			</li>
-			<li>
-				<Link to="/test2">test2</Link>
-			</li>
-			<li>
-				<Link to="/examples">examples</Link>
+			<li className="dswh">
+				<Link to="/examples">EX. for SKILL</Link>
 			</li>
 			<li className="drop" aria-expanded="false">
-				<a className="droplink drop_toggle" tabIndex={-1}>
-					ドロップ
+				<a className="droplink drop_toggle dswh" tabIndex={-1}>
+					MyWorks
+					<CaretDownIcon className="dropIcon ml-1" />
 				</a>
 				<button
 					type="button"
@@ -25,7 +23,40 @@ function NavUl() {
 				/>
 				<ul aria-hidden="true" aria-label="close">
 					<li>
-						<a href="#">子リンク</a>
+						<Link
+							to="https://cms0505.vercel.app/"
+							className="hover:text-[--AC] transition-colors "
+							target="_blank"
+						>
+							Portofolio
+						</Link>
+					</li>
+					<li>
+						<Link
+							to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							BYOS
+						</Link>
+					</li>
+					<li>
+						<Link
+							to="https://chat-kanban.vercel.app/"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							ChatCanban
+						</Link>
+					</li>
+					<li>
+						<Link
+							to="https://github.com/yuremono/creative-demos"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							CreativeDemos
+						</Link>
 					</li>
 				</ul>
 			</li>
@@ -37,12 +68,10 @@ function NavUl() {
  * LOCAL.html 準拠のヘッダー（#navsp は clone せず JSX で二重化）
  */
 export function Header() {
-	const innerStyle = { "--innerBG": "var(--WH)" } as CSSProperties;
-
 	return (
-		<div id="header" className="h  upInit" style={innerStyle}>
+		<div id="header" className="h  upInit [--innerBG:unset]">
 			<div className="h_inner">
-				<div className="h_logo Eng [--logoW:180px]">
+				<div className="h_logo Eng [--logoW:180px] dswh">
 					<Link to="/">Brand Name</Link>
 				</div>
 				<button
@@ -58,7 +87,7 @@ export function Header() {
 					<span className="bar3" />
 				</button>
 				<div className="h_items fix-tab">
-					<a className="textlink __tel" href="tel:000-000-0000">
+					<a className="textlink __tel dswh" href="tel:000-000-0000">
 						tel.000-000-0000
 					</a>
 					<a className="btn" href="#contact">
@@ -66,7 +95,7 @@ export function Header() {
 					</a>
 				</div>
 				<nav
-					className="h_nav"
+					className="h_nav "
 					id="nav"
 					role="navigation"
 					aria-label="main navigation"
