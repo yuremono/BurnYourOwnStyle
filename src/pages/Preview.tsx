@@ -113,10 +113,10 @@ function Preview() {
 				{/*Stick 、simulate Gsap RgbBeat*/}
 				<section className="">
 					<div className="Stick IsRev  items-start [--shift:6.25%]">
-						<PathDraw className="StickItem sticky min-h-[85lvh] content-center ">
+						<PathDraw className="StickItem sticky min-h-[100lvh] content-center ">
 							<svg
 								className=""
-								viewBox="0 0 2440 2950"
+								viewBox="0 0 2440 2850"
 								preserveAspectRatio="xMidYMid meet"
 								role="img"
 								aria-label="p-1.svg 編集"
