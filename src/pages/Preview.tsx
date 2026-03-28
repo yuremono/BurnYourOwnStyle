@@ -70,7 +70,8 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="">
-									Stickラッパー直下にStickItemとStickScrクラスをつけます
+									Stick直下にStickItemとStickScrクラスをつけます。[--scr:XX%][--shift:XX%]のTailwind arbitary
+									クラスで変数を上書きし、固定表示の幅、スクロール側の幅、重なる幅を調整します。
 								</p>
 							</div>
 						</PanelItem>
@@ -85,8 +86,7 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="">
-									[--scr:XX%][--shift:XX%]のTailwind arbitary
-									クラスで変数を上書きします
+									子要素をR,G,Bの三つのレイヤーに分けます。静的にずらすサイズを調整、または IsBeat クラスでアニメーションをつけます。
 								</p>
 							</div>
 						</PanelItem>
@@ -101,9 +101,9 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="budoux">
-									スマホデザインをそのまま表示したり、デスクトップ用に固定ヴィジュアルを用意したり、特殊な構造を作らずに済みます。
-									<br />
-									StickItem側にアニメーションを自由につけることもできます。
+                                                                        画面のスクロール量と要素の座標を元に Request Animation Frame で svg path の長さを変更します。
+                                                                        IsDown で左右のボーダーになります。
+                                                                        PathDrawはpathのみで作られたSVG画像ファイル、インラインSVGを描画できます。
 								</p>
 							</div>
 						</PanelItem>
