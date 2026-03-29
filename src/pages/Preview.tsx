@@ -38,7 +38,7 @@ function Preview() {
 					</p>
 				</section>
 				{/* Stick Title */}
-				<section className="Stick out mt-0 into pb-[--2MY] items-start img1-1 [--scr:50%] [--shift:6.25%]  bg-[--TC] text-[--WH]">
+				<section className="Stick out mt-0 into pb-[--2MY] items-start img1-1 [--scr:50%] [--shift:0%]  bg-[--TC] text-[--WH]">
 					<h1 className=" StickItem  md:min-h-[100lvh] content-center Eng font-medium  pt-6 md:pt-0">
 						<span className="sub block ">Not Vibe Design</span>
 						Class Based
@@ -114,9 +114,16 @@ function Preview() {
 				<section className="">
 					<div className="Stick IsRev  items-start [--shift:6.25%]">
 						<PathDraw className="StickItem sticky min-h-[100lvh] content-center ">
-							<svg
-								className=""
+							{/* <svg
+								className="scale-x-[-1]"
 								viewBox="0 0 2440 2850"
+								preserveAspectRatio="xMidYMid meet"
+								role="img"
+								aria-label="p-1.svg 編集"
+							> */}
+							<svg
+								className="scale-x-[-1]"
+								viewBox="-410 0 2750 2750"
 								preserveAspectRatio="xMidYMid meet"
 								role="img"
 								aria-label="p-1.svg 編集"
@@ -187,7 +194,7 @@ function Preview() {
 										</span>
 									</h3>
 									<p className="">
-										個人の使い慣れたCustomClassで構造を作らせることを強制し、Tailwindで装飾させることでエージェントと自然言語でスムーズに意思疎通を図ります。
+										個人の使い慣れたCustomClassで構造を作らせることを強制し、Tailwindは装飾のみで使用させることでエージェントとスムーズに意思疎通を図ります。
 									</p>
 								</div>
 							</PanelItem>
@@ -233,7 +240,7 @@ function Preview() {
 								/> */}
 								<div>
 									<p className="">
-										「メイン直下にスティッククラス月のセクションを配置してその中にあのSVG画像を配置してスティックアイテムクラスを付けるその隣にカーズクラスを置いてCore2モディファイヤーを付けるアイテムは4つセクションはここまで」
+										"メイン直下にスティッククラス月のセクションを配置してその中にあのSVG画像を配置してスティックアイテムクラスを付けるその隣にカーズクラスを置いてCore2モディファイヤーを付けるアイテムは4つセクションはここまで"
 										<br />
 										音声入力で人間に伝えるのと同じ感覚でチャットを送るだけで、ハンドコーディングと同じコードを書けるようにドキュメントを整備しています。
 									</p>
@@ -250,34 +257,33 @@ function Preview() {
 						<Image className="item PX max-md:[--PX:0px]" image={getAssetPath("/images/picsum/019.jpg")} />
 					</div>
 					<div className="StickScr  [--h3FZ:1.25em]">
-						<div className="bg-[--WH50] w-[--wid] [--wid:660px] mx-auto p-4">
+						<div className="bg-[--WH50] w-[--wid] [--wid:660px] mx-auto p-4 xl:p-0">
 						        <h2 className="text-center   pb-12 ">
         							<span className="sub block mr-0">Toggle</span>
         							Accordion Contents
         						</h2>
         						<Toggle className="">
         							<ToggleSummary>
-        								details/summaryはtransitionを有効にするために特殊なCSSを使います
+        								details/summaryでtransitionを有効にしています
         							</ToggleSummary>
         							<ToggleBody>
-        								javascript不要ですが、古いブラウザではゆっくり開きません
+        								javascript不要ですが特殊なCSSを使うため、古いブラウザではゆっくり開きません
         							</ToggleBody>
         						</Toggle>
         						<Toggle className="IsQa">
         							<ToggleSummary>
-        								IsQaは`Q`と`A`の装飾を付与する
+        								(エージェント向け) IsQaは`Q`と`A`の装飾を付与するので
         							</ToggleSummary>
         							<ToggleBody>
-                                                                質問2：回答2：のような書き方はしないこと！
+                                                                        質問2：回答2：のような書き方はしないでください
         							</ToggleBody>
         						</Toggle>
         						<Toggle className="">
         							<ToggleSummary>
-        								<h3>pencil.devを使ったデザイン再現、デザイン作成について</h3>
+        								<h3>pencil.dev を使ったデザイン再現、デザイン作成について</h3>
         							</ToggleSummary>
                                                                 <ToggleBody>
-                                                                        デザイン再現は.penファイルとクラスを伝えることで高精度で実現可能です。
-                                                                        既存コンポーネントを.penファイルで再現するのは容易で、意思伝達もスムーズな印象です。
+                                                                        デザインからコード、コードからデザインは"注意事項"を充実させればかなり高精度で実現できました。
                                                                         「構造化データ」を作るという意味で本番用コンポーネントのプロトタイピングをすることと変わらないため、現在は実証を見送っています。
         							</ToggleBody>
         						</Toggle>
@@ -287,10 +293,9 @@ function Preview() {
         							</ToggleSummary>
                                                                 <ToggleBody>
                                                                         OpenAI,Claude 共にAI駆動開発におけるフロントエンド品質向上のベストプラクティスを発信しています。
-                                                                        "https://www.anthropic.com/engineering/harness-design-long-running-apps" ではハーネス設計とコストにより一定水準を超えた創造を実現したと読み取りました。
-                                                                        無数の優れたwebサイトをDBに蓄積しても、形容詞をJSONデータに変換してベクトル検索しても、AIが人間の脳をシミュレートできるようになるまでwebサイトのようなデザインを選別することはできないと考えます。
+                                                                        "https://www.anthropic.com/engineering/harness-design-long-running-apps" ではハーネス設計と時間をかけることにより一定水準を超えた創造を実現したと解釈しました。
+                                                                        参考サイトを無数に用意してもその中から人間の感覚を模倣して選択することは現時点では難しく、特定サイトをトレースした方が合理的だと考えます。（本プロジェクトの話ではなくそのようなgithubリポジトリも公開されています）
                                                                         本プロジェクトでは仕様に基づいたテキストと画像を用意することがボトルネックになるため、 vibe design ツールとどのように連携させるかが課題です。
-                                                                        pencilやstitchは「仕様からのモックアップ作成」「デザインの共有」「AI開発自体のエンタメ化」という視点で優れていると考えます。
         							</ToggleBody>
         						</Toggle>
 						</div>
