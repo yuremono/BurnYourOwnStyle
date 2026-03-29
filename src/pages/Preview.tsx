@@ -70,7 +70,8 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="">
-									Stick直下にStickItemとStickScrクラスをつけます。[--scr:XX%][--shift:XX%]のTailwind arbitary
+									Stick直下にStickItemとStickScrクラスをつけます。[--scr:XX%][--shift:XX%]のTailwind
+									arbitary
 									クラスで変数を上書きし、固定表示の幅、スクロール側の幅、重なる幅を調整します。
 								</p>
 							</div>
@@ -86,7 +87,8 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="">
-									子要素をR,G,Bの三つのレイヤーに分けます。静的にずらすサイズを調整、または IsBeat クラスでアニメーションをつけます。
+									子要素をR,G,Bの三つのレイヤーに分けます。静的にずらすサイズを調整、または
+									IsBeat クラスでアニメーションをつけます。
 								</p>
 							</div>
 						</PanelItem>
@@ -101,9 +103,11 @@ function Preview() {
 									</span>
 								</h3>
 								<p className="budoux">
-                                                                        画面のスクロール量と要素の座標を元に Request Animation Frame で svg path の長さを変更します。
-                                                                        IsDown で左右のボーダーになります。
-                                                                        PathDrawはpathのみで作られたSVG画像ファイル、インラインSVGを描画できます。
+									画面のスクロール量と要素の座標を元に Request
+									Animation Frame で svg path
+									の長さを変更します。 IsDown
+									で左右のボーダーになります。
+									PathDrawはpathのみで作られたSVG画像ファイル、インラインSVGを描画できます。
 								</p>
 							</div>
 						</PanelItem>
@@ -253,51 +257,71 @@ function Preview() {
 				{/* FAQ - Toggle IsQa */}
 				<section className="Stick out [--scr:100%] [--shift:100%] ">
 					<div className="StickItem Cards col2 xl:[--gap:660px] top-[--head]">
-						<Image className="item PX max-md:[--PX:0px]" image={getAssetPath("/images/picsum/018.jpg")} />
-						<Image className="item PX max-md:[--PX:0px]" image={getAssetPath("/images/picsum/019.jpg")} />
+						<Image
+							className="item PX max-md:[--PX:0px]"
+							image={getAssetPath("/images/picsum/018.jpg")}
+						/>
+						<Image
+							className="item PX max-md:[--PX:0px]"
+							image={getAssetPath("/images/picsum/019.jpg")}
+						/>
 					</div>
 					<div className="StickScr  [--h3FZ:1.25em]">
 						<div className="bg-[--WH50] w-[--wid] [--wid:660px] mx-auto p-4 xl:p-0">
-						        <h2 className="text-center   pb-12 ">
-        							<span className="sub block mr-0">Toggle</span>
-        							Accordion Contents
-        						</h2>
-        						<Toggle className="">
-        							<ToggleSummary>
-        								details/summaryでtransitionを有効にしています
-        							</ToggleSummary>
-        							<ToggleBody>
-        								javascript不要ですが特殊なCSSを使うため、古いブラウザではゆっくり開きません
-        							</ToggleBody>
-        						</Toggle>
-        						<Toggle className="IsQa">
-        							<ToggleSummary>
-        								(エージェント向け) IsQaは`Q`と`A`の装飾を付与するので
-        							</ToggleSummary>
-        							<ToggleBody>
-                                                                        質問2：回答2：のような書き方はしないでください
-        							</ToggleBody>
-        						</Toggle>
-        						<Toggle className="">
-        							<ToggleSummary>
-        								<h3>pencil.dev を使ったデザイン再現、デザイン作成について</h3>
-        							</ToggleSummary>
-                                                                <ToggleBody>
-                                                                        デザインからコード、コードからデザインは"注意事項"を充実させればかなり高精度で実現できました。
-                                                                        「構造化データ」を作るという意味で本番用コンポーネントのプロトタイピングをすることと変わらないため、現在は実証を見送っています。
-        							</ToggleBody>
-        						</Toggle>
-        						<Toggle className="">
-        							<ToggleSummary>
-        								<h3>vibe design について</h3>
-        							</ToggleSummary>
-                                                                <ToggleBody>
-                                                                        OpenAI,Claude 共にAI駆動開発におけるフロントエンド品質向上のベストプラクティスを発信しています。
-                                                                        "https://www.anthropic.com/engineering/harness-design-long-running-apps" ではハーネス設計と時間をかけることにより一定水準を超えた創造を実現したと解釈しました。
-                                                                        参考サイトを無数に用意してもその中から人間の感覚を模倣して選択することは現時点では難しく、特定サイトをトレースした方が合理的だと考えます。（本プロジェクトの話ではなくそのようなgithubリポジトリも公開されています）
-                                                                        本プロジェクトでは仕様に基づいたテキストと画像を用意することがボトルネックになるため、 vibe design ツールとどのように連携させるかが課題です。
-        							</ToggleBody>
-        						</Toggle>
+							<h2 className="text-center   pb-12 ">
+								<span className="sub block mr-0">Toggle</span>
+								Accordion Contents
+							</h2>
+							<Toggle className="">
+								<ToggleSummary>
+									details/summaryでtransitionを有効にしています
+								</ToggleSummary>
+								<ToggleBody>
+									javascript不要ですが特殊なCSSを使うため、古いブラウザではゆっくり開きません
+								</ToggleBody>
+							</Toggle>
+							<Toggle className="IsQa">
+								<ToggleSummary>
+									(エージェント向け)
+									IsQaは`Q`と`A`の装飾を付与するので
+								</ToggleSummary>
+								<ToggleBody>
+									質問2：回答2：のような書き方はしないでください
+								</ToggleBody>
+							</Toggle>
+							<Toggle className="">
+								<ToggleSummary>
+									<h3>
+										pencil.dev
+										を使ったデザイン再現、デザイン作成について
+									</h3>
+								</ToggleSummary>
+								<ToggleBody>
+									デザインからコード、コードからデザインは"注意事項"を充実させればかなり高精度で実現できました。
+									「構造化データ」を作るという意味で本番用コンポーネントのプロトタイピングをすることと変わらないため、現在は実証を見送っています。
+								</ToggleBody>
+							</Toggle>
+							<Toggle className="">
+								<ToggleSummary>
+									<h3>vibe design について</h3>
+								</ToggleSummary>
+								<ToggleBody>
+									OpenAI,Claude
+									共にAI駆動開発におけるフロントエンド品質向上のベストプラクティスを発信しています。
+									"https://www.anthropic.com/engineering/harness-design-long-running-apps"
+									ではハーネス設計と時間をかけることにより一定水準を超えた創造を実現したと解釈しました。
+									参考サイトを無数に用意してもその中から人間の感覚を模倣して選択することは現時点では難しく、特定サイトをトレースした方が合理的だと考えます。（本プロジェクトの話ではなくそのようなgithubリポジトリも公開されています）
+									本プロジェクトでは仕様に基づいたテキストと画像を用意することがボトルネックになるため、
+									vibe designツールとどのように連携させるかが課題です。
+									<Link
+										to="https://zenn.dev/yuremono/articles/stitch-vibe-design-thinking"
+										className="hover:text-[--SC] transition-colors underline font-bold"
+										target="_blank"
+									>
+										Stitch体験レポート
+									</Link>
+								</ToggleBody>
+							</Toggle>
 						</div>
 					</div>
 				</section>
@@ -310,34 +334,34 @@ function Preview() {
 						Brand Name
 					</p>
 					<div className="space-x-4">
-					        <Link
-        						to="https://cms0505.vercel.app/"
-                                                        className="hover:text-[--AC] transition-colors "
-                                                        target="_blank"
-        					>
-        						MyWorks
-        					</Link>
-        					<Link
-        						to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
-                                                        className=" hover:text-[--AC] transition-colors"
-                                                        target="_blank"
-        					>
-        						BYOS
-        					</Link>
-        					<Link
-        						to="https://chat-kanban.vercel.app/"
-                                                        className=" hover:text-[--AC] transition-colors"
-                                                        target="_blank"
-        					>
-        						ChatCanban
-        					</Link>
-        					<Link
-        						to="https://github.com/yuremono/creative-demos"
-                                                        className=" hover:text-[--AC] transition-colors"
-                                                        target="_blank"
-        					>
-        						CreativeDemos
-        					</Link>
+						<Link
+							to="https://cms0505.vercel.app/"
+							className="hover:text-[--AC] transition-colors "
+							target="_blank"
+						>
+							MyWorks
+						</Link>
+						<Link
+							to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							BYOS
+						</Link>
+						<Link
+							to="https://chat-kanban.vercel.app/"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							ChatCanban
+						</Link>
+						<Link
+							to="https://github.com/yuremono/creative-demos"
+							className=" hover:text-[--AC] transition-colors"
+							target="_blank"
+						>
+							CreativeDemos
+						</Link>
 					</div>
 				</div>
 			</footer>
