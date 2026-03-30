@@ -50,7 +50,7 @@ memory/
 
 # Build output
 dist/
-build/
+/build/
 
 # Dependencies
 node_modules/

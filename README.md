@@ -202,9 +202,9 @@ https://yuremono.github.io/BurnYourOwnStyle/
 
 | ドキュメント | 説明 |
 |------------|------|
-| [STYLE.md](./STYLE.md) | 設計思想・変数設計・基本構造 |
-| [CLASS.md](./CLASS.md) | CustomClassクラスリファレンス・詳細使用方法 |
-| [Build/SKILL.md] | `/Build` 明示的指示で読み込むプロンプト |
+| [STYLE.md](STYLE.md) | 設計思想・変数設計・基本構造 |
+| [CLASS.md](CLASS.md) | CustomClassクラスリファレンス・詳細使用方法 |
+| [.claude/skills/Build/SKILL.md](.claude/skills/Build/SKILL.md)| `/Build` 明示的指示で読み込むプロンプト |
 
 ## ライセンス
 
