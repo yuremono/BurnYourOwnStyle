@@ -8,7 +8,7 @@
 
 **Value class指定**（ex: 小文字 + 数値）：
 
-CSS 変数に値を渡すclass。**例外的にPascalCaseを使用しない**。
+valuablesを渡すclass。**例外的にPascalCaseを使用しない**。
 
 | class | 意味 |
 |---|---|
@@ -42,18 +42,18 @@ class毎に定義されている。
 
 ## エージェントワークフロー
 
-### /Build Skill
-
 `.claude/skills/Build/SKILL.md` 参照
 
 ---
 
 ## CustomClass 一覧
 
-Wrapper 以外は Wrapper で囲むことが多い。Wrapper を Wrapperで囲むことは少ないが禁止ではない
+ユーザーが追加した場合最下部に追記する。
+
+points: Wrapper 以外は Wrapper で囲むことが多い。Wrapper を Wrapperで囲むことは少ないが禁止ではない
 ex. `.Wrap` > h2 + `.Flex46` + `.Stick` 
 
-required children : scssで定義されているセレクタではなく、見た目を作るのに最低限必要な要素(人間が判断)
+required children : class内で定義されているセレクタではなく、見た目を作るのに最低限必要な要素(人間が判断)
 
 | class | role | required children | has component | modifiers & values | common combinations |
 |-------|------|----------|---------------|-------------------|-------|

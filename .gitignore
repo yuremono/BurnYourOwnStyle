@@ -13,6 +13,7 @@ voice-input-patterns.md
 ingore/
 js/
 scss/
+LOCAL.html
 
 # Vite pre-bundle cache (regenerated locally)
 .vite/
@@ -47,6 +48,7 @@ public/images/
 # Temporary files
 *.tmp
 *.bak
+*.BAK
 
 # Memory MCP data (local to each installation)
 memory/
