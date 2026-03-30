@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "verify:css": "node verify-css.cjs",
     "verify:override": "node verify-override.cjs",
+    "build:preview-svg": "node scripts/build-preview-pathdraw-svg.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build && cp dist/index.html dist/404.html",
     "deploy": "gh-pages -d dist"

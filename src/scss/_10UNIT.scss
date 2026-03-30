@@ -687,13 +687,17 @@
         }
 }
 // **********PathDraw*************--gap --few
-
+// .hira{
+//         path{
+//                 fill:currentColor;
+//         }
+// }
 /* スクロール連動のラッパー（複数配置可） */
 :where(.PathDraw) {
         --PDS: 0.4;
         --PES: 0.6;
         --PVM: 0.5;
-        --stw: 5;
+        --stw: 1;
         --stc:  var(--cur);
         /* display: flex; */
         min-height: 55vh;
@@ -873,7 +877,7 @@
         >*{
                 position: sticky;
                 top: var(--top);
-                margin-inline: 1em;
+                margin-inline: 0.5em;
                 @for $i from 2 through 9 {
                         &:nth-child(#{$i}) {
                           margin-top: calc(var(--step) * #{$i - 1});
