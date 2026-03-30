@@ -81,11 +81,13 @@ hooks:
 | `partial` | 指示に含まれるクラスのみ使用可能 | "Tailwind でマージン追加", "p-4 をつけておいて" |
 | `full` | Tailwind 全面許可。装飾・調整に自由に使用可能 | "Tailwindで自由に装飾して", "〇〇を参考に装飾はお任せ" |
 
+### if="tailwind: partial"
 <important if="tailwind: partial">
 - Do not use other Tailwind classes
 - Do not arbitrarily add color to the text or background.
 </important>
 
+### if="tailwind: full"
 <important if="tailwind: full">
 - Actively use the Tailwind class.
 - **Follow the project's color tokens.** Do not create `text-[#...]`.
