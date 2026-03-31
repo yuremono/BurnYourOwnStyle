@@ -27,6 +27,7 @@ function NavUl() {
 							href="https://cms0505.vercel.app/"
 							className="hover:text-[--AC] transition-colors "
 							target="_blank"
+										rel="noopener noreferrer"
 						>
 							Portofolio
 						</a>
@@ -36,6 +37,7 @@ function NavUl() {
 							href="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+										rel="noopener noreferrer"
 						>
 							BYOS
 						</a>
@@ -45,6 +47,7 @@ function NavUl() {
 							href="https://chat-kanban.vercel.app/"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+										rel="noopener noreferrer"
 						>
 							ChatCanban
 						</a>
@@ -54,6 +57,7 @@ function NavUl() {
 							href="https://github.com/yuremono/creative-demos"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+										rel="noopener noreferrer"
 						>
 							CreativeDemos
 						</a>
@@ -87,7 +91,7 @@ export function Header() {
 					<span className="bar3" />
 				</button>
 				<div className="h_items fix-tab">
-					<a className="textlink __tel dswh" href="tel:000-000-0000">
+					<a className="textlink __tel dswh" href="#tel">
 						tel.000-000-0000
 					</a>
 					<a className="btn" href="#contact">

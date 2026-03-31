@@ -4,7 +4,7 @@ button,a{
     transition: var(--btnTR);
     font-size: inherit;
 
-    &:where(:not([class],.h a,[href*=tel])):hover{
+    &:where(:not([class],.h a,[href*=tel],.__tel)):hover{
         opacity: .7;
     }
     &:hover,&:hover *{
@@ -204,7 +204,7 @@ button,a{
     &:is( .txwh *){
         color: var(--btnC);
     }
-    &.btn:not([href*=tel],span):hover {
+    &.btn:not([href*=tel],.__tel,span):hover {
         background-color: var(--hoverBG);
         color: var(--hoverC);
         filter: var(--hoverFL); 
@@ -412,7 +412,7 @@ a.label{
     transition: var(--btnTR);
     will-change: scale;
 
-    &:not([href*=tel],span):hover {
+    &:not([href*=tel],.__tel,span):hover {
         animation: scaleDown var(--btnTR) forwards;
     }
     
@@ -447,11 +447,11 @@ a.label{
         font-size: 75%;
         color: inherit;
     }
-    // &:not([href*=tel],span):hover {
+    // &:not([href*=tel],.__tel,span):hover {
     //     // filter: var(--btnHover);
     //     // scale: 1 1.25;
     // }
-    &:not([href*=tel],span):hover:after {
+    &:not([href*=tel],.__tel,span):hover:after {
         // filter: var(--btnHover);
         scale: 1.25;
     }
@@ -540,7 +540,7 @@ p:has(>a){
 .f_link,.pan1 a
 ,.h_nav a:not(.drop a,.nopointer,:has(>span))
 ,.banner a
-,a.textlink
+,a.textlink:not([href*=tel],.__tel,span,.__grad)
 // ,.h_nav a:not(.drop a,.nopointer,:has(>span),:is(.logo *)) 
 ,.nav a:not(.drop ul li a)
 ,.f_nav ul a
@@ -579,7 +579,7 @@ p:has(>a){
 // ,.drop ul li a
 // ,.h_btn 
 // ,.h_fix a 
-,.btn:not([href*=tel],span,.__grad)
+,.btn:not([href*=tel],.__tel,span,.__grad)
 // ,.H-layer .veil
 // ,.btn
 // ,.h_contact
