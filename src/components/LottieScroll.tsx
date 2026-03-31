@@ -1,6 +1,7 @@
 import {
 	useCallback,
 	useEffect,
+	useLayoutEffect,
 	useRef,
 	useState,
 	type ComponentProps,
@@ -18,6 +19,11 @@ export type LottieScrollProps = {
 	 * スクロール連動では「キャンバス中心が画面縦中央」のときこのフレームになるよう合わせる。
 	 */
 	autoplayStopRatio: number;
+	/**
+	 * 何フレームに 1 回だけ setFrame を更新するか（負荷と滑らかさのトレードオフ）。
+	 * 1 = 毎フレーム（最も滑らか・負荷最大寄り）。2 以上で更新頻度が 1/N に減る。
+	 */
+	frameStride?: number;
 	/**
 	 * DotLottieReact のルート div に渡すクラス（`out` や `[--canvasH:100lvh]` など）。
 	 * 先頭に Unit 名 `LottieScroll` が自動で付与される。
@@ -66,6 +72,7 @@ export function LottieScroll({
 	segmentStartRatio,
 	segmentEndRatio,
 	autoplayStopRatio,
+	frameStride = 2,
 	className,
 	...dotLottieProps
 }: LottieScrollProps) {
@@ -79,6 +86,9 @@ export function LottieScroll({
 		endF: 0,
 		stopF: 0,
 	});
+	const rafIdRef = useRef<number | null>(null);
+	const strideCounterRef = useRef(0);
+	const dirtyRef = useRef(false);
 
 	const wrapperClassName = ["LottieScroll", className].filter(Boolean).join(" ");
 
@@ -162,15 +172,80 @@ export function LottieScroll({
 		return () => dotLottie.removeEventListener("frame", onFrame);
 	}, [dotLottie, phase]);
 
-	useEffect(() => {
-		window.addEventListener("scroll", updateFrameFromScroll, { passive: true });
-		window.addEventListener("resize", updateFrameFromScroll);
-		updateFrameFromScroll();
-		return () => {
-			window.removeEventListener("scroll", updateFrameFromScroll);
-			window.removeEventListener("resize", updateFrameFromScroll);
+	// スクロール連動: PathDraw と同じ RAF + dirty flag + stride パターン
+	useLayoutEffect(() => {
+		if (phase !== "scroll") return;
+
+		const stride = Math.max(1, Math.floor(frameStride));
+
+		const cancelScheduledRaf = () => {
+			if (rafIdRef.current != null) {
+				cancelAnimationFrame(rafIdRef.current);
+				rafIdRef.current = null;
+			}
 		};
-	}, [updateFrameFromScroll]);
+
+		const scheduleLoop = () => {
+			if (rafIdRef.current != null) return;
+			rafIdRef.current = requestAnimationFrame(loop);
+		};
+
+		const loop = () => {
+			rafIdRef.current = null;
+			if (!dirtyRef.current) return;
+
+			if (stride > 1) {
+				strideCounterRef.current += 1;
+				if (strideCounterRef.current < stride) {
+					rafIdRef.current = requestAnimationFrame(loop);
+					return;
+				}
+				strideCounterRef.current = 0;
+			}
+
+			updateFrameFromScroll();
+			dirtyRef.current = false;
+		};
+
+		const onScroll = () => {
+			dirtyRef.current = true;
+			scheduleLoop();
+		};
+
+		// リサイズはレイアウトが変わるため間引きせず即時更新（見た目のズレ防止）
+		const onResize = () => {
+			cancelScheduledRaf();
+			strideCounterRef.current = 0;
+			dirtyRef.current = false;
+			updateFrameFromScroll();
+		};
+
+		// スクロール終了時は最新位置で必ず 1 回描く（間引き中の取り残し防止）
+		const flushNow = () => {
+			cancelScheduledRaf();
+			strideCounterRef.current = 0;
+			dirtyRef.current = false;
+			updateFrameFromScroll();
+		};
+
+		const supportsScrollEnd = typeof window !== "undefined" && "onscrollend" in window;
+
+		updateFrameFromScroll();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onResize);
+		if (supportsScrollEnd) {
+			window.addEventListener("scrollend", flushNow, { passive: true });
+		}
+
+		return () => {
+			cancelScheduledRaf();
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", onResize);
+			if (supportsScrollEnd) {
+				window.removeEventListener("scrollend", flushNow);
+			}
+		};
+	}, [phase, updateFrameFromScroll, frameStride]);
 
 	return (
 		<DotLottieReact

@@ -1,5 +1,4 @@
 // import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
 import { Panel, PanelItem } from "../components/Panel";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Image } from "../components/Image";
@@ -308,13 +307,14 @@ function Preview() {
 									本プロジェクトでは仕様に基づいたテキストと画像を用意することがボトルネックになるため、
 									vibe
 									designツールとどのように連携させるかが課題です。
-									<Link
-										to="https://zenn.dev/yuremono/articles/stitch-vibe-design-thinking"
+									<a
+										href="https://zenn.dev/yuremono/articles/stitch-vibe-design-thinking"
 										className="hover:text-[--SC] transition-colors underline font-bold"
 										target="_blank"
+										rel="noopener noreferrer"
 									>
 										Stitch体験レポート
-									</Link>
+									</a>
 								</ToggleBody>
 							</Toggle>
 						</div>
@@ -329,34 +329,38 @@ function Preview() {
 						Brand Name
 					</p>
 					<div className="space-x-4">
-						<Link
-							to="https://cms0505.vercel.app/"
+						<a
+							href="https://cms0505.vercel.app/"
 							className="hover:text-[--AC] transition-colors "
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							MyWorks
-						</Link>
-						<Link
-							to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
+						</a>
+						<a
+							href="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							BYOS
-						</Link>
-						<Link
-							to="https://chat-kanban.vercel.app/"
+						</a>
+						<a
+							href="https://chat-kanban.vercel.app/"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							ChatCanban
-						</Link>
-						<Link
-							to="https://github.com/yuremono/creative-demos"
+						</a>
+						<a
+							href="https://github.com/yuremono/creative-demos"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
+							rel="noopener noreferrer"
 						>
 							CreativeDemos
-						</Link>
+						</a>
 					</div>
 				</div>
 			</footer>

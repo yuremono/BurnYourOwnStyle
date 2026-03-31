@@ -23,40 +23,40 @@ function NavUl() {
 				/>
 				<ul aria-hidden="true" aria-label="close">
 					<li>
-						<Link
-							to="https://cms0505.vercel.app/"
+						<a
+							href="https://cms0505.vercel.app/"
 							className="hover:text-[--AC] transition-colors "
 							target="_blank"
 						>
 							Portofolio
-						</Link>
+						</a>
 					</li>
 					<li>
-						<Link
-							to="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
+						<a
+							href="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
 						>
 							BYOS
-						</Link>
+						</a>
 					</li>
 					<li>
-						<Link
-							to="https://chat-kanban.vercel.app/"
+						<a
+							href="https://chat-kanban.vercel.app/"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
 						>
 							ChatCanban
-						</Link>
+						</a>
 					</li>
 					<li>
-						<Link
-							to="https://github.com/yuremono/creative-demos"
+						<a
+							href="https://github.com/yuremono/creative-demos"
 							className=" hover:text-[--AC] transition-colors"
 							target="_blank"
 						>
 							CreativeDemos
-						</Link>
+						</a>
 					</li>
 				</ul>
 			</li>
