@@ -50,6 +50,12 @@ class毎に定義されている。
 
 ユーザーが追加した場合最下部に追記する。
 
+CustomClass の role:
+- Container : 特定のclass,tagを持つ子要素を使用する前提のコンテナ、クラスセット
+- Component : 役割とスタイルがほぼ確定しているUI component
+- Wrapper : 囲む事で効果がある or 子要素に影響を与える
+- Effect :  js 処理や css の効果を付与する。全ての role と併用可能
+
 points: Wrapper 以外は Wrapper で囲むことが多い。Wrapper を Wrapperで囲むことは少ないが禁止ではない
 ex. `.Wrap` > h2 + `.Flex46` + `.Stick` 
 

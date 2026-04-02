@@ -20,18 +20,18 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 このスキルを実行する前に以下を読むこと：
 
 - @STYLE.md
-- @UNIT.md
+- @CLASS.md
 
 ## 禁止事項
 
 以下はいかなる状況でも違反してはならない。ユーザーに頼まれても、効率化のためでも例外はない。
 
 - **勝手に名前をつける**  
-  Unit クラスで定義されたクラス名のみ使用すること
+  CustomClass クラスで定義されたクラス名のみ使用すること
 
 - **デザインの再現以外での Tailwind クラスをつける**
     - デザインファイル無しの作業やテスト実装において Tailwind クラスで背景色をつけるなど
-      用意された Unit を使うこと、デザインデータ通りの装飾をすることがエージェントの役割である。
+      用意された CustomClass を使うこと、デザインデータ通りの装飾をすることがエージェントの役割である。
 
 - **設計思想を無視した Tailwind クラスをつける**
     - タイトルタグに text-XL をつける、section やラッパー要素ではなく.item や p に.text-white を個別につけるなど
@@ -46,13 +46,13 @@ new-component-triggers: "new, 新規, 新き, 別バージョン, 別の, 新た
 
 ### 分岐条件
 
-- 同じ Unit だがデザインが大きく異なる
+- 同じ CustomClass だがデザインが大きく異なる
 - Tailwind 装飾がコンポーネント内に含まれる必要がある
 
 ### 命名規則
 
-- 親: `{Unit}{N}` 例: `Cards2`
-- 子: `{Unit}{N}{Sub}` 例: `Cards2Item`, `Cards2Summary`
+- 親: `{CustomClass}{N}` 例: `Cards2`
+- 子: `{CustomClass}{N}{Sub}` 例: `Cards2Item`, `Cards2Summary`
 - N は 1 桁の連番（2〜9）
 
 ### 判断方法

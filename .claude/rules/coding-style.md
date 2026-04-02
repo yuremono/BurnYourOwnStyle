@@ -1,5 +1,5 @@
 ---
-globs: src/**/*.css, src/**/*.scss, src/**/*.sass, src/**/*.less, src/**/*.js, src/**/*.jsx, src/**/*.ts, src/**/*.tsx, src/**/*.vue, src/**/*.svelte, src/**/*.astro
+paths: src/**/*.css, src/**/*.scss, src/**/*.sass, src/**/*.less, src/**/*.js, src/**/*.jsx, src/**/*.ts, src/**/*.tsx, src/**/*.vue, src/**/*.svelte, src/**/*.astro
 ---
 
 # コーディングスタイル

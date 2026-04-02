@@ -644,7 +644,7 @@
                       "id": "KGPYm",
                       "name": "Toggle2Title",
                       "fill": "$TC",
-                      "content": "How do I use Unit components?",
+                      "content": "How do I use CustomClass components?",
                       "fontFamily": "Noto Sans JP",
                       "fontSize": "$FZ",
                       "fontWeight": "600"
@@ -690,7 +690,7 @@
                       "id": "xFytl",
                       "name": "Toggle2Ans",
                       "fill": "$GR",
-                      "content": "Each Unit is a CSS class. Add modifiers like col3, img40, IsRev for variations.",
+                      "content": "Each CustomClass is a CSS class. Add modifiers like col3, img40, IsRev for variations.",
                       "fontFamily": "Noto Sans JP",
                       "fontSize": "$FZ",
                       "fontWeight": "normal"

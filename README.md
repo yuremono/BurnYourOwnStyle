@@ -1,6 +1,6 @@
 # Burn Your Own Style
 
-個人のスタイルシステム（クラス、変数、コンポーネント、jsモジュール）を、Claude Code・Cursor 等のエージェントに利用させる為、ドキュメントを充実させることで、Web 制作の全工程をAI前提で進める為の public template です。
+個人のスタイルシステム（クラス、変数、コンポーネント、jsモジュール）を、Claude Code・Cursor 等のエージェントに利用させ、Web 制作の全工程をAI前提で進める為の public template です。
 
 **現在は`react`ブランチで進行中。完成後にmainにマージ予定**
 

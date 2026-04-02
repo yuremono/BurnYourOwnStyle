@@ -51,7 +51,7 @@ function Test2() {
 						</p>
 					</div>
 				</section>
-				{/*Stick Unit、RGB*/}
+				{/*Stick 、RGB*/}
 				<section className="" style={{} as CSSProperties}>
 					<Panel
 						className=" img30 IsFlow img1-1 [--afterW:0]  BorderDraw IsDown"
@@ -103,7 +103,7 @@ function Test2() {
 						</PanelItem>
 					</Panel>
 				</section>
-				{/*Stick Unit、RGB*/}
+				{/*Stick 、RGB*/}
 				<section
 					className="Wrap bg-[--TC] text-white"
 					style={{} as CSSProperties}
@@ -169,7 +169,7 @@ function Test2() {
 						</Panel>
 					</div>
 				</section>
-				{/*Stick Unit、simulate Gsap*/}
+				{/*Stick 、simulate Gsap*/}
 				<section className="" style={{} as CSSProperties}>
 					<div className="Stick IsRev out items-start " style={{} as CSSProperties}>
 						<PathDraw className="StickItem sticky min-h-[100lvh] content-center ">
@@ -278,7 +278,7 @@ function Test2() {
 					</div>
 				</section>
 
-				{/* Stick Unit、 */}
+				{/* Stick 、 */}
 				<section className="" style={{} as CSSProperties}>
 					<div className="Stick out items-start img1-1 [--item:50%] [--shift:25%]" style={{} as CSSProperties}>
 						<h2 className=" StickItem  font-bold md:min-h-[100lvh] content-center">

@@ -26,7 +26,7 @@ export type LottieScrollProps = {
 	frameStride?: number;
 	/**
 	 * DotLottieReact のルート div に渡すクラス（`out` や `[--canvasH:100lvh]` など）。
-	 * 先頭に Unit 名 `LottieScroll` が自動で付与される。
+	 * 先頭に CustomClass 名 `LottieScroll` が自動で付与される。
 	 */
 	className?: string;
 } & Omit<

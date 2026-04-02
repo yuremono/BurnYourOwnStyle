@@ -3,8 +3,8 @@ name: PC
 description: |
   pencil MCPツールを使用して.penデザインファイルを作成するスキル。
   ユーザーが「新しいデザインファイルを作成」「pencilでデザイン」「.penファイルを作成」等の指示をした時に使用。
-  Unitコンポーネント（Panel, ImgText, Cards, Hero等）のデザインを作成する際にも使用する。
-argument-hint: "[デザインの説明やUnit名]"
+  CustomClassコンポーネント（Panel, ImgText, Cards, Hero等）のデザインを作成する際にも使用する。
+argument-hint: "[デザインの説明やCustomClass名]"
 allowed-tools: Bash, Glob, Grep, Read, Write, Edit, mcp__pencil__*
 ---
 
@@ -20,7 +20,7 @@ pencil MCPツールを使用して、.penファイルを作成するためのワ
 
 **`/src/scss/_01variables.scss`の変数`--{variables} ` = pencil variables `${variables} ` である**
 
-- **IDはUnit名と同じ**: ImgText, Cards, Toggle 等
+- **IDはCustomClass名と同じ**: ImgText, Cards, Toggle 等
 - **コンポーネントはファイル間参照不可**: 使用している.penファイルがあればコピーする
 - `open_document("new")` はファイルを作成しない。先に `touch designs/{TIMESTAMP}.pen` で空ファイルを作成する
 - `layout: "horizontal"` または `"vertical"` の場合、子要素の x/y は無視される。絶対位置指定する場合は `layout: "none"` を設定
@@ -82,7 +82,7 @@ set_variables({
 
 ### Step 5: コンポーネントをインポート
 
-必要なUnitコンポーネントを定義する。詳細は「Components（コンポーネント）運用」を参照。
+必要なCustomClassコンポーネントを定義する。詳細は「Components（コンポーネント）運用」を参照。
 
 ### Step 6: キャンバス作成
 
@@ -106,7 +106,7 @@ batch_design:
 
 ### Step 6 要素を作成する
 
-フレームサイズはUnitクラス、コンポーネントの計算式に従う
+フレームサイズはCustomClassクラス、コンポーネントの計算式に従う
 指定がない限り全てのプロパティは変数で指定する。
 
 ---
@@ -163,7 +163,7 @@ batch_design:
 
 | プレースホルダー | 説明 | 例 |
 |-----------------|------|-----|
-| `{REF_ID}` | 参照するコンポーネントID（Unit名と同じ） | "ImgText", "Cards", "Hero" |
+| `{REF_ID}` | 参照するコンポーネントID（CustomClass名と同じ） | "ImgText", "Cards", "Hero" |
 | `{REUSABLE}` | 再利用可能フラグ | true, false |
 
 ---
@@ -220,12 +220,12 @@ fontFamily: "$FF"
 
 pencilのReusable ComponentsはFigmaやReactのコンポーネントに似た再利用可能な要素。
 
-### BYOS Unitコンポーネントとの連携
+### BYOS CustomClassコンポーネントとの連携
 
-BYOSのUnit名をそのままpencilコンポーネントIDとして使用する。
+BYOSのCustomClass名をそのままpencilコンポーネントIDとして使用する。
 
 ```
-BYOS Unit    pencil Component ID
+BYOS CustomClass    pencil Component ID
 ───────────  ───────────────────
 ImgText  →   ImgText（Reusable）
 Cards    →   Cards（Reusable）

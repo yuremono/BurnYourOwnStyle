@@ -13,7 +13,7 @@ hooks:
             Review the files you created or edited against the checklist below. Return only JSON in the form {"ok": true} or {"ok": false, "reason": "Specific problem"}.
 
             Check the following:
-            1. All structures are created using CustomClass/`src/scss` and are not built solely with Tailwind.
+            1. All structures are created using CustomClass /`src/scss` and are not built solely with Tailwind.
             2. The component name matches the CustomClass name, or the element name if no class definition exists.
             3. `text-*` is not used without permission.
             4. `[...]` is not used to overwrite variables without permission.
