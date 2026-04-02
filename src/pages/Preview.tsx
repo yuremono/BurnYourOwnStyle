@@ -6,6 +6,7 @@ import { PathDraw } from "../components/PathDraw";
 import { LottieScroll } from "../components/LottieScroll";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { useClientRuntime } from "../hooks/useClientRuntime";
 import { getAssetPath } from "../lib/assetPath";
 
@@ -16,7 +17,7 @@ function Preview() {
 		<>
 			<Header />
 
-			<main id="" className=" min-h-screen  mt-[--head]">
+			<main id="" className=" min-h-screen  mt-[--head] pb-[--MY]">
 				{/*Stick Lottie*/}
 				<section className="out Stick IsColumn mt-[--Nhead]">
 					<LottieScroll
@@ -322,48 +323,7 @@ function Preview() {
 				</section>
 			</main>
 
-			{/* Footer */}
-			<footer className="Wrap into bg-[--TC] text-white mt-[--MY]">
-				<div className="text-center font-medium Eng ">
-					<p className="mb-0 font-bold   text-[length:var(--logoFZ)]">
-						Brand Name
-					</p>
-					<div className="space-x-4">
-						<a
-							href="https://cms0505.vercel.app/"
-							className="hover:text-[--AC] transition-colors "
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							MyWorks
-						</a>
-						<a
-							href="https://github.com/yuremono/BurnYourOwnStyle/tree/react"
-							className=" hover:text-[--AC] transition-colors"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							BYOS
-						</a>
-						<a
-							href="https://chat-kanban.vercel.app/"
-							className=" hover:text-[--AC] transition-colors"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							ChatCanban
-						</a>
-						<a
-							href="https://github.com/yuremono/creative-demos"
-							className=" hover:text-[--AC] transition-colors"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							CreativeDemos
-						</a>
-					</div>
-				</div>
-			</footer>
+			<Footer />
 		</>
 	);
 }

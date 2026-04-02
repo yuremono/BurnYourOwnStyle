@@ -3,6 +3,7 @@ import Preview from "./pages/Preview";
 import Test2 from "./pages/Test2";
 import Playground from "./pages/Playground";
 import Examples from "./pages/Examples";
+import Rects from "./pages/Rects";
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 				<Route path="/test2" element={<Test2 />} />
 				<Route path="/playground" element={<Playground />} />
 				<Route path="/examples" element={<Examples />} />
+				<Route path="/rects" element={<Rects />} />
 			</Routes>
 		</BrowserRouter>
 	);

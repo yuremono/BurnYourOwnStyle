@@ -11,6 +11,9 @@ function NavUl() {
 			<li className="dswh">
 				<Link to="/examples">EX. for SKILL</Link>
 			</li>
+			<li className="dswh">
+				<Link to="/rects">RandomRects</Link>
+			</li>
 			<li className="drop" aria-expanded="false">
 				<a className="droplink drop_toggle dswh" tabIndex={-1}>
 					MyWorks
@@ -68,12 +71,21 @@ function NavUl() {
 	);
 }
 
+type HeaderProps = {
+	className?: string;
+};
+
 /**
  * LOCAL.html 準拠のヘッダー（#navsp は clone せず JSX で二重化）
  */
-export function Header() {
+export function Header({ className }: HeaderProps) {
 	return (
-		<div id="header" className="h  upInit [--innerBG:unset]">
+		<header
+			id="header"
+			className={["h  upInit [--innerBG:unset]", className]
+				.filter(Boolean)
+				.join(" ")}
+		>
 			<div className="h_inner">
 				<div className="h_logo Eng [--logoW:180px] dswh">
 					<Link to="/">Brand Name</Link>
@@ -123,6 +135,6 @@ export function Header() {
 					<CaretUpIcon className="" />
 				</a>
 			</div>
-		</div>
+		</header>
 	);
 }

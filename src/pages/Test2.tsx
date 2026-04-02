@@ -1,5 +1,4 @@
 import type { CSSProperties } from "react";
-import { Link } from "react-router-dom";
 import { Panel, PanelItem } from "../components/Panel";
 import { Toggle, ToggleSummary, ToggleBody } from "../components/Toggle";
 import { Image } from "../components/Image";
@@ -8,6 +7,7 @@ import { PathDraw } from "../components/PathDraw";
 import { LottieScroll } from "../components/LottieScroll";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { useClientRuntime } from "../hooks/useClientRuntime";
 import { getAssetPath } from "../lib/assetPath";
 
@@ -422,18 +422,7 @@ function Test2() {
 				</section>
 			</main>
 
-			{/* Footer */}
-			<footer className="Wrap into bg-[--BK] text-white">
-				<div className="text-center">
-					<p className="font-semibold mb-4">BRAND NAME</p>
-					<Link
-						to="/"
-						className=" hover:text-white font-medium transition-colors"
-					>
-						← Preview ページへ戻る
-					</Link>
-				</div>
-			</footer>
+			<Footer />
 		</>
 	);
 }

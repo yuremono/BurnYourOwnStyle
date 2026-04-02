@@ -10,6 +10,7 @@ import { LottieScroll } from "../components/LottieScroll";
 
 // Common
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { useClientRuntime } from "../hooks/useClientRuntime";
 import { getAssetPath } from "../lib/assetPath";
 
@@ -237,6 +238,8 @@ function Examples() {
 					</PathDraw>
 				</section>
 			</main>
+
+			<Footer />
 		</>
 	);
 }

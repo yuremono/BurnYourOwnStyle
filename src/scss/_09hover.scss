@@ -85,6 +85,7 @@ button,a{
     will-change: filter;
     overflow: hidden; 
     transition: var(--btnTR);
+    color: var(--btnC);
 
 
     // background: url(images/home/btn.png) no-repeat 100% 100%;
@@ -192,9 +193,6 @@ button,a{
             font-family: var(--San);
             display: block;
         }
-        i{
-            
-        }
     }
     &.__bc {--btnBG: var(--BC);color: var(--MC);}
     &.__mc {--btnBG: var(--MC);}
@@ -252,9 +250,6 @@ button,a{
             content: "\f35d";
         }
         // flex: 1;
-    }
-    &:is(a,span){
-        color: var(--btnC);
     }
     &.__icon {
         --btnW: var(--btnH);

@@ -5,6 +5,7 @@ import { Image } from "../components/Image";
 // import { RgbShift } from "../components/RgbShift";
 import { PathDraw } from "../components/PathDraw";
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import { useClientRuntime } from "../hooks/useClientRuntime";
 import { getAssetPath } from "../lib/assetPath";
 
@@ -174,6 +175,8 @@ function Playground() {
 					</div>
 				</section>
 			</main>
+
+			<Footer />
 		</>
 	);
 }
