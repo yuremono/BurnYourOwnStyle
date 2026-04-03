@@ -1,1 +1,3 @@
 @CLAUDE.md
+@STYLE.md
+@CLASS.md
