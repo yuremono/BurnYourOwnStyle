@@ -1,5 +1,5 @@
 ---
-name: PC
+name: Pencil
 description: |
   pencil MCPツールを使用して.penデザインファイルを作成するスキル。
   ユーザーが「新しいデザインファイルを作成」「pencilでデザイン」「.penファイルを作成」等の指示をした時に使用。
