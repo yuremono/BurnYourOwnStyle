@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Yuru-style face icon">
+  <defs>
+    <style>
+      .outline { stroke: #000000; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <!-- Face -->
+  <ellipse
+    cx="128"
+    cy="138"
+    rx="100"
+    ry="92"
+    fill="#FFF0ED"
+    class="outline"
+    stroke-width="3"
+  />
+
+  <!-- Ear (left) -->
+  <path
+    d="M 34 138c-14-6-12-32 4-36 12-2 14 18 8 28-4 8-8 10-12 8z"
+    fill="#FFF0ED"
+    class="outline"
+    stroke-width="3"
+  />
+
+  <!-- Hair -->
+  <path
+    fill="#3D2B2B"
+    class="outline"
+    stroke-width="3"
+    d="M 28 155
+       c-6-45 8-95 52-118 38-18 88-18 128 2 44 22 58 72 48 118
+       l-8-2
+       c-8-38-28-72-68-82-42-10-88 8-108 52
+       c-6 14-10 28-12 44
+       z
+       M 38 95
+       c-8-12-4-28 8-32 10-4 18 8 22 18 4 10 2 20-6 24-8 4-18-2-24-10z
+       M 48 88
+       c-6-10-2-22 10-26 8-2 16 6 18 16 2 8-4 16-12 18-8 2-14-2-16-8z"
+  />
+
+  <!-- Forelock strand (right forehead) -->
+  <path
+    fill="#3D2B2B"
+    class="outline"
+    stroke-width="2.5"
+    d="M 168 52
+       c18 8 32 28 36 48
+       c2 12-4 22-14 26
+       c-10 4-20-2-24-12
+       c-6-16 2-38 2-62z"
+  />
+
+  <!-- Mouth -->
+  <g fill="none" stroke="#000000" stroke-width="2.8" stroke-linecap="round">
+    <line x1="108" y1="178" x2="148" y2="178" />
+    <line x1="108" y1="174" x2="108" y2="182" />
+    <line x1="148" y1="174" x2="148" y2="182" />
+  </g>
+
+  <!-- Eyebrow (one side, above left lens) -->
+  <path
+    d="M 78 82 Q 94 76 110 80"
+    fill="none"
+    stroke="#000000"
+    stroke-width="2.2"
+    stroke-linecap="round"
+  />
+
+  <!-- Glasses -->
+  <g id="glasses">
+    <rect
+      x="72"
+      y="96"
+      width="44"
+      height="52"
+      rx="12"
+      ry="12"
+      fill="#FFFFFF"
+      stroke="#1A1A1B"
+      stroke-width="4.5"
+    />
+    <rect
+      x="140"
+      y="96"
+      width="44"
+      height="52"
+      rx="12"
+      ry="12"
+      fill="#FFFFFF"
+      stroke="#1A1A1B"
+      stroke-width="4.5"
+    />
+    <path
+      d="M 116 102 Q 128 98 140 102 M 116 142 Q 128 146 140 142"
+      fill="none"
+      stroke="#1A1A1B"
+      stroke-width="4.5"
+      stroke-linecap="round"
+    />
+    <ellipse cx="74" cy="102" rx="5" ry="2.5" fill="#FFFFFF" stroke="#1A1A1B" stroke-width="0.8" />
+    <ellipse cx="182" cy="102" rx="5" ry="2.5" fill="#FFFFFF" stroke="#1A1A1B" stroke-width="0.8" />
+  </g>
+</svg>
+<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 256 256"
+						role="img"
+						aria-label="Yuru-style face icon"
+					>
+						<defs>
+							<style>
+								{/* .outline { stroke: #000000; stroke-linecap: round; stroke-linejoin: round; } */}
+							</style>
+						</defs>
+
+						{/* <!-- Face --> */}
+						<ellipse
+							cx="128"
+							cy="138"
+							rx="100"
+							ry="92"
+							fill="#FFF0ED"
+							className="outline"
+							stroke-width="3"
+						/>
+
+						{/* <!-- Ear (left) --> */}
+						<path
+							d="M 34 138c-14-6-12-32 4-36 12-2 14 18 8 28-4 8-8 10-12 8z"
+							fill="#FFF0ED"
+							className="outline"
+							stroke-width="3"
+						/>
+
+						{/* <!-- Hair --> */}
+						<path
+							fill="#3D2B2B"
+							className="outline"
+							stroke-width="3"
+							d="M 28 155
+       c-6-45 8-95 52-118 38-18 88-18 128 2 44 22 58 72 48 118
+       l-8-2
+       c-8-38-28-72-68-82-42-10-88 8-108 52
+       c-6 14-10 28-12 44
+       z
+       M 38 95
+       c-8-12-4-28 8-32 10-4 18 8 22 18 4 10 2 20-6 24-8 4-18-2-24-10z
+       M 48 88
+       c-6-10-2-22 10-26 8-2 16 6 18 16 2 8-4 16-12 18-8 2-14-2-16-8z"
+						/>
+
+						{/* <!-- Forelock strand (right forehead) --> */}
+						<path
+							fill="#3D2B2B"
+							className="outline"
+							stroke-width="2.5"
+							d="M 168 52
+       c18 8 32 28 36 48
+       c2 12-4 22-14 26
+       c-10 4-20-2-24-12
+       c-6-16 2-38 2-62z"
+						/>
+
+						{/* <!-- Mouth --> */}
+						<g
+							fill="none"
+							stroke="#000000"
+							stroke-width="2.8"
+							stroke-linecap="round"
+						>
+							<line x1="108" y1="178" x2="148" y2="178" />
+							<line x1="108" y1="174" x2="108" y2="182" />
+							<line x1="148" y1="174" x2="148" y2="182" />
+						</g>
+
+						{/* <!-- Eyebrow (one side, above left lens) --> */}
+						<path
+							d="M 78 82 Q 94 76 110 80"
+							fill="none"
+							stroke="#000000"
+							stroke-width="2.2"
+							stroke-linecap="round"
+						/>
+
+						{/* <!-- Glasses --> */}
+						<g id="glasses">
+							<rect
+								x="72"
+								y="96"
+								width="44"
+								height="52"
+								rx="12"
+								ry="12"
+								fill="#FFFFFF"
+								stroke="#1A1A1B"
+								stroke-width="4.5"
+							/>
+							<rect
+								x="140"
+								y="96"
+								width="44"
+								height="52"
+								rx="12"
+								ry="12"
+								fill="#FFFFFF"
+								stroke="#1A1A1B"
+								stroke-width="4.5"
+							/>
+							<path
+								d="M 116 102 Q 128 98 140 102 M 116 142 Q 128 146 140 142"
+								fill="none"
+								stroke="#1A1A1B"
+								stroke-width="4.5"
+								stroke-linecap="round"
+							/>
+							<ellipse
+								cx="74"
+								cy="102"
+								rx="5"
+								ry="2.5"
+								fill="#FFFFFF"
+								stroke="#1A1A1B"
+								stroke-width="0.8"
+							/>
+							<ellipse
+								cx="182"
+								cy="102"
+								rx="5"
+								ry="2.5"
+								fill="#FFFFFF"
+								stroke="#1A1A1B"
+								stroke-width="0.8"
+							/>
+						</g>
+					</svg>
