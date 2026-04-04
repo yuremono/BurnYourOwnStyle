@@ -34,7 +34,11 @@ function Examples() {
 					/>
 					<div className="StickyStep StickScr [--step:3em] h3FZ">
 						<span>LottieScrollは</span>
-						<span>特定ファイル向けに<br/>調整されてる</span>
+						<span>
+							特定ファイル向けに
+							<br />
+							調整されてる
+						</span>
 						<span>StickyStepは</span>
 						<span>FV向け調整</span>
 					</div>
@@ -43,12 +47,50 @@ function Examples() {
 				{/* Hero */}
 				<section className="Hero out">
 					<figure className="back">
-						<img src={getAssetPath("/images/picsum/003.jpg")} alt="" loading="lazy" />
+						<img
+							src={getAssetPath("/images/picsum/003.jpg")}
+							alt=""
+							loading="lazy"
+						/>
 					</figure>
 					<div className="item">
 						<h1>Hero タイトル</h1>
 						<p>サブタイトル</p>
 					</div>
+				</section>
+
+				{/* PathDraw */}
+				<section className="">
+					<h2>PathDraw</h2>
+					<p>スクロール連動 SVG パス描画アニメーション。</p>
+					
+					
+					<PathDraw className="[--stw:1]">
+						<svg
+							viewBox="0 0 100 100"
+							role="img"
+							aria-label="パス描画デモ"
+						>
+							<path
+								d="M10,50 L90,50"
+								stroke="currentColor"
+								fill="none"
+							/>
+							<path
+								d="M50,10 L50,90"
+								stroke="currentColor"
+								fill="none"
+							/>
+							<circle
+								cx="50"
+								cy="50"
+								r="30"
+								stroke="currentColor"
+								strokeWidth="1"
+								fill="none"
+							/>
+						</svg>
+					</PathDraw>
 				</section>
 
 				{/* Panel */}
@@ -62,7 +104,9 @@ function Examples() {
 					</h3>
 					<Panel className="img40 IsFlow BorderDraw IsDown">
 						<PanelItem className="BorderDraw">
-							<Image image={getAssetPath("/images/picsum/002.jpg")} />
+							<Image
+								image={getAssetPath("/images/picsum/002.jpg")}
+							/>
 							<div>
 								<span className="sub">Step 01</span>
 								<h3>タイトル</h3>
@@ -70,7 +114,9 @@ function Examples() {
 							</div>
 						</PanelItem>
 						<PanelItem className="IsRev BorderDraw">
-							<Image image={getAssetPath("/images/picsum/003.jpg")} />
+							<Image
+								image={getAssetPath("/images/picsum/003.jpg")}
+							/>
 							<div>
 								<span className="sub">Step 02</span>
 								<h3>タイトル（反転）</h3>
@@ -89,21 +135,27 @@ function Examples() {
 					<h3>Cards col3</h3>
 					<Cards className="col3">
 						<CardsItem>
-							<Image image={getAssetPath("/images/picsum/004.jpg")} />
+							<Image
+								image={getAssetPath("/images/picsum/004.jpg")}
+							/>
 							<div className="p-4">
 								<h3>カード1</h3>
 								<p>説明文</p>
 							</div>
 						</CardsItem>
 						<CardsItem>
-							<Image image={getAssetPath("/images/picsum/005.jpg")} />
+							<Image
+								image={getAssetPath("/images/picsum/005.jpg")}
+							/>
 							<div className="p-4">
 								<h3>カード2</h3>
 								<p>説明文</p>
 							</div>
 						</CardsItem>
 						<CardsItem>
-							<Image image={getAssetPath("/images/picsum/006.jpg")} />
+							<Image
+								image={getAssetPath("/images/picsum/006.jpg")}
+							/>
 							<div className="p-4">
 								<h3>カード3</h3>
 								<p>説明文</p>
@@ -132,7 +184,9 @@ function Examples() {
 					<p>折りたたみコンテンツ。</p>
 					<h3>Toggle IsQa</h3>
 					<Toggle className="IsQa">
-						<ToggleSummary>IsQaは`Q`と`A`の装飾を付与する</ToggleSummary>
+						<ToggleSummary>
+							IsQaは`Q`と`A`の装飾を付与する
+						</ToggleSummary>
 						<ToggleBody>
 							<p>IsQaは`Q`と`A`の装飾を付与する</p>
 						</ToggleBody>
@@ -142,9 +196,7 @@ function Examples() {
 							質問2：回答2：のような書き方はしないこと！
 						</ToggleSummary>
 						<ToggleBody>
-							<p>
-                                                        質問2：回答2：のような書き方はしないこと！
-							</p>
+							<p>質問2：回答2：のような書き方はしないこと！</p>
 						</ToggleBody>
 					</Toggle>
 				</section>
@@ -173,30 +225,40 @@ function Examples() {
 
 					<div className="Stick MY Wrap bg-[--TC] text-white text-left ">
 						<div className="StickItem">
-                                                <Image
-                                                                        className=" RgbShift IsBeatY "
-										image={getAssetPath(
-											"/images/picsum/014.jpg",
-										)}
-									/>
+							<Image
+								className=" RgbShift IsBeatY "
+								image={getAssetPath("/images/picsum/014.jpg")}
+							/>
 						</div>
 						<Panel className="StickScr img40">
 							<PanelItem>
-								<Image image={getAssetPath("/images/picsum/016.jpg")} />
+								<Image
+									image={getAssetPath(
+										"/images/picsum/016.jpg",
+									)}
+								/>
 								<div>
 									<h3>スクロールコンテンツ1</h3>
 									<p>StickItemがスクロールされます</p>
 								</div>
 							</PanelItem>
 							<PanelItem className="IsRev">
-								<Image image={getAssetPath("/images/picsum/017.jpg")} />
+								<Image
+									image={getAssetPath(
+										"/images/picsum/017.jpg",
+									)}
+								/>
 								<div>
 									<h3>スクロールコンテンツ2</h3>
 									<p>StickScrは固定されています</p>
 								</div>
 							</PanelItem>
 							<PanelItem>
-								<Image image={getAssetPath("/images/picsum/016.jpg")} />
+								<Image
+									image={getAssetPath(
+										"/images/picsum/016.jpg",
+									)}
+								/>
 								<div>
 									<h3>スクロールコンテンツ1</h3>
 									<p>StickItemがスクロールされます</p>
@@ -204,38 +266,6 @@ function Examples() {
 							</PanelItem>
 						</Panel>
 					</div>
-				</section>
-
-				{/* PathDraw */}
-				<section className="">
-					<h2>PathDraw</h2>
-					<p>スクロール連動 SVG パス描画アニメーション。</p>
-					<PathDraw className="[--stw:1]">
-						<svg
-							viewBox="0 0 100 100"
-							role="img"
-							aria-label="パス描画デモ"
-						>
-							<path
-								d="M10,50 L90,50"
-								stroke="currentColor"
-								fill="none"
-							/>
-							<path
-								d="M50,10 L50,90"
-								stroke="currentColor"
-								fill="none"
-							/>
-							<circle
-								cx="50"
-								cy="50"
-								r="30"
-								stroke="currentColor"
-								strokeWidth="1"
-								fill="none"
-							/>
-						</svg>
-					</PathDraw>
 				</section>
 			</main>
 

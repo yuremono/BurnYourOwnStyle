@@ -17,11 +17,45 @@ const COUNT = 4;
 /** 1 個の矩形を置くとき、重なったらやり直す最大回数（この回数で置けなければその個はスキップ） */
 const MAX_TRY = 6;
 
-/** 縦横比のパターン [横の比, 縦の比]（どれかを等確率で選ぶ） */
+/**
+ * ランダム時に等確率で選ぶ [横, 縦]（`itemAspect` 未指定時）
+ */
 const RATIOS: readonly (readonly [number, number])[] = [
 	[1, 1],
 	[2, 3],
 	[3, 2],
+	[16, 9],
+	[9, 16],
+	[4, 3],
+	[3, 4],
+	[2, 1],
+	[1, 2],
+	[16, 10],
+	[10, 16],
+	[3, 1],
+	[1, 3],
+];
+
+/** UI のセレクト用（ラベルと固定比。`aspect` が null のときはランダム＝`RATIOS`） */
+export const ITEM_ASPECT_OPTIONS: readonly {
+	id: string;
+	label: string;
+	aspect: readonly [number, number] | null;
+}[] = [
+	{ id: "random", label: "ランダム（混在）", aspect: null },
+	{ id: "1-1", label: "1:1", aspect: [1, 1] },
+	{ id: "2-3", label: "2:3", aspect: [2, 3] },
+	{ id: "3-2", label: "3:2", aspect: [3, 2] },
+	{ id: "16-9", label: "16:9", aspect: [16, 9] },
+	{ id: "9-16", label: "9:16", aspect: [9, 16] },
+	{ id: "4-3", label: "4:3", aspect: [4, 3] },
+	{ id: "3-4", label: "3:4", aspect: [3, 4] },
+	{ id: "2-1", label: "2:1", aspect: [2, 1] },
+	{ id: "1-2", label: "1:2", aspect: [1, 2] },
+	{ id: "16-10", label: "16:10", aspect: [16, 10] },
+	{ id: "10-16", label: "10:16", aspect: [10, 16] },
+	{ id: "3-1", label: "3:1", aspect: [3, 1] },
+	{ id: "1-3", label: "1:3", aspect: [1, 3] },
 ];
 
 /**
@@ -46,6 +80,10 @@ type Opt = {
 	 * 矩形の最小幅（親の幅に対する %）。未指定時は BASE_MIN から換算（30% 相当）
 	 */
 	minWidthPct?: number;
+	/**
+	 * 各矩形の [横, 縦] を固定する。未指定時は `RATIOS` から毎回ランダム。
+	 */
+	itemAspect?: readonly [number, number];
 };
 
 /** 論理親サイズ上での AABB（重なり判定用） */
@@ -113,7 +151,7 @@ function toRect(
 /**
  * 親を幅 100%・高さ 100% としたときの矩形を乱数生成する。
  * - left/top は中心が親の 0〜100% の範囲に入るよう乱数（はみ出しは許容しないのは座標だけ）
- * - 幅は従来どおり BASE_MIN / SPAN / RATIOS から決め、高さは aspectRatio に任せる
+ * - 幅は従来どおり BASE_MIN / SPAN から決め、高さは aspectRatio に任せる（未指定時は RATIOS からランダム）
  * - 重なりは親の実アスペクト比を使って判定（opt.parentAspect）
  */
 export function rects(opt?: Opt): Rect[] {
@@ -131,7 +169,9 @@ export function rects(opt?: Opt): Rect[] {
 	for (let i = 0; i < n; i++) {
 		let placed = false;
 		for (let t = 0; t < MAX_TRY && !placed; t++) {
-			const aspect = RATIOS[Math.floor(Math.random() * RATIOS.length)]!;
+			const aspect =
+				opt?.itemAspect ??
+				RATIOS[Math.floor(Math.random() * RATIOS.length)]!;
 			const baseSize = Math.floor(Math.random() * SPAN) + minWidthU;
 
 			const rwU =
