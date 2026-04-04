@@ -62,7 +62,13 @@ function Examples() {
 				{/* PathDraw */}
 				<section className="">
 					<h2>PathDraw</h2>
-					<p>スクロール連動 SVG パス描画アニメーション。</p>
+                                        <p>スクロール連動 SVG パス描画アニメーション。</p>
+                                        <svg viewBox="0 0 100 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" >
+<rect x="86.15" y="23.2" width="25.7" height="25.7" fill="var(--GR50)" />
+<rect x="39.95" y="-8.725" width="26.9" height="40.35" fill="var(--GR50)" />
+<rect x="-14.3" y="-4.9" width="30" height="20" fill="var(--GR50)" />
+<rect x="79.35" y="-1.4" width="20.9" height="20.9" fill="var(--GR50)" />
+</svg>
 					
 					
 					<PathDraw className="[--stw:1]">

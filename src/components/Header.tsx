@@ -12,7 +12,7 @@ function NavUl() {
 				<Link to="/examples">EX. for SKILL</Link>
 			</li>
 			<li className="dswh">
-				<Link to="/rects">RandomRects</Link>
+				<Link to="/rects">RandomGenerator</Link>
 			</li>
 			<li className="drop" aria-expanded="false">
 				<a className="droplink drop_toggle dswh" tabIndex={-1}>

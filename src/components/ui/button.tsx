@@ -55,4 +55,5 @@ function Button({
   )
 }
 
+// eslint-disable-next-line react-refresh/only-export-components -- buttonVariants は cva を他コンポーネントと共有するため
 export { Button, buttonVariants }

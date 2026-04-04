@@ -1,6 +1,3 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,86 +30,65 @@ h1,h2,h3,h4,h5{
         line-height: var(--HLH);
         font-family: var(--Eng)
 }
-
-@layer base {
-  .theme {
-		--font-heading: var(--font-sans);
-		--font-sans: 'Geist Variable', sans-serif;
-	}
-  :root {
-		--background: oklch(1 0 0);
-		--foreground: oklch(0.145 0 0);
-		--card: oklch(1 0 0);
-		--card-foreground: oklch(0.145 0 0);
-		--popover: oklch(1 0 0);
-		--popover-foreground: oklch(0.145 0 0);
-		--primary: oklch(0.205 0 0);
-		--primary-foreground: oklch(0.985 0 0);
-		--secondary: oklch(0.97 0 0);
-		--secondary-foreground: oklch(0.205 0 0);
-		--muted: oklch(0.97 0 0);
-		--muted-foreground: oklch(0.556 0 0);
-		--accent: oklch(0.97 0 0);
-		--accent-foreground: oklch(0.205 0 0);
-		--destructive: oklch(0.577 0.245 27.325);
-		--border: oklch(0.922 0 0);
-		--input: oklch(0.922 0 0);
-		--ring: oklch(0.708 0 0);
-		--chart-1: oklch(0.87 0 0);
-		--chart-2: oklch(0.556 0 0);
-		--chart-3: oklch(0.439 0 0);
-		--chart-4: oklch(0.371 0 0);
-		--chart-5: oklch(0.269 0 0);
-		--radius: 0.625rem;
-		--sidebar: oklch(0.985 0 0);
-		--sidebar-foreground: oklch(0.145 0 0);
-		--sidebar-primary: oklch(0.205 0 0);
-		--sidebar-primary-foreground: oklch(0.985 0 0);
-		--sidebar-accent: oklch(0.97 0 0);
-		--sidebar-accent-foreground: oklch(0.205 0 0);
-		--sidebar-border: oklch(0.922 0 0);
-		--sidebar-ring: oklch(0.708 0 0);
-	}
-  .dark {
-		--background: oklch(0.145 0 0);
-		--foreground: oklch(0.985 0 0);
-		--card: oklch(0.205 0 0);
-		--card-foreground: oklch(0.985 0 0);
-		--popover: oklch(0.205 0 0);
-		--popover-foreground: oklch(0.985 0 0);
-		--primary: oklch(0.922 0 0);
-		--primary-foreground: oklch(0.205 0 0);
-		--secondary: oklch(0.269 0 0);
-		--secondary-foreground: oklch(0.985 0 0);
-		--muted: oklch(0.269 0 0);
-		--muted-foreground: oklch(0.708 0 0);
-		--accent: oklch(0.269 0 0);
-		--accent-foreground: oklch(0.985 0 0);
-		--destructive: oklch(0.704 0.191 22.216);
-		--border: oklch(1 0 0 / 10%);
-		--input: oklch(1 0 0 / 15%);
-		--ring: oklch(0.556 0 0);
-		--chart-1: oklch(0.87 0 0);
-		--chart-2: oklch(0.556 0 0);
-		--chart-3: oklch(0.439 0 0);
-		--chart-4: oklch(0.371 0 0);
-		--chart-5: oklch(0.269 0 0);
-		--sidebar: oklch(0.205 0 0);
-		--sidebar-foreground: oklch(0.985 0 0);
-		--sidebar-primary: oklch(0.488 0.243 264.376);
-		--sidebar-primary-foreground: oklch(0.985 0 0);
-		--sidebar-accent: oklch(0.269 0 0);
-		--sidebar-accent-foreground: oklch(0.985 0 0);
-		--sidebar-border: oklch(1 0 0 / 10%);
-		--sidebar-ring: oklch(0.556 0 0);
-	}
-  * {
-    @apply border-border outline-ring/50;
-	}
-  body {
-    @apply bg-background text-foreground;
-	}
-  html {
-    @apply font-sans;
-	}
+div.tp-rotv{
+        font-size: inherit;
+        /* --tp-base-background-color: var(--GR); */
+	--tp-base-border-radius: 6px;
+	--tp-base-font-family: system-ui, sans-serif;
+	--tp-base-shadow-color: rgba(0, 0, 0, 0.2);
+        --cnt-fg: var(--TC);
+        --lbl-fg: var(--TC);
+        --btn-fg: var(--WH);
+        --cnt-usz: 2em;
+        	/* Random Rects 等で実際に効く色 (--MC に一旦統一) */
+	--tp-base-background-color: var(--WH80);
+	/* --tp-base-shadow-color: var(--AC); */
+	/* --tp-button-background-color: var(--SC); */
+	/* --tp-button-background-color-hover: var(--AC); */
+	/* --tp-button-background-color-focus: var(--AC); */
+	/* --tp-button-background-color-active: var(--AC); */
+	/* --tp-button-foreground-color: var(--AC); */
+	/* --tp-container-background-color: var(--AC); */
+	/* --tp-container-foreground-color: var(--AC); */
+	/* --tp-container-background-color-hover: var(--AC); */
+	/* --tp-container-background-color-focus: var(--AC); */
+	/* --tp-container-background-color-active: var(--AC); */
+	/* --tp-input-background-color: var(--AC); */
+	--tp-input-foreground-color: var(--TC);
+	/* --tp-input-background-color-hover: var(--AC); */
+	/* --tp-input-background-color-focus: var(--AC); */
+	/* --tp-input-background-color-active: var(--AC); */
+	/* --tp-label-foreground-color: var(--AC); */
+	/* モニター・区切りブレード未使用時（値は --AC 想定で保持） */
+	/* --tp-monitor-background-color: var(--AC); */
+	/* --tp-monitor-foreground-color: var(--AC); */
+	/* --tp-groove-foreground-color: var(--AC); */
+        
+}
+.tp-fldv-expanded .tp-lblv_l{
+        text-align: right;
+}
+div.tp-lblv_v{
+        flex: unset;
+        width: unset;
+}
+/* plugin-essentials の radiogrid は幅が無いとGridが描画されない（上の unset を打ち消す） */
+div.tp-lblv_v:has(.tp-radgridv){
+        width: var(--bld-vw);
+        min-width: var(--bld-vw);
+        flex: 0 0 auto;
+        align-self: flex-start;
+}
+.tp-rotv_b{
+        min-width:25.5em;
+}
+.h_items>div{
+        scrollbar-gutter: stable;
+}
+.h_items>div::-webkit-scrollbar{background-color: transparent;width: o;height: 0;}
+.h_items>div:has(.tp-cntv.tp-rotv-expanded){
+        opacity: 0.5;
+}
+.h_items>div:has(.tp-cntv.tp-rotv-expanded):hover{
+        opacity: 1;
 }

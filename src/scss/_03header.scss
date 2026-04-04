@@ -128,7 +128,7 @@
 
         .h_items{
             transition: var(--trans);
-            @media (max-width : 834px){
+            @include max-md {
                 padding-bottom: env(safe-area-inset-bottom);
                 padding-block: var(--PTbottomTAB);
                 padding-inline: var(--PTbottomTAB);
@@ -339,7 +339,7 @@
             //     grid-template-columns: 1fr;
             //     grid-template: 1fr;
             // }
-            // @media (max-width : 834px){ 
+            // @include max-md { 
             //     grid-template-rows: 1fr;
             //     grid-template-columns: 1fr;
             //     grid-template: 1fr;
@@ -355,7 +355,7 @@
             }
         }
         .fix-tab:is(#header *){
-            @media (max-width : 834px){
+            @include max-md {
                 >*{
                     text-align: center;
                 }
@@ -504,7 +504,7 @@
             //     background-color: color-mix(in srgb, var(--innerBG) , transparent 30%);
             // }
             // background: linear-gradient(to bottom,var(--innerBG),color-mix(in srgb, transparent,var(--innerBG) 50%) 50%,transparent 90%); 
-            @media (max-width : 834px){
+            @include max-md {
                 justify-content: space-between;
             }
         }
@@ -536,7 +536,7 @@
                 flex-direction: row;
                 bottom: 0;right: 0;
             }
-            @media (max-width : 834px){
+            @include max-md {
                 flex-direction: row;
                 width: 100%;
                 >*{
@@ -1041,7 +1041,7 @@
         line-height: var(--head);
         font-family: var(--eng);
         text-align: center;
-        @media (max-width : 834px){
+        @include max-md {
             position: unset;
             font-size: calc(var(--head)*.4 );
         }
@@ -1114,7 +1114,7 @@
         .btn{
             &:after{display: none;}
         }
-        @media (max-width : 834px){
+        @include max-md {
             --btnH: var(--head);
             flex-direction: row;
             
@@ -1151,7 +1151,7 @@
             justify-content: space-around;
             span{display: block;color: var(--spanC);} 
         }
-        @media (max-width : 834px){
+        @include max-md {
             // --btnH:var(--head);
             // --btnFZ:var(--f20);
             
@@ -1292,7 +1292,7 @@
     }
     &.fix-tab{
 
-        @media (max-width : 834px){
+        @include max-md {
             position: fixed;
             top: unset;
             // top: calc(100% - var(--btnH) - 1em);
@@ -1421,7 +1421,7 @@
         }
     }
     &.tab-icon{
-        @media (max-width : 834px){
+        @include max-md {
             a:is(#header *){
                 font-size: 0px;
                 aspect-ratio: 1;
@@ -1459,7 +1459,7 @@
                 i{font-size: 20px;}
             }
         }
-        @media (max-width : 834px){
+        @include max-md {
             position: fixed;
             top: unset;
             // top: calc(100% - var(--btnH) - 1em);
@@ -1945,7 +1945,7 @@
             @include menu{
                 width: 66%;
             }
-            @media (max-width : 834px){
+            @include max-md {
                 width: 100%;
             }
             &.show{
@@ -2079,7 +2079,7 @@
     //         visibility: visible;
     //         translate:  0;
     //         transition: .4s;
-    //         @media (max-width : 834px){
+    //         @include max-md {
     //             width: 100%;
 
     //         }
